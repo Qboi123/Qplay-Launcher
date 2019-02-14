@@ -2,8 +2,8 @@
 Bubble Blaster by Qplay123
 
 ## Requirements
-Python 3.7 or better (recommended, i test with python 3.7).
-Minimum of 1600x700 screen.
+* Python 3.7 or better (recommended, i test with python 3.7).
+* Minimum of 1600x700 screen.
 
 ## Steps
 01. Download Python. (Link in description)
@@ -18,5 +18,5 @@ Minimum of 1600x700 screen.
 10. When this is done, unpack the archive (zip). Ans run Main.py
 
 ## Downloads:
-www.python.org for Python.
-https://github.com/Qplay123/Qplay-Bubbles-1.1/releases for the Game.
+* www.python.org for Python.
+* https://github.com/Qplay123/Qplay-Bubbles-1.1/releases for the Game.
