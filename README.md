@@ -1,4 +1,4 @@
-# Qplay-Bubbles-1.1
+# Qplay Bubbles 2D Version
 Bubble Blaster by Qplay123
 
 ## Requirements
