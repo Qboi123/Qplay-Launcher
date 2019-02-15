@@ -8,7 +8,7 @@ Bubble Blaster by Qplay123
 ## Steps
 01. Download Python. (Link in description)
 02. Install Python by clicking to the download when it is done.
-03. On the setup click on "[ ] Add Python to PATH".
+03. On the setup click on "Add Python to PATH" (the checkbox).
 04. Then click on Install.
 05. When this instalation is done, press on "Disable PATH length limit."
 06. When you have downloaded Python 3.7. Search with start for cmd.exe and open it.
