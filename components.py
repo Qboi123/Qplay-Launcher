@@ -13,7 +13,7 @@ class Present:
     Giving a present activated by a bubble
     """
 
-    def __init__(self, canvas, stats, temp, modes, config, icons, foregrounds):
+    def __init__(self, canvas, stats, temp, modes, config, icons, foregrounds, log):
         # Sets pause, and presentmode for controling information.
         modes["pause"] = True
         modes["present"] = True
@@ -45,11 +45,12 @@ class Present:
         self.fgid = canvas.create_image(mid_x, mid_y, image=foregrounds["store-fg"])
 
         # Ramdomizing Gifts for output
-        Thread(None, lambda: self.randomize_gifts(canvas, stats)).start()
+        Thread(None, lambda: self.randomize_gifts(canvas, stats, log)).start()
 
-    def randomize_gifts(self, canvas, stats, index=None):
+    def randomize_gifts(self, canvas, stats, log, index=None):
         """
         Randomizing Gifts
+        :param log:
         :param stats:
         :param canvas:
         :param index:
@@ -103,14 +104,14 @@ class Present:
             stats["coins"] += self.Money
 
             play_sound("data/sounds/Tadaa.wav")
-        elif 1 <= index < 100:
+        elif 1 <= index < 200:
             # Teleport
             text = "You earned:\n1 Teleport"
             canvas.itemconfig(self.textid, text=text)
             stats["teleports"] += 1
 
             play_sound("data/sounds/Tadaa.wav")
-        elif 100 <= index < 180:
+        elif 200 <= index < 360:
             # Giving a Protection
             # Text for information
             text = "You earned:\nA protection"
@@ -119,14 +120,7 @@ class Present:
             # Playing sound for gift.
 
             # Globals and status setup
-            stats["secure"] = True
-            stats["secure-time"] = time() + randint(10, 18)
-            stats["confusion"] = False
-            stats["confusion-time"] = time()
-            stats["paralis"] = False
-            stats["paralis-time"] = time()
-            stats["notouch"] = False
-            stats["notouch-time"] = time()
+            State.set_state(canvas, log, stats, "Protect", backgrounds=None)
 
             play_sound("data/sounds/Tadaa.wav")
         else:
@@ -263,6 +257,7 @@ class Store:
         :rtype: object
         """
         # Logging information for debug.
+        self.foregrounds = foregrounds
         log.info("Store.__init__", "Player Opened the store")
 
         # Setup for store, the pause and controls.
@@ -273,7 +268,8 @@ class Store:
         modes["pause"] = True
 
         # Background color (Can be changed by fill=<color-string>
-        self.bg = canvas.create_rectangle(0, 0, config["width"], config["height"], fill="coral")
+        self.bg = canvas.create_rectangle(0, 0, config["width"], config["height"], fill="white")
+        self.title = canvas.create_rectangle(-1, -1, config["width"] + 1, 48, fill="#373737")
 
         # Selection
         self.maximal = 3
@@ -294,9 +290,6 @@ class Store:
         self.vDiamonds = canvas.create_text(25, 25, text="Diamonds: " + str(stats["diamonds"]), fill="white", anchor=W,
                                             font=("Helvetica", 18))
 
-        mid_x = config["middle-x"]
-        mid_y = config["middle-y"]
-
         # Setups items and price.
         info = Reader("config/store.json").get_decoded()
 
@@ -304,34 +297,36 @@ class Store:
 
         self.maximal = len(info) - 1
 
-        y = 0
-        x = 0
+        y = 50
+        x = 2
 
         for b in info:
-            if y > 899:
+            if y > config["height"] - 160:
                 y -= 900
                 x += 200
-            self.button[i] = canvas.create_rectangle(25 + x, 50 + y, 199 + x, 149 + y, outline="white",
-                                                     fill="coral")
-            self.frame[i] = canvas.create_rectangle(50 + x, 50 + y, 100 + x, 100 + y, outline="white",
-                                                    fill="coral")
-            self.item[i] = canvas.create_image(75 + x, 75 + y, image=icons["store-pack"][i])
-            self.name[i] = canvas.create_text(110 + x, 75 + y, text=b["name"], fill="white", anchor=W)
-            self.d_icon[i] = canvas.create_image(188 + x, 117 + y, image=icons["store-diamond"], anchor=E)
-            self.info[i] = canvas.create_text(148 + x, 117 + y, text=str(int(b["diamonds"])), fill="white",
+            self.button[i] = canvas.create_rectangle(50 + x, 1 + y, 100 + x, 51 + y, outline="white",
+                                                     fill="white")
+            self.frame[i] = canvas.create_rectangle(0 + x, 0 + y, 190 + x, 140 + y, outline="#cfcfcf",
+                                                    fill="white")
+            self.item[i] = canvas.create_image(100 + x, 26 + y, image=icons["store-pack"][i])
+            self.name[i] = canvas.create_text(100 + x, 75 + y, text=b["name"], fill="#7f7f7f", anchor=CENTER)
+            self.d_icon[i] = canvas.create_image(170 + x, 117 + y, image=icons["store-diamond"], anchor=E)
+            self.info[i] = canvas.create_text(150 + x, 117 + y, text=str(int(b["diamonds"])), fill="#7f7f7f",
                                               anchor=E)
             self.price[i] = int(b["diamonds"])
-            self.c_icon[i] = canvas.create_image(30 + x, 117 + y, image=icons["store-coin"], anchor=W)
-            self.coins[i] = canvas.create_text(50 + x, 117 + y, text=b["coins"], fill="white", anchor=W)
-            y += 100
+            self.c_icon[i] = canvas.create_image(20 + x, 117 + y, image=icons["store-coin"], anchor=W)
+            self.coins[i] = canvas.create_text(40 + x, 117 + y, text=b["coins"], fill="#7f7f7f", anchor=W)
+            y += 150
             i += 1
 
         # Sets up the selected, the first.
-        canvas.itemconfig(self.button[self.selected], fill="red")
-        canvas.itemconfig(self.frame[self.selected], fill="darkred")
+        canvas.itemconfig(self.button[self.selected], fill="#7f7f7f", outline="#373737")
+        canvas.itemconfig(self.frame[self.selected], fill="#7f7f7f", outline="#7f7f7f")
+        canvas.itemconfig(self.info[self.selected], fill="#373737")
+        canvas.itemconfig(self.coins[self.selected], fill="#373737")
 
         # Foreground for fade
-        self.fg = canvas.create_image(mid_x, mid_y, image=foregrounds["store-fg"])
+        # self.fg = canvas.create_image(mid_x, mid_y, image=foregrounds["store-fg"])
         self.w = None
         self.b = None
         self.b2 = None
@@ -353,15 +348,21 @@ class Store:
         if self.maximal >= self.selected + x > -1:
             # Sets old color
 
-            canvas.itemconfig(self.button[self.selected], fill="coral")
-            canvas.itemconfig(self.frame[self.selected], fill="coral")
+            canvas.itemconfig(self.button[self.selected], fill="white", outline="white")
+            canvas.itemconfig(self.frame[self.selected], fill="white", outline="#cfcfcf")
+            canvas.itemconfig(self.name[self.selected], fill="#7f7f7f")
+            canvas.itemconfig(self.info[self.selected], fill="#7f7f7f")
+            canvas.itemconfig(self.coins[self.selected], fill="#7f7f7f")
 
             # Sets selected variable
             self.selected += x
 
             # Sets new selected color
-            canvas.itemconfig(self.button[self.selected], fill="red")
-            canvas.itemconfig(self.frame[self.selected], fill="darkred")
+            canvas.itemconfig(self.button[self.selected], fill="#7f7f7f", outline="#7f7f7f")
+            canvas.itemconfig(self.frame[self.selected], fill="#7f7f7f", outline="#121212")
+            canvas.itemconfig(self.name[self.selected], fill="#373737")
+            canvas.itemconfig(self.info[self.selected], fill="#373737")
+            canvas.itemconfig(self.coins[self.selected], fill="#373737")
 
     def buy(self, canvas, log, modes, stats, bubble, backgrounds, temp, texts, commands, root):
         """
@@ -381,7 +382,7 @@ class Store:
         # self.close.destroy()
         # Log information
         log.info("Store", "Player bought item nr. " + str(self.selected) + " for " + str(self.price[self.selected]) +
-                 " diamonds, and" + canvas.itemcget(self.coins[self.selected], "text")+" coins.")
+                 " diamonds, and" + canvas.itemcget(self.coins[self.selected], "text") + " coins.")
 
         # Checking if you have enough money / diamonds
         if stats["diamonds"] >= self.price[self.selected] and stats["coins"] >= int(canvas.itemcget(
@@ -425,6 +426,7 @@ class Store:
                 stats["special-level"] = True
                 stats["special-level-time"] = time() + 20
                 log.info("State", "Special Level State is ON!!!")
+                play_sound("data/sounds/specialmode.mp3")
             if self.selected == 9:
                 stats["scorestate"] = 2
                 stats["scorestate-time"] = time() + randint(20, 40)
@@ -468,11 +470,6 @@ class Store:
         self.b2 = Button(root, text="No",
                          command=lambda: (self.w.destroy(modes, canvas), self.b.destroy(), self.b2.destroy(), None,
                                           storemode_on()))
-        # self.close = Button2(mid_x + 80, text="No",
-        #                 command=lambda: self.close.storemode_destroy(self.w.destroy(), self.b.destroy(),
-        #                                                              self.b2.destroy(),
-        #                                      self.close.destroy(), StoremodeOn()))
-
         # Places buttons
         self.w.child.append(self.b)
         self.w.child.append(self.b2)
@@ -494,8 +491,8 @@ class Store:
         # Deletes item-boxes and items.
         for i in range(self.maximal + 1):
             log.debug("Store", "Del attributes: " + str((self.button[i], self.frame[i], self.item[i], self.info[i],
-                                                self.d_icon[i], self.name[i], self.price[i],
-                                                self.c_icon[i], self.coins[i])))
+                                                         self.d_icon[i], self.name[i], self.price[i],
+                                                         self.c_icon[i], self.coins[i])))
             canvas.delete(self.button[i])
             canvas.delete(self.frame[i])
             if canvas.option_get("image", self.item[i]) is not None:
@@ -508,7 +505,6 @@ class Store:
             canvas.delete(self.coins[i])
         # Deletes back- and foreground.
         canvas.delete(self.bg)
-        canvas.delete(self.fg)
 
         # Deletes the view of diamonds you have.
         canvas.delete(self.vDiamonds)

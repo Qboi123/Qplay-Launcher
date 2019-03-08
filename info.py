@@ -1,7 +1,7 @@
 from time import sleep, time
 
 
-def show_Score(canvas, texts, score):
+def show_score(canvas, texts, score):
     """
     Shows Score
     :param texts:
@@ -12,7 +12,7 @@ def show_Score(canvas, texts, score):
     canvas.itemconfig(texts["score"], text=str(score))
 
 
-def show_Level(canvas, texts, level):
+def show_level(canvas, texts, level):
     """
     Shows Level
     :param canvas:
@@ -23,7 +23,7 @@ def show_Level(canvas, texts, level):
     canvas.itemconfig(texts["level"], text=str(level))
 
 
-def show_Speed(canvas, texts, speed):
+def show_speed(canvas, texts, speed):
     """
     Shows Speed
     :param texts:
@@ -34,7 +34,7 @@ def show_Speed(canvas, texts, speed):
     canvas.itemconfig(texts["speed"], text=str(speed))
 
 
-def show_Lives(canvas, texts, lives):
+def show_lives(canvas, texts, lives):
     """
     Shows Lives
     :param canvas:
@@ -45,7 +45,7 @@ def show_Lives(canvas, texts, lives):
     canvas.itemconfig(texts["lives"], text=str(lives))
 
 
-def show_S_Pnt(canvas, texts, data):
+def show_score_point(canvas, texts, data):
     """
     Shows score status value
     :param texts:
@@ -56,7 +56,7 @@ def show_S_Pnt(canvas, texts, data):
     canvas.itemconfig(texts["scorestate"], text=data)
 
 
-def show_Secure(canvas, texts, on_off):
+def show_protection(canvas, texts, on_off):
     """
     shows security-state
     :param canvas:
@@ -67,7 +67,7 @@ def show_Secure(canvas, texts, on_off):
     canvas.itemconfig(texts["secure"], text=on_off)
 
 
-def show_SlowMo(canvas, texts, on_off):
+def show_slowmotion(canvas, texts, on_off):
     """
     shows slow motion state
     :param texts:
@@ -78,7 +78,7 @@ def show_SlowMo(canvas, texts, on_off):
     canvas.itemconfig(texts["slowmotion"], text=on_off)
 
 
-def show_Confus(canvas, texts, on_off):
+def show_confusion(canvas, texts, on_off):
     """
     shows confusion state
     :param canvas:
@@ -89,7 +89,7 @@ def show_Confus(canvas, texts, on_off):
     canvas.itemconfig(texts["confusion"], text=on_off)
 
 
-def show_TmeBrk(canvas, texts, on_off):
+def show_timebreak(canvas, texts, on_off):
     """
     shows timebreak state
     :param texts:
@@ -100,7 +100,7 @@ def show_TmeBrk(canvas, texts, on_off):
     canvas.itemconfig(texts["timebreak"], text=on_off)
 
 
-def show_SpdBst(canvas, texts, on_off):
+def show_spdboost(canvas, texts, on_off):
     """
     shows speedboost state
     :param texts:
@@ -195,16 +195,16 @@ def show_info(canvas, texts, stats):
     Score, Level, status-time etc.
     :return:
     """
-    show_Score(canvas, texts, stats["score"])
-    show_Level(canvas, texts, stats["level"])
-    show_Speed(canvas, texts, stats["shipspeed"])
-    show_Lives(canvas, texts, stats["lives"])
-    show_S_Pnt(canvas, texts, str(int(stats["scorestate-time"] - time())))
-    show_Secure(canvas, texts, str(int(stats["secure-time"] - time())))
-    show_SlowMo(canvas, texts, str(int(stats["slowmotion-time"] - time())))
-    show_Confus(canvas, texts, str(int(stats["confusion-time"] - time())))
-    show_TmeBrk(canvas, texts, str(int(stats["timebreak-time"] - time())))
-    show_SpdBst(canvas, texts, str(int(stats["speedboost-time"] - time())))
+    show_score(canvas, texts, stats["score"])
+    show_level(canvas, texts, stats["level"])
+    show_speed(canvas, texts, stats["shipspeed"])
+    show_lives(canvas, texts, stats["lives"])
+    show_score_point(canvas, texts, str(int(stats["scorestate-time"] - time())))
+    show_protection(canvas, texts, str(int(stats["secure-time"] - time())))
+    show_slowmotion(canvas, texts, str(int(stats["slowmotion-time"] - time())))
+    show_confusion(canvas, texts, str(int(stats["confusion-time"] - time())))
+    show_timebreak(canvas, texts, str(int(stats["timebreak-time"] - time())))
+    show_spdboost(canvas, texts, str(int(stats["speedboost-time"] - time())))
     show_paralis(canvas, texts, str(int(stats["paralis-time"] - time())))
     show_shotspeed(canvas, texts, str(int(stats["shotspeed-time"] - time())))
     show_notouch(canvas, texts, str(int(stats["notouch-time"] - time())))

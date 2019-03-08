@@ -61,10 +61,9 @@ class State:
         if act == "SpecialLevel":
             canvas.itemconfig(backgrounds["id"], image=backgrounds["special"])
             stats["special-level"] = True
-            stats["special-level-time"] = time() + 10
+            stats["special-level-time"] = time() + 20
             log.info("State", "Special Level State is ON!!!")
-            play_sound("data/sounds/specialmode")
-
+            play_sound("data/sounds/specialmode.mp3")
 
     @staticmethod
     def set_state(canvas, log, stats, action, backgrounds):

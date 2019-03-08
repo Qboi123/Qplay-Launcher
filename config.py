@@ -14,9 +14,9 @@ class Reader(json.JSONDecoder):
 
 
 class Writer(json.JSONEncoder):
-    def __init__(self, config_file, object):
+    def __init__(self, config_file, obj):
         super().__init__()
-        self.json = self.encode(object)
+        self.json = self.encode(obj)
         file = open(config_file, "w")
         file.write(self.json)
         file.close()

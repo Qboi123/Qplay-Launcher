@@ -1,4 +1,4 @@
-import pygame
+# import pygame
 
 
 class Logging:
@@ -7,71 +7,83 @@ class Logging:
     """
 
     def __init__(self, save_path="", stdout=True, stderr=False):
-        from time import strftime
-        import os
-
-        self.os = os
-        self.tme = strftime
-        self.save_file = save_path + self.tme("/log_%d_%m_%Y_-_%H_%M_%S.log")
-        self.pos = 1
-        self.log_var = ""
-        self.stdout = stdout
         self.stderr = stderr
+        self.stdout = stdout
+        self.save_path = save_path
+        return
+        # from time import strftime
+        # import os
+        #
+        # self.os = os
+        # self.tme = strftime
+        # self.save_file = save_path + self.tme("/log_%d_%m_%Y_-_%H_%M_%S.log")
+        # self.pos = 1
+        # self.log_var = ""
+        # self.stdout = stdout
+        # self.stderr = stderr
 
     def log(self, prior, cmd, msg):
-        from threading import Thread
-        import sys
-        Thread(None, lambda: self._log(prior, cmd, msg, sys.stdout)).start()
+        return
+        # from threading import Thread
+        # import sys
+        # Thread(None, lambda: self._log(prior, cmd, msg, sys.stdout)).start()
 
     def _log(self, priority, cmd, msg, std):
-        """
-        Logs a message
-        :param priority:
-        :param cmd:
-        :param msg:
-        :return:
-        """
-        priority = str(priority)
-        cmd = str(cmd)
-        msg = str(msg)
-        out = "[" + self.tme("%H:%M:%S") + "] - [" + priority.upper() + "] [" + cmd + "]: " + msg + "\n"
-        if self.log:
-            print(out[0:-1], file=std)
-        self.log_var += out
+        return
+        # """
+        # Logs a message
+        # :param priority:
+        # :param cmd:
+        # :param msg:
+        # :return:
+        # """
+        # priority = str(priority)
+        # cmd = str(cmd)
+        # msg = str(msg)
+        # out = "[" + self.tme("%H:%M:%S") + "] - [" + priority.upper() + "] [" + cmd + "]: " + msg + "\n"
+        # if self.log:
+        #     print(out[0:-1], file=std)
+        # self.log_var += out
+        # self.save()
 
     def debug(self, cmd, message):
-        from threading import Thread
-        import sys
-        Thread(None, lambda: self._log("DEBUG", cmd, message, sys.stdout)).start()
+        return
+        # from threading import Thread
+        # import sys
+        # Thread(None, lambda: self._log("DEBUG", cmd, message, sys.stdout)).start()
 
     def info(self, cmd, message):
-        from threading import Thread
-        import sys
-        Thread(None, lambda: self._log("INFO", cmd, message, sys.stdout)).start()
+        return
+        # from threading import Thread
+        # import sys
+        # Thread(None, lambda: self._log("INFO", cmd, message, sys.stdout)).start()
 
     def warning(self, cmd, message):
-        from threading import Thread
-        import sys
-        Thread(None, lambda: self._log("WARNING", cmd, message, sys.stderr)).start()
+        return
+        # from threading import Thread
+        # import sys
+        # Thread(None, lambda: self._log("WARNING", cmd, message, sys.stderr)).start()
 
     def error(self, cmd, message):
-        from threading import Thread
-        import sys
-        Thread(None, lambda: self._log("ERROR", cmd, message, sys.stderr)).start()
+        return
+        # from threading import Thread
+        # import sys
+        # Thread(None, lambda: self._log("ERROR", cmd, message, sys.stderr)).start()
 
     def fatal(self, cmd, message):
-        from threading import Thread
-        import sys
-        Thread(None, lambda: self._log("FATAL", cmd, message, sys.stderr)).start()
-        exit(1)
+        return
+        # from threading import Thread
+        # import sys
+        # Thread(None, lambda: self._log("FATAL", cmd, message, sys.stderr)).start()
+        # exit(1)
 
     def save(self):
-        """
-        saves the log
-        :return:
-        """
-        pass
-        # fa = open(self.save_file, "w+")
+        return
+        # """
+        # saves the log
+        # :return:
+        # """
+        # fa = open(self.save_file, "w")
         # fa.write(self.log_var)
         # fa.close()
 
@@ -177,6 +189,7 @@ class Extra:
         Thread(None, lambda: PlaySound(file, 0))
 
 
+# noinspection PyTypeChecker
 def replace_list(list_name=list, index=int, item=None):
     """
     Replacelist function
@@ -329,8 +342,9 @@ def shuffling(bubble):
 
 
 def play_sound(filename):
-    pygame.mixer.music.load(filename)
-    pygame.mixer.music.play()
+    return
+    # pygame.mixer.music.load(filename)
+    # pygame.mixer.music.play()
 
 
-pygame.init()
+# pygame.init()

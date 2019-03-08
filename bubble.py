@@ -74,12 +74,20 @@ def create_bubble(stats, config, bub, c, bubble, i=None, x=None, y=None, r=None,
     from random import randint
     if x is None:
         x = config["width"] + config["bubble"]["screen-gap"]
+    else:
+        x = x
     if r is None:
         r = randint(int(config["bubble"]["min-radius"]), int(config["bubble"]["max-radius"]))
+    else:
+        r = r
     if y is None:
         y = randint(72 + r, (config["height"] - 105 - r))
+    else:
+        y = y
     if i is None:
         i = randint(0, 1600)
+    else:
+        i = i
     if stats["level"] <= 100:
         level_dat = stats["level"]
     else:
@@ -221,7 +229,7 @@ def create_bubble(stats, config, bub, c, bubble, i=None, x=None, y=None, r=None,
         act = "Coin"
         spd = randint(int(stats["bubspeed"]), int(stats["bubspeed"]) + 2)
         hardness = 2
-    elif 1491 <= i < 1692:
+    elif 1491 <= i < 1492:
         ids = [c.create_image(x, y, image=bub["SpecialKey"][48])]
         r = 24
         act = "SpecialKey"
@@ -354,6 +362,7 @@ class Collision:
                     root.update()
                 x, y, = get_coords(canvas, bubble["bub-id"][index][j])
                 bubble["bub-position"][index] = [x, y]
+                canvas.update()
         except IndexError:
             pass
 
@@ -464,8 +473,12 @@ class Collision:
             commands["present"] = True
         play_sound("data/sounds/bubpop.mp3")
         if action == "SpecialKey":
-            State.set_state(canvas, log, stats, "SpecialMode", backgrounds)
-        log.debug("coll_func""Bubble popped with id: "+str(index)+" | action: "+action)
+            canvas.itemconfig(backgrounds["id"], image=backgrounds["special"])
+            stats["special-level"] = True
+            stats["special-level-time"] = time() + 20
+            log.info("State", "(CollFunc) Special Level State is ON!!!")
+            play_sound("data/sounds/specialmode.mp3")
+        log.debug("CollFunc", "Bubble popped with id: "+str(index)+" | action: "+action)
 
     @staticmethod
     def clean_up_bub(canvas, index, bubble, config, log):
@@ -528,7 +541,8 @@ class Collision:
                     elif bubble["bub-hardness"][index_bub] > 1:
                         replace_list(bubble["bub-hardness"], index_bub, bubble["bub-hardness"][index_bub] - 1)
             if not stats["timebreak"]:
-                self.move_bubble(index_bub, bubble, canvas, stats, root)
+                Thread(None, lambda: self.move_bubble(index_bub, bubble, canvas, stats, root)).start()
+                canvas.update()
                 self.clean_up_bub(canvas, index_bub, bubble, config, log)
             # Collision with ammo
             for ammo_index in range(len(ammo["ammo-id"].copy()) - 1, -1, -1):
