@@ -5,7 +5,7 @@ Bubble Blaster by Qplay123
 * Python 3.4 or better (recommended, the last test was with it.).
 * Minimum of 1600x700 screen.
 
-## Steps
+## Steps for Source (zip / tar.gz archive)
 01. Download Python. (Link in description)
 02. Install Python by clicking to the download when it is done.
 03. On the setup click on "Add Python to PATH" (the checkbox).
