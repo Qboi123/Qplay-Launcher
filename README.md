@@ -2,7 +2,7 @@
 Bubble Blaster by Qplay123
 
 ## Requirements
-* Python 3.7 or better (recommended, i test with python 3.7).
+* Python 3.4 or better (recommended, the last test was with it.).
 * Minimum of 1600x700 screen.
 
 ## Steps
@@ -16,6 +16,12 @@ Bubble Blaster by Qplay123
 08. Press ENTER.
 09. Wait.
 10. When this is done, unpack the archive (zip). Ans run Main.py
+
+## Steps for Application (The setup.exe file)
+01. Download the setup.exe from the releases page.
+02. Run the setup.
+03. Follow the instructions
+04. NOTE: The game will run automaticly. If you want to close it, press the red button on the top.
 
 ## Downloads:
 * www.python.org for Python.
