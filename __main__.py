@@ -5,22 +5,23 @@ from bubble import Collision, create_bubble
 from components import *
 from extras import Logging, shuffling, refresh
 from teleport import *
+from special import ScrolledWindow
 
 log = Logging("logs", True, True)
 
 log.info("<Root>", "Imports loading success")
 log.info("<Root>", "Starting Game")
-
-
-def handle_exception(exc_type, exc_value, exc_traceback):
-    if issubclass(exc_type, KeyboardInterrupt):
-        sys.__excepthook__(exc_type, exc_value, exc_traceback)
-        return
-
-    log.error("?", str(exc_type.__name__) + ": " + str(exc_value))
-
-
-sys.excepthook = handle_exception
+#
+#
+# def handle_exception(exc_type, exc_value, exc_traceback):
+#     if issubclass(exc_type, KeyboardInterrupt):
+#         sys.__excepthook__(exc_type, exc_value, exc_traceback)
+#         return
+#
+#     log.error("?", str(exc_type.__name__) + ": " + str(exc_value))
+#
+#
+# sys.excepthook = handle_exception
 
 
 def control(root, canvas, icon, config, event, stats, temp, modes, ship, commands, ammo, tp,
@@ -53,22 +54,22 @@ def control(root, canvas, icon, config, event, stats, temp, modes, ship, command
                     a = 10
                 else:
                     a = 0
-                if event.keysym == 'Up':
+                if event.keysym == 'Up' or event.keysym.lower() == "w":
                     if y > 72 + config["game"]["ship-radius"]:
                         canvas.move(ship["id1"], 0, -stats["shipspeed"] - a)
                         canvas.move(ship["id2"], 0, -stats["shipspeed"] - a)
                         root.update()
-                elif event.keysym == 'Down':
+                elif event.keysym == 'Down' or event.keysym.lower() == "s":
                     if y < config["height"] - 105 - config["game"]["ship-radius"]:
                         canvas.move(ship["id1"], 0, stats["shipspeed"] + a)
                         canvas.move(ship["id2"], 0, stats["shipspeed"] + a)
                         root.update()
-                elif event.keysym == 'Left':
+                elif event.keysym == 'Left' or event.keysym.lower() == "a":
                     if x > 0 + config["game"]["ship-radius"]:
                         canvas.move(ship["id1"], -stats["shipspeed"] - a, 0)
                         canvas.move(ship["id2"], -stats["shipspeed"] - a, 0)
                         root.update()
-                elif event.keysym == 'Right':
+                elif event.keysym == 'Right' or event.keysym.lower() == "d":
                     if x < config["width"] - config["game"]["ship-radius"]:
                         canvas.move(ship["id1"], stats["shipspeed"] + a, 0)
                         canvas.move(ship["id2"], stats["shipspeed"] + a, 0)
@@ -305,19 +306,19 @@ class Maintance:
         cfg.Writer("saves/" + save_name + "/bubble.json", bubble.copy())
 
 
-def start(bubble, save_name, stats, config, bub, canvas):
+def start(bubble, save_name, stats, config, bub, modes, canvas):
     bubs = Reader("saves/" + save_name + "/bubble.json").get_decoded()
     for i in range(len(bubs["bub-id"])):
         if bubs["bub-special"]:
-            create_bubble(stats, config, bub, canvas, bubble, bubs["bub-index"][i], bubs["bub-position"][i][0],
+            create_bubble(stats, config, bub, canvas, bubble, modes, i, bubs["bub-index"][i], bubs["bub-position"][i][0],
                           bubs["bub-position"][i][1], bubs["bub-radius"][i], bubs["bub-speed"][i])
         elif not bubs["bub-special"]:
-            SpecialMode.create_bubble(canvas, config, bubble, stats, bub, bubs["bub-index"][i],
+            SpecialMode.create_bubble(canvas, config, bubble, stats, bub, modes, i, bubs["bub-index"][i],
                                       bubs["bub-position"][i][0],
                                       bubs["bub-position"][i][1], bubs["bub-radius"][i], bubs["bub-speed"][i])
 
 
-def r_start(bubble, stats, config, bub, canvas):
+def r_start(bubble, stats, config, bub, canvas, modes):
     for i in range(int((config["width"] - 105 - 72) / 10)):
         x = randint(0, config["width"])
         r = randint(int(config["bubble"]["min-radius"]),
@@ -325,17 +326,22 @@ def r_start(bubble, stats, config, bub, canvas):
         y = randint(72 + r, (config["height"] - 105 - r))
         # spd = stats["bubspeed"]
         # i = randint(0, 1600)
-        create_bubble(stats, config, bub, canvas, bubble, x=x, y=y, r=r)
+        create_bubble(stats, config, bub, canvas, bubble, modes, i, x=x, y=y, r=r)
 
 
 class Game(Canvas):
     def __init__(self, start_time=0.0, already_opened=False):
         super().__init__()
-        self.log = log
+
         import config
+        import os
+        from tkinter import ttk
+        self.log = log
         self.returnmain = False
 
         log.info("Game.__init__", "Started Game.")
+
+        # print("Started Game")
 
         self.root = self.master
         self.time1 = start_time
@@ -364,6 +370,8 @@ class Game(Canvas):
         self.modes["teleport"] = False
         self.modes["present"] = False
 
+        # print("Phase 1")
+
         self.canvas = None
 
         self.icons = dict()
@@ -371,6 +379,8 @@ class Game(Canvas):
 
         self.back = dict()
         self.fore = dict()
+
+        # print("Phase 2")
 
         self.commands = {"store": False, "present": False, "special-mode": False}
 
@@ -387,14 +397,17 @@ class Game(Canvas):
         self.ammo = {"ammo-id": list(), "ammo-radius": 5, "ammo-speed": list(), "ammo-position": list(),
                      "ammo-damage": list(), "retime": start_time}
 
-        res = self.config["game"]["resolution"]
-        l_res = res.split("x")
-
-        self.config["width"] = int(l_res[0])
-        self.config["height"] = int(l_res[1])
+        # print("Phase 3")
 
         if self.config["game"]["fullscreen"]:
             self.root.wm_attributes("-fullscreen", True)
+
+        self.root.update()
+        res = self.config["game"]["resolution"]
+        l_res = res.split("x")
+
+        self.config["width"] = self.root.winfo_width()  # int(l_res[0])
+        self.config["height"] = self.root.winfo_height()  # int(l_res[1])
 
         self.config["middle-x"] = self.config["width"] / 2
         self.config["middle-y"] = self.config["height"] / 2
@@ -402,13 +415,12 @@ class Game(Canvas):
         self.Coll = Collision()
 
         # self.game()
-        from tkinter import ttk
 
-        self.tabs = ttk.Notebook(self.root)
+        # print("Phase 4")
+
         width = 16
         height = 34
 
-        import os
         path = "saves/"
         index = os.listdir(path)
         dirs = []
@@ -424,62 +436,178 @@ class Game(Canvas):
         p = 0
         i = 0
 
+        # print("Phase 5")
+
         if not already_opened:
             self.close = Button(self.root, text="X", fg="white", relief=FLAT, bg="#ff0000",
                                 command=lambda: self.root.destroy())
             self.close.pack(side=TOP, fill=X)
 
-        self.frames = []
-        self.item_info = [[[[]]]]
+        # self.frames = []
+        # self.item_info = [[[[]]]]
         self.items = list()
-        self.frames.append(Frame(self.tabs, bd=1, bg="#3c3c3c"))
-        items2 = []
-        while i < len(dirs):
-            y += 1
-            self.item_info[p][0][x].append(dirs[i])
-            if y >= height:
-                y = 0
-                self.item_info[p][0].append([])
-                self.item_info[p][0].append([])
-                self.item_info[p][0].append([])
-                self.item_info[p][0].append([])
-                x += 4
-            if x > width:
-                self.tabs.add(self.frames.copy()[-1], text=' {} '.format(p))
-                self.frames.append(Frame(self.tabs, bd=1, bg="#3c3c3c"))
-                y = 0
-                x = 0
-                self.item_info.append([[[]]])
-                p += 1
-            items2.append(dirs[i])
 
-            self.items.append(Button(self.frames[-1], width=30, relief=FLAT, text=dirs[i], bg="#707070"))
-            self.items.copy()[-1].grid(column=x, row=y, padx=2, pady=2)
-            self.items.copy()[-1].bind("<ButtonRelease-1>", self.open)
+        # print("Phase 6")
 
-            self.items.append(Button(self.frames[-1], relief=FLAT, text="rename", bg="#707070"))
-            self.items.copy()[-1].grid(column=x + 1, row=y, padx=2, pady=2)
-            self.items.copy()[-1].bind("<ButtonRelease-1>", self.rename)
+        # self.frames.append(Frame(self.tabs, bd=1, bg="#3c3c3c"))
+        # items2 = []
+        # while i < len(dirs):
+        #     y += 1
+        #     self.item_info[p][0][x].append(dirs[i])
+        #     if y >= height:
+        #         y = 0
+        #         self.item_info[p][0].append([])
+        #         self.item_info[p][0].append([])
+        #         self.item_info[p][0].append([])
+        #         self.item_info[p][0].append([])
+        #         x += 4
+        #     if x > width:
+        #         self.tabs.add(self.frames.copy()[-1], text=' {} '.format(p))
+        #         self.frames.append(Frame(self.tabs, bd=1, bg="#3c3c3c"))
+        #         y = 0
+        #         x = 0
+        #         self.item_info.append([[[]]])
+        #         p += 1
+        #     items2.append(dirs[i])
+        #
+        #     self.items.append(Button(self.frames[-1], width=30, relief=FLAT, text=dirs[i], bg="#707070"))
+        #     self.items.copy()[-1].grid(column=x, row=y, padx=2, pady=2)
+        #     self.items.copy()[-1].bind("<ButtonRelease-1>", self.open)
+        #
+        #     self.items.append(Button(self.frames[-1], relief=FLAT, text="rename", bg="#707070"))
+        #     self.items.copy()[-1].grid(column=x + 1, row=y, padx=2, pady=2)
+        #     self.items.copy()[-1].bind("<ButtonRelease-1>", self.rename)
+        #
+        #     self.items.append(Button(self.frames[-1], relief=FLAT, text="remove", bg="#707070"))
+        #     self.items.copy()[-1].grid(column=x + 2, row=y, padx=2, pady=2)
+        #     self.items.copy()[-1].bind("<ButtonRelease-1>", self.remove)
+        #
+        #     self.items.append(Button(self.frames[-1], relief=FLAT, text="", width=5, bg="#3c3c3c"))
+        #     self.items.copy()[-1].grid(column=x + 3, row=y, padx=2, pady=2)
+        #
+        #     self.max_pages = p
+        #     i += 1
 
-            self.items.append(Button(self.frames[-1], relief=FLAT, text="remove", bg="#707070"))
-            self.items.copy()[-1].grid(column=x + 2, row=y, padx=2, pady=2)
-            self.items.copy()[-1].bind("<ButtonRelease-1>", self.remove)
+        self.frame2 = Frame(bg="#5c5c5c")
 
-            self.items.append(Button(self.frames[-1], relief=FLAT, text="", width=5, bg="#3c3c3c"))
-            self.items.copy()[-1].grid(column=x + 3, row=y, padx=2, pady=2)
+        self.add = Button(self.frame2, text="Add Save", relief=FLAT, bg="#7f7f7f", fg="white", command=self.add_save)
+        self.add.pack(side=RIGHT, padx=2, pady=5)
+        self.add_input = Entry(self.frame2, bd=5, fg="#3c3c3c", bg="#7f7f7f", relief=FLAT)
+        self.add_input.pack(side=LEFT, fill=X, expand=TRUE, padx=2, pady=5)
+        self.root.update()
 
-            self.max_pages = p
+        self.frame2.pack(side=TOP, fill=X)
+
+        # print("Phase 7")
+
+        self.main_f = Frame(self.root, background="#3c3c3c", height=self.root.winfo_height()-100)
+        self.main_f.pack(fill=BOTH)
+
+        # print("Phase 7a")
+
+        self.s_frame = Frame(self.main_f, height=self.main_f.winfo_height()-100, width=700)
+        self.s_frame.pack()
+
+        # print("Phase 7b")
+
+        self.sw = ScrolledWindow(self.s_frame, 700, self.root.winfo_height()-100, heigh=400, width=400)
+
+        # print("Phase 7c")
+
+        self.canv = self.sw.canv
+
+        # print("Phase 7d")
+
+        self.frame = self.sw.scrollwindow
+        self.frames = []
+
+        # print("Phase 7e")
+
+        self.canvass = []
+        self.buttons = []
+
+        # print("Phase 8")
+
+        import os
+        names = os.listdir("./saves/")
+
+        infos = {}
+        infos["dates"] = []
+        infos["score"] = []
+        infos["level"] = []
+
+        import time
+
+        for i in names:
+            # print(time.localtime(int(os.path.getmtime("./saves/" + i + "/bubble.json"))))
+            mtime = os.path.getmtime("./saves/" + i + "/bubble.json")
+            a = time.localtime(mtime)
+
+            b = list(a)
+
+            if a[4] < 10:
+                b[4] = "0"+str(a[4])
+            else:
+                b[4] = str(a[4])
+            if a[5] < 10:
+                b[5] = "0"+str(a[5])
+            else:
+                b[5] = str(a[5])
+
+            tme_var = "%i/%i/%i %i:%s:%s" % (a[2], a[1], a[0], a[3], b[4], b[5])
+            infos["dates"].append(tme_var)
+
+            a = Reader("./saves/" + i + "/game.json").get_decoded()
+            infos["score"].append(a["score"])
+            infos["level"].append(a["level"])
+
+        self.item_info = names
+
+        # print(names)
+
+        i = 0
+
+        # print("Phase 9")
+
+        for name in tuple(dirs):
+            # print("Round: " + str(i))
+            # print(names[i])
+            self.item_info.append(i)
+            self.frames.append(Frame(self.frame, height=200, width=700))
+            self.canvass.append(Canvas(self.frames[-1], height=200, width=700, bg="#7f7f7f", highlightthickness=0))
+            self.canvass[-1].pack()
+
+            self.canvass[-1].create_text(10, 10, text=name, fill="gold", anchor=NW,
+                                         font=("Helvetica", 26, "bold"))
+            self.canvass[-1].create_text(10, 50, text=infos["dates"][i], fill="#afafaf", anchor=NW,
+                                         font=("helvetica", 16))
+            self.canvass[-1].create_text(240, 50, text="Level: "+str(infos["level"][i]), fill="#afafaf", anchor=NW,
+                                         font=("helvetica", 16))
+            self.canvass[-1].create_text(370, 50, text="Score: "+str(infos["score"][i]), fill="#afafaf", anchor=NW,
+                                         font=("helvetica", 16))
+
+            self.canvass[-1].create_rectangle(0, 0, 699, 201, outline="#3c3c3c")
+
+            self.buttons.append(Button(self.frames[-1], relief=FLAT, text="open", bg="#afafaf", width=7))
+            self.buttons.copy()[-1].place(x=675, y=175, anchor=SE)
+            self.buttons.copy()[-1].bind("<ButtonRelease-1>", self.open)
+
+            self.buttons.append(Button(self.frames[-1], relief=FLAT, text="rename", bg="#afafaf", width=7))
+            self.buttons.copy()[-1].place(x=600, y=175, anchor=SE)
+            self.buttons.copy()[-1].bind("<ButtonRelease-1>", self.rename)
+
+            self.buttons.append(Button(self.frames[-1], relief=FLAT, text="remove", bg="#afafaf", width=7))
+            self.buttons.copy()[-1].place(x=525, y=175, anchor=SE)
+            self.buttons.copy()[-1].bind("<ButtonRelease-1>", self.remove)
+
+            self.frames[-1].grid(row=i)
+
             i += 1
 
-        self.tabs.add(self.frames.copy()[-1], text=' {} '.format(p))
-        self.tabs.enable_traversal()
-        self.tabs.pack(side=TOP, expand=TRUE, fill=BOTH)
-        self.add = Button(self.root, text="Add Save", relief=FLAT, bg="#cfcfcf", command=self.add_save)
-        self.add.pack(side=RIGHT, padx=4, pady=5)
-        self.add_input = Entry(self.root, bd=5, fg="#3c3c3c", bg="#cfcfcf", relief=FLAT)
-        self.add_input.pack(side=LEFT, fill=X, expand=TRUE, padx=2, pady=5)
+        # self.tabs.add(self.frames.copy()[-1], text=' {} '.format(p))
+        # self.tabs.enable_traversal()
+        # self.tabs.pack(side=TOP, expand=TRUE, fill=BOTH)
 
-        self.root.update()
         self.root.mainloop()
 
     @staticmethod
@@ -494,13 +622,13 @@ class Game(Canvas):
         os.close(fd2)
 
     def load(self):
+        import os
         from tkinter import ttk
         log.info("Game.load", "Loading...")
-        self.tabs = ttk.Notebook(self.root)
+        # self.tabs = ttk.Notebook(self.root)
         width = 16
         height = 34
 
-        import os
         path = "saves/"
         index = os.listdir(path)
         log.debug("Game.load", "Index of '" + path + "' is " + str(index))
@@ -516,57 +644,169 @@ class Game(Canvas):
         x = 0
         p = 0
         i = 0
-        self.frames = []
-        self.item_info = [[[[]]]]
+        # self.frames = []
+        # self.item_info = [[[[]]]]
         self.items = list()
-        self.frames.append(Frame(self.tabs, bd=1, bg="#3c3c3c"))
-        items2 = []
+        # self.frames.append(Frame(self.tabs, bd=1, bg="#3c3c3c"))
+        # items2 = []
+        #
+        # while i < len(dirs):
+        #     y += 1
+        #     self.item_info[p][0][x].append(dirs[i])
+        #     if y >= height:
+        #         y = 0
+        #         self.item_info[p][0].append([])
+        #         self.item_info[p][0].append([])
+        #         self.item_info[p][0].append([])
+        #         self.item_info[p][0].append([])
+        #         x += 4
+        #     if x > width:
+        #         self.tabs.add(self.frames.copy()[-1], text=' {} '.format(p))
+        #         self.frames.append(Frame(self.tabs, bd=1, bg="#3c3c3c"))
+        #         y = 0
+        #         x = 0
+        #         self.item_info.append([[[]]])
+        #         p += 1
+        #     items2.append(dirs[i])
+        #
+        #     self.items.append(Button(self.frames[-1], width=30, relief=FLAT, text=dirs[i], bg="#707070"))
+        #     self.items.copy()[-1].grid(column=x, row=y, padx=2, pady=2)
+        #     self.items.copy()[-1].bind("<ButtonRelease-1>", self.open)
+        #
+        #     self.items.append(Button(self.frames[-1], relief=FLAT, text="rename", bg="#707070"))
+        #     self.items.copy()[-1].grid(column=x + 1, row=y, padx=2, pady=2)
+        #     self.items.copy()[-1].bind("<ButtonRelease-1>", self.rename)
+        #
+        #     self.items.append(Button(self.frames[-1], relief=FLAT, text="remove", bg="#707070"))
+        #     self.items.copy()[-1].grid(column=x + 2, row=y, padx=2, pady=2)
+        #     self.items.copy()[-1].bind("<ButtonRelease-1>", self.remove)
+        #
+        #     self.items.append(Button(self.frames[-1], relief=FLAT, text="", width=5, bg="#3c3c3c"))
+        #     self.items.copy()[-1].grid(column=x + 3, row=y, padx=2, pady=2)
+        #
+        #     self.max_pages = p
+        #     i += 1
 
-        while i < len(dirs):
-            y += 1
-            self.item_info[p][0][x].append(dirs[i])
-            if y >= height:
-                y = 0
-                self.item_info[p][0].append([])
-                self.item_info[p][0].append([])
-                self.item_info[p][0].append([])
-                self.item_info[p][0].append([])
-                x += 4
-            if x > width:
-                self.tabs.add(self.frames.copy()[-1], text=' {} '.format(p))
-                self.frames.append(Frame(self.tabs, bd=1, bg="#3c3c3c"))
-                y = 0
-                x = 0
-                self.item_info.append([[[]]])
-                p += 1
-            items2.append(dirs[i])
+        self.frame2 = Frame(bg="#5c5c5c")
 
-            self.items.append(Button(self.frames[-1], width=30, relief=FLAT, text=dirs[i], bg="#707070"))
-            self.items.copy()[-1].grid(column=x, row=y, padx=2, pady=2)
-            self.items.copy()[-1].bind("<ButtonRelease-1>", self.open)
-
-            self.items.append(Button(self.frames[-1], relief=FLAT, text="rename", bg="#707070"))
-            self.items.copy()[-1].grid(column=x + 1, row=y, padx=2, pady=2)
-            self.items.copy()[-1].bind("<ButtonRelease-1>", self.rename)
-
-            self.items.append(Button(self.frames[-1], relief=FLAT, text="remove", bg="#707070"))
-            self.items.copy()[-1].grid(column=x + 2, row=y, padx=2, pady=2)
-            self.items.copy()[-1].bind("<ButtonRelease-1>", self.remove)
-
-            self.items.append(Button(self.frames[-1], relief=FLAT, text="", width=5, bg="#3c3c3c"))
-            self.items.copy()[-1].grid(column=x + 3, row=y, padx=2, pady=2)
-
-            self.max_pages = p
-            i += 1
-
-        self.tabs.add(self.frames.copy()[-1], text=' {} '.format(p))
-        self.tabs.enable_traversal()
-        self.tabs.pack(side=TOP, expand=TRUE, fill=BOTH)
-        self.add = Button(self.root, text="Add Save", relief=FLAT, bg="#cfcfcf", command=self.add_save)
+        self.add = Button(self.frame2, text="Add Save", relief=FLAT, bg="#7f7f7f", fg="white", command=self.add_save)
         self.add.pack(side=RIGHT, padx=2, pady=5)
-        self.add_input = Entry(self.root, bd=5, fg="#3c3c3c", bg="#cfcfcf", relief=FLAT)
+        self.add_input = Entry(self.frame2, bd=5, fg="#3c3c3c", bg="#7f7f7f", relief=FLAT)
         self.add_input.pack(side=LEFT, fill=X, expand=TRUE, padx=2, pady=5)
         self.root.update()
+
+        self.frame2.pack(side=TOP, fill=X)
+
+        # print("Phase 7")
+
+        self.main_f = Frame(self.root, background="#3c3c3c", height=self.root.winfo_height()-100)
+        self.main_f.pack(fill=BOTH)
+
+        # print("Phase 7a")
+
+        self.s_frame = Frame(self.main_f, height=self.main_f.winfo_height()-100, width=700)
+        self.s_frame.pack()
+
+        # print("Phase 7b")
+
+        self.sw = ScrolledWindow(self.s_frame, 700, self.root.winfo_height()-100, heigh=400, width=400)
+
+        # print("Phase 7c")
+
+        self.canv = self.sw.canv
+
+        # print("Phase 7d")
+
+        self.frame = self.sw.scrollwindow
+        self.frames = []
+
+        # print("Phase 7e")
+
+        self.canvass = []
+        self.buttons = []
+
+        # print("Phase 8")
+
+        import os
+        names = os.listdir("./saves/")
+
+        infos = {}
+        infos["dates"] = []
+        infos["score"] = []
+        infos["level"] = []
+
+        import time
+
+        for i in names:
+            # print(time.localtime(int(os.path.getmtime("./saves/" + i + "/bubble.json"))))
+            mtime = os.path.getmtime("./saves/" + i + "/bubble.json")
+            a = time.localtime(mtime)
+
+            b = list(a)
+
+            if a[4] < 10:
+                b[4] = "0"+str(a[4])
+            else:
+                b[4] = str(a[4])
+            if a[5] < 10:
+                b[5] = "0"+str(a[5])
+            else:
+                b[5] = str(a[5])
+
+            tme_var = "%i/%i/%i %i:%s:%s" % (a[2], a[1], a[0], a[3], b[4], b[5])
+            infos["dates"].append(tme_var)
+
+            a = Reader("./saves/" + i + "/game.json").get_decoded()
+            infos["score"].append(a["score"])
+            infos["level"].append(a["level"])
+
+        self.item_info = names
+
+        # print(names)
+
+        i = 0
+
+        # print("Phase 9")
+
+        for name in tuple(dirs):
+            # print("Round: " + str(i))
+            # print(names[i])
+            self.item_info.append(i)
+            self.frames.append(Frame(self.frame, height=200, width=700))
+            self.canvass.append(Canvas(self.frames[-1], height=200, width=700, bg="#7f7f7f", highlightthickness=0))
+            self.canvass[-1].pack()
+
+            self.canvass[-1].create_text(10, 10, text=name, fill="gold", anchor=NW,
+                                         font=("Helvetica", 26, "bold"))
+            self.canvass[-1].create_text(10, 50, text=infos["dates"][i], fill="#afafaf", anchor=NW,
+                                         font=("helvetica", 16))
+            self.canvass[-1].create_text(240, 50, text="Level: "+str(infos["level"][i]), fill="#afafaf", anchor=NW,
+                                         font=("helvetica", 16))
+            self.canvass[-1].create_text(370, 50, text="Score: "+str(infos["score"][i]), fill="#afafaf", anchor=NW,
+                                         font=("helvetica", 16))
+
+            self.canvass[-1].create_rectangle(0, 0, 699, 201, outline="#3c3c3c")
+
+            self.buttons.append(Button(self.frames[-1], relief=FLAT, text="open", bg="#afafaf", width=7))
+            self.buttons.copy()[-1].place(x=675, y=175, anchor=SE)
+            self.buttons.copy()[-1].bind("<ButtonRelease-1>", self.open)
+
+            self.buttons.append(Button(self.frames[-1], relief=FLAT, text="rename", bg="#afafaf", width=7))
+            self.buttons.copy()[-1].place(x=600, y=175, anchor=SE)
+            self.buttons.copy()[-1].bind("<ButtonRelease-1>", self.rename)
+
+            self.buttons.append(Button(self.frames[-1], relief=FLAT, text="remove", bg="#afafaf", width=7))
+            self.buttons.copy()[-1].place(x=525, y=175, anchor=SE)
+            self.buttons.copy()[-1].bind("<ButtonRelease-1>", self.remove)
+
+            self.frames[-1].grid(row=i)
+
+            i += 1
+
+        # self.tabs.add(self.frames.copy()[-1], text=' {} '.format(p))
+        # self.tabs.enable_traversal()
+        # self.tabs.pack(side=TOP, expand=TRUE, fill=BOTH)
+
         self.root.mainloop()
 
     def add_save(self):
@@ -588,15 +828,9 @@ class Game(Canvas):
     # noinspection PyTypeChecker
     def remove(self, event):
         import os
-        x = event.widget.grid_info()["column"] - 2
-        y = event.widget.grid_info()["row"]
+        y = event.widget.master.grid_info()["row"]
 
-        p = self.tabs.index("current")
-
-        if p > 0 or x > 0:
-            y -= 1
-
-        src = self.item_info[p][0][x][y]
+        src = self.item_info[y]
         for i in os.listdir("saves/" + src):
             os.remove("saves/" + src + "/" + i)
 
@@ -608,15 +842,9 @@ class Game(Canvas):
     def rename(self, event):
         import os
 
-        x = event.widget.grid_info()["column"] - 1
-        y = event.widget.grid_info()["row"]
+        y = event.widget.master.grid_info()["row"]
 
-        p = self.tabs.index("current")
-
-        if p > 0 or x > 0:
-            y -= 1
-
-        src = self.item_info[p][0][x][y]
+        src = self.item_info[y]
 
         new = self.add_input.get()
 
@@ -626,25 +854,15 @@ class Game(Canvas):
         self.load()
 
     def open(self, event):
-        x = event.widget.grid_info()["column"]
-        y = event.widget.grid_info()["row"]
+        y = event.widget.master.grid_info()["row"]
 
-        p = self.tabs.index("current")
-
-        if p > 0 or x > 0:
-            y -= 1
-
-        src = self.item_info[p][0][x][y]
+        src = self.item_info[y]
         self.delete_all()
         self.run(src)
 
     def delete_all(self):
-        for i in range(len(self.items) - 1, -1, -1):
-            self.items[i].destroy()
-            del self.items[i]
-        self.tabs.destroy()
-        self.add_input.destroy()
-        self.add.destroy()
+        self.main_f.destroy()
+        self.frame2.destroy()
 
     def run(self, save_name):
         self.save_name = save_name
@@ -668,7 +886,6 @@ class Game(Canvas):
 
     def main(self):
         from threading import Thread
-        from info import show_info
         from bubble import place_bubble
 
         self.canvas.update()
@@ -738,8 +955,8 @@ class Game(Canvas):
         log.debug("Game.main", "PhotoImage.__doc__=" + str(PhotoImage.__doc__))
         self.back["normal"] = PhotoImage(file="data/BackGround.png")
         self.icons["store-pack"] = list()
-        self.icons["store-pack"].append(PhotoImage(file="data/Images/StoreItems/UnlockLevel.png"))
-        self.icons["store-pack"].append(PhotoImage(file="data/Images/StoreItems/Teleporting.png"))
+        self.icons["store-pack"].append(PhotoImage(file="data/Images/StoreItems/Key.png"))
+        self.icons["store-pack"].append(PhotoImage(file="data/Images/StoreItems/Teleport.png"))
         self.icons["store-pack"].append(PhotoImage(file="data/Images/StoreItems/Shield.png"))
         self.icons["store-pack"].append(PhotoImage(file="data/Images/StoreItems/DiamondBuy.png"))
         self.icons["store-pack"].append(PhotoImage(file="data/Images/StoreItems/BuyACake.png"))
@@ -771,10 +988,6 @@ class Game(Canvas):
         # self.fore["gloss"] = PhotoImage(file="data/Images/Foregrounds/Glossy.png")
 
         self.back["id"] = self.canvas.create_image(0, 0, anchor=NW, image=self.back["normal"])
-
-        # sounds
-        # mixer.init()
-        # pop = mixer.Sound("bubpop")
 
         log.debug("Game.main", "Background=" + str(self.back["normal"]))
         # c.create_image(mid_x, mid_y, image=bg)
@@ -839,62 +1052,62 @@ class Game(Canvas):
         self.texts["pause"] = c.create_text(mid_x, mid_y, fill='Orange', font=("Helvetica", 60, "bold"))
         self.icons["pause"] = c.create_image(mid_x, mid_y, image=self.icons["pause-id"], state=HIDDEN)
 
-        c.create_text(50, self.config["height"] - 30, text='1x Score', fill='cyan')
-        c.create_text(130, self.config["height"] - 30, text='2x Score', fill='cyan')
-        c.create_text(210, self.config["height"] - 30, text='3x Score', fill='cyan')
-        c.create_text(290, self.config["height"] - 30, text='-1 leven', fill='cyan')
-        c.create_text(370, self.config["height"] - 30, text='Slow Motion', fill='cyan')
-        c.create_text(450, self.config["height"] - 30, text='Verwarring', fill='cyan')
-        c.create_text(530, self.config["height"] - 30, text='NoBubMove', fill='cyan')
-        c.create_text(610, self.config["height"] - 30, text='Protectie', fill='cyan')
-        c.create_text(690, self.config["height"] - 30, text='2x Pnt Status', fill='cyan')
-        c.create_text(770, self.config["height"] - 30, text='Speed-up', fill='cyan')
-        c.create_text(850, self.config["height"] - 30, text='Speed-down', fill='cyan')
-        c.create_text(930, self.config["height"] - 30, text='Ultime Bubbel', fill='cyan')
-        c.create_text(1010, self.config["height"] - 30, text='Hyper Mode', fill='cyan')
-        c.create_text(1090, self.config["height"] - 30, text='Ammo speedup', fill='cyan')
-        c.create_text(1170, self.config["height"] - 30, text='Teleporter', fill='cyan')
-        c.create_text(1250, self.config["height"] - 30, text='No-touch', fill='cyan')
-        c.create_text(1410, self.config["height"] - 30, text='Level Sleutel', fill='cyan')
+        c.create_text(50, self.config["height"] - 30, text='1x Score', fill='yellow')
+        c.create_text(130, self.config["height"] - 30, text='2x Score', fill='yellow')
+        c.create_text(210, self.config["height"] - 30, text='3x Score', fill='yellow')
+        c.create_text(290, self.config["height"] - 30, text='-1 leven', fill='yellow')
+        c.create_text(370, self.config["height"] - 30, text='Slow Motion', fill='yellow')
+        c.create_text(450, self.config["height"] - 30, text='Verwarring', fill='yellow')
+        c.create_text(530, self.config["height"] - 30, text='NoBubMove', fill='yellow')
+        c.create_text(610, self.config["height"] - 30, text='Protectie', fill='yellow')
+        c.create_text(690, self.config["height"] - 30, text='2x Pnt Status', fill='yellow')
+        c.create_text(770, self.config["height"] - 30, text='Speed-up', fill='yellow')
+        c.create_text(850, self.config["height"] - 30, text='Speed-down', fill='yellow')
+        c.create_text(930, self.config["height"] - 30, text='Ultime Bubbel', fill='yellow')
+        c.create_text(1010, self.config["height"] - 30, text='Hyper Mode', fill='yellow')
+        c.create_text(1090, self.config["height"] - 30, text='Ammo speedup', fill='yellow')
+        c.create_text(1170, self.config["height"] - 30, text='Teleporter', fill='yellow')
+        c.create_text(1250, self.config["height"] - 30, text='No-touch', fill='yellow')
+        c.create_text(1410, self.config["height"] - 30, text='Level Sleutel', fill='yellow')
 
-        c.create_line(-25 + (75 / 2), self.config["height"] - 101, -25 + (75 / 2), self.config["height"],
-                      fill="darkcyan")
-        c.create_line(55 + (75 / 2), self.config["height"] - 101, 55 + (75 / 2), self.config["height"], fill="darkcyan")
-        c.create_line(135 + (75 / 2), self.config["height"] - 101, 135 + (75 / 2), self.config["height"],
-                      fill="darkcyan")
-        c.create_line(215 + (75 / 2), self.config["height"] - 101, 215 + (75 / 2), self.config["height"],
-                      fill="darkcyan")
-        c.create_line(295 + (75 / 2), self.config["height"] - 101, 295 + (75 / 2), self.config["height"],
-                      fill="darkcyan")
-        c.create_line(375 + (75 / 2), self.config["height"] - 101, 375 + (75 / 2), self.config["height"],
-                      fill="darkcyan")
-        c.create_line(455 + (75 / 2), self.config["height"] - 101, 455 + (75 / 2), self.config["height"],
-                      fill="darkcyan")
-        c.create_line(535 + (75 / 2), self.config["height"] - 101, 535 + (75 / 2), self.config["height"],
-                      fill="darkcyan")
-        c.create_line(615 + (75 / 2), self.config["height"] - 101, 615 + (75 / 2), self.config["height"],
-                      fill="darkcyan")
-        c.create_line(695 + (75 / 2), self.config["height"] - 101, 695 + (75 / 2), self.config["height"],
-                      fill="darkcyan")
-        c.create_line(775 + (75 / 2), self.config["height"] - 101, 775 + (75 / 2), self.config["height"],
-                      fill="darkcyan")
-        c.create_line(855 + (75 / 2), self.config["height"] - 101, 855 + (75 / 2), self.config["height"],
-                      fill="darkcyan")
-        c.create_line(935 + (75 / 2), self.config["height"] - 101, 935 + (75 / 2), self.config["height"],
-                      fill="darkcyan")
-        c.create_line(1015 + (75 / 2), self.config["height"] - 101, 1015 + (75 / 2), self.config["height"],
-                      fill="darkcyan")
-        c.create_line(1095 + (75 / 2), self.config["height"] - 101, 1095 + (75 / 2), self.config["height"],
-                      fill="darkcyan")
-        c.create_line(1175 + (75 / 2), self.config["height"] - 101, 1175 + (75 / 2), self.config["height"],
-                      fill="darkcyan")
-        c.create_line(1255 + (75 / 2), self.config["height"] - 101, 1255 + (75 / 2), self.config["height"],
-                      fill="darkcyan")
-        c.create_line(1335 + (75 / 2), self.config["height"] - 101, 1335 + (75 / 2), self.config["height"],
-                      fill="darkcyan")
-        c.create_line(1415 + (75 / 2), self.config["height"] - 101, 1415 + (75 / 2), self.config["height"],
-                      fill="darkcyan")
-        log.info("Game.main", "Lines for bubble info created.")
+        # c.create_line(-25 + (75 / 2), self.config["height"] - 101, -25 + (75 / 2), self.config["height"],
+        #               fill="darkcyan")
+        # c.create_line(55 + (75 / 2), self.config["height"] - 101, 55 + (75 / 2), self.config["height"], fill="darkcyan")
+        # c.create_line(135 + (75 / 2), self.config["height"] - 101, 135 + (75 / 2), self.config["height"],
+        #               fill="darkcyan")
+        # c.create_line(215 + (75 / 2), self.config["height"] - 101, 215 + (75 / 2), self.config["height"],
+        #               fill="darkcyan")
+        # c.create_line(295 + (75 / 2), self.config["height"] - 101, 295 + (75 / 2), self.config["height"],
+        #               fill="darkcyan")
+        # c.create_line(375 + (75 / 2), self.config["height"] - 101, 375 + (75 / 2), self.config["height"],
+        #               fill="darkcyan")
+        # c.create_line(455 + (75 / 2), self.config["height"] - 101, 455 + (75 / 2), self.config["height"],
+        #               fill="darkcyan")
+        # c.create_line(535 + (75 / 2), self.config["height"] - 101, 535 + (75 / 2), self.config["height"],
+        #               fill="darkcyan")
+        # c.create_line(615 + (75 / 2), self.config["height"] - 101, 615 + (75 / 2), self.config["height"],
+        #               fill="darkcyan")
+        # c.create_line(695 + (75 / 2), self.config["height"] - 101, 695 + (75 / 2), self.config["height"],
+        #               fill="darkcyan")
+        # c.create_line(775 + (75 / 2), self.config["height"] - 101, 775 + (75 / 2), self.config["height"],
+        #               fill="darkcyan")
+        # c.create_line(855 + (75 / 2), self.config["height"] - 101, 855 + (75 / 2), self.config["height"],
+        #               fill="darkcyan")
+        # c.create_line(935 + (75 / 2), self.config["height"] - 101, 935 + (75 / 2), self.config["height"],
+        #               fill="darkcyan")
+        # c.create_line(1015 + (75 / 2), self.config["height"] - 101, 1015 + (75 / 2), self.config["height"],
+        #               fill="darkcyan")
+        # c.create_line(1095 + (75 / 2), self.config["height"] - 101, 1095 + (75 / 2), self.config["height"],
+        #               fill="darkcyan")
+        # c.create_line(1175 + (75 / 2), self.config["height"] - 101, 1175 + (75 / 2), self.config["height"],
+        #               fill="darkcyan")
+        # c.create_line(1255 + (75 / 2), self.config["height"] - 101, 1255 + (75 / 2), self.config["height"],
+        #               fill="darkcyan")
+        # c.create_line(1335 + (75 / 2), self.config["height"] - 101, 1335 + (75 / 2), self.config["height"],
+        #               fill="darkcyan")
+        # c.create_line(1415 + (75 / 2), self.config["height"] - 101, 1415 + (75 / 2), self.config["height"],
+        #               fill="darkcyan")
+        # log.info("Game.main", "Lines for bubble info created.")
 
         place_bubble(self.canvas, self.bub, 50, self.config["height"] - 75, 25, "Normal")
         place_bubble(self.canvas, self.bub, 130, self.config["height"] - 75, 25, "Double")
@@ -995,7 +1208,7 @@ class Game(Canvas):
         # self.fore["game-id"] = c.create_image(0, 0, anchor=NW, image=self.fore["game"])
         # self.fore["gloss-id"] = c.create_image(0, 0, anchor=NW, image=self.fore["gloss"])
 
-        start(self.bubbles, self.save_name, self.stats, self.config, self.bub, self.canvas)
+        start(self.bubbles, self.save_name, self.stats, self.config, self.bub, self.modes, self.canvas)
 
         global Mainloop
         Mainloop = False
@@ -1003,7 +1216,7 @@ class Game(Canvas):
         self.stats = stats
 
         if len(self.bubbles["bub-id"]) <= 1:
-            r_start(self.bubbles, self.stats, self.config, self.bub, self.canvas)
+            r_start(self.bubbles, self.stats, self.config, self.bub, self.canvas, self.modes)
 
         # Thread(None, lambda: Threads().move_bubbles()).start()
 
@@ -1022,7 +1235,7 @@ class Game(Canvas):
                                     if not self.stats["special-level"]:
                                         Thread(None,
                                                lambda: create_bubble(self.stats, self.config, self.bub, self.canvas,
-                                                                     self.bubbles)).start()
+                                                                     self.bubbles, self.modes, len(self.bubbles["bub-id"]))).start()
                                     else:
                                         Thread(None, lambda: SpecialMode().create_bubble(self.canvas, self.config,
                                                                                          self.bubbles, self.stats,
@@ -1033,7 +1246,7 @@ class Game(Canvas):
                                                             self.ammo,
                                                             self.ship, self.canvas, log, self.back,
                                                             self.texts)
-                                Thread(None, lambda: move_ammo(self.canvas, log, self.root, self.ammo)).start()
+                                # Thread(None, lambda: move_ammo(self.canvas, log, self.root, self.ammo)).start()
                             if self.commands["present"] is True:
                                 # noinspection PyTypeChecker
                                 self.commands["present"] = Present(self.canvas, self.stats, self.temp, self.modes,
@@ -1042,8 +1255,7 @@ class Game(Canvas):
                                 State.set_state(self.canvas, log, self.stats, "SpecialLevel", self.back)
                                 self.commands["special-mode"] = False
                             Thread(None, lambda: refresh(self.stats, self.config, self.bubbles, self.bub, self.canvas,
-                                                         self.back)).start()
-                            Thread(None, lambda: show_info(self.canvas, self.texts, self.stats)).start()
+                                                         self.back, self.texts, self.modes)).start()
                             Thread(None,
                                    lambda: Maintance().auto_save(self.save_name, self.stats, self.bubbles)).start()
                         self.root.update()
@@ -1090,6 +1302,14 @@ class Game(Canvas):
                 else:
                     log.fatal('Game.main', 'TclError: ' + e.args[0] + "Line: " + str(e.__traceback__.tb_next.tb_lineno))
                     sys.exit(1)
+        except AttributeError as e:
+            if self.returnmain:
+                pass
+            else:
+                if e.args[0] == "self.tk_widget is None. Not hooked into a Tk instance.":
+                    sys.exit(0)
+                else:
+                    raise AttributeError(e.args[0])
 
 
 if __name__ == "__main__":

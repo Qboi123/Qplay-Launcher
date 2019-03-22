@@ -56,9 +56,10 @@ def place_bubble(c, bub, x, y, r, act):
         c.create_image(x, y, image=bub["Key"][60])
 
 
-def create_bubble(stats, config, bub, c, bubble, i=None, x=None, y=None, r=None, s=None):
+def create_bubble(stats, config, bub, c, bubble, modes, index, i=None, x=None, y=None, r=None, s=None):
     """
     Creates a bubble that can moving and removing by touching with the ship
+    :param modes:
     :param s:
     :param bubble:
     :param c:
@@ -262,6 +263,7 @@ def create_bubble(stats, config, bub, c, bubble, i=None, x=None, y=None, r=None,
     bubble["bub-id"].append(ids)
     bubble["bub-radius"].append(r)
     bubble["bub-speed"].append(spd)
+    Thread(None, lambda: movebubble_thread(index, bubble, c, stats, modes)).start()
 
 
 def move_bubbles(bubble, stats, root, canvas):
@@ -442,17 +444,19 @@ class Collision:
         if action == "SlowMotion":
             State.set_state(canvas, log, stats, action, backgrounds)
         if action == "TimeBreak":
-            State.set_state(canvas, log, stats, action, backgrounds)
+            # State.set_state(canvas, log, stats, action, backgrounds)\
+            pass
         if action == "Ultimate":
             if stats["lives"] < 7:
                 stats["lives"] += 1
             stats["shipspeed"] = 25
             stats["score"] += bubscore * 10 * stats["scorestate"]
         if action == "HyperMode":
-            stats["lives"] += 2
-            stats["shipspeed"] = 25
-            stats["score"] += bubscore * 30 * stats["scorestate"]
-            State.set_state(canvas, log, stats, action, backgrounds)
+            # stats["lives"] += 2
+            # stats["shipspeed"] = 25
+            # stats["score"] += bubscore * 30 * stats["scorestate"]
+            # State.set_state(canvas, log, stats, action, backgrounds)
+            pass
         if action == "ShotSpdStat":
             stats["score"] += bubscore * stats["scorestate"]
             State.set_state(canvas, log, stats, action, backgrounds)
@@ -541,7 +545,7 @@ class Collision:
                     elif bubble["bub-hardness"][index_bub] > 1:
                         replace_list(bubble["bub-hardness"], index_bub, bubble["bub-hardness"][index_bub] - 1)
             if not stats["timebreak"]:
-                Thread(None, lambda: self.move_bubble(index_bub, bubble, canvas, stats, root)).start()
+                # Thread(None, lambda: self.move_bubble(index_bub, bubble, canvas, stats, root)).start()
                 canvas.update()
                 self.clean_up_bub(canvas, index_bub, bubble, config, log)
             # Collision with ammo
@@ -586,6 +590,24 @@ class Collision:
                     pass
                 except AttributeError:
                     pass
+
+def movebubble_thread(index, bubble, canvas, stats, modes):
+    while True:
+        try:
+            if not stats["timebreak"] and not modes["pause"]:
+                for j in range(len(bubble["bub-id"][index]) - 1, -1, -1):
+                    if not bubble["bub-action"][index] == "Null":
+                        if stats["slowmotion"]:
+                            canvas.move(bubble["bub-id"][index][j], -bubble["bub-speed"][index] / 10, 0)
+                        else:
+                            canvas.move(bubble["bub-id"][index][j], -bubble["bub-speed"][index], 0)
+                    x, y, = get_coords(canvas, bubble["bub-id"][index][j])
+                    bubble["bub-position"][index] = [x, y]
+                    canvas.update()
+        except IndexError as e:
+            print("IndexError: "+e.args[0])
+            break
+
 
 
 def clean_all(bubble, canvas):

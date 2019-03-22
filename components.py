@@ -146,7 +146,7 @@ class Present:
 
 class SpecialMode:
     @staticmethod
-    def create_bubble(canvas, config, bubble, stats, bub, id2=None, loc_x=None, loc_y=None, rad=None, spd=None):
+    def create_bubble(canvas, config, bubble, stats, bub, modes, id2=None, loc_x=None, loc_y=None, rad=None, spd=None):
         """
         Creates bubble.
         :param spd:
@@ -161,6 +161,7 @@ class SpecialMode:
         :param id2:
         :return:
         """
+        from bubble import movebubble_thread
         if id2 is not None:
             index = id2
         else:
@@ -238,6 +239,7 @@ class SpecialMode:
         bubble["bub-radius"].append(rad)
         bubble["bub-speed"].append(spd)
         bubble["bub-id"].append(ids)
+        Thread(None, lambda: movebubble_thread(index, bubble, canvas, stats, modes))
 
 
 class Store:
@@ -796,7 +798,7 @@ class CheatEngine:
         canvas.update()
 
     @staticmethod
-    def add_level_key(stats, config, bubble, canvas, params):
+    def add_level_key(stats, config, bubble, canvas, modes, bub, params):
         """
         Adds Level Key. This is only used for the Cheat.
         :param canvas:
@@ -812,7 +814,7 @@ class CheatEngine:
                 a = int(params[0])
                 if 0 <= a < 10:
                     for i in range(0, a):
-                        Thread(None, lambda: create_bubble(stats, config, bubble, canvas, -1)).start()
+                        Thread(None, lambda: create_bubble(stats, config, bub, canvas, bubble, modes, len(bubble["bub-id"]))).start()
 
     @staticmethod
     def clean_all_bubbles(bubble, canvas, params):
@@ -828,9 +830,10 @@ class CheatEngine:
             Thread(None, lambda: clean_all(bubble, canvas)).start()
 
     @staticmethod
-    def add_bubble(stats, config, bub, canvas, bubble, params):
+    def add_bubble(stats, config, bub, canvas, bubble, modes, params):
         """
         Adds a bubble using this cheat.
+        :param modes:
         :param bubble:
         :param canvas:
         :param bub:
@@ -896,7 +899,7 @@ class CheatEngine:
             if p.isnumeric():
                 if i:
                     for _ in range(int(float(p))):
-                        Thread(None, lambda: create_bubble(stats, config, bub, canvas, bubble, float(i))).start()
+                        Thread(None, lambda: create_bubble(stats, config, bub, canvas, bubble, modes, len(bubble["bub-id"]), float(i))).start()
         if len(params) == 5:
             i = 0
             if params[0] in act:
@@ -946,7 +949,7 @@ class CheatEngine:
             if params[1].isnumeric() and params[2].isnumeric() and params[3].isnumeric() and params[4].isnumeric():
                 if i:
                     for _ in range(int(float(params[1]))):
-                        Thread(None, lambda: create_bubble(stats, config, bub, canvas, bubble, i, float(params[2]),
+                        Thread(None, lambda: create_bubble(stats, config, bub, canvas, bubble, modes, len(bubble["bubid"]), i, float(params[2]),
                                                            float(params[3]), float(params[4]))).start()
 
     @staticmethod
@@ -1007,11 +1010,11 @@ class CheatEngine:
         print(command)
         print(params)
         if command == "/AddLevelKey":
-            self.add_level_key(stats, config, bubble, canvas, params=params)
+            self.add_level_key(stats, config, bubble, canvas, params=params, modes=modes, bub=bub)
         elif command == "/CleanAllBubbles":
             clean_all(bubble, canvas)
         elif command == "/AddBubble":
-            self.add_bubble(stats, config, bub, canvas, bubble, params)
+            self.add_bubble(stats, config, bub, canvas, bubble, modes, params)
         elif command == "/AddLives":
             self.add_lives(stats, params)
         elif command == "/AddState":
