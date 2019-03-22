@@ -1239,7 +1239,7 @@ class Game(Canvas):
                                     else:
                                         Thread(None, lambda: SpecialMode().create_bubble(self.canvas, self.config,
                                                                                          self.bubbles, self.stats,
-                                                                                         self.bub)).start()
+                                                                                         self.bub, self.modes)).start()
 
                                 Collision().check_collision(self.root, self.commands, self.bubbles, self.config,
                                                             self.stats,

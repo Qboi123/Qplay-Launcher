@@ -239,7 +239,7 @@ class SpecialMode:
         bubble["bub-radius"].append(rad)
         bubble["bub-speed"].append(spd)
         bubble["bub-id"].append(ids)
-        Thread(None, lambda: movebubble_thread(index, bubble, canvas, stats, modes))
+        # Thread(None, lambda: movebubble_thread(index, bubble, canvas, stats, modes))
 
 
 class Store:

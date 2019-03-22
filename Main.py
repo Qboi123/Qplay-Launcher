@@ -310,11 +310,11 @@ class Maintance:
         config.Writer("saves/" + save_name + "/game.json", game_save)
 
 
-def start(bubble, save_name, stats, config, bub, canvas):
+def start(bubble, save_name, stats, config, bub, canvas, modes):
     bubs = Reader("saves/" + save_name + "/bubble.json").get_decoded()
     for i in range(len(bubs["bub-id"])):
         if bubs["bub-special"]:
-            create_bubble(stats, config, bub, canvas, bubble, bubs["bub-index"][i], bubs["bub-position"][i][0],
+            create_bubble(stats, config, bub, canvas, bubble, modes, bubs["bub-index"][i], bubs["bub-position"][i][0],
                           bubs["bub-position"][i][1], bubs["bub-radius"][i], bubs["bub-speed"][i])
         elif not bubs["bub-special"]:
             SpecialMode.create_bubble(canvas, config, bubble, stats, bub, bubs["bub-index"][i],
@@ -986,7 +986,7 @@ class Game(Canvas):
         # self.fore["game-id"] = c.create_image(0, 0, anchor=NW, image=self.fore["game"])
         # self.fore["gloss-id"] = c.create_image(0, 0, anchor=NW, image=self.fore["gloss"])
 
-        start(self.bubbles, self.save_name, self.stats, self.config, self.bub, self.canvas)
+        start(self.bubbles, self.save_name, self.stats, self.config, self.bub, self.canvas, self.modes)
 
         global Mainloop
         Mainloop = False
@@ -1026,7 +1026,7 @@ class Game(Canvas):
                                         i = randint(0, 1600)
                                         Thread(None,
                                                lambda: create_bubble(self.stats, self.config, self.bub, self.canvas,
-                                                                     self.bubbles, i, x, y, r, spd)).start()
+                                                                     self.bubbles, self.modes, i, x, y, r, spd)).start()
                                     else:
                                         # log.debug("Game.main", "Create Special Bubble")
                                         Thread(None, lambda: SpecialMode().create_bubble(self.canvas, self.config,
@@ -1060,7 +1060,7 @@ class Game(Canvas):
                             #     c.delete(self.ship["id2"])
                             #     self.__init__()
                             Thread(None, lambda: refresh(self.stats, self.config, self.bubbles, self.bub, self.canvas,
-                                                         self.back)).start()
+                                                         self.back, self.modes)).start()
                             Thread(None, lambda: show_info(self.canvas, self.texts, self.stats)).start()
                             if randint(0, 10000) == 1:
                                 State.set_state(self.canvas, log, self.stats, "SpecialLevel", self.back)

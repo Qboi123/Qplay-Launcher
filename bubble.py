@@ -529,7 +529,7 @@ class Collision:
         from extras import distance, replace_list
         from threading import Thread
         for index_bub in range(len(bubble["bub-id"].copy()) - 1, -1, -1):
-            # Collision with ship
+            print(distance(canvas, log, ship["id2"], bubble["bub-id"][index_bub][0]) - (config["game"]["ship-radius"] + bubble["bub-radius"][index_bub]))
             self.bub = index_bub
             if distance(canvas, log, ship["id2"], bubble["bub-id"][index_bub][0]) < (
                     config["game"]["ship-radius"] + bubble["bub-radius"][index_bub]):
@@ -545,12 +545,11 @@ class Collision:
                     elif bubble["bub-hardness"][index_bub] > 1:
                         replace_list(bubble["bub-hardness"], index_bub, bubble["bub-hardness"][index_bub] - 1)
             if not stats["timebreak"]:
-                # Thread(None, lambda: self.move_bubble(index_bub, bubble, canvas, stats, root)).start()
+                self.move_bubble(index_bub, bubble, canvas, stats, root)
                 canvas.update()
                 self.clean_up_bub(canvas, index_bub, bubble, config, log)
             # Collision with ammo
             for ammo_index in range(len(ammo["ammo-id"].copy()) - 1, -1, -1):
-                # print(ShotID[shot], shot)
                 self.shot = ammo_index
                 if not stats["timebreak"]:
                     # self.move_ammo(ammo_index, ammo, canvas, log, )
@@ -558,12 +557,6 @@ class Collision:
                 try:
                     if distance(canvas, log, ammo["ammo-id"][ammo_index], bubble["bub-id"][index_bub][0]) < (
                             1 + bubble["bub-radius"][index_bub]):
-                        # log.info("Bubble",
-                        #         "Bubble collised: " + BubAct[index_bub] + "| Radius: " + str(BubRad[index_bub]) + "| Hardness: " +
-                        #         str(
-                        #             BubHard[index_bub]) + "| Speed: " + str(BubSpd[index_bub]) + "| len BubAct: " + str(
-                        #             len(BubAct)) +
-                        #         "| len BubHard: " + str(len(BubHard)))
                         if bubble["bub-hardness"][index_bub] == 1:
                             try:
                                 Thread(None, lambda: self.coll_func(index_bub, canvas, commands, root, log, stats,
@@ -592,21 +585,22 @@ class Collision:
                     pass
 
 def movebubble_thread(index, bubble, canvas, stats, modes):
-    while True:
-        try:
-            if not stats["timebreak"] and not modes["pause"]:
-                for j in range(len(bubble["bub-id"][index]) - 1, -1, -1):
-                    if not bubble["bub-action"][index] == "Null":
-                        if stats["slowmotion"]:
-                            canvas.move(bubble["bub-id"][index][j], -bubble["bub-speed"][index] / 10, 0)
-                        else:
-                            canvas.move(bubble["bub-id"][index][j], -bubble["bub-speed"][index], 0)
-                    x, y, = get_coords(canvas, bubble["bub-id"][index][j])
-                    bubble["bub-position"][index] = [x, y]
-                    canvas.update()
-        except IndexError as e:
-            print("IndexError: "+e.args[0])
-            break
+    # while True:
+    #     try:
+    #         if not stats["timebreak"] and not modes["pause"]:
+    #             for j in range(len(bubble["bub-id"][index]) - 1, -1, -1):
+    #                 if not bubble["bub-action"][index] == "Null":
+    #                     if stats["slowmotion"]:
+    #                         canvas.move(bubble["bub-id"][index][j], -bubble["bub-speed"][index] / 10, 0)
+    #                     else:
+    #                         canvas.move(bubble["bub-id"][index][j], -bubble["bub-speed"][index], 0)
+    #                 x, y, = get_coords(canvas, bubble["bub-id"][index][j])
+    #                 bubble["bub-position"][index] = [x, y]
+    #                 canvas.update()
+    #     except IndexError as e:
+    #         print("IndexError: "+e.args[0])
+    #         break
+    return
 
 
 
