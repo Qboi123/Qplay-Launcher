@@ -18,7 +18,7 @@ Bubble Blaster by Qplay123
 10. When this is done, unpack the archive (zip). Ans run Main.py
 
 ## Steps for Application (The setup.exe file)
-01. Download the setup.exe from the releases page.
+01. Download the setup.exe or setup.msi (the case doesn't matter) from the releases page.
 02. Run the setup.
 03. Follow the instructions
 04. NOTE: The game will run automaticly. If you want to close it, press the red button on the top.
