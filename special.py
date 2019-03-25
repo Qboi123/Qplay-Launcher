@@ -42,8 +42,8 @@ class ScrolledWindow(tk.Frame):
         self.vbar = Scrollbar(self.parent, orient=VERTICAL)
         self.vbar.pack(side=RIGHT, fill=Y)
         self.vbar.config(command=self.canv.yview)
-        self.canv.config(width=300, height=300)
-        self.canv.config(# xscrollcommand=self.hbar.set,
+        self.canv.config(width=canv_w-100, height=canv_h-100)
+        self.canv.config(  # xscrollcommand=self.hbar.set,
                          yscrollcommand=self.vbar.set)
         self.canv.pack(side=LEFT, fill=BOTH)
         # creating a canvas
@@ -62,7 +62,7 @@ class ScrolledWindow(tk.Frame):
 
         self.canv.create_window(0, 0, window=self.scrollwindow, anchor='nw')
 
-        self.canv.config( # xscrollcommand=self.hbar.set,
+        self.canv.config(  # xscrollcommand=self.hbar.set,
                          yscrollcommand=self.vbar.set,
                          scrollregion=(0, 0, canv_h, canv_w))
 

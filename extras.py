@@ -242,7 +242,7 @@ def distance(canvas, log, id1, id2):
         log.fatal("distance", "IndexError excepted in distance()-module")
 
 
-def refresh(stats, config, bubble, bub, canvas, backgrounds, texts, modes):
+def refresh(stats, config, bubble, bub, canvas, backgrounds, texts, modes, panels):
     """
     Refresh Object. Refreshing in a Thread for faster mainloop.
     :return:
@@ -257,11 +257,11 @@ def refresh(stats, config, bubble, bub, canvas, backgrounds, texts, modes):
                 Thread(None, lambda: create_bubble(stats, config, bub, canvas, bubble, modes, len(bubble["bub-id"]), i=-1)).start()
                 config["bubble"]["max-speed"] += 0.2
                 bubble["key-active"] = True
-    Thread(None, lambda: refresh_state(stats, bubble, canvas, backgrounds)).start()
+    Thread(None, lambda: refresh_state(stats, bubble, canvas, backgrounds, panels)).start()
     Thread(None, lambda: show_info(canvas, texts, stats)).start()
 
 
-def refresh_state(stats, bubbles, canvas, backgrounds):
+def refresh_state(stats, bubbles, canvas, backgrounds, panels):
     """
     Refreshing the states. So as normal, in a Thread.
     :rtype: object
@@ -300,6 +300,8 @@ def refresh_state(stats, bubbles, canvas, backgrounds):
         stats["special-level"] = False
         stats["special-level-time"] = time()
         canvas.itemconfig(backgrounds["id"], image=backgrounds["normal"])
+        canvas.itemconfig(panels["game/top"], fill="darkcyan")
+        canvas.itemconfig(panels["game/bottom"], fill="darkcyan")
     if stats["score"] > stats["hiscore"]:
         stats["hiscore"] = stats["score"]
     stats["score"] = int(stats["score"])

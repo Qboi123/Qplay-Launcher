@@ -55,7 +55,7 @@ class State:
             stats["notouch-time"] = time() + randint(10, 15)
         if act == "Ultimate":
             stats["scorestate"] = 10
-            stats["scorestate-time"] = time() + 10
+            stats["scorestate-time"] = time() + 15
             stats["slowmotion"] = True
             stats["slowmotion-time"] = time() + randint(7, 10)
         if act == "SpecialLevel":

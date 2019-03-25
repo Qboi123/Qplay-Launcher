@@ -1,7 +1,7 @@
 from time import sleep
 
 from ammo import *
-from bubble import Collision, create_bubble
+from bubble import Collision, create_bubble, place_bubble
 from components import *
 from extras import Logging, shuffling, refresh
 from teleport import *
@@ -25,9 +25,10 @@ log.info("<Root>", "Starting Game")
 
 
 def control(root, canvas, icon, config, event, stats, temp, modes, ship, commands, ammo, tp,
-            texts, foregrounds, backgrounds, bubble):
+            texts, foregrounds, backgrounds, bubble, panels, return_main, bub):
     """
     Ship-motion event
+    :param panels:
     :param commands:
     :param bubble:
     :param backgrounds:
@@ -94,7 +95,7 @@ def control(root, canvas, icon, config, event, stats, temp, modes, ship, command
         if event.keysym == "space":
             commands["store"].buy_selected(config, modes, log, root, canvas, stats, bubble, backgrounds,
                                            texts,
-                                           commands, temp)
+                                           commands, temp, panels)
         if event.keysym == "BackSpace":
             commands["store"].exit(canvas, log, modes, stats, temp, commands)
             commands["store"] = None
@@ -193,11 +194,93 @@ def control(root, canvas, icon, config, event, stats, temp, modes, ship, command
 
             stats["teleports"] -= 1
             teleport(canvas, root, stats, modes, ship, tp, tp["id1"])
-    if event.keysym == "Shift_L" and (not modes["pause"]):
+    if event.keysym == "Escape" and (not modes["pause"]) and (not modes["store"]) and (not modes["teleport"]) and \
+            (not modes["window"]) and (not modes["present"]) and (not modes["cheater"]):
         modes["pause"] = True
 
         canvas.delete(icon["pause"])
-        icon["pause"] = canvas.create_image(config["middle-x"], config["middle-y"], image=icon["pause-id"])
+        if stats["special-level"]:
+            temp['pause/bg'] = canvas.create_rectangle(0, 69,
+                                                       config["width"],
+                                                       config[
+                                                           "height"],
+                                                       fill="#3f3f3f",
+                                                       outline="#3f3f3f")
+            temp['pause/top.line'] = canvas.create_line(0, 69, config["width"], 69,
+                                                        fill="#afafaf")
+            # temp['pause/bottom.line'] = canvas.create_line(0, config["height"] - 102, config["width"],
+            #                                                config["height"] - 102,
+            #                                                fill="#afafaf")
+
+            temp['pause/menu_frame'] = Frame(root, bg="#3f3f3f")
+            temp['pause/menu'] = canvas.create_window(config["middle-x"], config["middle-y"]/2+130,
+                                                      window=temp['pause/menu_frame'], anchor='n',
+                                                      height=20, width=300)
+
+            temp["pause/back-to-menu"] = Button(temp["pause/menu_frame"], text="Back to home.", command=return_main,
+                                                relief=FLAT, bg="#1f1f1f", fg="#afafaf")
+            back = "#1f1f1f"
+            fore = "yellow"
+        else:
+            temp['pause/bg'] = canvas.create_rectangle(0, 69,
+                                                       config["width"],
+                                                       config[
+                                                           "height"],
+                                                       fill="darkcyan",
+                                                       outline="darkcyan")
+            temp['pause/top.line'] = canvas.create_line(0, 69, config["width"], 69,
+                                                        fill="#7fffff")
+            # temp['pause/bottom.line'] = canvas.create_line(0, config["height"] - 102, config["width"],
+            #                                                config["height"] - 102,
+            #                                                fill="#7fffff")
+
+            temp['pause/menu_frame'] = Frame(root, bg="darkcyan")
+            temp['pause/menu'] = canvas.create_window(config["middle-x"], config["middle-y"]/2+130,
+                                                      window=temp['pause/menu_frame'], anchor='n',
+                                                      height=500, width=300)
+
+            temp["pause/back-to-menu"] = Button(temp["pause/menu_frame"], text="Back to home.", command=return_main,
+                                                relief=FLAT, bg="#005f5f", fg="#7fffff")
+
+            back = "#005f5f"
+            fore = "#7fffff"
+
+        temp["s_frame"] = Frame(root, height=100, width=1000, bg=back)
+        temp["s_frame"].place(x=config["middle-x"], y=config["middle-y"]/2+250, anchor='n', width=1000)
+
+        temp["sw"] = ScrolledWindow(temp["s_frame"], 1000, 100, heigh=100, width=1000)
+
+        temp["canv"] = temp["sw"].canv
+
+        temp["frame"] = temp["sw"].scrollwindow
+
+        a = ("Normal", "Double", "Kill", "Triple", "SpeedUp", "SpeedDown", "Up", "Ultimate", "DoubleState",
+                  "Protect", "SlowMotion", "TimeBreak", "Confusion", "HyperMode", "Teleporter",
+                  "Coin", "NoTouch", "Paralis", "Diamond", "StoneBub", "Present", "SpecialKey", "LevelKey")
+        b = ("Normale bubbel", "Dubbele waarde", "-1 Leven", "3x waarde", "Versnellen", "Vertragen", "+1 Leven", "Ultieme bubbel",
+             "Dubbel-bubbel", "Schild", "Slow motion", "Bubbels stil", "Verwarring", "Hyper-mode", "Teleporter", "Munt",
+             "Geest-modus", "Verstijving", "Diamant", "Steen-bubbel", "Cadeau", "Speciale-modus", "Sleutel")
+
+        canvass = Canvas(temp["frame"], bg=back, highlightthickness=0)
+        x = 50
+        y = 50
+        temp["pause/bubble.icons"] = []
+        for i in range(len(a)):
+            # print(a[i], b[i])
+            place_bubble(canvass, bub, x, y, 25, a[i])
+            canvass.create_text(x, y + 40, text=b[i], fill=fore)
+            if x > 900:
+                x = 50
+                y += 100
+            else:
+                x += 100
+
+        canvass.config(height=y+70, width=1000)
+        canvass.pack(fill=X)
+
+        temp["pause/back-to-menu"].pack(fill=X)
+
+        icon["pause"] = canvas.create_image(config["middle-x"], config["middle-y"]/2, image=icon["pause-id"])
 
         canvas.itemconfig(texts["pause"], text="")
         root.update()
@@ -211,12 +294,23 @@ def control(root, canvas, icon, config, event, stats, temp, modes, ship, command
         temp["shotspeed-save"] = stats["shotspeed-time"] - time()
         temp["notouch-save"] = stats["notouch-time"] - time()
         temp["special-level-save"] = stats["special-level-time"] - time()
-    elif event.keysym == "Shift_R" and modes["pause"] and (not modes["store"]) and (not modes["teleport"]) and \
-            (not modes["window"]) and (not modes["present"]) and not modes["cheater"]:
+    elif event.keysym == "Escape" and modes["pause"] and (not modes["store"]) and (not modes["teleport"]) and \
+            (not modes["window"]) and (not modes["present"]) and (not modes["cheater"]):
         modes["pause"] = False
 
         canvas.itemconfig(icon["pause"], state=HIDDEN)
         canvas.itemconfig(texts["pause"], text="")
+
+
+        temp["pause/back-to-menu"].destroy()
+        temp['pause/menu_frame'].destroy()
+        temp["s_frame"].destroy()
+
+        canvas.delete(temp['pause/top.line'])
+        # canvas.delete(temp['pause/bottom.line'])
+        canvas.delete(temp['pause/menu'])
+        canvas.delete(temp['pause/bg'])
+
         root.update()
 
         stats["scorestate-time"] = temp["scorestate-save"] + time()
@@ -370,6 +464,9 @@ class Game(Canvas):
         self.modes["teleport"] = False
         self.modes["present"] = False
 
+        # Panels (top and bottom, the panels are for information)
+        self.panels = dict()
+
         # print("Phase 1")
 
         self.canvas = None
@@ -447,53 +544,13 @@ class Game(Canvas):
         # self.item_info = [[[[]]]]
         self.items = list()
 
-        # print("Phase 6")
-
-        # self.frames.append(Frame(self.tabs, bd=1, bg="#3c3c3c"))
-        # items2 = []
-        # while i < len(dirs):
-        #     y += 1
-        #     self.item_info[p][0][x].append(dirs[i])
-        #     if y >= height:
-        #         y = 0
-        #         self.item_info[p][0].append([])
-        #         self.item_info[p][0].append([])
-        #         self.item_info[p][0].append([])
-        #         self.item_info[p][0].append([])
-        #         x += 4
-        #     if x > width:
-        #         self.tabs.add(self.frames.copy()[-1], text=' {} '.format(p))
-        #         self.frames.append(Frame(self.tabs, bd=1, bg="#3c3c3c"))
-        #         y = 0
-        #         x = 0
-        #         self.item_info.append([[[]]])
-        #         p += 1
-        #     items2.append(dirs[i])
-        #
-        #     self.items.append(Button(self.frames[-1], width=30, relief=FLAT, text=dirs[i], bg="#707070"))
-        #     self.items.copy()[-1].grid(column=x, row=y, padx=2, pady=2)
-        #     self.items.copy()[-1].bind("<ButtonRelease-1>", self.open)
-        #
-        #     self.items.append(Button(self.frames[-1], relief=FLAT, text="rename", bg="#707070"))
-        #     self.items.copy()[-1].grid(column=x + 1, row=y, padx=2, pady=2)
-        #     self.items.copy()[-1].bind("<ButtonRelease-1>", self.rename)
-        #
-        #     self.items.append(Button(self.frames[-1], relief=FLAT, text="remove", bg="#707070"))
-        #     self.items.copy()[-1].grid(column=x + 2, row=y, padx=2, pady=2)
-        #     self.items.copy()[-1].bind("<ButtonRelease-1>", self.remove)
-        #
-        #     self.items.append(Button(self.frames[-1], relief=FLAT, text="", width=5, bg="#3c3c3c"))
-        #     self.items.copy()[-1].grid(column=x + 3, row=y, padx=2, pady=2)
-        #
-        #     self.max_pages = p
-        #     i += 1
-
         self.frame2 = Frame(bg="#5c5c5c")
 
         self.add = Button(self.frame2, text="Add Save", relief=FLAT, bg="#7f7f7f", fg="white", command=self.add_save)
         self.add.pack(side=RIGHT, padx=2, pady=5)
         self.add_input = Entry(self.frame2, bd=5, fg="#3c3c3c", bg="#7f7f7f", relief=FLAT)
         self.add_input.pack(side=LEFT, fill=X, expand=TRUE, padx=2, pady=5)
+        self.add_input.bind("<Return>", self.add_event)
         self.root.update()
 
         self.frame2.pack(side=TOP, fill=X)
@@ -609,6 +666,9 @@ class Game(Canvas):
         # self.tabs.pack(side=TOP, expand=TRUE, fill=BOTH)
 
         self.root.mainloop()
+
+    def add_event(self, event):
+        self.add_save()
 
     @staticmethod
     def copy(src, dist):
@@ -997,12 +1057,13 @@ class Game(Canvas):
         c.move(self.ship["id1"], self.stats["ship-position"][0], self.stats["ship-position"][1])
         c.move(self.ship["id2"], self.stats["ship-position"][0], self.stats["ship-position"][1])
 
-        # c.create_rectangle(0, 0, self.config["width"], 69, fill="#003f3f")
-        # c.create_rectangle(0, self.config["height"], self.config["width"], self.config["height"] - 102, fill="#003f3f")
-
-        self.canvas.create_rectangle(0, 0, self.config["width"], 69, fill="#3f3f3f")
-        self.canvas.create_rectangle(0, self.config["height"], self.config["width"], self.config["height"] - 102,
-                                     fill="#3f3f3f")
+        # Initializing the panels for the game.
+        self.panels["game/top"] = self.canvas.create_rectangle(
+            -1, -1, self.config["width"], 69, fill="darkcyan"
+        )
+        self.panels["game/bottom"] = self.canvas.create_rectangle(
+            -1, self.config["height"]+1, self.config["width"], self.config["height"] - 102, fill="darkcyan"
+        )
 
         self.canvas.create_line(0, 70, self.config["width"], 70, fill="lightblue")
         self.canvas.create_line(0, 69, self.config["width"], 69, fill="white")
@@ -1014,6 +1075,7 @@ class Game(Canvas):
                                 fill="White")
         log.info("Game.main", "Lines 2")
 
+        # Game-information
         c.create_text(55, 30, text='Score', fill='orange')
         c.create_text(110, 30, text='Level', fill='orange')
         c.create_text(165, 30, text='Speed', fill='orange')
@@ -1049,9 +1111,11 @@ class Game(Canvas):
         self.texts["coin"] = c.create_text(1210, 50, fill='cyan')
         self.texts["level-view"] = c.create_text(mid_x, mid_y, fill='Orange', font=("Helvetica", 50))
 
+        # Pause text ans icon.
         self.texts["pause"] = c.create_text(mid_x, mid_y, fill='Orange', font=("Helvetica", 60, "bold"))
         self.icons["pause"] = c.create_image(mid_x, mid_y, image=self.icons["pause-id"], state=HIDDEN)
 
+        # Bubble-information / -help and place bubbles with no motion.
         c.create_text(50, self.config["height"] - 30, text='1x Score', fill='yellow')
         c.create_text(130, self.config["height"] - 30, text='2x Score', fill='yellow')
         c.create_text(210, self.config["height"] - 30, text='3x Score', fill='yellow')
@@ -1070,45 +1134,6 @@ class Game(Canvas):
         c.create_text(1250, self.config["height"] - 30, text='No-touch', fill='yellow')
         c.create_text(1410, self.config["height"] - 30, text='Level Sleutel', fill='yellow')
 
-        # c.create_line(-25 + (75 / 2), self.config["height"] - 101, -25 + (75 / 2), self.config["height"],
-        #               fill="darkcyan")
-        # c.create_line(55 + (75 / 2), self.config["height"] - 101, 55 + (75 / 2), self.config["height"], fill="darkcyan")
-        # c.create_line(135 + (75 / 2), self.config["height"] - 101, 135 + (75 / 2), self.config["height"],
-        #               fill="darkcyan")
-        # c.create_line(215 + (75 / 2), self.config["height"] - 101, 215 + (75 / 2), self.config["height"],
-        #               fill="darkcyan")
-        # c.create_line(295 + (75 / 2), self.config["height"] - 101, 295 + (75 / 2), self.config["height"],
-        #               fill="darkcyan")
-        # c.create_line(375 + (75 / 2), self.config["height"] - 101, 375 + (75 / 2), self.config["height"],
-        #               fill="darkcyan")
-        # c.create_line(455 + (75 / 2), self.config["height"] - 101, 455 + (75 / 2), self.config["height"],
-        #               fill="darkcyan")
-        # c.create_line(535 + (75 / 2), self.config["height"] - 101, 535 + (75 / 2), self.config["height"],
-        #               fill="darkcyan")
-        # c.create_line(615 + (75 / 2), self.config["height"] - 101, 615 + (75 / 2), self.config["height"],
-        #               fill="darkcyan")
-        # c.create_line(695 + (75 / 2), self.config["height"] - 101, 695 + (75 / 2), self.config["height"],
-        #               fill="darkcyan")
-        # c.create_line(775 + (75 / 2), self.config["height"] - 101, 775 + (75 / 2), self.config["height"],
-        #               fill="darkcyan")
-        # c.create_line(855 + (75 / 2), self.config["height"] - 101, 855 + (75 / 2), self.config["height"],
-        #               fill="darkcyan")
-        # c.create_line(935 + (75 / 2), self.config["height"] - 101, 935 + (75 / 2), self.config["height"],
-        #               fill="darkcyan")
-        # c.create_line(1015 + (75 / 2), self.config["height"] - 101, 1015 + (75 / 2), self.config["height"],
-        #               fill="darkcyan")
-        # c.create_line(1095 + (75 / 2), self.config["height"] - 101, 1095 + (75 / 2), self.config["height"],
-        #               fill="darkcyan")
-        # c.create_line(1175 + (75 / 2), self.config["height"] - 101, 1175 + (75 / 2), self.config["height"],
-        #               fill="darkcyan")
-        # c.create_line(1255 + (75 / 2), self.config["height"] - 101, 1255 + (75 / 2), self.config["height"],
-        #               fill="darkcyan")
-        # c.create_line(1335 + (75 / 2), self.config["height"] - 101, 1335 + (75 / 2), self.config["height"],
-        #               fill="darkcyan")
-        # c.create_line(1415 + (75 / 2), self.config["height"] - 101, 1415 + (75 / 2), self.config["height"],
-        #               fill="darkcyan")
-        # log.info("Game.main", "Lines for bubble info created.")
-
         place_bubble(self.canvas, self.bub, 50, self.config["height"] - 75, 25, "Normal")
         place_bubble(self.canvas, self.bub, 130, self.config["height"] - 75, 25, "Double")
         place_bubble(self.canvas, self.bub, 210, self.config["height"] - 75, 25, "Triple")
@@ -1126,15 +1151,17 @@ class Game(Canvas):
         place_bubble(self.canvas, self.bub, 1170, self.config["height"] - 75, 25, "Teleporter")
         place_bubble(self.canvas, self.bub, 1250, self.config["height"] - 75, 25, "NoTouch")
         place_bubble(self.canvas, self.bub, 1410, self.config["height"] - 75, 25, "LevelKey")
-        log.info("Game.main", "Virtual bubbles for info created.")
 
+        # Binding key-events for control
         c.bind_all('<Key>', lambda event: control(self.root, self.canvas, self.icons, self.config, event, self.stats,
                                                   self.temp, self.modes, self.ship, self.commands, self.ammo, self.tp,
-                                                  self.texts, self.fore, self.back, self.bubbles))
+                                                  self.texts, self.fore, self.back, self.bubbles, self.panels, lambda: self.return_main(), self.bub))
         # Thread(None, lambda: c.bind("<Motion>", MotionEventHandler)).start()
         # Thread(None, lambda: c.bind("<ButtonPress-1>", Button1PressEventHandler)).start()
         # Thread(None, lambda: c.bind("<ButtonRelease-1>", Button1ReleaseEventHandler)).start()
-        c.bind_all('<KeyRelease-Escape>', lambda event: self.return_main())
+
+        # Binding other key-events.
+        # c.bind_all('<KeyRelease-Escape>', lambda event: self.return_main())
         c.bind_all('Configure', lambda event: self.resize)
 
         log.info("Game.main", "Key-bindings binded to 'move_ship'")
@@ -1144,17 +1171,6 @@ class Game(Canvas):
         # print(BubPos)
         # print
         # print(BubPos0)
-
-        log.debug("Game.main", "Current Bubble pos. is '" + str(self.bubbles["bub-position"]) + "'.")
-        log.debug("Game.main", "__name__ variable is '" + str(__name__) + "'.")
-        log.debug("Game.main", "'Lives' variable is '" + str(self.stats["lives"]) + "'.")
-        log.debug("Game.main", "Score       =" + str(self.stats["score"]))
-        log.debug("Game.main", "HiScore     =" + str(self.stats["hiscore"]))
-        log.debug("Game.main", "Ship ID's are '" + str(self.ship["id1"]) + "' and '" + str(
-            self.ship["id2"]) + "'. (Default = 1 and 2)")
-        log.debug("Game.main", "TimeBreak=" + str(self.stats["timebreak"]))
-        log.debug("Game.main", "StateTime=" + str(self.stats["timebreak-time"]))
-        log.debug("Game.main", "S. Time  =" + str(int(self.stats["timebreak-time"] - time())))
 
         # old_start()
         if len(self.bubbles["bub-id"]) == 0:
@@ -1197,6 +1213,10 @@ class Game(Canvas):
         if stats["special-level-time"] <= time():
             stats["special-level"] = False
             stats["special-level-time"] = time()
+        else:
+            self.canvas.itemconfig(self.backgrounds["id"], image=self.backgrounds["special"])
+            self.canvas.itemconfig(self.panels["game/top"], fill="#3f3f3f")
+            self.canvas.itemconfig(self.panels["game/bottom"], fill="#3f3f3f")
         if stats["score"] < 0:
             log.error("Game.main", "The 'Score' variable under zero.")
             stats["score"] = 0
@@ -1241,11 +1261,11 @@ class Game(Canvas):
                                                                                          self.bubbles, self.stats,
                                                                                          self.bub, self.modes)).start()
 
-                                Collision().check_collision(self.root, self.commands, self.bubbles, self.config,
-                                                            self.stats,
-                                                            self.ammo,
-                                                            self.ship, self.canvas, log, self.back,
-                                                            self.texts)
+                            Collision().check_collision(self.root, self.commands, self.bubbles, self.config,
+                                                        self.stats,
+                                                        self.ammo,
+                                                        self.ship, self.canvas, log, self.back,
+                                                        self.texts, self.panels)
                                 # Thread(None, lambda: move_ammo(self.canvas, log, self.root, self.ammo)).start()
                             if self.commands["present"] is True:
                                 # noinspection PyTypeChecker
@@ -1255,7 +1275,7 @@ class Game(Canvas):
                                 State.set_state(self.canvas, log, self.stats, "SpecialLevel", self.back)
                                 self.commands["special-mode"] = False
                             Thread(None, lambda: refresh(self.stats, self.config, self.bubbles, self.bub, self.canvas,
-                                                         self.back, self.texts, self.modes)).start()
+                                                         self.back, self.texts, self.modes, self.panels)).start()
                             Thread(None,
                                    lambda: Maintance().auto_save(self.save_name, self.stats, self.bubbles)).start()
                         self.root.update()
@@ -1289,25 +1309,25 @@ class Game(Canvas):
             else:
                 if e.args[0] == 'can\'t invoke "update" command: application has been destroyed':
                     log.info('<root>', "Exit...")
-                    sys.exit(0)
+                    exit(0)
                 elif e.args[0] == 'can\'t invoke "update_idletasks" command: application has been destroyed':
                     log.info('<root>', "Exit...")
-                    sys.exit(0)
+                    exit(0)
                 elif e.args[0] == 'invalid command name ".!canvas"':
                     log.info('<root>', "Exit...")
-                    sys.exit(0)
+                    exit(0)
                 elif e.args[0] == 'invalid command name ".!canvas"':
                     log.info('<root>', "Exit...")
-                    sys.exit(0)
+                    exit(0)
                 else:
                     log.fatal('Game.main', 'TclError: ' + e.args[0] + "Line: " + str(e.__traceback__.tb_next.tb_lineno))
-                    sys.exit(1)
+                    exit(1)
         except AttributeError as e:
             if self.returnmain:
                 pass
             else:
                 if e.args[0] == "self.tk_widget is None. Not hooked into a Tk instance.":
-                    sys.exit(0)
+                    exit(0)
                 else:
                     raise AttributeError(e.args[0])
 

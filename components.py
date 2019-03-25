@@ -366,7 +366,7 @@ class Store:
             canvas.itemconfig(self.info[self.selected], fill="#373737")
             canvas.itemconfig(self.coins[self.selected], fill="#373737")
 
-    def buy(self, canvas, log, modes, stats, bubble, backgrounds, temp, texts, commands, root):
+    def buy(self, canvas, log, modes, stats, bubble, backgrounds, temp, texts, commands, root, panels):
         """
         Buying a item and accepting buying the item
         activates the last phase.
@@ -425,9 +425,11 @@ class Store:
                 State.set_state(canvas, log, stats, "SpeedBoost", backgrounds)
             if self.selected == 8:
                 canvas.itemconfig(backgrounds["id"], image=backgrounds["special"])
+                canvas.itemconfig(panels["game/top"], fill="#3f3f3f")
+                canvas.itemconfig(panels["game/bottom"], fill="#3f3f3f")
                 stats["special-level"] = True
-                stats["special-level-time"] = time() + 20
-                log.info("State", "Special Level State is ON!!!")
+                stats["special-level-time"] = time() + 40
+                log.info("State", "(CollFunc) Special Level State is ON!!!")
                 play_sound("data/sounds/specialmode.mp3")
             if self.selected == 9:
                 stats["scorestate"] = 2
@@ -446,7 +448,7 @@ class Store:
             pass
 
     def buy_selected(self, config, modes, log, root, canvas, stats, bubble, backgrounds, texts, commands,
-                     temp):
+                     temp, panels):
         """
         Creates a window for accepting to bought a item.
         """
@@ -462,21 +464,21 @@ class Store:
         # Creates window
         self.w = Window(canvas, config, title="Continue?", height=50, width=200, parent_is_store=True,
                         close_event=lambda: (
-                            self.b.destroy(), self.b2.destroy(), None, storemode_on()))
+                            self.b.destroy(), self.b2.destroy(), None, storemode_on()), root=root)
 
         # Creates buttons
         log.debug("Store", "mid_x - 80 = " + str(mid_x - 80))
-        self.b = Button(root, text="Yes",
+        self.b = Button(self.w.root, text="Yes", bg="#3c3c3c", fg="#afafaf", relief=FLAT, width=7,
                         command=lambda: self.buy(canvas, log, modes, stats, bubble, backgrounds, temp, texts,
-                                                 commands, root))
-        self.b2 = Button(root, text="No",
+                                                 commands, root, panels))
+        self.b2 = Button(self.w.root, text="No", bg="#3c3c3c", fg="#afafaf", relief=FLAT, width=7,
                          command=lambda: (self.w.destroy(modes, canvas), self.b.destroy(), self.b2.destroy(), None,
                                           storemode_on()))
         # Places buttons
         self.w.child.append(self.b)
         self.w.child.append(self.b2)
-        self.b.place(y=mid_y, x=mid_x - 80, anchor=W)
-        self.b2.place(y=mid_y, x=mid_x + 80, anchor=E)
+        self.b.pack(side=LEFT, anchor=W, padx=10)
+        self.b2.pack(side=RIGHT, anchor=E, padx=10)
 
         # Sets windowmode controls
         modes["window"] = True
@@ -510,6 +512,7 @@ class Store:
 
         # Deletes the view of diamonds you have.
         canvas.delete(self.vDiamonds)
+        canvas.delete(self.title)
         #
         # # Globals for the pause of game and control of store-items.
         # global pause, storemode
@@ -544,7 +547,7 @@ class Window:
     """
 
     def __init__(self, canvas, config, title="window", height=600, width=800, parent_is_store=False,
-                 close_event=object):
+                 close_event=object, root=Tk):
         # Window variables
         self.canvas = canvas
         self.x1 = config["middle-x"] - width / 2
@@ -574,6 +577,9 @@ class Window:
 
         self.id.append(canvas.create_rectangle(self.x1 - 6, self.y1 + 14, self.x2 + 6, self.y2 + 6, fill="lightgray",
                                                outline="#272727"))
+
+        self.root = Frame(root, bg="black")
+        self._root = canvas.create_window(self.x1-5, self.y1+15, window=self.root, anchor='nw', height=height+11, width=width+11)
 
         self.id.append(canvas.create_image(self.x1 - 4, self.y1, image=self.title_left))
         self.id.append(canvas.create_image(self.x2 + 4, self.y1, image=self.title_right))
@@ -643,6 +649,8 @@ class Window:
             #     log.fatal("Window", "Child isn't a child. Id: " + str(i) + ".")
             # raise ChildProcessError("Child isn't a child. Id: " + str(i) + ".")
         modes["window"] = False
+        canvas.delete(self._root)
+        self.root.destroy()
         if self.is_store_parent:
             modes["store"] = True
 

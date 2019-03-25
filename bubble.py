@@ -17,43 +17,53 @@ def place_bubble(c, bub, x, y, r, act):
     """
 
     if act == "Normal":
-        c.create_image(x, y, image=bub["Normal"][r * 2])
+        return c.create_image(x, y, image=bub["Normal"][r * 2])
     if act == "Double":
-        c.create_image(x, y, image=bub["Double"][r * 2])
+        return c.create_image(x, y, image=bub["Double"][r * 2])
     if act == "Kill":
-        c.create_image(x, y, image=bub["Kill"][r * 2])
+        return c.create_image(x, y, image=bub["Kill"][r * 2])
     if act == "Triple":
-        c.create_image(x, y, image=bub["Triple"][r * 2])
+        return c.create_image(x, y, image=bub["Triple"][r * 2])
     if act == "SpeedUp":
-        c.create_image(x, y, image=bub["SpeedUp"][r * 2])
+        return c.create_image(x, y, image=bub["SpeedUp"][r * 2])
     if act == "SpeedDown":
-        c.create_image(x, y, image=bub["SpeedDown"][r * 2])
+        return c.create_image(x, y, image=bub["SpeedDown"][r * 2])
     if act == "Up":
-        c.create_image(x, y, image=bub["Up"][r * 2])
+        return c.create_image(x, y, image=bub["Up"][r * 2])
     if act == "Ultimate":
-        c.create_image(x, y, image=bub["Ultimate"][r * 2])
+        return c.create_image(x, y, image=bub["Ultimate"][r * 2])
     if act == "DoubleState":
-        c.create_image(x, y, image=bub["DoubleState"][r * 2])
+        return c.create_image(x, y, image=bub["DoubleState"][r * 2])
     if act == "Protect":
-        c.create_image(x, y, image=bub["Protect"][r * 2])
+        return c.create_image(x, y, image=bub["Protect"][r * 2])
     if act == "SlowMotion":
-        c.create_image(x, y, image=bub["SlowMotion"][r * 2])
+        return c.create_image(x, y, image=bub["SlowMotion"][r * 2])
     if act == "TimeBreak":
-        c.create_image(x, y, image=bub["TimeBreak"][r * 2])
+        return c.create_image(x, y, image=bub["TimeBreak"][r * 2])
     if act == "Confusion":
-        c.create_image(x, y, image=bub["Confusion"][r * 2])
+        return c.create_image(x, y, image=bub["Confusion"][r * 2])
     if act == "HyperMode":
-        c.create_image(x, y, image=bub["HyperMode"][r * 2])
+        return c.create_image(x, y, image=bub["HyperMode"][r * 2])
     if act == "ShotSpdStat":
-        c.create_image(x, y, image=bub["ShotSpdStat"][r * 2])
+        return c.create_image(x, y, image=bub["ShotSpdStat"][r * 2])
     if act == "Teleporter":
-        c.create_image(x, y, image=bub["Teleporter"][r * 2])
+        return c.create_image(x, y, image=bub["Teleporter"][r * 2])
     if act == "Coin":
-        c.create_image(x, y, image=bub["Coin"])
+        return c.create_image(x, y, image=bub["Coin"])
     if act == "NoTouch":
-        c.create_image(x, y, image=bub["NoTouch"][r * 2])
+        return c.create_image(x, y, image=bub["NoTouch"][r * 2])
     if act == "LevelKey":
-        c.create_image(x, y, image=bub["Key"][60])
+        return c.create_image(x, y, image=bub["Key"][60])
+    if act == "Paralis":
+        return c.create_image(x, y, image=bub["Paralis"][r * 2])
+    if act == "SpecialKey":
+        return c.create_image(x, y, image=bub["SpecialKey"][48])
+    if act == "Diamond":
+        return c.create_image(x, y, image=bub["Diamond"][36])
+    if act == "StoneBub":
+        return c.create_image(x, y, image=bub["StoneBub"][r * 2])
+    if act == "Present":
+        return c.create_image(x, y, image=bub["Present"][40])
 
 
 def create_bubble(stats, config, bub, c, bubble, modes, index, i=None, x=None, y=None, r=None, s=None):
@@ -384,7 +394,7 @@ class Collision:
             log.warning("move_ammo", "Can't move ammo index '" + str(index) + "'.")
 
     @staticmethod
-    def coll_func(index, canvas, commands, root, log, stats, bubscore, action, bubble, backgrounds, texts,
+    def coll_func(index, canvas, commands, root, log, stats, bubscore, action, bubble, backgrounds, texts, panels,
                   accept_negative):
         """
         Collision.
@@ -444,19 +454,17 @@ class Collision:
         if action == "SlowMotion":
             State.set_state(canvas, log, stats, action, backgrounds)
         if action == "TimeBreak":
-            # State.set_state(canvas, log, stats, action, backgrounds)\
-            pass
+            State.set_state(canvas, log, stats, action, backgrounds)
         if action == "Ultimate":
             if stats["lives"] < 7:
                 stats["lives"] += 1
             stats["shipspeed"] = 25
-            stats["score"] += bubscore * 10 * stats["scorestate"]
+            State.set_state(canvas, log, stats, action, backgrounds)
         if action == "HyperMode":
-            # stats["lives"] += 2
-            # stats["shipspeed"] = 25
-            # stats["score"] += bubscore * 30 * stats["scorestate"]
-            # State.set_state(canvas, log, stats, action, backgrounds)
-            pass
+            stats["lives"] += 2
+            stats["shipspeed"] = 25
+            stats["score"] += bubscore * 30 * stats["scorestate"]
+            State.set_state(canvas, log, stats, action, backgrounds)
         if action == "ShotSpdStat":
             stats["score"] += bubscore * stats["scorestate"]
             State.set_state(canvas, log, stats, action, backgrounds)
@@ -478,8 +486,10 @@ class Collision:
         play_sound("data/sounds/bubpop.mp3")
         if action == "SpecialKey":
             canvas.itemconfig(backgrounds["id"], image=backgrounds["special"])
+            canvas.itemconfig(panels["game/top"], fill="#3f3f3f")
+            canvas.itemconfig(panels["game/bottom"], fill="#3f3f3f")
             stats["special-level"] = True
-            stats["special-level-time"] = time() + 20
+            stats["special-level-time"] = time() + 30
             log.info("State", "(CollFunc) Special Level State is ON!!!")
             play_sound("data/sounds/specialmode.mp3")
         log.debug("CollFunc", "Bubble popped with id: "+str(index)+" | action: "+action)
@@ -521,7 +531,8 @@ class Collision:
         if x > config["width"] + config["bubble"]["screen-gap"]:
             del_shoot(canvas, index, ammo)
 
-    def check_collision(self, root, commands, bubble, config, stats, ammo, ship, canvas, log, backgrounds, texts):
+    def check_collision(self, root, commands, bubble, config, stats, ammo, ship, canvas, log, backgrounds, texts,
+                        panels):
         """
         Collision bubble by touching or shooting the bubble
         :rtype: object
@@ -529,7 +540,7 @@ class Collision:
         from extras import distance, replace_list
         from threading import Thread
         for index_bub in range(len(bubble["bub-id"].copy()) - 1, -1, -1):
-            print(distance(canvas, log, ship["id2"], bubble["bub-id"][index_bub][0]) - (config["game"]["ship-radius"] + bubble["bub-radius"][index_bub]))
+            # print(distance(canvas, log, ship["id2"], bubble["bub-id"][index_bub][0]) - (config["game"]["ship-radius"] + bubble["bub-radius"][index_bub]))
             self.bub = index_bub
             if distance(canvas, log, ship["id2"], bubble["bub-id"][index_bub][0]) < (
                     config["game"]["ship-radius"] + bubble["bub-radius"][index_bub]):
@@ -540,7 +551,7 @@ class Collision:
                                                             (bubble["bub-radius"][index_bub] +
                                                              bubble["bub-speed"][index_bub]),
                                                             bubble["bub-action"][index_bub], bubble, backgrounds,
-                                                            texts, True)).start()
+                                                            texts, panels, True)).start()
                         del_bubble(index_bub, bubble, canvas)
                     elif bubble["bub-hardness"][index_bub] > 1:
                         replace_list(bubble["bub-hardness"], index_bub, bubble["bub-hardness"][index_bub] - 1)
@@ -563,7 +574,7 @@ class Collision:
                                                                     (bubble["bub-radius"][index_bub] +
                                                                      bubble["bub-speed"][index_bub]),
                                                                     bubble["bub-action"][index_bub], bubble, backgrounds,
-                                                                    texts, False)).start()
+                                                                    texts, panels, False)).start()
                             except IndexError:
                                 pass
                             del_bubble(index_bub, bubble, canvas)
