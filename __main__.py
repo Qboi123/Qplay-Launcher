@@ -553,25 +553,26 @@ class Game(Canvas):
         self.add_input.bind("<Return>", self.add_event)
         self.root.update()
 
-        self.frame2.pack(side=TOP, fill=X)
+        self.frame2.pack(side=BOTTOM, fill=X)
 
         # print("Phase 7")
 
         self.main_f = Frame(self.root, background="#3c3c3c", height=self.root.winfo_height()-100)
-        self.main_f.pack(fill=BOTH)
+        self.main_f.pack(fill=BOTH, expand=True)
 
         # print("Phase 7a")
 
         self.s_frame = Frame(self.main_f, height=self.main_f.winfo_height()-100, width=700)
-        self.s_frame.pack()
+        self.s_frame.pack(fill=Y)
 
         # print("Phase 7b")
 
-        self.sw = ScrolledWindow(self.s_frame, 700, self.root.winfo_height()-100, heigh=400, width=400)
+        self.sw = ScrolledWindow(self.s_frame, 700, self.root.winfo_height()+0, expand=True, fill=BOTH)
 
         # print("Phase 7c")
 
         self.canv = self.sw.canv
+        self.canv.config(bg="#2e2e2e")
 
         # print("Phase 7d")
 
@@ -769,7 +770,7 @@ class Game(Canvas):
 
         # print("Phase 7b")
 
-        self.sw = ScrolledWindow(self.s_frame, 700, self.root.winfo_height()-100, heigh=400, width=400)
+        self.sw = ScrolledWindow(self.s_frame, 760, self.root.winfo_height()-100, heigh=400, width=400)
 
         # print("Phase 7c")
 
