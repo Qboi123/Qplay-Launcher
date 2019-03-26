@@ -25,4 +25,4 @@ Bubble Blaster by Qplay123
 
 ## Downloads:
 * www.python.org for Python.
-* https://github.com/Qplay123/Qplay-Bubbles-1.1/releases for the Game.
+* https://github.com/Qplay123/Qplay-Bubbles-1.1/releases for the Game. (Setup / Source)
