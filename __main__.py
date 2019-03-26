@@ -770,7 +770,7 @@ class Game(Canvas):
 
         # print("Phase 7b")
 
-        self.sw = ScrolledWindow(self.s_frame, 760, self.root.winfo_height()-100, heigh=400, width=400)
+        self.sw = ScrolledWindow(self.s_frame, 760, self.root.winfo_height()-100, height=len(dirs)*200, width=700)
 
         # print("Phase 7c")
 

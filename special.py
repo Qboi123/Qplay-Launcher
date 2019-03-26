@@ -34,8 +34,18 @@ class ScrolledWindow(tk.Frame):
 
         # creating a scrollbars
 
+        if width is None:
+            __width = 0
+        else:
+            __width = width
+
+        if height is None:
+            __height = 0
+        else:
+            __height = width
+
         self.canv = Canvas(self.parent, bg='#FFFFFF', width=canv_w, height=canv_h,
-                           scrollregion=(0, 0, canv_w, canv_h), highlightthickness=0)
+                           scrollregion=(0, 0, __width, __height), highlightthickness=0)
         # self.hbar = Scrollbar(self.parent, orient=HORIZONTAL)
         # self.hbar.pack(side=BOTTOM, fill=X)
         # self.hbar.config(command=self.canv.xview)
@@ -85,7 +95,7 @@ class ScrolledWindow(tk.Frame):
     def _configure_window(self, event):
         # update the scrollbars to match the size of the inner frame
         size = (self.scrollwindow.winfo_reqwidth(), self.scrollwindow.winfo_reqheight())
-        # self.canv.config(scrollregion='0 0 %s %s' % size)
+        self.canv.config(scrollregion='0 0 %s %s' % size)
         # if self.scrollwindow.winfo_reqwidth() != self.canv.winfo_width():
         #     # update the canvas's width to fit the inner frame
         #     # self.canv.config(width=self.scrollwindow.winfo_reqwidth())
