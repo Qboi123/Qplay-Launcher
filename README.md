@@ -26,3 +26,8 @@ Bubble Blaster by Qplay123
 ## Downloads:
 * www.python.org for Python.
 * https://github.com/Qplay123/Qplay-Bubbles-1.1/releases for the Game. (Setup / Source)
+
+## Information for next version (v1.3.0):
+* The home-menu will be updated in options
+* The slots-menu will be updated to go back and create a slot e.g.
+* Maybe more bubbles.
