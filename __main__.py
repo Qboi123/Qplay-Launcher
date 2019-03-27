@@ -429,13 +429,11 @@ class Game(Canvas):
 
         import config
         import os
-        from tkinter import ttk
+
         self.log = log
         self.returnmain = False
 
         log.info("Game.__init__", "Started Game.")
-
-        # print("Started Game")
 
         self.root = self.master
         self.time1 = start_time
@@ -467,8 +465,6 @@ class Game(Canvas):
         # Panels (top and bottom, the panels are for information)
         self.panels = dict()
 
-        # print("Phase 1")
-
         self.canvas = None
 
         self.icons = dict()
@@ -476,8 +472,6 @@ class Game(Canvas):
 
         self.back = dict()
         self.fore = dict()
-
-        # print("Phase 2")
 
         self.commands = {"store": False, "present": False, "special-mode": False}
 
@@ -494,14 +488,10 @@ class Game(Canvas):
         self.ammo = {"ammo-id": list(), "ammo-radius": 5, "ammo-speed": list(), "ammo-position": list(),
                      "ammo-damage": list(), "retime": start_time}
 
-        # print("Phase 3")
-
         if self.config["game"]["fullscreen"]:
             self.root.wm_attributes("-fullscreen", True)
 
         self.root.update()
-        res = self.config["game"]["resolution"]
-        l_res = res.split("x")
 
         self.config["width"] = self.root.winfo_width()  # int(l_res[0])
         self.config["height"] = self.root.winfo_height()  # int(l_res[1])
@@ -511,160 +501,181 @@ class Game(Canvas):
 
         self.Coll = Collision()
 
-        # self.game()
-
-        # print("Phase 4")
-
-        width = 16
-        height = 34
-
-        path = "saves/"
-        index = os.listdir(path)
-        dirs = []
-
-        for item in index:
-            file_path = path + item
-
-            if os.path.isdir(file_path):
-                dirs.append(item)
-
-        y = -1
-        x = 0
-        p = 0
-        i = 0
-
-        # print("Phase 5")
-
         if not already_opened:
             self.close = Button(self.root, text="X", fg="white", relief=FLAT, bg="#ff0000",
                                 command=lambda: self.root.destroy())
             self.close.pack(side=TOP, fill=X)
 
-        # self.frames = []
-        # self.item_info = [[[[]]]]
         self.items = list()
 
-        self.frame2 = Frame(bg="#5c5c5c")
 
-        self.add = Button(self.frame2, text="Add Save", relief=FLAT, bg="#7f7f7f", fg="white", command=self.add_save)
-        self.add.pack(side=RIGHT, padx=2, pady=5)
-        self.add_input = Entry(self.frame2, bd=5, fg="#3c3c3c", bg="#7f7f7f", relief=FLAT)
-        self.add_input.pack(side=LEFT, fill=X, expand=TRUE, padx=2, pady=5)
-        self.add_input.bind("<Return>", self.add_event)
+        class Background:
+            def __init__(self, root: Tk):
+                self._root = root
+                self._canvas = Canvas(root, bg="#00afaf", highlightthickness=0)
+                self._canvas.pack(fill=BOTH, expand=TRUE)
+
+                self.__bubbles = []
+                self.__speed = []
+
+            def create_bubble(self):
+                    r = randint(9, 60)
+                    x = self._root.winfo_width()+100
+                    y = randint(int(r), int(self._canvas.winfo_height() - r))
+
+                    spd = randint(7, 10)
+
+                    self.__bubbles.append(self._canvas.create_oval(x - r, y - r, x + r, y + r, outline="white"))
+                    self.__speed.append(spd)
+
+
+            def cleanup_bubs(self):
+                from bubble import get_coords
+                for index in range(len(self.__bubbles)-1, -1, -1):
+                    x, y, = get_coords(self._canvas, self.__bubbles[index])
+                    if x < -100:
+                        self._canvas.delete(self.__bubbles[index])
+                        del self.__bubbles[index]
+                        del self.__speed[index]
+
+            def move_bubbles(self):
+                for index in range(len(self.__bubbles) - 1, -1, -1):
+                    self._canvas.move(self.__bubbles[index], -self.__speed[index], 0)
+
+            def destroy(self):
+                self._canvas.destroy()
+
+        self.background = Background(self.root)
+
+        self.start_btn = Button(self.root, bg="#007f7f", fg="#7fffff", bd=4, command=lambda: self.load(), text="START",
+                                relief=FLAT, font=("helvetica", 20))
+        self.start_btn.place(x=self.config["width"]/2, y=self.config["height"]/2-40, width=310, anchor=CENTER)
+
+        self.quit_btn = Button(self.root, bg="#007f7f", fg="#7fffff", bd=4, command=lambda: self.root.destroy(), text="QUIT",
+                               relief=FLAT, font=("helvetica", 20))
+        self.quit_btn.place(x=self.config["width"]/2+80, y=self.config["height"]/2+40, width=150, anchor=CENTER)
+
+        self.options_btn = Button(self.root, bg="#007f7f", fg="#7fffff", bd=4, text="OPTIONS",
+                                  relief=FLAT, font=("helvetica", 20))
+        self.options_btn.place(x=self.config["width"]/2-80, y=self.config["height"]/2+40, width=150, anchor=CENTER)
+
         self.root.update()
 
-        self.frame2.pack(side=BOTTOM, fill=X)
+        while True:
+            try:
+                self.background.create_bubble()
+                self.background.move_bubbles()
+                self.background.cleanup_bubs()
+                self.root.update()
+                # self.background._canvas.update()
+            except TclError:
+                break
 
-        # print("Phase 7")
-
-        self.main_f = Frame(self.root, background="#3c3c3c", height=self.root.winfo_height()-100)
-        self.main_f.pack(fill=BOTH, expand=True)
-
-        # print("Phase 7a")
-
-        self.s_frame = Frame(self.main_f, height=self.main_f.winfo_height()-100, width=700)
-        self.s_frame.pack(fill=Y)
-
-        # print("Phase 7b")
-
-        self.sw = ScrolledWindow(self.s_frame, 700, self.root.winfo_height()+0, expand=True, fill=BOTH)
-
-        # print("Phase 7c")
-
-        self.canv = self.sw.canv
-        self.canv.config(bg="#2e2e2e")
-
-        # print("Phase 7d")
-
-        self.frame = self.sw.scrollwindow
-        self.frames = []
-
-        # print("Phase 7e")
-
-        self.canvass = []
-        self.buttons = []
-
-        # print("Phase 8")
-
-        import os
-        names = os.listdir("./saves/")
-
-        infos = {}
-        infos["dates"] = []
-        infos["score"] = []
-        infos["level"] = []
-
-        import time
-
-        for i in names:
-            # print(time.localtime(int(os.path.getmtime("./saves/" + i + "/bubble.json"))))
-            mtime = os.path.getmtime("./saves/" + i + "/bubble.json")
-            a = time.localtime(mtime)
-
-            b = list(a)
-
-            if a[4] < 10:
-                b[4] = "0"+str(a[4])
-            else:
-                b[4] = str(a[4])
-            if a[5] < 10:
-                b[5] = "0"+str(a[5])
-            else:
-                b[5] = str(a[5])
-
-            tme_var = "%i/%i/%i %i:%s:%s" % (a[2], a[1], a[0], a[3], b[4], b[5])
-            infos["dates"].append(tme_var)
-
-            a = Reader("./saves/" + i + "/game.json").get_decoded()
-            infos["score"].append(a["score"])
-            infos["level"].append(a["level"])
-
-        self.item_info = names
-
-        # print(names)
-
-        i = 0
-
-        # print("Phase 9")
-
-        for name in tuple(dirs):
-            # print("Round: " + str(i))
-            # print(names[i])
-            self.item_info.append(i)
-            self.frames.append(Frame(self.frame, height=200, width=700))
-            self.canvass.append(Canvas(self.frames[-1], height=200, width=700, bg="#7f7f7f", highlightthickness=0))
-            self.canvass[-1].pack()
-
-            self.canvass[-1].create_text(10, 10, text=name, fill="gold", anchor=NW,
-                                         font=("Helvetica", 26, "bold"))
-            self.canvass[-1].create_text(10, 50, text=infos["dates"][i], fill="#afafaf", anchor=NW,
-                                         font=("helvetica", 16))
-            self.canvass[-1].create_text(240, 50, text="Level: "+str(infos["level"][i]), fill="#afafaf", anchor=NW,
-                                         font=("helvetica", 16))
-            self.canvass[-1].create_text(370, 50, text="Score: "+str(infos["score"][i]), fill="#afafaf", anchor=NW,
-                                         font=("helvetica", 16))
-
-            self.canvass[-1].create_rectangle(0, 0, 699, 201, outline="#3c3c3c")
-
-            self.buttons.append(Button(self.frames[-1], relief=FLAT, text="open", bg="#afafaf", width=7))
-            self.buttons.copy()[-1].place(x=675, y=175, anchor=SE)
-            self.buttons.copy()[-1].bind("<ButtonRelease-1>", self.open)
-
-            self.buttons.append(Button(self.frames[-1], relief=FLAT, text="rename", bg="#afafaf", width=7))
-            self.buttons.copy()[-1].place(x=600, y=175, anchor=SE)
-            self.buttons.copy()[-1].bind("<ButtonRelease-1>", self.rename)
-
-            self.buttons.append(Button(self.frames[-1], relief=FLAT, text="remove", bg="#afafaf", width=7))
-            self.buttons.copy()[-1].place(x=525, y=175, anchor=SE)
-            self.buttons.copy()[-1].bind("<ButtonRelease-1>", self.remove)
-
-            self.frames[-1].grid(row=i)
-
-            i += 1
-
-        # self.tabs.add(self.frames.copy()[-1], text=' {} '.format(p))
-        # self.tabs.enable_traversal()
-        # self.tabs.pack(side=TOP, expand=TRUE, fill=BOTH)
+        # path = "saves/"
+        # index = os.listdir(path)
+        # dirs = []
+        #
+        # for item in index:
+        #     file_path = path + item
+        #
+        #     if os.path.isdir(file_path):
+        #         dirs.append(item)
+        # self.frame2 = Frame(bg="#5c5c5c")
+        #
+        # self.add = Button(self.frame2, text="Add Save", relief=FLAT, bg="#7f7f7f", fg="white", command=self.add_save)
+        # self.add.pack(side=RIGHT, padx=2, pady=5)
+        # self.add_input = Entry(self.frame2, bd=5, fg="#3c3c3c", bg="#7f7f7f", relief=FLAT)
+        # self.add_input.pack(side=LEFT, fill=X, expand=TRUE, padx=2, pady=5)
+        # self.add_input.bind("<Return>", self.add_event)
+        # self.root.update()
+        #
+        # self.frame2.pack(side=BOTTOM, fill=X)
+        #
+        # self.main_f = Frame(self.root, background="#3c3c3c", height=self.root.winfo_height()-100)
+        # self.main_f.pack(fill=BOTH, expand=True)
+        #
+        # self.s_frame = Frame(self.main_f, height=self.main_f.winfo_height()-100, width=700)
+        # self.s_frame.pack(fill=Y)
+        #
+        # self.sw = ScrolledWindow(self.s_frame, 700, self.root.winfo_height()+0, expand=True, fill=BOTH)
+        #
+        # self.canv = self.sw.canv
+        # self.canv.config(bg="#2e2e2e")
+        #
+        # self.frame = self.sw.scrollwindow
+        # self.frames = []
+        #
+        # self.canvass = []
+        # self.buttons = []
+        #
+        # import os
+        # names = os.listdir("./saves/")
+        #
+        # infos = {}
+        # infos["dates"] = []
+        # infos["score"] = []
+        # infos["level"] = []
+        #
+        # import time
+        #
+        # for i in names:
+        #     mtime = os.path.getmtime("./saves/" + i + "/bubble.json")
+        #     a = time.localtime(mtime)
+        #
+        #     b = list(a)
+        #
+        #     if a[4] < 10:
+        #         b[4] = "0"+str(a[4])
+        #     else:
+        #         b[4] = str(a[4])
+        #     if a[5] < 10:
+        #         b[5] = "0"+str(a[5])
+        #     else:
+        #         b[5] = str(a[5])
+        #
+        #     tme_var = "%i/%i/%i %i:%s:%s" % (a[2], a[1], a[0], a[3], b[4], b[5])
+        #     infos["dates"].append(tme_var)
+        #
+        #     a = Reader("./saves/" + i + "/game.json").get_decoded()
+        #     infos["score"].append(a["score"])
+        #     infos["level"].append(a["level"])
+        #
+        # self.item_info = names
+        #
+        # i = 0
+        #
+        # for name in tuple(dirs):
+        #     self.item_info.append(i)
+        #     self.frames.append(Frame(self.frame, height=200, width=700))
+        #     self.canvass.append(Canvas(self.frames[-1], height=200, width=700, bg="#7f7f7f", highlightthickness=0))
+        #     self.canvass[-1].pack()
+        #
+        #     self.canvass[-1].create_text(10, 10, text=name, fill="gold", anchor=NW,
+        #                                  font=("Helvetica", 26, "bold"))
+        #     self.canvass[-1].create_text(10, 50, text=infos["dates"][i], fill="#afafaf", anchor=NW,
+        #                                  font=("helvetica", 16))
+        #     self.canvass[-1].create_text(240, 50, text="Level: "+str(infos["level"][i]), fill="#afafaf", anchor=NW,
+        #                                  font=("helvetica", 16))
+        #     self.canvass[-1].create_text(370, 50, text="Score: "+str(infos["score"][i]), fill="#afafaf", anchor=NW,
+        #                                  font=("helvetica", 16))
+        #
+        #     self.canvass[-1].create_rectangle(0, 0, 699, 201, outline="#3c3c3c")
+        #
+        #     self.buttons.append(Button(self.frames[-1], relief=FLAT, text="open", bg="#afafaf", width=7))
+        #     self.buttons.copy()[-1].place(x=675, y=175, anchor=SE)
+        #     self.buttons.copy()[-1].bind("<ButtonRelease-1>", self.open)
+        #
+        #     self.buttons.append(Button(self.frames[-1], relief=FLAT, text="rename", bg="#afafaf", width=7))
+        #     self.buttons.copy()[-1].place(x=600, y=175, anchor=SE)
+        #     self.buttons.copy()[-1].bind("<ButtonRelease-1>", self.rename)
+        #
+        #     self.buttons.append(Button(self.frames[-1], relief=FLAT, text="remove", bg="#afafaf", width=7))
+        #     self.buttons.copy()[-1].place(x=525, y=175, anchor=SE)
+        #     self.buttons.copy()[-1].bind("<ButtonRelease-1>", self.remove)
+        #
+        #     self.frames[-1].grid(row=i)
+        #
+        #     i += 1
 
         self.root.mainloop()
 
@@ -684,15 +695,16 @@ class Game(Canvas):
 
     def load(self):
         import os
-        from tkinter import ttk
         log.info("Game.load", "Loading...")
-        # self.tabs = ttk.Notebook(self.root)
-        width = 16
-        height = 34
+
+        self.background.destroy()
+
+        self.start_btn.destroy()
+        self.quit_btn.destroy()
+        self.options_btn.destroy()
 
         path = "saves/"
         index = os.listdir(path)
-        log.debug("Game.load", "Index of '" + path + "' is " + str(index))
         dirs = []
 
         for item in index:
@@ -700,93 +712,33 @@ class Game(Canvas):
 
             if os.path.isdir(file_path):
                 dirs.append(item)
-
-        y = -1
-        x = 0
-        p = 0
-        i = 0
-        # self.frames = []
-        # self.item_info = [[[[]]]]
-        self.items = list()
-        # self.frames.append(Frame(self.tabs, bd=1, bg="#3c3c3c"))
-        # items2 = []
-        #
-        # while i < len(dirs):
-        #     y += 1
-        #     self.item_info[p][0][x].append(dirs[i])
-        #     if y >= height:
-        #         y = 0
-        #         self.item_info[p][0].append([])
-        #         self.item_info[p][0].append([])
-        #         self.item_info[p][0].append([])
-        #         self.item_info[p][0].append([])
-        #         x += 4
-        #     if x > width:
-        #         self.tabs.add(self.frames.copy()[-1], text=' {} '.format(p))
-        #         self.frames.append(Frame(self.tabs, bd=1, bg="#3c3c3c"))
-        #         y = 0
-        #         x = 0
-        #         self.item_info.append([[[]]])
-        #         p += 1
-        #     items2.append(dirs[i])
-        #
-        #     self.items.append(Button(self.frames[-1], width=30, relief=FLAT, text=dirs[i], bg="#707070"))
-        #     self.items.copy()[-1].grid(column=x, row=y, padx=2, pady=2)
-        #     self.items.copy()[-1].bind("<ButtonRelease-1>", self.open)
-        #
-        #     self.items.append(Button(self.frames[-1], relief=FLAT, text="rename", bg="#707070"))
-        #     self.items.copy()[-1].grid(column=x + 1, row=y, padx=2, pady=2)
-        #     self.items.copy()[-1].bind("<ButtonRelease-1>", self.rename)
-        #
-        #     self.items.append(Button(self.frames[-1], relief=FLAT, text="remove", bg="#707070"))
-        #     self.items.copy()[-1].grid(column=x + 2, row=y, padx=2, pady=2)
-        #     self.items.copy()[-1].bind("<ButtonRelease-1>", self.remove)
-        #
-        #     self.items.append(Button(self.frames[-1], relief=FLAT, text="", width=5, bg="#3c3c3c"))
-        #     self.items.copy()[-1].grid(column=x + 3, row=y, padx=2, pady=2)
-        #
-        #     self.max_pages = p
-        #     i += 1
-
         self.frame2 = Frame(bg="#5c5c5c")
 
         self.add = Button(self.frame2, text="Add Save", relief=FLAT, bg="#7f7f7f", fg="white", command=self.add_save)
         self.add.pack(side=RIGHT, padx=2, pady=5)
         self.add_input = Entry(self.frame2, bd=5, fg="#3c3c3c", bg="#7f7f7f", relief=FLAT)
         self.add_input.pack(side=LEFT, fill=X, expand=TRUE, padx=2, pady=5)
+        self.add_input.bind("<Return>", self.add_event)
         self.root.update()
 
-        self.frame2.pack(side=TOP, fill=X)
-
-        # print("Phase 7")
+        self.frame2.pack(side=BOTTOM, fill=X)
 
         self.main_f = Frame(self.root, background="#3c3c3c", height=self.root.winfo_height()-100)
-        self.main_f.pack(fill=BOTH)
-
-        # print("Phase 7a")
+        self.main_f.pack(fill=BOTH, expand=True)
 
         self.s_frame = Frame(self.main_f, height=self.main_f.winfo_height()-100, width=700)
-        self.s_frame.pack()
+        self.s_frame.pack(fill=Y)
 
-        # print("Phase 7b")
-
-        self.sw = ScrolledWindow(self.s_frame, 760, self.root.winfo_height()-100, height=len(dirs)*200, width=700)
-
-        # print("Phase 7c")
+        self.sw = ScrolledWindow(self.s_frame, 700, self.root.winfo_height()+0, expand=True, fill=BOTH)
 
         self.canv = self.sw.canv
-
-        # print("Phase 7d")
+        self.canv.config(bg="#2e2e2e")
 
         self.frame = self.sw.scrollwindow
         self.frames = []
 
-        # print("Phase 7e")
-
         self.canvass = []
         self.buttons = []
-
-        # print("Phase 8")
 
         import os
         names = os.listdir("./saves/")
@@ -799,7 +751,6 @@ class Game(Canvas):
         import time
 
         for i in names:
-            # print(time.localtime(int(os.path.getmtime("./saves/" + i + "/bubble.json"))))
             mtime = os.path.getmtime("./saves/" + i + "/bubble.json")
             a = time.localtime(mtime)
 
@@ -823,15 +774,9 @@ class Game(Canvas):
 
         self.item_info = names
 
-        # print(names)
-
         i = 0
 
-        # print("Phase 9")
-
         for name in tuple(dirs):
-            # print("Round: " + str(i))
-            # print(names[i])
             self.item_info.append(i)
             self.frames.append(Frame(self.frame, height=200, width=700))
             self.canvass.append(Canvas(self.frames[-1], height=200, width=700, bg="#7f7f7f", highlightthickness=0))
@@ -863,10 +808,6 @@ class Game(Canvas):
             self.frames[-1].grid(row=i)
 
             i += 1
-
-        # self.tabs.add(self.frames.copy()[-1], text=' {} '.format(p))
-        # self.tabs.enable_traversal()
-        # self.tabs.pack(side=TOP, expand=TRUE, fill=BOTH)
 
         self.root.mainloop()
 

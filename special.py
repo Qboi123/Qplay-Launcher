@@ -94,7 +94,7 @@ class ScrolledWindow(tk.Frame):
 
     def _configure_window(self, event):
         # update the scrollbars to match the size of the inner frame
-        size = (self.scrollwindow.winfo_reqwidth(), self.scrollwindow.winfo_reqheight())
+        size = (self.scrollwindow.winfo_reqwidth(), self.scrollwindow.winfo_reqheight()+1)
         self.canv.config(scrollregion='0 0 %s %s' % size)
         # if self.scrollwindow.winfo_reqwidth() != self.canv.winfo_width():
         #     # update the canvas's width to fit the inner frame
