@@ -781,7 +781,7 @@ class Game(Canvas):
         self.__init__(time(), True)
 
     def main(self):
-        from threading import Thread
+        from threading import Thread, ThreadError
         from bubble import place_bubble
 
         self.canvas.update()
@@ -1132,13 +1132,6 @@ class Game(Canvas):
                     del g1, g2, g3
                     Maintance().reset(self.save_name)
                     self.return_main()
-                    # clean_all(self.bubbles, self.canvas)
-                    # if len(self.bubbles["bub-id"]) != 0:
-                    #     log.fatal("Game.main", "Na schoonmaken van speelvlak zijn er nog steeds bubbels overgebleven. " +
-                    #               "Vraag de eigenaar voor hulp en ondersteuning.")
-                    #     sys.exit(1)
-                    #
-                    # self.cfg.reset(self.save_name)
         except TclError as e:
             if self.returnmain:
                 pass
@@ -1166,6 +1159,8 @@ class Game(Canvas):
                     exit(0)
                 else:
                     raise AttributeError(e.args[0])
+        except ThreadError:
+            pass
 
 
 if __name__ == "__main__":
