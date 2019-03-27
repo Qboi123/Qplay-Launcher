@@ -13,6 +13,7 @@
     "resolution": "1920x1080",
     "ship-radius": 15,
     "ship-speed": 10,
-    "fullscreen": true
+    "fullscreen": true,
+    "language": "nl"
   }
 }

@@ -25,7 +25,7 @@ log.info("<Root>", "Starting Game")
 
 
 def control(root, canvas, icon, config, event, stats, temp, modes, ship, commands, ammo, tp,
-            texts, foregrounds, backgrounds, bubble, panels, return_main, bub):
+            texts, foregrounds, backgrounds, bubble, panels, return_main, bub, lang):
     """
     Ship-motion event
     :param panels:
@@ -261,6 +261,12 @@ def control(root, canvas, icon, config, event, stats, temp, modes, ship, command
              "Dubbel-bubbel", "Schild", "Slow motion", "Bubbels stil", "Verwarring", "Hyper-mode", "Teleporter", "Munt",
              "Geest-modus", "Verstijving", "Diamant", "Steen-bubbel", "Cadeau", "Speciale-modus", "Sleutel")
 
+        c = ("bubble.normal", "bubble.double", "bubble.kill", "bubble.triple", "bubble.speedup", "bubble.speeddown",
+             "bubble.up", "bubble.ultimate", "bubble.state.double", "bubble.state.protect", "bubble.state.slowmotion",
+             "bubble.state.timebreak", "bubble.state.confusion", "bubble.state.hypermode", "bubble.state.teleporter",
+             "bubble.coin", "bubble.statenotouch", "bubble.state.paralis", "bubble.diamond", "bubble.state.stonebub",
+             "bubble.state.specialkey", "bubble.levelkey")
+
         canvass = Canvas(temp["frame"], bg=back, highlightthickness=0)
         x = 50
         y = 50
@@ -268,7 +274,7 @@ def control(root, canvas, icon, config, event, stats, temp, modes, ship, command
         for i in range(len(a)):
             # print(a[i], b[i])
             place_bubble(canvass, bub, x, y, 25, a[i])
-            canvass.create_text(x, y + 40, text=b[i], fill=fore)
+            canvass.create_text(x, y + 40, text=lang[c[i]], fill=fore)
             if x > 900:
                 x = 50
                 y += 100
@@ -429,6 +435,7 @@ class Game(Canvas):
 
         import config
         import os
+        import yaml
 
         self.log = log
         self.returnmain = False
@@ -473,12 +480,16 @@ class Game(Canvas):
         self.back = dict()
         self.fore = dict()
 
+        self.config = config.Reader("config/startup.json").get_decoded()
+
+        fd = os.open("lang/"+self.config["game"]["language"]+".yaml", os.O_RDONLY | os.O_CREAT)
+        self.lang = yaml.safe_load(os.read(fd, 4096).decode())
+        os.close(fd)
+
         self.commands = {"store": False, "present": False, "special-mode": False}
 
         self.ship = dict()
         self.tp = dict()
-
-        self.config = config.Reader("config/startup.json").get_decoded()
         self.bub = dict()
         self.bub["normal"] = dict()
         self.bubbles = {"bub-id": list(), "bub-special": list(), "bub-action": list(), "bub-radius": list(),
@@ -547,15 +558,18 @@ class Game(Canvas):
 
         self.background = Background(self.root)
 
-        self.start_btn = Button(self.root, bg="#007f7f", fg="#7fffff", bd=4, command=lambda: self.load(), text="START",
+        self.start_btn = Button(self.root, bg="#007f7f", fg="#7fffff", bd=4, command=lambda: self.load(),
+                                text=self.lang["home.start"],
                                 relief=FLAT, font=("helvetica", 20))
         self.start_btn.place(x=self.config["width"]/2, y=self.config["height"]/2-40, width=310, anchor=CENTER)
 
-        self.quit_btn = Button(self.root, bg="#007f7f", fg="#7fffff", bd=4, command=lambda: self.root.destroy(), text="QUIT",
+        self.quit_btn = Button(self.root, bg="#007f7f", fg="#7fffff", bd=4, command=lambda: self.root.destroy(),
+                               text=self.lang["home.quit"],
                                relief=FLAT, font=("helvetica", 20))
         self.quit_btn.place(x=self.config["width"]/2+80, y=self.config["height"]/2+40, width=150, anchor=CENTER)
 
-        self.options_btn = Button(self.root, bg="#007f7f", fg="#7fffff", bd=4, text="OPTIONS",
+        self.options_btn = Button(self.root, bg="#007f7f", fg="#7fffff", bd=4,
+                                  text=self.lang["home.options"],
                                   relief=FLAT, font=("helvetica", 20))
         self.options_btn.place(x=self.config["width"]/2-80, y=self.config["height"]/2+40, width=150, anchor=CENTER)
 
@@ -911,21 +925,20 @@ class Game(Canvas):
                                 fill="White")
         log.info("Game.main", "Lines 2")
 
-        # Game-information
-        c.create_text(55, 30, text='Score', fill='orange')
-        c.create_text(110, 30, text='Level', fill='orange')
-        c.create_text(165, 30, text='Speed', fill='orange')
-        c.create_text(220, 30, text='Lives', fill='orange')
-        c.create_text(330, 30, text="Stat Score", fill="gold")
-        c.create_text(400, 30, text="Protection", fill="gold")
-        c.create_text(490, 30, text="Slowmotion", fill="gold")
-        c.create_text(580, 30, text="Confusion", fill="gold")
-        c.create_text(670, 30, text="Time Break", fill="gold")
-        c.create_text(760, 30, text="Spd. Boost", fill="gold")
-        c.create_text(850, 30, text="Paralizing", fill="gold")
-        c.create_text(940, 30, text="Shot spd. time", fill="gold")
-        c.create_text(1030, 30, text="No-touch time", fill="gold")
-        c.create_text(1120, 30, text='Teleports', fill='gold')
+        c.create_text(55, 30, text=self.lang["info.score"], fill='orange')
+        c.create_text(110, 30, text=self.lang["info.level"], fill='orange')
+        c.create_text(165, 30, text=self.lang["info.speed"], fill='orange')
+        c.create_text(220, 30, text=self.lang["info.lives"], fill='orange')
+        c.create_text(330, 30, text=self.lang["info.state.score"], fill="gold")
+        c.create_text(400, 30, text=self.lang["info.state.protect"], fill="gold")
+        c.create_text(490, 30, text=self.lang["info.state.slowmotion"], fill="gold")
+        c.create_text(580, 30, text=self.lang["info.state.confusion"], fill="gold")
+        c.create_text(670, 30, text=self.lang["info.state.timebreak"], fill="gold")
+        c.create_text(760, 30, text=self.lang["info.state.spdboost"], fill="gold")
+        c.create_text(850, 30, text=self.lang["info.state.paralis"], fill="gold")
+        c.create_text(940, 30, text=self.lang["info.state.shotspeed"], fill="gold")
+        c.create_text(1030, 30, text=self.lang["info.state.notouch"], fill="gold")
+        c.create_text(1120, 30, text=self.lang["info.tps"], fill='gold')
         c.create_image(1185, 30, image=self.icons["store-diamond"])
         c.create_image(1185, 50, image=self.icons["store-coin"])
 
@@ -947,28 +960,26 @@ class Game(Canvas):
         self.texts["coin"] = c.create_text(1210, 50, fill='cyan')
         self.texts["level-view"] = c.create_text(mid_x, mid_y, fill='Orange', font=("Helvetica", 50))
 
-        # Pause text ans icon.
         self.texts["pause"] = c.create_text(mid_x, mid_y, fill='Orange', font=("Helvetica", 60, "bold"))
         self.icons["pause"] = c.create_image(mid_x, mid_y, image=self.icons["pause-id"], state=HIDDEN)
 
-        # Bubble-information / -help and place bubbles with no motion.
-        c.create_text(50, self.config["height"] - 30, text='1x Score', fill='yellow')
-        c.create_text(130, self.config["height"] - 30, text='2x Score', fill='yellow')
-        c.create_text(210, self.config["height"] - 30, text='3x Score', fill='yellow')
-        c.create_text(290, self.config["height"] - 30, text='-1 leven', fill='yellow')
-        c.create_text(370, self.config["height"] - 30, text='Slow Motion', fill='yellow')
-        c.create_text(450, self.config["height"] - 30, text='Verwarring', fill='yellow')
-        c.create_text(530, self.config["height"] - 30, text='NoBubMove', fill='yellow')
-        c.create_text(610, self.config["height"] - 30, text='Protectie', fill='yellow')
-        c.create_text(690, self.config["height"] - 30, text='2x Pnt Status', fill='yellow')
-        c.create_text(770, self.config["height"] - 30, text='Speed-up', fill='yellow')
-        c.create_text(850, self.config["height"] - 30, text='Speed-down', fill='yellow')
-        c.create_text(930, self.config["height"] - 30, text='Ultime Bubbel', fill='yellow')
-        c.create_text(1010, self.config["height"] - 30, text='Hyper Mode', fill='yellow')
-        c.create_text(1090, self.config["height"] - 30, text='Ammo speedup', fill='yellow')
-        c.create_text(1170, self.config["height"] - 30, text='Teleporter', fill='yellow')
-        c.create_text(1250, self.config["height"] - 30, text='No-touch', fill='yellow')
-        c.create_text(1410, self.config["height"] - 30, text='Level Sleutel', fill='yellow')
+        c.create_text(50, self.config["height"] - 30, text=self.lang["bubble.normal"], fill='cyan')
+        c.create_text(130, self.config["height"] - 30, text=self.lang["bubble.double"], fill='cyan')
+        c.create_text(210, self.config["height"] - 30, text=self.lang["bubble.triple"], fill='cyan')
+        c.create_text(290, self.config["height"] - 30, text=self.lang["bubble.kill"], fill='cyan')
+        c.create_text(370, self.config["height"] - 30, text=self.lang["bubble.state.slowmotion"], fill='cyan')
+        c.create_text(450, self.config["height"] - 30, text=self.lang["bubble.state.confusion"], fill='cyan')
+        c.create_text(530, self.config["height"] - 30, text=self.lang["bubble.state.timebreak"], fill='cyan')
+        c.create_text(610, self.config["height"] - 30, text=self.lang["bubble.state.protect"], fill='cyan')
+        c.create_text(690, self.config["height"] - 30, text=self.lang["bubble.state.double"], fill='cyan')
+        c.create_text(770, self.config["height"] - 30, text=self.lang["bubble.speedup"], fill='cyan')
+        c.create_text(850, self.config["height"] - 30, text=self.lang["bubble.speeddown"], fill='cyan')
+        c.create_text(930, self.config["height"] - 30, text=self.lang["bubble.state.ultimate"], fill='cyan')
+        c.create_text(1010, self.config["height"] - 30, text=self.lang["bubble.state.hypermode"], fill='cyan')
+        c.create_text(1090, self.config["height"] - 30, text=self.lang["bubble.state.shotspdstate"], fill='cyan')
+        c.create_text(1170, self.config["height"] - 30, text=self.lang["bubble.teleporter"], fill='cyan')
+        c.create_text(1250, self.config["height"] - 30, text=self.lang["bubble.state.notouch"], fill='cyan')
+        c.create_text(1410, self.config["height"] - 30, text=self.lang["bubble.levelkey"], fill='cyan')
 
         place_bubble(self.canvas, self.bub, 50, self.config["height"] - 75, 25, "Normal")
         place_bubble(self.canvas, self.bub, 130, self.config["height"] - 75, 25, "Double")
@@ -991,7 +1002,8 @@ class Game(Canvas):
         # Binding key-events for control
         c.bind_all('<Key>', lambda event: control(self.root, self.canvas, self.icons, self.config, event, self.stats,
                                                   self.temp, self.modes, self.ship, self.commands, self.ammo, self.tp,
-                                                  self.texts, self.fore, self.back, self.bubbles, self.panels, lambda: self.return_main(), self.bub))
+                                                  self.texts, self.fore, self.back, self.bubbles, self.panels,
+                                                  lambda: self.return_main(), self.bub, self.lang))
         # Thread(None, lambda: c.bind("<Motion>", MotionEventHandler)).start()
         # Thread(None, lambda: c.bind("<ButtonPress-1>", Button1PressEventHandler)).start()
         # Thread(None, lambda: c.bind("<ButtonRelease-1>", Button1ReleaseEventHandler)).start()
