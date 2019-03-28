@@ -7,6 +7,20 @@ home.start: "DÉBUT"
 home.quit: "QUITTER"
 home.options: "OPTIONS"
 
+# Pause Menu
+pause.back-to-home: "Sauvegarder et revenir au menu principal"
+
+# Slots Menu
+slots.open: "Open"
+slots.rename: "Rename"
+slots.remove: "Delete"
+slots.add: "New"
+
+# Options
+options.language: "Language"
+options.name: "Franch"
+options.save: "Save"
+
 # Items
 item.unlck_lvl: "Débloquer le niveau"
 item.teleport: "Téléporteur"

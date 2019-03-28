@@ -213,7 +213,7 @@ def control(root, canvas, icon, config, event, stats, temp, modes, ship, command
                                                       window=temp['pause/menu_frame'], anchor='n',
                                                       height=20, width=300)
 
-            temp["pause/back-to-menu"] = Button(temp["pause/menu_frame"], text="Back to home.", command=return_main,
+            temp["pause/back-to-menu"] = Button(temp["pause/menu_frame"], text=lang["pause.back-to-home"], command=return_main,
                                                 relief=FLAT, bg="#1f1f1f", fg="#afafaf")
             back = "#1f1f1f"
             fore = "yellow"
@@ -235,7 +235,7 @@ def control(root, canvas, icon, config, event, stats, temp, modes, ship, command
                                                       window=temp['pause/menu_frame'], anchor='n',
                                                       height=500, width=300)
 
-            temp["pause/back-to-menu"] = Button(temp["pause/menu_frame"], text="Back to home.", command=return_main,
+            temp["pause/back-to-menu"] = Button(temp["pause/menu_frame"], text=lang["pause.back-to-home"], command=return_main,
                                                 relief=FLAT, bg="#005f5f", fg="#7fffff")
 
             back = "#005f5f"
@@ -260,10 +260,10 @@ def control(root, canvas, icon, config, event, stats, temp, modes, ship, command
              "Geest-modus", "Verstijving", "Diamant", "Steen-bubbel", "Cadeau", "Speciale-modus", "Sleutel")
 
         c = ("bubble.normal", "bubble.double", "bubble.kill", "bubble.triple", "bubble.speedup", "bubble.speeddown",
-             "bubble.up", "bubble.ultimate", "bubble.state.double", "bubble.state.protect", "bubble.state.slowmotion",
-             "bubble.state.timebreak", "bubble.state.confusion", "bubble.state.hypermode", "bubble.state.teleporter",
-             "bubble.coin", "bubble.statenotouch", "bubble.state.paralis", "bubble.diamond", "bubble.state.stonebub",
-             "bubble.state.specialkey", "bubble.levelkey")
+             "bubble.up", "bubble.state.ultimate", "bubble.state.double", "bubble.state.protect", "bubble.state.slowmotion",
+             "bubble.state.timebreak", "bubble.state.confusion", "bubble.state.hypermode", "bubble.teleporter",
+             "bubble.coin", "bubble.state.notouch", "bubble.state.paralis", "bubble.diamond", "bubble.stonebubble",
+             "bubble.present", "bubble.state.specialkey", "bubble.levelkey")
 
         canvass = Canvas(temp["frame"], bg=back, highlightthickness=0)
         x = 50
@@ -604,7 +604,7 @@ class Game(Canvas):
 
         self.options_btn = Button(self.root, bg="#007f7f", fg="#7fffff", bd=4,
                                   text=self.lang["home.options"],
-                                  relief=FLAT, font=("helvetica", 20))
+                                  relief=FLAT, font=("helvetica", 20), command=lambda: self.options())
         self.options_btn.place(x=self.config["width"]/2-80, y=self.config["height"]/2+40, width=150, anchor=CENTER)
 
         # Refresh game.
@@ -647,6 +647,61 @@ class Game(Canvas):
         os.close(fd)
         os.close(fd2)
 
+    def options(self):
+        self.background.destroy()
+        self.start_btn.destroy()
+        self.quit_btn.destroy()
+        self.options_btn.destroy()
+
+        self.frame5 = Frame(self.root, bg="#5c5c5c")
+        self.frame5.pack(fill=BOTH, expand=TRUE)
+
+        self.frame3 = Frame(self.frame5, height=700, width=1000, bg="#5c5c5c")
+        self.frame3.pack()
+
+        self.frame4 = Frame(self.frame5, height=20, bg="#5c5c5c")
+        self.frame4.pack(side=BOTTOM, fill=X)
+
+        self.lang_lbl = Label(self.frame3, text=self.lang["options.language"], bg="#5c5c5c")
+        self.lang_lbl.grid(row=0, column=0)
+
+        self.lang_selected = StringVar(self.root)
+
+        self.lang_btn = Menubutton(self.frame3, textvariable=self.lang_selected.set, bg="#3c3c3c", fg="#9c9c9c")
+        self.lang_btn.grid(row=0, column=1)
+
+        self.save = Button(self.frame4, text=self.lang["options.save"], width=7, command=self.options_save, bg="#3c3c3c", fg="#9c9c9c")
+        self.save.pack(side=RIGHT)
+
+        import os, yaml
+        a = os.listdir("lang/")
+        b = []
+        c = []
+        self.lang_btn.menu = Menu(self.lang_btn, tearoff=0)
+        self.lang_btn["menu"] = self.lang_btn.menu
+
+        for i in a:
+            file = open("lang/"+i, "r")
+            b.append(yaml.unsafe_load(file)["options.name"])
+            c.append(i)
+            file.close()
+
+        d = 0
+        for i in range(len(b)):
+            self.lang_btn.menu.add_checkbutton(label=b[i], command=lambda: self.lang_selected.set(c[i]))
+            d += 1
+
+    def options_save(self):
+        import yaml
+        file = open("lang/"+self.lang_selected.get(), "r")
+        self.lang = yaml.safe_load(file)
+        file.close()
+
+        self.options_close()
+
+    def options_close(self):
+        self.frame5.destroy()
+
     def load(self):
         """
         Loading slots-menu.
@@ -656,10 +711,6 @@ class Game(Canvas):
         log.info("Game.load", "Loading...")
 
         # Removes title-menu items.
-        self.background.destroy()
-        self.start_btn.destroy()
-        self.quit_btn.destroy()
-        self.options_btn.destroy()
 
         # Getting list of saves.
         path = "saves/"
@@ -675,7 +726,7 @@ class Game(Canvas):
         self.frame2 = Frame(bg="#5c5c5c")
 
         # Add-button and -entry (Input)
-        self.add = Button(self.frame2, text="Add Save", relief=FLAT, bg="#7f7f7f", fg="white", command=self.add_save)
+        self.add = Button(self.frame2, text=self.lang["slots.add"], relief=FLAT, bg="#7f7f7f", fg="white", command=self.add_save)
         self.add.pack(side=RIGHT, padx=2, pady=5)
         self.add_input = Entry(self.frame2, bd=5, fg="#3c3c3c", bg="#7f7f7f", relief=FLAT)
         self.add_input.pack(side=LEFT, fill=X, expand=TRUE, padx=2, pady=5)
@@ -764,15 +815,15 @@ class Game(Canvas):
 
             self.canvass[-1].create_rectangle(0, 0, 699, 201, outline="#3c3c3c")
 
-            self.buttons.append(Button(self.frames[-1], relief=FLAT, text="open", bg="#afafaf", width=7))
+            self.buttons.append(Button(self.frames[-1], relief=FLAT, text=self.lang["slots.open"], bg="#afafaf", width=7))
             self.buttons.copy()[-1].place(x=675, y=175, anchor=SE)
             self.buttons.copy()[-1].bind("<ButtonRelease-1>", self.open)
 
-            self.buttons.append(Button(self.frames[-1], relief=FLAT, text="rename", bg="#afafaf", width=7))
+            self.buttons.append(Button(self.frames[-1], relief=FLAT, text=self.lang["slots.rename"], bg="#afafaf", width=7))
             self.buttons.copy()[-1].place(x=600, y=175, anchor=SE)
             self.buttons.copy()[-1].bind("<ButtonRelease-1>", self.rename)
 
-            self.buttons.append(Button(self.frames[-1], relief=FLAT, text="remove", bg="#afafaf", width=7))
+            self.buttons.append(Button(self.frames[-1], relief=FLAT, text=self.lang["slots.remove"], bg="#afafaf", width=7))
             self.buttons.copy()[-1].place(x=525, y=175, anchor=SE)
             self.buttons.copy()[-1].bind("<ButtonRelease-1>", self.remove)
 
@@ -1080,42 +1131,6 @@ class Game(Canvas):
 
         self.texts["pause"] = c.create_text(mid_x, mid_y, fill='Orange', font=("Helvetica", 60, "bold"))
         self.icons["pause"] = c.create_image(mid_x, mid_y, image=self.icons["pause-id"], state=HIDDEN)
-
-        c.create_text(50, self.config["height"] - 30, text=self.lang["bubble.normal"], fill='cyan')
-        c.create_text(130, self.config["height"] - 30, text=self.lang["bubble.double"], fill='cyan')
-        c.create_text(210, self.config["height"] - 30, text=self.lang["bubble.triple"], fill='cyan')
-        c.create_text(290, self.config["height"] - 30, text=self.lang["bubble.kill"], fill='cyan')
-        c.create_text(370, self.config["height"] - 30, text=self.lang["bubble.state.slowmotion"], fill='cyan')
-        c.create_text(450, self.config["height"] - 30, text=self.lang["bubble.state.confusion"], fill='cyan')
-        c.create_text(530, self.config["height"] - 30, text=self.lang["bubble.state.timebreak"], fill='cyan')
-        c.create_text(610, self.config["height"] - 30, text=self.lang["bubble.state.protect"], fill='cyan')
-        c.create_text(690, self.config["height"] - 30, text=self.lang["bubble.state.double"], fill='cyan')
-        c.create_text(770, self.config["height"] - 30, text=self.lang["bubble.speedup"], fill='cyan')
-        c.create_text(850, self.config["height"] - 30, text=self.lang["bubble.speeddown"], fill='cyan')
-        c.create_text(930, self.config["height"] - 30, text=self.lang["bubble.state.ultimate"], fill='cyan')
-        c.create_text(1010, self.config["height"] - 30, text=self.lang["bubble.state.hypermode"], fill='cyan')
-        c.create_text(1090, self.config["height"] - 30, text=self.lang["bubble.state.shotspdstate"], fill='cyan')
-        c.create_text(1170, self.config["height"] - 30, text=self.lang["bubble.teleporter"], fill='cyan')
-        c.create_text(1250, self.config["height"] - 30, text=self.lang["bubble.state.notouch"], fill='cyan')
-        c.create_text(1410, self.config["height"] - 30, text=self.lang["bubble.levelkey"], fill='cyan')
-
-        place_bubble(self.canvas, self.bub, 50, self.config["height"] - 75, 25, "Normal")
-        place_bubble(self.canvas, self.bub, 130, self.config["height"] - 75, 25, "Double")
-        place_bubble(self.canvas, self.bub, 210, self.config["height"] - 75, 25, "Triple")
-        place_bubble(self.canvas, self.bub, 290, self.config["height"] - 75, 25, "Kill")
-        place_bubble(self.canvas, self.bub, 370, self.config["height"] - 75, 25, "SlowMotion")
-        place_bubble(self.canvas, self.bub, 450, self.config["height"] - 75, 25, "Confusion")
-        place_bubble(self.canvas, self.bub, 530, self.config["height"] - 75, 25, "TimeBreak")
-        place_bubble(self.canvas, self.bub, 610, self.config["height"] - 75, 25, "Protect")
-        place_bubble(self.canvas, self.bub, 690, self.config["height"] - 75, 25, "DoubleState")
-        place_bubble(self.canvas, self.bub, 770, self.config["height"] - 75, 25, "SpeedUp")
-        place_bubble(self.canvas, self.bub, 850, self.config["height"] - 75, 25, "SpeedDown")
-        place_bubble(self.canvas, self.bub, 930, self.config["height"] - 75, 25, "Ultimate")
-        place_bubble(self.canvas, self.bub, 1010, self.config["height"] - 75, 25, "HyperMode")
-        place_bubble(self.canvas, self.bub, 1090, self.config["height"] - 75, 25, "ShotSpdStat")
-        place_bubble(self.canvas, self.bub, 1170, self.config["height"] - 75, 25, "Teleporter")
-        place_bubble(self.canvas, self.bub, 1250, self.config["height"] - 75, 25, "NoTouch")
-        place_bubble(self.canvas, self.bub, 1410, self.config["height"] - 75, 25, "LevelKey")
 
         # Binding key-events for control
         c.bind_all('<Key>', lambda event: control(self.root, self.canvas, self.icons, self.config, event, self.stats,

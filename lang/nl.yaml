@@ -7,6 +7,20 @@ home.start: "START"
 home.quit: "SLUIT"
 home.options: "OPTIES"
 
+# Pause Menu
+pause.back-to-home: "Opslaan en terug naar hoodfdmenu"
+
+# Slots Menu
+slots.open: "Open"
+slots.rename: "Hernoem"
+slots.remove: "Verwijder"
+slots.add: "Nieuw"
+
+# Options
+options.language: "Taal"
+options.name: "Nederlands"
+options.save: "Opslaan"
+
 # Items
 item.unlck_lvl: "Level-up"
 item.teleport: "Teleporter"

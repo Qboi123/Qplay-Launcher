@@ -7,6 +7,20 @@ home.start: "START"
 home.quit: "VERLASSEN"
 home.options: "OPTIONEN"
 
+# Pause Menu
+pause.back-to-home: "Speichern und zurück zum Hauptmenü"
+
+# Slots Menu
+slots.open: "Open"
+slots.rename: "Rename"
+slots.remove: "Delete"
+slots.add: "New"
+
+# Options
+options.language: "Language"
+options.name: "Deutch"
+options.save: "Save"
+
 # Items
 item.unlck_lvl: "Level freischalten"
 item.teleport: "Teleporter"
