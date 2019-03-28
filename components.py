@@ -169,7 +169,7 @@ class SpecialMode:
         if loc_x is None and loc_y is None and rad is None and spd is None:
             loc_x = config["width"] + config["bubble"]["screen-gap"]
             rad = randint(int(config["bubble"]["min-radius"]), int(config["bubble"]["max-radius"]))
-            loc_y = randint(72 + rad, (config["height"] - 105 - rad))
+            loc_y = randint(72 + rad, (config["height"] - rad))
         else:
             pass
         if 0 <= index < 500:
@@ -426,7 +426,6 @@ class Store:
             if self.selected == 8:
                 canvas.itemconfig(backgrounds["id"], image=backgrounds["special"])
                 canvas.itemconfig(panels["game/top"], fill="#3f3f3f")
-                canvas.itemconfig(panels["game/bottom"], fill="#3f3f3f")
                 stats["special-level"] = True
                 stats["special-level-time"] = time() + 40
                 log.info("State", "(CollFunc) Special Level State is ON!!!")

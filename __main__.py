@@ -50,32 +50,28 @@ def control(root, canvas, icon, config, event, stats, temp, modes, ship, command
     if (not modes["teleport"]) and (not modes["store"]) and (not modes["window"]):
         if not modes["pause"]:
             if not stats["paralis"]:
-                x, y = get_coords(canvas, ship["id2"])
+                x, y = get_coords(canvas, ship["id"])
                 if stats["speedboost"]:
                     a = 10
                 else:
                     a = 0
                 if event.keysym == 'Up' or event.keysym.lower() == "w":
                     if y > 72 + config["game"]["ship-radius"]:
-                        canvas.move(ship["id1"], 0, -stats["shipspeed"] - a)
-                        canvas.move(ship["id2"], 0, -stats["shipspeed"] - a)
+                        canvas.move(ship["id"], 0, -stats["shipspeed"] - a)
                         root.update()
                 elif event.keysym == 'Down' or event.keysym.lower() == "s":
-                    if y < config["height"] - 105 - config["game"]["ship-radius"]:
-                        canvas.move(ship["id1"], 0, stats["shipspeed"] + a)
-                        canvas.move(ship["id2"], 0, stats["shipspeed"] + a)
+                    if y < config["height"] - config["game"]["ship-radius"]:
+                        canvas.move(ship["id"], 0, stats["shipspeed"] + a)
                         root.update()
                 elif event.keysym == 'Left' or event.keysym.lower() == "a":
                     if x > 0 + config["game"]["ship-radius"]:
-                        canvas.move(ship["id1"], -stats["shipspeed"] - a, 0)
-                        canvas.move(ship["id2"], -stats["shipspeed"] - a, 0)
+                        canvas.move(ship["id"], -stats["shipspeed"] - a, 0)
                         root.update()
                 elif event.keysym == 'Right' or event.keysym.lower() == "d":
                     if x < config["width"] - config["game"]["ship-radius"]:
-                        canvas.move(ship["id1"], stats["shipspeed"] + a, 0)
-                        canvas.move(ship["id2"], stats["shipspeed"] + a, 0)
+                        canvas.move(ship["id"], stats["shipspeed"] + a, 0)
                         root.update()
-                stats["ship-position"] = get_coords(canvas, ship["id1"])
+                stats["ship-position"] = get_coords(canvas, ship["id"])
                 if event.keysym == "space":
                     create_shot(canvas, ammo, config, ship, stats)
 
@@ -245,12 +241,14 @@ def control(root, canvas, icon, config, event, stats, temp, modes, ship, command
             back = "#005f5f"
             fore = "#7fffff"
 
-        temp["s_frame"] = Frame(root, height=100, width=1000, bg=back)
+        temp["s_frame"] = Frame(root, bg=back)
         temp["s_frame"].place(x=config["middle-x"], y=config["middle-y"]/2+250, anchor='n', width=1000)
 
-        temp["sw"] = ScrolledWindow(temp["s_frame"], 1000, 100, heigh=100, width=1000)
+        temp["sw"] = ScrolledWindow(temp["s_frame"], 1020, 200, height=321, width=1000)
 
         temp["canv"] = temp["sw"].canv
+        temp["canv"].config(bg=back)
+        temp["sw"].scrollwindow.config(bg=back)
 
         temp["frame"] = temp["sw"].scrollwindow
 
@@ -276,7 +274,7 @@ def control(root, canvas, icon, config, event, stats, temp, modes, ship, command
                 x += 100
 
         canvass.config(height=y+70, width=1000)
-        canvass.pack(fill=X)
+        canvass.pack(fill=Y)
 
         temp["pause/back-to-menu"].pack(fill=X)
 
@@ -647,7 +645,6 @@ class Game(Canvas):
 
         # Removes title-menu items.
         self.background.destroy()
-
         self.start_btn.destroy()
         self.quit_btn.destroy()
         self.options_btn.destroy()
@@ -771,79 +768,113 @@ class Game(Canvas):
 
             i += 1
 
+        # Using this so the program doesn't exit automaticly
         self.root.mainloop()
 
     def add_save(self):
+        """
+        Adding a slot to your game.
+        :return:
+        """
         import os
 
         if len(os.listdir("saves/")) <= 4000:
+            # Disabling the input and the button.
             self.add_input.config(state=DISABLED)
             self.add.config(state=DISABLED)
+
+            # Getting the input text.
             new = self.add_input.get()
 
+            # Creating dir for the game.
             os.mkdir("saves/" + new)
 
+            # Copy the template (resetted save-files)
             self.copy("config/reset.json", "saves/" + new + "/game.json")
             self.copy("config/reset-bubble.json", "saves/" + new + "/bubble.json")
 
+            # Refresh slots-menu
             self.delete_all()
             self.load()
 
     # noinspection PyTypeChecker
     def remove(self, event):
         import os
+
+        # Getting row-index.
         y = event.widget.master.grid_info()["row"]
 
+        # Getting source dir.
         src = self.item_info[y]
+
+        # Removing the files inside.
         for i in os.listdir("saves/" + src):
             os.remove("saves/" + src + "/" + i)
 
+        # Remove the slot (dir)
         os.removedirs("saves/" + src)
 
+        # Refreshing slots-menu
         self.delete_all()
         self.load()
 
     def rename(self, event):
         import os
 
+        # Getting row-index.
         y = event.widget.master.grid_info()["row"]
 
+        # Getting source dir.
         src = self.item_info[y]
 
+        # Getting new name.
         new = self.add_input.get()
 
         # noinspection PyTypeChecker
+        # Rename the dir for the slot.
         os.rename("saves/" + src, "saves/" + new)
+
+        # Refreshing slots-menu
         self.delete_all()
         self.load()
 
     def open(self, event):
+        # Getting row-index
         y = event.widget.master.grid_info()["row"]
 
+        # Getting source dir.
         src = self.item_info[y]
+
+        # Remove slots menu and run the game.
         self.delete_all()
         self.run(src)
 
     def delete_all(self):
+        # Delete all main frames
         self.main_f.destroy()
         self.frame2.destroy()
 
     def run(self, save_name):
+        # Getting save-name and copy this in the self.
         self.save_name = save_name
 
+        # Reload stats with the reader.
         self.stats = Reader("saves/" + self.save_name + "/game.json").get_decoded()
 
+        # Create canvas.
         self.canvas = Canvas(self.root, height=self.config["height"], width=self.config["width"], highlightthickness=0)
         self.canvas.pack(expand=TRUE)
 
+        # Run the main method (function).
         self.main()
-        self.root.mainloop()
 
     def resize(self, event):
+        # Reload config resolution.
         self.config["height"] = event.height
         self.config["width"] = event.width
 
     def return_main(self):
+        # Returning to title menu.
         self.returnmain = True
         self.canvas.destroy()
         self.__init__(time(), True)
@@ -852,15 +883,21 @@ class Game(Canvas):
         from threading import Thread
         from bubble import place_bubble
 
+        # Updates canvas.
         self.canvas.update()
 
+        # Reload config resolution.
         self.config["height"] = self.canvas.winfo_height()
         self.config["width"] = self.canvas.winfo_width()
 
+        # Copy self.canvas into c.
         c = self.canvas
+
+        # Reload middle positions.
         mid_x = self.config["width"] / 2
         mid_y = self.config["height"] / 2
 
+        # Adding the dictionaries for the bubbles. With different res.
         self.bub["Normal"] = dict()
         self.bub["Triple"] = dict()
         self.bub["Double"] = dict()
@@ -884,6 +921,8 @@ class Game(Canvas):
         self.bub["Diamond"] = dict()
         self.bub["Present"] = dict()
         self.bub["SpecialKey"] = dict()
+
+        # Adding the different resolutions to the bubbles.
         for i in range(9, 61):
             self.bub["Normal"][i] = PhotoImage(file="data/bubbles/Normal/" + str(i) + "px.png")
             self.bub["Triple"][i] = PhotoImage(file="data/bubbles/Triple/" + str(i) + "px.png")
@@ -904,20 +943,25 @@ class Game(Canvas):
             self.bub["Paralis"][i] = PhotoImage(file="data/bubbles/Paralis/" + str(i) + "px.png")
             self.bub["StoneBub"][i] = PhotoImage(file="data/bubbles/StoneBub/" + str(i) + "px.png")
             self.bub["NoTouch"][i] = PhotoImage(file="data/bubbles/NoTouch/" + str(i) + "px.png")
+
+        # Adding the static-resolution-bubbles.
         self.bub["Key"][60] = PhotoImage(file="data/bubbles/Key.png")
         self.bub["Diamond"][36] = PhotoImage(file="data/bubbles/Diamond.png")
         self.bub["Present"][40] = PhotoImage(file="data/bubbles/Present.png")
         # noinspection PyTypeChecker
         self.bub["Coin"] = PhotoImage(file="data/CoinBub.png")
         self.bub["SpecialKey"][48] = PhotoImage(file="data/bubbles/SpecialMode.png")
+
+        # Adding ship image.
         self.ship["image"] = PhotoImage(file="data/Ship.png")
 
+        # Reload stats with auto-restore.
         self.stats = Maintance().auto_restore(self.save_name)
 
-        log.info("Game.main", "Save, restore and reset methods created")
-        log.info("Game.main", "Window and canvas created")
-        log.debug("Game.main", "PhotoImage.__doc__=" + str(PhotoImage.__doc__))
+        # Getting the normal background.
         self.back["normal"] = PhotoImage(file="data/BackGround.png")
+
+        # Getting the store-icons.
         self.icons["store-pack"] = list()
         self.icons["store-pack"].append(PhotoImage(file="data/Images/StoreItems/Key.png"))
         self.icons["store-pack"].append(PhotoImage(file="data/Images/StoreItems/Teleport.png"))
@@ -934,50 +978,57 @@ class Game(Canvas):
         self.icons["store-pack"].append(None)
         self.icons["store-pack"].append(None)
 
+        # Unknown
         self.back["line"] = PhotoImage(file="data/LineIcon.png")
+
+        # Setting present foreground
         self.fore["present-fg"] = PhotoImage(file="data/EventBackground.png")
+
+        # Setting present icons.
         self.icons["circle"] = PhotoImage(file="data/Circle.png")
         self.icons["present"] = PhotoImage(file="data/Present.png")
-        # self.back["store-bg"] = PhotoImage(file="data/StoreBG.png")
+
+        # Setting store foreground
         self.fore["store-fg"] = PhotoImage(file="data/FG2.png")
+
+        # Setting standard store icons.
         self.icons["store-diamond"] = PhotoImage(file="data/Diamond.png")
         self.icons["store-coin"] = PhotoImage(file="data/Coin.png")
-        # BubCoin = PhotoImage(file="data/CoinBub.png")
+
+        # Setting pause-icon.
         self.icons["pause-id"] = PhotoImage(file="data/Pause.png")
+
+        # Setting slowmotion-icon.
         self.icons["slowmotion"] = PhotoImage(file="data/SlowMotionIcon.png")
 
+        # Setting special background.
         self.back["special"] = PhotoImage(file="data/Images/Backgrounds/GameBG Special2.png")
-        self.back["normal"] = PhotoImage(file="data/Images/Backgrounds/GameBG2.png")
-        # self.fore["game"] = PhotoImage(file="data/Images/Foregrounds/GameFG.png")
-        # self.fore["gloss"] = PhotoImage(file="data/Images/Foregrounds/Glossy.png")
 
+        # Setting normal background.
+        self.back["normal"] = PhotoImage(file="data/Images/Backgrounds/GameBG2.png")
+
+        # Setting background from nothing to normal.
         self.back["id"] = self.canvas.create_image(0, 0, anchor=NW, image=self.back["normal"])
 
-        log.debug("Game.main", "Background=" + str(self.back["normal"]))
-        # c.create_image(mid_x, mid_y, image=bg)
-        self.ship["id1"] = self.canvas.create_polygon(0, 0, 0, 0, 0, 0, outline=None)
-        self.ship["id2"] = c.create_image(7.5, 7.5, image=self.ship["image"])
+        # Creating ship.
+        self.ship["id"] = c.create_image(7.5, 7.5, image=self.ship["image"])
 
-        c.move(self.ship["id1"], self.stats["ship-position"][0], self.stats["ship-position"][1])
-        c.move(self.ship["id2"], self.stats["ship-position"][0], self.stats["ship-position"][1])
+        # Moving ship to position
+        c.move(self.ship["id"], self.stats["ship-position"][0], self.stats["ship-position"][1])
 
         # Initializing the panels for the game.
         self.panels["game/top"] = self.canvas.create_rectangle(
             -1, -1, self.config["width"], 69, fill="darkcyan"
         )
-        self.panels["game/bottom"] = self.canvas.create_rectangle(
-            -1, self.config["height"]+1, self.config["width"], self.config["height"] - 102, fill="darkcyan"
-        )
-
+        # Create seperating lines.
         self.canvas.create_line(0, 70, self.config["width"], 70, fill="lightblue")
         self.canvas.create_line(0, 69, self.config["width"], 69, fill="white")
-        log.info("Game.main", "Lines 1")
 
+        # Create sperating lines 2.
         self.canvas.create_line(0, self.config["height"] - 103, self.config["width"], self.config["height"] - 103,
                                 fill="lightblue")
         self.canvas.create_line(0, self.config["height"] - 102, self.config["width"], self.config["height"] - 102,
                                 fill="White")
-        log.info("Game.main", "Lines 2")
 
         # Game-information
         c.create_text(55, 30, text='Score', fill='orange')
@@ -997,6 +1048,7 @@ class Game(Canvas):
         c.create_image(1185, 30, image=self.icons["store-diamond"])
         c.create_image(1185, 50, image=self.icons["store-coin"])
 
+        # Game information values.
         self.texts["score"] = c.create_text(55, 50, fill='cyan')
         self.texts["level"] = c.create_text(110, 50, fill='cyan')
         self.texts["speed"] = c.create_text(165, 50, fill='cyan')
@@ -1018,43 +1070,6 @@ class Game(Canvas):
         # Pause text ans icon.
         self.texts["pause"] = c.create_text(mid_x, mid_y, fill='Orange', font=("Helvetica", 60, "bold"))
         self.icons["pause"] = c.create_image(mid_x, mid_y, image=self.icons["pause-id"], state=HIDDEN)
-
-        # Bubble-information / -help and place bubbles with no motion.
-        c.create_text(50, self.config["height"] - 30, text='1x Score', fill='yellow')
-        c.create_text(130, self.config["height"] - 30, text='2x Score', fill='yellow')
-        c.create_text(210, self.config["height"] - 30, text='3x Score', fill='yellow')
-        c.create_text(290, self.config["height"] - 30, text='-1 leven', fill='yellow')
-        c.create_text(370, self.config["height"] - 30, text='Slow Motion', fill='yellow')
-        c.create_text(450, self.config["height"] - 30, text='Verwarring', fill='yellow')
-        c.create_text(530, self.config["height"] - 30, text='NoBubMove', fill='yellow')
-        c.create_text(610, self.config["height"] - 30, text='Protectie', fill='yellow')
-        c.create_text(690, self.config["height"] - 30, text='2x Pnt Status', fill='yellow')
-        c.create_text(770, self.config["height"] - 30, text='Speed-up', fill='yellow')
-        c.create_text(850, self.config["height"] - 30, text='Speed-down', fill='yellow')
-        c.create_text(930, self.config["height"] - 30, text='Ultime Bubbel', fill='yellow')
-        c.create_text(1010, self.config["height"] - 30, text='Hyper Mode', fill='yellow')
-        c.create_text(1090, self.config["height"] - 30, text='Ammo speedup', fill='yellow')
-        c.create_text(1170, self.config["height"] - 30, text='Teleporter', fill='yellow')
-        c.create_text(1250, self.config["height"] - 30, text='No-touch', fill='yellow')
-        c.create_text(1410, self.config["height"] - 30, text='Level Sleutel', fill='yellow')
-
-        place_bubble(self.canvas, self.bub, 50, self.config["height"] - 75, 25, "Normal")
-        place_bubble(self.canvas, self.bub, 130, self.config["height"] - 75, 25, "Double")
-        place_bubble(self.canvas, self.bub, 210, self.config["height"] - 75, 25, "Triple")
-        place_bubble(self.canvas, self.bub, 290, self.config["height"] - 75, 25, "Kill")
-        place_bubble(self.canvas, self.bub, 370, self.config["height"] - 75, 25, "SlowMotion")
-        place_bubble(self.canvas, self.bub, 450, self.config["height"] - 75, 25, "Confusion")
-        place_bubble(self.canvas, self.bub, 530, self.config["height"] - 75, 25, "TimeBreak")
-        place_bubble(self.canvas, self.bub, 610, self.config["height"] - 75, 25, "Protect")
-        place_bubble(self.canvas, self.bub, 690, self.config["height"] - 75, 25, "DoubleState")
-        place_bubble(self.canvas, self.bub, 770, self.config["height"] - 75, 25, "SpeedUp")
-        place_bubble(self.canvas, self.bub, 850, self.config["height"] - 75, 25, "SpeedDown")
-        place_bubble(self.canvas, self.bub, 930, self.config["height"] - 75, 25, "Ultimate")
-        place_bubble(self.canvas, self.bub, 1010, self.config["height"] - 75, 25, "HyperMode")
-        place_bubble(self.canvas, self.bub, 1090, self.config["height"] - 75, 25, "ShotSpdStat")
-        place_bubble(self.canvas, self.bub, 1170, self.config["height"] - 75, 25, "Teleporter")
-        place_bubble(self.canvas, self.bub, 1250, self.config["height"] - 75, 25, "NoTouch")
-        place_bubble(self.canvas, self.bub, 1410, self.config["height"] - 75, 25, "LevelKey")
 
         # Binding key-events for control
         c.bind_all('<Key>', lambda event: control(self.root, self.canvas, self.icons, self.config, event, self.stats,
@@ -1120,7 +1135,6 @@ class Game(Canvas):
         else:
             self.canvas.itemconfig(self.backgrounds["id"], image=self.backgrounds["special"])
             self.canvas.itemconfig(self.panels["game/top"], fill="#3f3f3f")
-            self.canvas.itemconfig(self.panels["game/bottom"], fill="#3f3f3f")
         if stats["score"] < 0:
             log.error("Game.main", "The 'Score' variable under zero.")
             stats["score"] = 0

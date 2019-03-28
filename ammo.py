@@ -7,7 +7,7 @@ def create_shot(c, ammo, config, ship, stats):
     Creates Shooting ammo
     """
     if ammo["retime"] < time():
-        x, y = get_coords(c, ship["id2"])
+        x, y = get_coords(c, ship["id"])
         ammo["ammo-id"].append(c.create_line(10 + x + config["game"]["ship-radius"] / 2, y, 15 + x + config["game"]["ship-radius"] / 2,
                                              y, fill="yellow"))
         ammo["ammo-speed"].append(stats["shotspeed"])

@@ -301,7 +301,6 @@ def refresh_state(stats, bubbles, canvas, backgrounds, panels):
         stats["special-level-time"] = time()
         canvas.itemconfig(backgrounds["id"], image=backgrounds["normal"])
         canvas.itemconfig(panels["game/top"], fill="darkcyan")
-        canvas.itemconfig(panels["game/bottom"], fill="darkcyan")
     if stats["score"] > stats["hiscore"]:
         stats["hiscore"] = stats["score"]
     stats["score"] = int(stats["score"])
