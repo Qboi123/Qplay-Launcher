@@ -430,18 +430,20 @@ class Game(Canvas):
         import config
         import os
 
+        # Startup Vars
         self.log = log
         self.returnmain = False
 
-        log.info("Game.__init__", "Started Game.")
-
+        # Startup
         self.root = self.master
         self.time1 = start_time
         self.cfg = Maintance()
         self.save_name = "Lyfo"
 
+        # Stats
         self.stats = dict()
 
+        # Standard Temporaray variables
         self.temp = dict()
         self.temp["scorestate-save"] = 0
         self.temp["secure-save"] = 0
@@ -454,6 +456,7 @@ class Game(Canvas):
         self.temp["special-level-save"] = 0
         self.temp["found-bubble"] = False
 
+        # Modes
         self.modes = dict()
         self.modes["pause"] = False
         self.modes["cheater"] = False
@@ -465,40 +468,52 @@ class Game(Canvas):
         # Panels (top and bottom, the panels are for information)
         self.panels = dict()
 
+        # Initialize Canvas
         self.canvas = None
 
+        # Icons and texts
         self.icons = dict()
         self.texts = dict()
 
+        # Back- and foreground
         self.back = dict()
         self.fore = dict()
 
+        # Commands
         self.commands = {"store": False, "present": False, "special-mode": False}
 
+        # Player-prites
         self.ship = dict()
         self.tp = dict()
 
+        # Configuration
         self.config = config.Reader("config/startup.json").get_decoded()
+
+        # Bubble / bubble-info
         self.bub = dict()
         self.bub["normal"] = dict()
         self.bubbles = {"bub-id": list(), "bub-special": list(), "bub-action": list(), "bub-radius": list(),
                         "bub-speed": list(),
                         "bub-position": list(), "bub-hardness": list(), "bub-index": list(), "key-active": False}
 
+        # Ammo id-dictionary
         self.ammo = {"ammo-id": list(), "ammo-radius": 5, "ammo-speed": list(), "ammo-position": list(),
                      "ammo-damage": list(), "retime": start_time}
 
+        # Sets fullscreen if not
         if self.config["game"]["fullscreen"]:
             self.root.wm_attributes("-fullscreen", True)
 
         self.root.update()
 
-        self.config["width"] = self.root.winfo_width()  # int(l_res[0])
-        self.config["height"] = self.root.winfo_height()  # int(l_res[1])
+        # Config resolution / positions
+        self.config["width"] = self.root.winfo_width()
+        self.config["height"] = self.root.winfo_height()
 
         self.config["middle-x"] = self.config["width"] / 2
         self.config["middle-y"] = self.config["height"] / 2
 
+        # Collision class
         self.Coll = Collision()
 
         if not already_opened:
@@ -510,26 +525,37 @@ class Game(Canvas):
 
 
         class Background:
+            """
+            Background for the title menu.
+            This is a random animation.
+            """
             def __init__(self, root: Tk):
+                # Widgets
                 self._root = root
                 self._canvas = Canvas(root, bg="#00afaf", highlightthickness=0)
                 self._canvas.pack(fill=BOTH, expand=TRUE)
 
+                # Bubble-sprites config.
                 self.__bubbles = []
                 self.__speed = []
 
             def create_bubble(self):
-                    r = randint(9, 60)
-                    x = self._root.winfo_width()+100
-                    y = randint(int(r), int(self._canvas.winfo_height() - r))
+                r = randint(9, 60)
+                x = self._root.winfo_width()+100
+                y = randint(int(r), int(self._canvas.winfo_height() - r))
 
-                    spd = randint(7, 10)
+                spd = randint(7, 10)
 
-                    self.__bubbles.append(self._canvas.create_oval(x - r, y - r, x + r, y + r, outline="white"))
-                    self.__speed.append(spd)
+                self.__bubbles.append(self._canvas.create_oval(x - r, y - r, x + r, y + r, outline="white"))
+                self.__speed.append(spd)
 
 
             def cleanup_bubs(self):
+                """
+                Cleaning up bubbles.
+                Deleting bubble if the x coord of the bubble is under -100
+                :return:
+                """
                 from bubble import get_coords
                 for index in range(len(self.__bubbles)-1, -1, -1):
                     x, y, = get_coords(self._canvas, self.__bubbles[index])
@@ -539,45 +565,69 @@ class Game(Canvas):
                         del self.__speed[index]
 
             def move_bubbles(self):
+                """
+                Move all bubble to the left with the self.__speed with index of the bubble
+                :return:
+                """
                 for index in range(len(self.__bubbles) - 1, -1, -1):
                     self._canvas.move(self.__bubbles[index], -self.__speed[index], 0)
 
             def destroy(self):
+                """
+                Destroys this custom widget.
+                :return:
+                """
                 self._canvas.destroy()
 
+        # Defining self.background class.
         self.background = Background(self.root)
 
+        # The "START" button creation.
         self.start_btn = Button(self.root, bg="#007f7f", fg="#7fffff", bd=4, command=lambda: self.load(), text="START",
                                 relief=FLAT, font=("helvetica", 20))
         self.start_btn.place(x=self.config["width"]/2, y=self.config["height"]/2-40, width=310, anchor=CENTER)
 
+        # The "QUIT" button creation.
         self.quit_btn = Button(self.root, bg="#007f7f", fg="#7fffff", bd=4, command=lambda: self.root.destroy(), text="QUIT",
                                relief=FLAT, font=("helvetica", 20))
         self.quit_btn.place(x=self.config["width"]/2+80, y=self.config["height"]/2+40, width=150, anchor=CENTER)
 
+        # The "OPTIONS" button creation.
         self.options_btn = Button(self.root, bg="#007f7f", fg="#7fffff", bd=4, text="OPTIONS",
                                   relief=FLAT, font=("helvetica", 20))
         self.options_btn.place(x=self.config["width"]/2-80, y=self.config["height"]/2+40, width=150, anchor=CENTER)
 
+        # Refresh game.
         self.root.update()
 
+        # Non-stop refreshing the background.
         while True:
             try:
                 self.background.create_bubble()
                 self.background.move_bubbles()
                 self.background.cleanup_bubs()
                 self.root.update()
-                # self.background._canvas.update()
             except TclError:
                 break
 
         self.root.mainloop()
 
     def add_event(self, event):
+        """
+        The event handler for the "Add"-button.
+        :param event:
+        :return:
+        """
         self.add_save()
 
     @staticmethod
     def copy(src, dist):
+        """
+        Copying a directory or file.
+        :param src:
+        :param dist:
+        :return:
+        """
         import os
         log.info("Game.copy", "Copying " + src + " to " + dist)
         fd = os.open(src, os.O_RDONLY)
@@ -588,26 +638,34 @@ class Game(Canvas):
         os.close(fd2)
 
     def load(self):
+        """
+        Loading slots-menu.
+        :return:
+        """
         import os
         log.info("Game.load", "Loading...")
 
+        # Removes title-menu items.
         self.background.destroy()
 
         self.start_btn.destroy()
         self.quit_btn.destroy()
         self.options_btn.destroy()
 
+        # Getting list of saves.
         path = "saves/"
         index = os.listdir(path)
         dirs = []
-
         for item in index:
             file_path = path + item
 
             if os.path.isdir(file_path):
                 dirs.append(item)
+
+        # Frame for adding saves.
         self.frame2 = Frame(bg="#5c5c5c")
 
+        # Add-button and -entry (Input)
         self.add = Button(self.frame2, text="Add Save", relief=FLAT, bg="#7f7f7f", fg="white", command=self.add_save)
         self.add.pack(side=RIGHT, padx=2, pady=5)
         self.add_input = Entry(self.frame2, bd=5, fg="#3c3c3c", bg="#7f7f7f", relief=FLAT)
@@ -617,26 +675,33 @@ class Game(Canvas):
 
         self.frame2.pack(side=BOTTOM, fill=X)
 
+        # Main frame.
         self.main_f = Frame(self.root, background="#3c3c3c", height=self.root.winfo_height()-100)
         self.main_f.pack(fill=BOTH, expand=True)
 
+        # Slots frame.
         self.s_frame = Frame(self.main_f, height=self.main_f.winfo_height()-100, width=700)
         self.s_frame.pack(fill=Y)
 
+        # Scrollwindow for the slots frame
         self.sw = ScrolledWindow(self.s_frame, 700, self.root.winfo_height()+0, expand=True, fill=BOTH)
 
+        # Configurate the canvas from the scrollwindow
         self.canv = self.sw.canv
         self.canv.config(bg="#2e2e2e")
 
+        # self.frame.
         self.frame = self.sw.scrollwindow
         self.frames = []
 
+        # Defining the list of widgets
         self.canvass = []
         self.buttons = []
 
         import os
         names = os.listdir("./saves/")
 
+        # Information variables for each slot.
         infos = {}
         infos["dates"] = []
         infos["score"] = []
@@ -644,6 +709,7 @@ class Game(Canvas):
 
         import time
 
+        # Prepare info variables
         for i in names:
             mtime = os.path.getmtime("./saves/" + i + "/bubble.json")
             a = time.localtime(mtime)
@@ -668,8 +734,10 @@ class Game(Canvas):
 
         self.item_info = names
 
+        # Define the index variable.
         i = 0
 
+        # Startloop
         for name in tuple(dirs):
             self.item_info.append(i)
             self.frames.append(Frame(self.frame, height=200, width=700))
