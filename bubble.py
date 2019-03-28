@@ -92,7 +92,7 @@ def create_bubble(stats, config, bub, c, bubble, modes, index, i=None, x=None, y
     else:
         r = r
     if y is None:
-        y = randint(72 + r, (config["height"] - 105 - r))
+        y = randint(72 + r, (config["height"] - r))
     else:
         y = y
     if i is None:
@@ -487,7 +487,6 @@ class Collision:
         if action == "SpecialKey":
             canvas.itemconfig(backgrounds["id"], image=backgrounds["special"])
             canvas.itemconfig(panels["game/top"], fill="#3f3f3f")
-            canvas.itemconfig(panels["game/bottom"], fill="#3f3f3f")
             stats["special-level"] = True
             stats["special-level-time"] = time() + 30
             log.info("State", "(CollFunc) Special Level State is ON!!!")
@@ -540,9 +539,9 @@ class Collision:
         from extras import distance, replace_list
         from threading import Thread
         for index_bub in range(len(bubble["bub-id"].copy()) - 1, -1, -1):
-            # print(distance(canvas, log, ship["id2"], bubble["bub-id"][index_bub][0]) - (config["game"]["ship-radius"] + bubble["bub-radius"][index_bub]))
+            # print(distance(canvas, log, ship["id"], bubble["bub-id"][index_bub][0]) - (config["game"]["ship-radius"] + bubble["bub-radius"][index_bub]))
             self.bub = index_bub
-            if distance(canvas, log, ship["id2"], bubble["bub-id"][index_bub][0]) < (
+            if distance(canvas, log, ship["id"], bubble["bub-id"][index_bub][0]) < (
                     config["game"]["ship-radius"] + bubble["bub-radius"][index_bub]):
                 if not stats["notouch"]:
                     # Sets score / status etc. and deletes bubble

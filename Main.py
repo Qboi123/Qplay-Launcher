@@ -67,32 +67,32 @@ def move_ship(root, canvas, icon, config, event, stats, temp, modes, ship, comma
             # print("No Pause")
             if not stats["paralis"]:
                 # print("Not Paralized")
-                x, y = get_coords(canvas, ship["id2"])
+                x, y = get_coords(canvas, ship["id"])
                 if stats["speedboost"]:
                     a = 10
                 else:
                     a = 0
                 if event.keysym == 'Up':
                     if y > 72 + config["game"]["ship-radius"]:
-                        canvas.move(ship["id1"], 0, -stats["shipspeed"] - a)
-                        canvas.move(ship["id2"], 0, -stats["shipspeed"] - a)
+                        canvas.move(ship["id"], 0, -stats["shipspeed"] - a)
+                        canvas.move(ship["id"], 0, -stats["shipspeed"] - a)
                         root.update()
                 elif event.keysym == 'Down':
                     if y < config["height"] - 105 - config["game"]["ship-radius"]:
-                        canvas.move(ship["id1"], 0, stats["shipspeed"] + a)
-                        canvas.move(ship["id2"], 0, stats["shipspeed"] + a)
+                        canvas.move(ship["id"], 0, stats["shipspeed"] + a)
+                        canvas.move(ship["id"], 0, stats["shipspeed"] + a)
                         root.update()
                 elif event.keysym == 'Left':
                     if x > 0 + config["game"]["ship-radius"]:
-                        canvas.move(ship["id1"], -stats["shipspeed"] - a, 0)
-                        canvas.move(ship["id2"], -stats["shipspeed"] - a, 0)
+                        canvas.move(ship["id"], -stats["shipspeed"] - a, 0)
+                        canvas.move(ship["id"], -stats["shipspeed"] - a, 0)
                         root.update()
                 elif event.keysym == 'Right':
                     if x < config["width"] - config["game"]["ship-radius"]:
-                        canvas.move(ship["id1"], stats["shipspeed"] + a, 0)
-                        canvas.move(ship["id2"], stats["shipspeed"] + a, 0)
+                        canvas.move(ship["id"], stats["shipspeed"] + a, 0)
+                        canvas.move(ship["id"], stats["shipspeed"] + a, 0)
                         root.update()
-                stats["ship-position"] = get_coords(canvas, ship["id1"])
+                stats["ship-position"] = get_coords(canvas, ship["id"])
                 if event.keysym == "space":
                     create_shot(canvas, ammo, config, ship, stats)
 
@@ -769,11 +769,11 @@ class Game(Canvas):
 
         log.debug("Game.main", "Background=" + str(self.back["normal"]))
         # c.create_image(mid_x, mid_y, image=bg)
-        self.ship["id1"] = self.canvas.create_polygon(0, 0, 0, 0, 0, 0, outline=None)
-        self.ship["id2"] = c.create_image(7.5, 7.5, image=self.ship["image"])
+        self.ship["id"] = self.canvas.create_polygon(0, 0, 0, 0, 0, 0, outline=None)
+        self.ship["id"] = c.create_image(7.5, 7.5, image=self.ship["image"])
 
-        c.move(self.ship["id1"], self.stats["ship-position"][0], self.stats["ship-position"][1])
-        c.move(self.ship["id2"], self.stats["ship-position"][0], self.stats["ship-position"][1])
+        c.move(self.ship["id"], self.stats["ship-position"][0], self.stats["ship-position"][1])
+        c.move(self.ship["id"], self.stats["ship-position"][0], self.stats["ship-position"][1])
 
         # c.create_rectangle(0, 0, self.config["width"], 69, fill="#003f3f")
         # c.create_rectangle(0, self.config["height"], self.config["width"], self.config["height"] - 102, fill="#003f3f")
@@ -928,8 +928,8 @@ class Game(Canvas):
         log.debug("Game.main", "'Lives' variable is '" + str(self.stats["lives"]) + "'.")
         log.debug("Game.main", "Score       =" + str(self.stats["score"]))
         log.debug("Game.main", "HiScore     =" + str(self.stats["hiscore"]))
-        log.debug("Game.main", "Ship ID's are '" + str(self.ship["id1"]) + "' and '" + str(
-            self.ship["id2"]) + "'. (Default = 1 and 2)")
+        log.debug("Game.main", "Ship ID's are '" + str(self.ship["id"]) + "' and '" + str(
+            self.ship["id"]) + "'. (Default = 1 and 2)")
         log.debug("Game.main", "TimeBreak=" + str(self.stats["timebreak"]))
         log.debug("Game.main", "StateTime=" + str(self.stats["timebreak-time"]))
         log.debug("Game.main", "S. Time  =" + str(int(self.stats["timebreak-time"] - time())))
@@ -1056,8 +1056,8 @@ class Game(Canvas):
                             #     c.delete(self.fore["game-id"])
                             #     c.delete(self.fore["gloss-id"])
                             #     c.delete(self.back["id"])
-                            #     c.delete(self.ship["id1"])
-                            #     c.delete(self.ship["id2"])
+                            #     c.delete(self.ship["id"])
+                            #     c.delete(self.ship["id"])
                             #     self.__init__()
                             Thread(None, lambda: refresh(self.stats, self.config, self.bubbles, self.bub, self.canvas,
                                                          self.back, self.modes)).start()

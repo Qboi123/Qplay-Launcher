@@ -42,14 +42,13 @@ def teleport(canvas, root, stats, modes, ship, tp, teleport_id):
     modes["teleport"] = False
 
     # Setting up variables for teleporting.
-    s_x, s_y = get_coords(canvas, ship["id1"])
+    s_x, s_y = get_coords(canvas, ship["id"])
     t_x, t_y = get_coords(canvas, teleport_id)
     x_move = t_x - s_x
     y_move = t_y - s_y
 
     # Teleporting.
-    canvas.move(ship["id1"], x_move, y_move)
-    canvas.move(ship["id2"], x_move, y_move)
+    canvas.move(ship["id"], x_move, y_move)
 
     # Deletes Teleport ID's
     canvas.delete(tp["id1"])
