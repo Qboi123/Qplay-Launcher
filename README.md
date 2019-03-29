@@ -1,6 +1,6 @@
 # Qplay Bubbles 2D Version
-Bubble Blaster by Qplay123
 [![Build status](https://ci.appveyor.com/api/projects/status/mqlkd69teux5a7lt?svg=true)](https://ci.appveyor.com/project/Qplay123/qplay-bubbles)
+> Bubble Blaster by Qplay123
 
 ## Requirements
 * Python 3.4 or better (recommended, the last test was with it.).
