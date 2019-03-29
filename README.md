@@ -3,7 +3,6 @@
 
 ## Build Status
 [![Build status](https://ci.appveyor.com/api/projects/status/mqlkd69teux5a7lt?svg=true)](https://ci.appveyor.com/project/Qplay123/qplay-bubbles)
-[![Build status](https://ci.appveyor.com/api/projects/status/mqlkd69teux5a7lt/branch/master?svg=true)](https://ci.appveyor.com/project/Qplay123/qplay-bubbles/branch/master)
 
 ## Requirements
 * Python 3.4 or better (recommended, the last test was with it.).
