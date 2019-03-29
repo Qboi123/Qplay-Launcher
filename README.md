@@ -50,3 +50,6 @@ NOTE: If you don't do this. You can't install Qplay Bubbles.
 * The home-menu will be updated in options
 * The slots-menu will be updated to go back and create a slot e.g.
 * Maybe more bubbles.
+
+## Tips:
+01: Use the Source steps. (.zip / .tar.gz)
