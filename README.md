@@ -56,4 +56,4 @@ NOTE: If you don't do this. You can't install Qplay Bubbles.
 * Maybe more bubbles.
 
 ## Tips:
-01: Use the Source steps. (.zip / .tar.gz)
+01. Use the Source steps. (.zip / .tar.gz)
