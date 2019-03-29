@@ -604,7 +604,7 @@ class Game(Canvas):
 
         self.options_btn = Button(self.root, bg="#007f7f", fg="#7fffff", bd=4,
                                   text=self.lang["home.options"],
-                                  relief=FLAT, font=("helvetica", 20), command=lambda: self.options())
+                                  relief=FLAT, font=("helvetica", 20))  # , command=lambda: self.options())
         self.options_btn.place(x=self.config["width"]/2-80, y=self.config["height"]/2+40, width=150, anchor=CENTER)
 
         # Refresh game.
@@ -707,6 +707,11 @@ class Game(Canvas):
         Loading slots-menu.
         :return:
         """
+        self.background.destroy()
+        self.start_btn.destroy()
+        self.quit_btn.destroy()
+        self.options_btn.destroy()
+        
         import os
         log.info("Game.load", "Loading...")
 
