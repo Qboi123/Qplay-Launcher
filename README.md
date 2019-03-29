@@ -3,7 +3,7 @@ Bubble Blaster by Qplay123
 
 ## Requirements
 * Python 3.4 or better (recommended, the last test was with it.).
-* Minimum of 1600x700 screen.
+* Minimum of 1366x768 resolution of your screen.
 
 ## Steps for Source (zip / tar.gz archive)
 01. Download Python. (Link in description)
@@ -20,6 +20,25 @@ Bubble Blaster by Qplay123
 ## Steps for Application (The setup.msi file)
 01. Download the setup.msi (the case doesn't matter) from the releases page.
 02. Run the setup.
+03. Follow the instructions
+04. NOTE: After install you can choose to run the game.
+
+## Steps for Application (Windows 10)
+Steps for Windows 10
+
+### Steps:
+NOTE: If you don't do this. You can't install Qplay Bubbles.
+
+01. Open settings in the start menu.
+02. Click Updates and Security.
+03. Click Windows Security from the left.
+04. Click on "Open Windows security".
+05. Click on "Apps and browser"
+06. Under "Control apps and files". Press Warn.
+
+### Install:
+01. Download the setup.msi (the case doesn't matter) from the releases page.
+02. Run the setup. And click on Run.
 03. Follow the instructions
 04. NOTE: After install you can choose to run the game.
 
