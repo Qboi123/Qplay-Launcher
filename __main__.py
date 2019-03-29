@@ -1,7 +1,7 @@
 from time import sleep
 
 from ammo import *
-from bubble import Collision, create_bubble, place_bubble
+from bubble import Collision, create_bubble, place_bubble, move_bubbles, clean_up_bubs
 from components import *
 from extras import Logging, shuffling, refresh
 from teleport import *
@@ -46,39 +46,6 @@ def control(root, canvas, icon, config, event, stats, temp, modes, ship, command
     :param root:
     :param event:
     """
-
-    if (not modes["teleport"]) and (not modes["store"]) and (not modes["window"]):
-        if not modes["pause"]:
-            if not stats["paralis"]:
-                x, y = get_coords(canvas, ship["id"])
-                if stats["speedboost"]:
-                    a = 10
-                else:
-                    a = 0
-                if event.keysym == 'Up' or event.keysym.lower() == "w":
-                    if y > 72 + config["game"]["ship-radius"]:
-                        canvas.move(ship["id"], 0, -stats["shipspeed"] - a)
-                        root.update()
-                elif event.keysym == 'Down' or event.keysym.lower() == "s":
-                    if y < config["height"] - config["game"]["ship-radius"]:
-                        canvas.move(ship["id"], 0, stats["shipspeed"] + a)
-                        root.update()
-                elif event.keysym == 'Left' or event.keysym.lower() == "a":
-                    if x > 0 + config["game"]["ship-radius"]:
-                        canvas.move(ship["id"], -stats["shipspeed"] - a, 0)
-                        root.update()
-                elif event.keysym == 'Right' or event.keysym.lower() == "d":
-                    if x < config["width"] - config["game"]["ship-radius"]:
-                        canvas.move(ship["id"], stats["shipspeed"] + a, 0)
-                        root.update()
-                stats["ship-position"] = get_coords(canvas, ship["id"])
-                if event.keysym == "space":
-                    create_shot(canvas, ammo, config, ship, stats)
-
-                canvas.update()
-                canvas.update_idletasks()
-                root.update()
-                root.update_idletasks()
     if modes["store"] and commands["store"] is not None:
         if event.keysym == "Up":
             commands["store"].set_selected(canvas, -1)
@@ -377,8 +344,8 @@ class Maintance:
         Saves the game. (For Auto-Save)
         """
         import config as cfg
-        cfg.Writer("saves/" + save_name + "/game.json", game_stats.copy())
-        cfg.Writer("saves/" + save_name + "/bubble.json", bubble.copy())
+        cfg.Writer("slots/" + save_name + "/game.json", game_stats.copy())
+        cfg.Writer("slots/" + save_name + "/bubble.json", bubble.copy())
 
     @staticmethod
     def auto_restore(save_name):
@@ -386,7 +353,7 @@ class Maintance:
         Restoring. (For Auto-Restore)
         """
         import config as cfg
-        game_stats = cfg.Reader("saves/" + save_name + "/game.json").get_decoded()
+        game_stats = cfg.Reader("slots/" + save_name + "/game.json").get_decoded()
 
         return game_stats
 
@@ -400,12 +367,12 @@ class Maintance:
         stats = cfg.Reader("config/reset.json").get_decoded()
         bubble = cfg.Reader("config/reset-bubble.json").get_decoded()
 
-        cfg.Writer("saves/" + save_name + "/game.json", stats.copy())
-        cfg.Writer("saves/" + save_name + "/bubble.json", bubble.copy())
+        cfg.Writer("slots/" + save_name + "/game.json", stats.copy())
+        cfg.Writer("slots/" + save_name + "/bubble.json", bubble.copy())
 
 
 def start(bubble, save_name, stats, config, bub, modes, canvas):
-    bubs = Reader("saves/" + save_name + "/bubble.json").get_decoded()
+    bubs = Reader("slots/" + save_name + "/bubble.json").get_decoded()
     for i in range(len(bubs["bub-id"])):
         if bubs["bub-special"]:
             create_bubble(stats, config, bub, canvas, bubble, modes, i, bubs["bub-index"][i], bubs["bub-position"][i][0],
@@ -469,6 +436,12 @@ class Game(Canvas):
         self.modes["store"] = False
         self.modes["teleport"] = False
         self.modes["present"] = False
+
+        self.pressed = {"Up": False,
+                        "Down": False,
+                        "Left": False,
+                        "Right": False,
+                        }
 
         # Panels (top and bottom, the panels are for information)
         self.panels = dict()
@@ -704,6 +677,8 @@ class Game(Canvas):
 
     def load(self):
         """
+        This is the Slots Menu.
+
         Loading slots-menu.
         :return:
         """
@@ -711,14 +686,14 @@ class Game(Canvas):
         self.start_btn.destroy()
         self.quit_btn.destroy()
         self.options_btn.destroy()
-        
+
         import os
         log.info("Game.load", "Loading...")
 
         # Removes title-menu items.
 
-        # Getting list of saves.
-        path = "saves/"
+        # Getting list of slots.
+        path = "slots/"
         index = os.listdir(path)
         dirs = []
         for item in index:
@@ -727,7 +702,7 @@ class Game(Canvas):
             if os.path.isdir(file_path):
                 dirs.append(item)
 
-        # Frame for adding saves.
+        # Frame for adding slots.
         self.frame2 = Frame(bg="#5c5c5c")
 
         # Add-button and -entry (Input)
@@ -736,8 +711,11 @@ class Game(Canvas):
         self.add_input = Entry(self.frame2, bd=5, fg="#3c3c3c", bg="#7f7f7f", relief=FLAT)
         self.add_input.pack(side=LEFT, fill=X, expand=TRUE, padx=2, pady=5)
         self.add_input.bind("<Return>", self.add_event)
+
+        # Update root GUI.
         self.root.update()
 
+        # Packing the config frame for adding a slot.
         self.frame2.pack(side=BOTTOM, fill=X)
 
         # Main frame.
@@ -763,8 +741,9 @@ class Game(Canvas):
         self.canvass = []
         self.buttons = []
 
+        # Getting the list of directories in the slots-folder.
         import os
-        names = os.listdir("./saves/")
+        names = os.listdir("./slots/")
 
         # Information variables for each slot.
         infos = {}
@@ -776,7 +755,7 @@ class Game(Canvas):
 
         # Prepare info variables
         for i in names:
-            mtime = os.path.getmtime("./saves/" + i + "/bubble.json")
+            mtime = os.path.getmtime("./slots/" + i + "/bubble.json")
             a = time.localtime(mtime)
 
             b = list(a)
@@ -793,7 +772,7 @@ class Game(Canvas):
             tme_var = "%i/%i/%i %i:%s:%s" % (a[2], a[1], a[0], a[3], b[4], b[5])
             infos["dates"].append(tme_var)
 
-            a = Reader("./saves/" + i + "/game.json").get_decoded()
+            a = Reader("./slots/" + i + "/game.json").get_decoded()
             infos["score"].append(a["score"])
             infos["level"].append(a["level"])
 
@@ -846,7 +825,7 @@ class Game(Canvas):
         """
         import os
 
-        if len(os.listdir("saves/")) <= 4000:
+        if len(os.listdir("slots/")) <= 4000:
             # Disabling the input and the button.
             self.add_input.config(state=DISABLED)
             self.add.config(state=DISABLED)
@@ -855,11 +834,11 @@ class Game(Canvas):
             new = self.add_input.get()
 
             # Creating dir for the game.
-            os.mkdir("saves/" + new)
+            os.mkdir("slots/" + new)
 
             # Copy the template (resetted save-files)
-            self.copy("config/reset.json", "saves/" + new + "/game.json")
-            self.copy("config/reset-bubble.json", "saves/" + new + "/bubble.json")
+            self.copy("config/reset.json", "slots/" + new + "/game.json")
+            self.copy("config/reset-bubble.json", "slots/" + new + "/bubble.json")
 
             # Refresh slots-menu
             self.delete_all()
@@ -876,11 +855,11 @@ class Game(Canvas):
         src = self.item_info[y]
 
         # Removing the files inside.
-        for i in os.listdir("saves/" + src):
-            os.remove("saves/" + src + "/" + i)
+        for i in os.listdir("slots/" + src):
+            os.remove("slots/" + src + "/" + i)
 
         # Remove the slot (dir)
-        os.removedirs("saves/" + src)
+        os.removedirs("slots/" + src)
 
         # Refreshing slots-menu
         self.delete_all()
@@ -900,7 +879,7 @@ class Game(Canvas):
 
         # noinspection PyTypeChecker
         # Rename the dir for the slot.
-        os.rename("saves/" + src, "saves/" + new)
+        os.rename("slots/" + src, "slots/" + new)
 
         # Refreshing slots-menu
         self.delete_all()
@@ -927,7 +906,7 @@ class Game(Canvas):
         self.save_name = save_name
 
         # Reload stats with the reader.
-        self.stats = Reader("saves/" + self.save_name + "/game.json").get_decoded()
+        self.stats = Reader("slots/" + self.save_name + "/game.json").get_decoded()
 
         # Create canvas.
         self.canvas = Canvas(self.root, height=self.config["height"], width=self.config["width"], highlightthickness=0)
@@ -946,6 +925,88 @@ class Game(Canvas):
         self.returnmain = True
         self.canvas.destroy()
         self.__init__(time(), True)
+
+    def movent_change(self):
+            if (not self.modes["teleport"]) and (not self.modes["store"]) and (not self.modes["window"]):
+                if not self.modes["pause"]:
+                    if not self.stats["paralis"]:
+                        x, y = get_coords(self.canvas, self.ship["id"])
+                        if self.stats["speedboost"]:
+                            a = 10
+                        else:
+                            a = 0
+                        if self.pressed['Up']:
+                            if y > 72 + self.config["game"]["ship-radius"]:
+                                self.canvas.move(self.ship["id"], 0, (-self.stats["shipspeed"] - a) / 2)
+                                self.root.update()
+                        elif self.pressed['Down']:
+                            if y < self.config["height"] - self.config["game"]["ship-radius"]:
+                                self.canvas.move(self.ship["id"], 0, (self.stats["shipspeed"] + a) / 2)
+                                self.root.update()
+                        elif self.pressed['Left']:
+                            if x > 0 + self.config["game"]["ship-radius"]:
+                                self.canvas.move(self.ship["id"], (-self.stats["shipspeed"] - a) / 2, 0)
+                                self.root.update()
+                        elif self.pressed['Right']:
+                            if x < self.config["width"] - self.config["game"]["ship-radius"]:
+                                self.canvas.move(self.ship["id"], (self.stats["shipspeed"] + a) / 2, 0)
+                                self.root.update()
+                        self.stats["ship-position"] = get_coords(self.canvas, self.ship["id"])
+
+
+
+    def _press(self, e):
+        if e.keysym == "Up":
+            self.pressed["Up"] = True
+        if e.keysym == "Down":
+            self.pressed["Down"] = True
+        if e.keysym == "Left":
+            self.pressed["Left"] = True
+        if e.keysym == "Right":
+            self.pressed["Right"] = True
+            
+    def _release(self, e):
+        if e.keysym == "Up":
+            self.pressed["Up"] = False
+        if e.keysym == "Down":
+            self.pressed["Down"] = False
+        if e.keysym == "Left":
+            self.pressed["Left"] = False
+        if e.keysym == "Right":
+            self.pressed["Right"] = False
+            
+
+
+    def up_press(self, event):
+        self.pressed["Up"] = True
+
+    def down_press(self, event):
+        self.pressed["Down"] = True
+
+    def left_press(self, event):
+        self.pressed["Left"] = True
+
+    def right_press(self, event):
+        self.pressed["Right"] = True
+
+    def up_release(self, event):
+        self.pressed["Up"] = False
+
+    def down_release(self, event):
+        self.pressed["Down"] = False
+
+    def left_release(self, event):
+        self.pressed["Left"] = False
+
+    def right_release(self, event):
+        self.pressed["Right"] = False
+
+    def shot(self, event):
+        if (not self.modes["teleport"]) and (not self.modes["store"]) and (not self.modes["window"]):
+            if not self.modes["pause"]:
+                if not self.stats["paralis"]:
+                    if event.keysym == "space":
+                        create_shot(self.canvas, self.ammo, self.config, self.ship, self.stats)
 
     def main(self):
         from threading import Thread, ThreadError
@@ -1092,12 +1153,6 @@ class Game(Canvas):
         self.canvas.create_line(0, 70, self.config["width"], 70, fill="lightblue")
         self.canvas.create_line(0, 69, self.config["width"], 69, fill="white")
 
-        # Create sperating lines 2.
-        self.canvas.create_line(0, self.config["height"] - 103, self.config["width"], self.config["height"] - 103,
-                                fill="lightblue")
-        self.canvas.create_line(0, self.config["height"] - 102, self.config["width"], self.config["height"] - 102,
-                                fill="White")
-
         c.create_text(55, 30, text=self.lang["info.score"], fill='orange')
         c.create_text(110, 30, text=self.lang["info.level"], fill='orange')
         c.create_text(165, 30, text=self.lang["info.speed"], fill='orange')
@@ -1142,6 +1197,20 @@ class Game(Canvas):
                                                   self.temp, self.modes, self.ship, self.commands, self.ammo, self.tp,
                                                   self.texts, self.fore, self.back, self.bubbles, self.panels,
                                                   lambda: self.return_main(), self.bub, self.lang))
+
+        c.bind_all("<KeyPress-Up>", lambda event: self.up_press(event))
+        c.bind_all("<KeyPress-Down>", lambda event: self.down_press(event))
+        c.bind_all("<KeyPress-Left>", lambda event: self.left_press(event))
+        c.bind_all("<KeyPress-Right>", lambda event: self.right_press(event))
+
+        c.bind_all("<KeyRelease-Up>", self.up_release)
+
+        # Thread(None, lambda: self.movent_change(), "MotionThread").start()
+
+        c.bind_all("<KeyRelease-Down>", lambda event: self.down_release(event))
+        c.bind_all("<KeyRelease-Left>", lambda event: self.left_release(event))
+        c.bind_all("<KeyRelease-Right>", lambda event: self.right_release(event))
+
         # Thread(None, lambda: c.bind("<Motion>", MotionEventHandler)).start()
         # Thread(None, lambda: c.bind("<ButtonPress-1>", Button1PressEventHandler)).start()
         # Thread(None, lambda: c.bind("<ButtonRelease-1>", Button1ReleaseEventHandler)).start()
@@ -1245,13 +1314,11 @@ class Game(Canvas):
                                         Thread(None, lambda: SpecialMode().create_bubble(self.canvas, self.config,
                                                                                          self.bubbles, self.stats,
                                                                                          self.bub, self.modes)).start()
+                                Thread(None, lambda: move_bubbles(self.bubbles, self.stats, self.root, self.canvas)).start()
+                                Thread(None, lambda: clean_up_bubs(self.bubble, self.canvas, self.config))
 
-                            Collision().check_collision(self.root, self.commands, self.bubbles, self.config,
-                                                        self.stats,
-                                                        self.ammo,
-                                                        self.ship, self.canvas, log, self.back,
-                                                        self.texts, self.panels)
                                 # Thread(None, lambda: move_ammo(self.canvas, log, self.root, self.ammo)).start()
+                            Thread(None, lambda: self.movent_change()).start()
                             if self.commands["present"] is True:
                                 # noinspection PyTypeChecker
                                 self.commands["present"] = Present(self.canvas, self.stats, self.temp, self.modes,
@@ -1259,10 +1326,13 @@ class Game(Canvas):
                             if self.commands["special-mode"] is True:
                                 State.set_state(self.canvas, log, self.stats, "SpecialLevel", self.back)
                                 self.commands["special-mode"] = False
+                            Collision().check_collision(self.root, self.commands, self.bubbles, self.config,
+                                                            self.stats,
+                                                            self.ammo,
+                                                            self.ship, self.canvas, log, self.back,
+                                                            self.texts, self.panels)
                             Thread(None, lambda: refresh(self.stats, self.config, self.bubbles, self.bub, self.canvas,
                                                          self.back, self.texts, self.modes, self.panels)).start()
-                            Thread(None,
-                                   lambda: Maintance().auto_save(self.save_name, self.stats, self.bubbles)).start()
                         self.root.update()
                         self.root.update_idletasks()
                         # sleep(0.001)

@@ -13,6 +13,6 @@ setup(
     cmdclass={'build_ext': build_ext},
     ext_modules=[Extension("Qplay Bubbles", ["__main__.py", 'ammo.py', 'bubble.py', 'components.py', 'config.py',
                                              'extras.py', 'info.py', 'state.py', 'teleport.py'], )],
-    include_dirs=["config", "data", "logs", "saves"],
+    include_dirs=["config", "data", "logs", "slots"],
     requires=['pygame', 'tkinter', 'threadsafe_tkinter', 'tkinter.ttk', 'os', 'json', 'sys', 'random', 'math', 'windound']
 )

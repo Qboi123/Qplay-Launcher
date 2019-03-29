@@ -80,7 +80,7 @@ class Logging:
     def save(self):
         return
         # """
-        # saves the log
+        # slots the log
         # :return:
         # """
         # fa = open(self.save_file, "w")

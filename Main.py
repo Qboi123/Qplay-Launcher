@@ -282,8 +282,8 @@ class Maintance:
         Saves the game. (For Auto-Save)
         """
         import config as cfg
-        cfg.Writer("saves/" + save_name + "/game.json", game_stats.copy())
-        cfg.Writer("saves/" + save_name + "/bubble.json", bubble.copy())
+        cfg.Writer("slots/" + save_name + "/game.json", game_stats.copy())
+        cfg.Writer("slots/" + save_name + "/bubble.json", bubble.copy())
 
     @staticmethod
     def auto_restore(save_name):
@@ -291,7 +291,7 @@ class Maintance:
         Restoring. (For Auto-Restore)
         """
         import config as cfg
-        game_stats = cfg.Reader("saves/" + save_name + "/game.json").get_decoded()
+        game_stats = cfg.Reader("slots/" + save_name + "/game.json").get_decoded()
 
         return game_stats
 
@@ -306,12 +306,12 @@ class Maintance:
         game_states = reset["state"]
         game_save = reset["game"]
 
-        config.Writer("saves/" + save_name + "/states.json", game_states)
-        config.Writer("saves/" + save_name + "/game.json", game_save)
+        config.Writer("slots/" + save_name + "/states.json", game_states)
+        config.Writer("slots/" + save_name + "/game.json", game_save)
 
 
 def start(bubble, save_name, stats, config, bub, canvas, modes):
-    bubs = Reader("saves/" + save_name + "/bubble.json").get_decoded()
+    bubs = Reader("slots/" + save_name + "/bubble.json").get_decoded()
     for i in range(len(bubs["bub-id"])):
         if bubs["bub-special"]:
             create_bubble(stats, config, bub, canvas, bubble, modes, bubs["bub-index"][i], bubs["bub-position"][i][0],
@@ -403,7 +403,7 @@ class Game(Canvas):
         height = 34
 
         import os
-        path = "saves/"
+        path = "slots/"
         index = os.listdir(path)
         dirs = []
 
@@ -495,7 +495,7 @@ class Game(Canvas):
         height = 34
 
         import os
-        path = "saves/"
+        path = "slots/"
         index = os.listdir(path)
         log.debug("Game.load", "Index of '" + path + "' is " + index)
         dirs = []
@@ -566,15 +566,15 @@ class Game(Canvas):
     def add_save(self):
         import os
 
-        if len(os.listdir("saves/")) <= 4000:
+        if len(os.listdir("slots/")) <= 4000:
             self.add_input.config(state=DISABLED)
             self.add.config(state=DISABLED)
             new = self.add_input.get()
 
-            os.mkdir("saves/" + new)
+            os.mkdir("slots/" + new)
 
-            self.copy("config/reset.json", "saves/" + new + "/game.json")
-            self.copy("config/reset-bubble.json", "saves/" + new + "/bubble.json")
+            self.copy("config/reset.json", "slots/" + new + "/game.json")
+            self.copy("config/reset-bubble.json", "slots/" + new + "/bubble.json")
 
             self.delete_all()
             self.load()
@@ -590,10 +590,10 @@ class Game(Canvas):
             y -= 1
 
         src = self.item_info[p][0][x][y]
-        for i in os.listdir("saves/" + src):
-            os.remove("saves/" + src + "/" + i)
+        for i in os.listdir("slots/" + src):
+            os.remove("slots/" + src + "/" + i)
 
-        os.removedirs("saves/" + src)
+        os.removedirs("slots/" + src)
 
         self.delete_all()
         self.load()
@@ -613,7 +613,7 @@ class Game(Canvas):
 
         new = self.add_input.get()
 
-        os.rename("saves/" + src, "saves/" + new)
+        os.rename("slots/" + src, "slots/" + new)
         self.delete_all()
         self.load()
 
@@ -641,7 +641,7 @@ class Game(Canvas):
     def run(self, save_name):
         self.save_name = save_name
 
-        self.stats = Reader("saves/" + self.save_name + "/game.json").get_decoded()
+        self.stats = Reader("slots/" + self.save_name + "/game.json").get_decoded()
 
         self.canvas = Canvas(self.root, height=self.config["height"], width=self.config["width"])
         self.canvas.pack(expand=TRUE)
