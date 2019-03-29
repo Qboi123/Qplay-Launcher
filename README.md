@@ -38,7 +38,7 @@ NOTE: If you don't do this. You can't install Qplay Bubbles.
 07. Left top press start / home or reopen settings.
 08. Update & security 
 09. For developers
-10. Select Apps siteloaden or Mode for developers. (The best is Apps siteloaden)
+10. Select Apps sideloaden or Mode for developers. (The best is Apps siteloaden)
 
 ### Install:
 01. Download the setup.msi (the case doesn't matter) from the releases page.
