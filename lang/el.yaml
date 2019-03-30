@@ -11,10 +11,10 @@ home.options: "ΕΠΙΛΟΓΕΣ"
 pause.back-to-home: "Αποθηκεύστε και επιστρέψτε στο κύριο μενού"
 
 # Slots Menu
-slots.open: "Open"
-slots.rename: "Rename"
-slots.remove: "Delete"
-slots.add: "New"
+slots.open: "Ανοιξε"
+slots.rename: "Μετονομάζω"
+slots.remove: "Διαγράφω"
+slots.add: "Νέος"
 
 # Options
 options.language: "Language"

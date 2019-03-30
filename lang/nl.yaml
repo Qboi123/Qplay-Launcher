@@ -4,7 +4,7 @@ store.coins: "Munten: "
 
 # Home Menu
 home.start: "START"
-home.quit: "SLUIT"
+home.quit: "SLUITEN"
 home.options: "OPTIES"
 
 # Pause Menu

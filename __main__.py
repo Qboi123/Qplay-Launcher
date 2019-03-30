@@ -211,7 +211,7 @@ def control(root, canvas, icon, config, event, stats, temp, modes, ship, command
         temp["s_frame"] = Frame(root, bg=back)
         temp["s_frame"].place(x=config["middle-x"], y=config["middle-y"]/2+250, anchor='n', width=1000)
 
-        temp["sw"] = ScrolledWindow(temp["s_frame"], 1020, 200, height=321, width=1000)
+        temp["sw"] = ScrolledWindow(temp["s_frame"], 1020, 321, height=321, width=1000)
 
         temp["canv"] = temp["sw"].canv
         temp["canv"].config(bg=back)
@@ -937,19 +937,19 @@ class Game(Canvas):
                             a = 0
                         if self.pressed['Up']:
                             if y > 72 + self.config["game"]["ship-radius"]:
-                                self.canvas.move(self.ship["id"], 0, (-self.stats["shipspeed"] - a) / 2)
+                                self.canvas.move(self.ship["id"], 0, (-self.stats["shipspeed"] - a))
                                 self.root.update()
                         elif self.pressed['Down']:
                             if y < self.config["height"] - self.config["game"]["ship-radius"]:
-                                self.canvas.move(self.ship["id"], 0, (self.stats["shipspeed"] + a) / 2)
+                                self.canvas.move(self.ship["id"], 0, (self.stats["shipspeed"] + a))
                                 self.root.update()
                         elif self.pressed['Left']:
                             if x > 0 + self.config["game"]["ship-radius"]:
-                                self.canvas.move(self.ship["id"], (-self.stats["shipspeed"] - a) / 2, 0)
+                                self.canvas.move(self.ship["id"], (-self.stats["shipspeed"] - a), 0)
                                 self.root.update()
                         elif self.pressed['Right']:
                             if x < self.config["width"] - self.config["game"]["ship-radius"]:
-                                self.canvas.move(self.ship["id"], (self.stats["shipspeed"] + a) / 2, 0)
+                                self.canvas.move(self.ship["id"], (self.stats["shipspeed"] + a), 0)
                                 self.root.update()
                         self.stats["ship-position"] = get_coords(self.canvas, self.ship["id"])
 
