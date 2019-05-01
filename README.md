@@ -51,7 +51,7 @@ NOTE: If you don't do this. You can't install Qplay Bubbles.
 
 ## Downloads:
 * www.python.org for Python.
-* https://github.com/Qplay123/Qplay-Bubbles-1.1/releases for the Game. (Setup / Source)
+* https://github.com/Qplay123/Qplay-Bubbles/releases for the Game. (Setup / Source)
 
 ## Information for next version (v1.3.0):
 * The home-menu will be updated in options
