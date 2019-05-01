@@ -128,7 +128,7 @@ def download(url, frame, panel, version):
     data = b''.join(data_blocks)  # had to add b because I was joining bytes not strings
     u.close()
 
-    with open("temp/QplayBubbles-"+version, "wb") as f:
+    with open("temp/QplayBubbles-"+version+'.zip', "wb") as f:
         f.write(data)
 
     frame.SetWindowStyle(wx.DEFAULT_FRAME_STYLE)
@@ -158,7 +158,26 @@ class Launcher(wx.Panel):
         else:
             outdated = False
 
+        json_url = urllib.request.urlopen("https://raw.githubusercontent.com/Qplay123/Qplay-Bubbles/master/all_versions.json")
+        json_data = json_url.read().decode()
+
+        version = "v1.4.0"
+        minimum = "v1.4.0"
+        build = 10
+        min_build = 10
+
+        import json
+
+        self.all = json.JSONDecoder().decode(json_data)
+
+        if self.data["build"] > build:
+            outdated = True
+        else:
+            outdated = False
+
+
         print(self.data)
+        print(self.all)
 
         vertical_box = wx.BoxSizer(wx.VERTICAL)
 
@@ -170,10 +189,13 @@ class Launcher(wx.Panel):
 
 
     def open(self):
-        version = self.data["version"]
-        version_dir = replace2dir(self.data["version"])
+        version = self.versions.GetString(self.versions.GetSelection())
+        version_dir = replace2dir(version)
         if not os.path.exists("versions/"+version_dir+"/"):
             download("https://codeload.github.com/Qplay123/Qplay-Bubbles/zip/"+self.data["version"], frame, self, version)
+
+
+        extract_zipfile("temp/QplayBubbles-"+version+'.zip', "versions/")
 
         a = __import__("versions.%s.__main__" % version_dir)
         a.__dict__[version_dir].__main__.Game()
