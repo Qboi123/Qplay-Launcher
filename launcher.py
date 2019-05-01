@@ -3,8 +3,6 @@ import zipfile
 
 import wx
 
-os.chdir("versions/v1_3_0")
-
 # a.v1_3_0.__main__.Game()
 
 
@@ -31,7 +29,7 @@ def extract_zipfile(path2zip: str, extract_path: str):
 
 def speed():
     import time
-
+    global active
     global spd
     global h, m, s
     while active:
@@ -107,6 +105,8 @@ def download(url, frame, panel, version):
     # load.pack()
     # Frame.Update()
 
+    active = True
+
     Thread(None, lambda: speed(), "SpeedThread").start()
 
     while True:
@@ -127,6 +127,9 @@ def download(url, frame, panel, version):
 
     data = b''.join(data_blocks)  # had to add b because I was joining bytes not strings
     u.close()
+
+    if not os.path.exists("temp"):
+        os.makedirs("temp")
 
     with open("temp/QplayBubbles-"+version+'.zip', "wb") as f:
         f.write(data)
@@ -164,6 +167,7 @@ class Launcher(wx.Panel):
         import json
 
         self.all = json.JSONDecoder().decode(json_data)
+        print(self.all)
         for i in ("v1.1.0", "v1.1.1", "v1.2.0-pre1", "v1.2.0-pre2", "v1.2.0", "v1.2.1", "v1.2.2", "v1.3.0-pre1", "v1.3.0"):
             self.all.pop(i)
 
@@ -174,22 +178,23 @@ class Launcher(wx.Panel):
 
         self.versions = wx.Choice(self, pos=(0, 640-35), choices=list(self.all.keys()))
         self.play = wx.Button(self, label="Play!", size=wx.Size(120, 70), pos=(640-60, 640-35))
+        self.play.Bind(wx.EVT_BUTTON, self.open)
         self.play.Show()
 
         self.SetSizer(vertical_box)
 
-
-    def open(self):
+    def open(self, event):
         version = self.versions.GetString(self.versions.GetSelection())
         version_dir = replace2dir(version)
         if not os.path.exists("versions/"+version_dir+"/"):
-            download("https://codeload.github.com/Qplay123/Qplay-Bubbles/zip/"+self.data["version"], frame, self, version)
+            download("https://codeload.github.com/Qplay123/QplayBubbles-Releaes/zip/"+self.data["version"], frame, self, version)
+            extract_zipfile("temp/QplayBubbles-"+version+'.zip', "versions/")
+            os.rename("versions/QplayBubbles-Releaes-"+version[1:], "versions/"+version_dir)
 
-
-        extract_zipfile("temp/QplayBubbles-"+version+'.zip', "versions/")
-
+        os.chdir("versions/"+version_dir)
         a = __import__("versions.%s.__main__" % version_dir)
         a.__dict__[version_dir].__main__.Game()
+        os.chdir("../../")
 
 
 if __name__ == '__main__':

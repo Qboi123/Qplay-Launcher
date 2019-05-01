@@ -1,1 +1,0 @@
-from pseudo import main

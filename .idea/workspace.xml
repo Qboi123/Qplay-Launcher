@@ -10,16 +10,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/launcher.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="361">
-              <caret line="172" column="47" selection-start-line="172" selection-start-column="47" selection-end-line="172" selection-end-column="47" />
+            <state relative-caret-position="422">
+              <caret line="196" column="24" selection-start-line="196" selection-start-column="24" selection-end-line="196" selection-end-column="24" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/versions/v1_3_0/config/reset.json">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -40,7 +45,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/current.json">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="51">
@@ -53,7 +58,7 @@
         <entry file="file://$PROJECT_DIR$/../Private-PyCharmProjects/System Utils/wxDownload.pyw">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="183">
-              <caret line="158" lean-forward="true" selection-start-line="156" selection-end-line="158" />
+              <caret line="158" selection-start-line="156" selection-end-line="158" />
               <folding>
                 <element signature="e#0#21#0" expanded="true" />
               </folding>
@@ -108,7 +113,7 @@
   </component>
   <component name="Git.Settings">
     <option name="ROOT_SYNC" value="DONT_SYNC" />
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/versions/v1_3_0/QplayBubbles-Releaes" />
     <option name="WARN_ABOUT_CRLF" value="false" />
     <option name="WARN_ABOUT_DETACHED_HEAD" value="false" />
     <option name="PREVIEW_PUSH_ON_COMMIT_AND_PUSH" value="false" />
@@ -139,9 +144,9 @@
         <option value="$PROJECT_DIR$/versions/v1_3_0/bubble.py" />
         <option value="$PROJECT_DIR$/versions/v1_3_0/__main__.py" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/launcher.py" />
         <option value="$PROJECT_DIR$/all_versions.json" />
         <option value="$PROJECT_DIR$/current.json" />
+        <option value="$PROJECT_DIR$/launcher.py" />
       </list>
     </option>
   </component>
@@ -172,13 +177,12 @@
             <path>
               <item name="Qplay-Bubbles" type="b2602c69:ProjectViewProjectNode" />
               <item name="Qplay-Bubbles" type="462c0819:PsiDirectoryNode" />
-              <item name="versions" type="462c0819:PsiDirectoryNode" />
+              <item name="temp" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Qplay-Bubbles" type="b2602c69:ProjectViewProjectNode" />
               <item name="Qplay-Bubbles" type="462c0819:PsiDirectoryNode" />
               <item name="versions" type="462c0819:PsiDirectoryNode" />
-              <item name="v1_3_0" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -199,6 +203,7 @@
       <recent name="C:\Users\quint\Documents\GitHub\Qplay-Bubbles\old_lang" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\quint\Documents\GitHub\Qplay-Bubbles\versions\v1_3_0" />
       <recent name="C:\Users\quint\Documents\GitHub\Qplay-Bubbles" />
     </key>
   </component>
@@ -543,7 +548,7 @@
     <entry file="file://$PROJECT_DIR$/../Private-PyCharmProjects/System Utils/wxDownload.pyw">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="183">
-          <caret line="158" lean-forward="true" selection-start-line="156" selection-end-line="158" />
+          <caret line="158" selection-start-line="156" selection-end-line="158" />
           <folding>
             <element signature="e#0#21#0" expanded="true" />
           </folding>
@@ -553,10 +558,10 @@
     <entry file="file://$PROJECT_DIR$/_config.yml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
+    <entry file="file://$PROJECT_DIR$/current.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="15" selection-start-line="2" selection-start-column="15" selection-end-line="2" selection-end-column="15" />
+        <state relative-caret-position="51">
+          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -567,20 +572,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/launcher.py">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="172" column="47" selection-start-line="172" selection-start-column="47" selection-end-line="172" selection-end-column="47" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="34">
+          <caret line="2" column="15" selection-start-line="2" selection-start-column="15" selection-end-line="2" selection-end-column="15" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/current.json">
+    <entry file="file://$PROJECT_DIR$/versions/v1_3_0/config/reset.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/launcher.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+        <state relative-caret-position="422">
+          <caret line="196" column="24" selection-start-line="196" selection-start-column="24" selection-end-line="196" selection-end-column="24" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
