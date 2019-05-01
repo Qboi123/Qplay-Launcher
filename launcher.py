@@ -161,27 +161,18 @@ class Launcher(wx.Panel):
         json_url = urllib.request.urlopen("https://raw.githubusercontent.com/Qplay123/Qplay-Bubbles/master/all_versions.json")
         json_data = json_url.read().decode()
 
-        version = "v1.4.0"
-        minimum = "v1.4.0"
-        build = 10
-        min_build = 10
-
         import json
 
         self.all = json.JSONDecoder().decode(json_data)
-
-        if self.data["build"] > build:
-            outdated = True
-        else:
-            outdated = False
-
+        for i in ("v1.1.0", "v1.1.1", "v1.2.0-pre1", "v1.2.0-pre2", "v1.2.0", "v1.2.1", "v1.2.2", "v1.3.0-pre1", "v1.3.0"):
+            self.all.pop(i)
 
         print(self.data)
         print(self.all)
 
         vertical_box = wx.BoxSizer(wx.VERTICAL)
 
-        self.versions = wx.Choice(self, pos=(0, 640-10), choices=)
+        self.versions = wx.Choice(self, pos=(0, 640-35), choices=list(self.all.keys()))
         self.play = wx.Button(self, label="Play!", size=wx.Size(120, 70), pos=(640-60, 640-35))
         self.play.Show()
 
