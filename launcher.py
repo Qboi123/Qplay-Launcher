@@ -130,6 +130,7 @@ class Launcher(wx.Panel):
         import json
 
         self.data = json.JSONDecoder().decode(json_data)
+        print(self.data)
 
         json_url = urllib.request.urlopen("https://raw.githubusercontent.com/Qplay123/Qplay-Bubbles/master/all_versions.json")
         json_data = json_url.read().decode()
