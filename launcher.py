@@ -137,12 +137,16 @@ class Launcher(wx.Panel):
         import json
 
         self.all = json.JSONDecoder().decode(json_data)
-        for i in ("v1.1.0", "v1.1.1", "v1.2.0-pre1", "v1.2.0-pre2", "v1.2.0", "v1.2.1", "v1.2.2", "v1.3.0-pre1", "v1.3.0"):
+        for i in ("v1.1.0", "v1.1.1", "v1.2.0-pre1", "v1.2.0-pre2", "v1.2.0", "v1.2.1", "v1.2.2", "v1.3.0-pre1"):
             self.all.pop(i)
 
         vertical_box = wx.BoxSizer(wx.VERTICAL)
 
-        self.versions = wx.Choice(self, pos=(0, 640-35), choices=list(self.all.keys()))
+        all = list(self.all.keys())
+        all.sort(reverse=False)
+
+        self.versions = wx.Choice(self, pos=(0, 640-35), choices=all)
+        self.versions.SetSelection(0)
         self.play = wx.Button(self, label="Play!", size=wx.Size(120, 70), pos=(640-60, 640-35))
         self.play.Bind(wx.EVT_BUTTON, lambda event: self.open())
         self.play.Show()
@@ -151,6 +155,8 @@ class Launcher(wx.Panel):
 
     def open(self):
         version = self.versions.GetString(self.versions.GetSelection())
+        if version == "":
+            return
         version_dir = replace2dir(version)
         if not os.path.exists("versions/"+version_dir+"/"):
             download("https://github.com/Qplay123/QplayBubbles-Releaes/archive/"+self.data["version"]+".zip", self, version)
