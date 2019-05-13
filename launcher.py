@@ -125,7 +125,9 @@ class Launcher(wx.Panel):
         import urllib.request
 
         # -- current ------------------------------------------------------------------------------------------------- #
-        json_url = urllib.request.urlopen("https://raw.githubusercontent.com/Qplay123/Qplay-Bubbles/master/current.json")
+        json_url = urllib.request.urlopen(
+            "https://raw.githubusercontent.com/Qplay123/Qplay-Bubbles/master/current.json"
+        )
         json_data = json_url.read().decode()
 
         import json
@@ -134,7 +136,9 @@ class Launcher(wx.Panel):
         print(self.data)
 
         # -- all versions -------------------------------------------------------------------------------------------- #
-        json_url = urllib.request.urlopen("https://raw.githubusercontent.com/Qplay123/Qplay-Bubbles/master/all_versions.json")
+        json_url = urllib.request.urlopen(
+            "https://raw.githubusercontent.com/Qplay123/Qplay-Bubbles/master/all_versions.json"
+        )
         json_data = json_url.read().decode()
 
         import json
@@ -145,7 +149,9 @@ class Launcher(wx.Panel):
             self.all.pop(i)
 
         # -- old / historic versions --------------------------------------------------------------------------------- #
-        json_url = urllib.request.urlopen("https://raw.githubusercontent.com/Qplay123/Qplay-Bubbles/master/old_versions.json")
+        json_url = urllib.request.urlopen(
+            "https://raw.githubusercontent.com/Qplay123/Qplay-Bubbles/master/old_versions.json"
+        )
         json_data = json_url.read().decode()
 
         import json
@@ -167,34 +173,44 @@ class Launcher(wx.Panel):
         self.SetSizer(vertical_box)
 
     def open(self):
+        import sys
+
         version = self.versions.GetString(self.versions.GetSelection())
         if version == "":
             return
 
-        if version < "v1.3.0":
+        version_dir = replace2dir(version)
+
+        if 1:
             if version in self.old:
                 if not os.path.exists("versions/" + version_dir + "/"):
                     download(
                         "https://github.com/Qplay123/QplayBubbles-OldReleases/archive/" + self.data["version"] + ".zip",
-                        self, version)
+                        self, version
+                    )
                     extract_zipfile("temp/QplayBubbles-" + version + '.zip', "versions/")
                     os.rename("versions/QplayBubbles-Releaes-" + version[1:], "versions/" + version_dir)
             else:
                 if not os.path.exists("versions/" + version_dir + "/"):
                     download(
                         "https://github.com/Qplay123/QplayBubbles-Releaes/archive/" + self.data["version"] + ".zip",
-                        self, version)
+                        self, version
+                    )
                     extract_zipfile("temp/QplayBubbles-" + version + '.zip', "versions/")
                     os.rename("versions/QplayBubbles-Releaes-" + version[1:], "versions/" + version_dir)
-
         else:
             return
 
-        version_dir = replace2dir(version)
+        cfg = {"version": version,
+               "versionDir": version_dir,
+               "launcher": self,
+               "args": sys.argv
+               }
 
         os.chdir("versions/"+version_dir)
-        a = __import__("versions.%s.__main__" % version_dir)
-        a.__dict__[version_dir].__main__.Game()
+        print(os.curdir)
+        a = __import__("versions.%s.__main__" % version_dir, fromlist=["__main__"])
+        a.Game(launcher_cfg=cfg)
         os.chdir("../../")
 
 

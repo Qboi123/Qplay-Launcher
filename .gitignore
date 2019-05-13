@@ -1140,3 +1140,6 @@ versions/v1_4_1/data/Images/StoreItems/Speed [Source[.png
 slots/Quinten/bubble.json
 slots/Quinten/game.json
 
+mods/v1_3_0/TestMod/TestStoreItem.py
+mods/v1_3_0/TestMod/__main__.py
+versions/v0_1_0/
