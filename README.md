@@ -59,3 +59,6 @@ https://github.com/Qplay123/Qplay-Bubbles/releases for the Game. (Setup / Source
 
 ## Tips:
 01. Use the Source steps. (.zip / .tar.gz)  
+
+## Badges
+![LOL]()
