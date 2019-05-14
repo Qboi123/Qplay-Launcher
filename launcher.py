@@ -171,6 +171,10 @@ class Launcher(wx.Panel):
         if version == "":
             return
 
+        version_dir = replace2dir(version)
+
+        print(version_dir)
+
         if version < "v1.3.0":
             if version in self.old:
                 if not os.path.exists("versions/" + version_dir + "/"):
@@ -190,7 +194,6 @@ class Launcher(wx.Panel):
         else:
             return
 
-        version_dir = replace2dir(version)
 
         os.chdir("versions/"+version_dir)
         a = __import__("versions.%s.__main__" % version_dir)
