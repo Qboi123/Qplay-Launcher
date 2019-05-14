@@ -2,11 +2,12 @@
 > Bubble Blaster by Qplay123
 
 ## Build Status
-[![Build status](https://ci.appveyor.com/api/projects/status/mqlkd69teux5a7lt?svg=true)](https://ci.appveyor.com/project/Qplay123/qplay-bubbles)
+Launcher: [![Build status](https://ci.appveyor.com/api/projects/status/mqlkd69teux5a7lt?svg=true)](https://ci.appveyor.com/project/Qplay123/qplay-bubbles)  
+Game: [![Build status](https://ci.appveyor.com/api/projects/status/hdvtcqor1d983pqh?svg=true)](https://ci.appveyor.com/project/Qplay123/qplaybubbles-releaes)
 
 ## Requirements
-* Python 3.4 or better (recommended, the last test was with it.).
-* Minimum of 1366x768 resolution of your screen.
+Python 3.4 or better (recommended, the last test was with it.).  
+Minimum of 1366x768 resolution of your screen.
 
 ## Steps for Source (zip / tar.gz archive)
 01. Download Python. (Link in description)
@@ -30,8 +31,8 @@
 Steps for Windows 10
 
 ### Steps:
-NOTE: If you don't do this. You can't install Qplay Bubbles.
-
+NOTE: If you don't do this. You can't install Qplay Bubbles.  
+  
 01. Open settings in the start menu.
 02. Click Updates & Security.
 03. Click Windows Security from the left.
@@ -50,13 +51,11 @@ NOTE: If you don't do this. You can't install Qplay Bubbles.
 04. NOTE: After install you can choose to run the game.
 
 ## Downloads:
-* www.python.org for Python.
-* https://github.com/Qplay123/Qplay-Bubbles/releases for the Game. (Setup / Source)
+www.python.org for Python.  
+https://github.com/Qplay123/Qplay-Bubbles/releases for the Game. (Setup / Source)
 
-## Information for next version (v1.3.0):
-* The home-menu will be updated in options
-* The slots-menu will be updated to go back and create a slot e.g.
-* Maybe more bubbles.
+## Information for next version (v1.5.0):
+* Mods / Addon support
 
 ## Tips:
-01. Use the Source steps. (.zip / .tar.gz)
+01. Use the Source steps. (.zip / .tar.gz)  
