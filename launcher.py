@@ -1,5 +1,6 @@
 import os
 import zipfile
+
 import wx
 
 
@@ -57,7 +58,7 @@ def speed():
             s = "0" + s
 
 
-def download(url, panel, version):
+def download(url: str, panel: wx.Panel, version: str):
     import urllib.request
     from threading import Thread
 
