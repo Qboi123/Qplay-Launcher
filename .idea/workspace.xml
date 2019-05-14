@@ -67,8 +67,8 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="797">
-                <caret line="63" column="7" selection-start-line="63" selection-start-column="7" selection-end-line="63" selection-end-column="7" />
+              <first_editor relative-caret-position="814">
+                <caret line="68" selection-start-line="68" selection-end-line="68" />
               </first_editor>
               <second_editor />
             </state>
@@ -170,8 +170,7 @@
     <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="ROOT_SYNC" value="DONT_SYNC" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="WARN_ABOUT_CRLF" value="false" />
-    <option name="WARN_ABOUT_DETACHED_HEAD" value="false" />
+    <option name="AUTO_COMMIT_ON_CHERRY_PICK" value="true" />
     <option name="ADD_SUFFIX_TO_CHERRY_PICKS_OF_PUBLISHED_COMMITS" value="false" />
   </component>
   <component name="IdeDocumentHistory">
@@ -212,6 +211,7 @@
         <option value="$PROJECT_DIR$/versions/v1_3_0/base.py" />
         <option value="$PROJECT_DIR$/mods/v1_3_0/TestMod/__main__.py" />
         <option value="$PROJECT_DIR$/mods/v1_3_0/TestMod/EventCatcher.py" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -273,9 +273,9 @@
   <component name="PropertiesComponent">
     <property name="ChangesTree.GroupingKeys" value="directory&#10;repository" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/versions/0_1_0" />
+    <property name="last_opened_file_path" value="C:/Program Files/Git/bin/git.exe" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -463,7 +463,7 @@
     <option name="ACTIVE_ACTIONS" value=",ALPHA_COMPARATOR,SHOW_INHERITED" />
   </component>
   <component name="SvnConfiguration">
-    <configuration />
+    <configuration>C:\Users\quint\AppData\Roaming\Subversion</configuration>
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -505,11 +505,11 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
+    <frame x="70" y="-8" width="1858" height="1096" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49636552" visible="true" weight="0.15226555" />
-      <window_info id="Structure" order="1" sideWeight="0.50363445" side_tool="true" visible="true" weight="0.15226555" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49636552" visible="true" weight="0.15879121" />
+      <window_info id="Structure" order="1" sideWeight="0.50363445" side_tool="true" visible="true" weight="0.15879121" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32936078" />
