@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ebd1d8ec-c92d-450e-a095-92c9f916e95f" name="Default Changelist" comment="">
+    <list default="true" id="ebd1d8ec-c92d-450e-a095-92c9f916e95f" name="Default Changelist" comment="LICENSE Update (Also for older versions)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
+    <list id="693c844b-4be0-44d9-9e7c-714de82debfb" name="LICENSE Update (Also for older versions)" comment="Update Readme.md" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,7 +68,7 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="377">
+              <first_editor relative-caret-position="391">
                 <caret line="57" column="22" selection-start-line="57" selection-start-column="22" selection-end-line="57" selection-end-column="22" />
               </first_editor>
               <second_editor />
@@ -200,7 +201,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -223,6 +223,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -449,14 +450,20 @@
       <option name="project" value="LOCAL" />
       <updated>1557817720642</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Update Readme.md">
+      <created>1557817878571</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1557817878571</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -466,7 +473,7 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.8452381" weight="0.92962354" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="7" sideWeight="0.8452381" visible="true" weight="0.92962354" />
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info anchor="bottom" id="Python Console" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.15476191" side_tool="true" weight="0.15220949" />
@@ -520,16 +527,37 @@
         <entry key="MAIN">
           <value>
             <State>
+              <option name="SHOW_DETAILS_IN_CHANGES" value="false" />
               <option name="RECENTLY_FILTERED_USER_GROUPS">
                 <collection />
               </option>
               <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
                 <collection />
               </option>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                  <entry key="roots">
+                    <value>
+                      <list>
+                        <option value="$PROJECT_DIR$" />
+                        <option value="$PROJECT_DIR$/versions/v1_3_0" />
+                        <option value="$PROJECT_DIR$/versions/v0_1_0" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
               <option name="COLUMN_WIDTH">
                 <map>
-                  <entry key="2" value="15" />
-                  <entry key="3" value="125" />
+                  <entry key="2" value="125" />
+                  <entry key="3" value="15" />
                 </map>
               </option>
               <option name="COLUMN_ORDER">
@@ -552,7 +580,23 @@
             <list>
               <RecentGroup>
                 <option name="FILTER_VALUES">
+                  <option value="master" />
+                </option>
+              </RecentGroup>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
                   <option value="HEAD" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
+        <entry key="User">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="me" />
                 </option>
               </RecentGroup>
             </list>
@@ -568,7 +612,8 @@
     </ignored-roots>
     <MESSAGE value="Automaticly Update (PyCharm)" />
     <MESSAGE value="LICENSE Update (Also for older versions)" />
-    <option name="LAST_COMMIT_MESSAGE" value="LICENSE Update (Also for older versions)" />
+    <MESSAGE value="Update Readme.md" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update Readme.md" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -763,7 +808,7 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="377">
+          <first_editor relative-caret-position="391">
             <caret line="57" column="22" selection-start-line="57" selection-start-column="22" selection-end-line="57" selection-end-column="22" />
           </first_editor>
           <second_editor />
