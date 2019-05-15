@@ -2,30 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ebd1d8ec-c92d-450e-a095-92c9f916e95f" name="Default Changelist" comment="Updating Mod Support&#10;This is for the 1.5.0 Pre-Release">
-      <change afterPath="$PROJECT_DIR$/mods/v1_5_0_pre1/TestMod/EventCatcher.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/versions/v1_5_0_pre1/LICENSE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/versions/v1_5_0_pre1/sprites.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mods/v1_5_0_pre1/TestMod/Barier.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/launcher.py" beforeDir="false" afterPath="$PROJECT_DIR$/launcher.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mods/v1_3_0/TestMod/EventCatcher.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/slots/Bob/bubble.json" beforeDir="false" afterPath="$PROJECT_DIR$/slots/Bob/bubble.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/slots/Bob/game.json" beforeDir="false" afterPath="$PROJECT_DIR$/slots/Bob/game.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mods/v1_5_0_pre1/TestMod/EventCatcher.py" beforeDir="false" afterPath="$PROJECT_DIR$/mods/v1_5_0_pre1/TestMod/EventCatcher.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/slots/Quinten/bubble.json" beforeDir="false" afterPath="$PROJECT_DIR$/slots/Quinten/bubble.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/slots/Quinten/game.json" beforeDir="false" afterPath="$PROJECT_DIR$/slots/Quinten/game.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp/QplayBubbles-v1.4.0.zip" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/versions/v1_5_0_pre1/__main__.py" beforeDir="false" afterPath="$PROJECT_DIR$/versions/v1_5_0_pre1/__main__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/versions/v1_5_0_pre1/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/versions/v1_5_0_pre1/base.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/versions/v1_5_0_pre1/config/reset - kopie.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/versions/v1_5_0_pre1/config/reset-bubble - kopie.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/versions/v1_5_0_pre1/data/Nothing" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/versions/v1_5_0_pre1/data/bubbles/Nothing" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/versions/v1_5_0_pre1/data/contacts.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/versions/v1_5_0_pre1/fake_main.py" beforeDir="false" afterPath="$PROJECT_DIR$/versions/v1_5_0_pre1/fake_main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/versions/v1_5_0_pre1/components.py" beforeDir="false" afterPath="$PROJECT_DIR$/versions/v1_5_0_pre1/components.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/versions/v1_5_0_pre1/mod_support.py" beforeDir="false" afterPath="$PROJECT_DIR$/versions/v1_5_0_pre1/mod_support.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/versions/v1_5_0_pre1/pychat.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/versions/v1_5_0_pre1/test 3.py" beforeDir="false" afterPath="$PROJECT_DIR$/versions/v1_5_0_pre1/Test 3.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -38,40 +23,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/versions/v1_5_0_pre1/__main__.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="597">
-              <caret line="459" column="39" selection-start-line="459" selection-start-column="39" selection-end-line="459" selection-end-column="39" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/versions/v1_5_0_pre1/ammo.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="705">
-              <caret line="52" column="79" selection-start-line="52" selection-start-column="79" selection-end-line="52" selection-end-column="79" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/versions/v1_5_0_pre1/base.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="495">
-              <caret line="158" column="20" selection-start-line="158" selection-start-column="20" selection-end-line="158" selection-end-column="20" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/versions/v1_5_0_pre1/LICENSE">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/versions/v1_5_0_pre1/fake_main.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="20" column="18" lean-forward="true" selection-start-line="20" selection-start-column="18" selection-end-line="20" selection-end-column="18" />
+            <state relative-caret-position="442">
+              <caret line="1018" column="35" lean-forward="true" selection-start-line="1018" selection-start-column="35" selection-end-line="1018" selection-end-column="35" />
               <folding>
                 <element signature="e#134#156#0" expanded="true" />
               </folding>
@@ -79,16 +32,41 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/versions/v1_5_0_pre1/extras.py">
-          <provider selected="true" editor-type-id="text-editor" />
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/versions/v1_5_0_pre1/base.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="391">
+              <caret line="184" column="20" selection-start-line="184" selection-start-column="20" selection-end-line="184" selection-end-column="20" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/launcher.py">
+        <entry file="file://$PROJECT_DIR$/versions/v1_5_0_pre1/config/reset-bubble.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="87">
-              <caret line="187" lean-forward="true" selection-start-line="187" selection-end-line="187" />
+            <state relative-caret-position="204">
+              <caret line="12" column="4" lean-forward="true" selection-end-line="23" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mods/v1_5_0_pre1/TestMod/__main__.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/versions/v1_5_0_pre1/mod_support.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="663">
+              <caret line="39" column="23" selection-start-line="39" selection-start-column="23" selection-end-line="39" selection-end-column="23" />
+              <folding>
+                <element signature="e#0#9#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -96,7 +74,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/versions/v1_5_0_pre1/components.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
+            <state relative-caret-position="306">
+              <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
               </folding>
@@ -105,15 +84,22 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/versions/v1_5_0_pre1/.gitignore">
-          <provider selected="true" editor-type-id="text-editor" />
+        <entry file="file://$PROJECT_DIR$/mods/v1_5_0_pre1/TestMod/EventCatcher.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="13" column="14" selection-start-line="13" selection-start-column="14" selection-end-line="13" selection-end-column="14" />
+              <folding>
+                <element signature="e#0#47#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/versions/v1_5_0_pre1/bubble.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="553" column="88" selection-start-line="552" selection-start-column="84" selection-end-line="553" selection-end-column="88" />
+            <state relative-caret-position="-170">
+              <caret line="68" column="4" selection-start-line="68" selection-start-column="4" selection-end-line="68" selection-end-column="4" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
               </folding>
@@ -157,6 +143,7 @@
       <find>versions.v1_5_0</find>
       <find>itemp.</find>
       <find>bubble</find>
+      <find>self.parent.coords</find>
     </findStrings>
     <replaceStrings>
       <replace>False</replace>
@@ -179,6 +166,7 @@
       <replace>versions.v1_5_0_pre1</replace>
       <replace>item</replace>
       <replace>parent.bubbles</replace>
+      <replace>self.parent.canvas.coords</replace>
     </replaceStrings>
     <dirStrings>
       <dir>C:\Users\quint\Documents\GitHub\Qplay-Bubbles\versions</dir>
@@ -196,10 +184,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/lang/zh.yaml" />
-        <option value="$PROJECT_DIR$/lang/fr.yaml" />
-        <option value="$PROJECT_DIR$/lang/en.yaml" />
-        <option value="$PROJECT_DIR$/lang/el.yaml" />
         <option value="$PROJECT_DIR$/lang/de.yaml" />
         <option value="$PROJECT_DIR$/lang/it.yaml" />
         <option value="$PROJECT_DIR$/lang/nl.yaml" />
@@ -239,13 +223,17 @@
         <option value="$PROJECT_DIR$/mods/v1_5_0-pre1/TestMod/TestStoreItem.py" />
         <option value="$PROJECT_DIR$/mods/v1_3_0/TestMod/TestStoreItem.py" />
         <option value="$PROJECT_DIR$/slots/Bob/game.json" />
-        <option value="$PROJECT_DIR$/slots/Quinten/game.json" />
         <option value="$PROJECT_DIR$/mods/v1_5_0_pre1/TestMod/__main__.py" />
-        <option value="$PROJECT_DIR$/versions/v1_5_0_pre1/mod_support.py" />
         <option value="$PROJECT_DIR$/versions/v1_5_0_pre1/sprites.py" />
         <option value="$PROJECT_DIR$/versions/v1_5_0_pre1/fake_main.py" />
-        <option value="$PROJECT_DIR$/versions/v1_5_0_pre1/__main__.py" />
         <option value="$PROJECT_DIR$/launcher.py" />
+        <option value="$PROJECT_DIR$/versions/v1_5_0_pre1/mod_support.py" />
+        <option value="$PROJECT_DIR$/mods/v1_5_0_pre1/TestMod/EventCatcher.py" />
+        <option value="$PROJECT_DIR$/mods/v1_5_0_pre1/TestMod/Barier.py" />
+        <option value="$PROJECT_DIR$/slots/Quinten/bubble.json" />
+        <option value="$PROJECT_DIR$/slots/Quinten/game.json" />
+        <option value="$PROJECT_DIR$/versions/v1_5_0_pre1/components.py" />
+        <option value="$PROJECT_DIR$/versions/v1_5_0_pre1/__main__.py" />
         <option value="$PROJECT_DIR$/versions/v1_5_0_pre1/base.py" />
       </list>
     </option>
@@ -258,10 +246,11 @@
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
-    <navigator proportions="" version="1">
+    <navigator currentView="Scope" currentSubView="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope" proportions="" version="1">
       <showMembers ProjectPane="true" />
       <autoscrollToSource ProjectPane="true" />
       <autoscrollFromSource ProjectPane="true" />
+      <sortByType ProjectPane="true" />
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
@@ -334,7 +323,37 @@
               <item name="Qplay-Bubbles" type="462c0819:PsiDirectoryNode" />
               <item name="versions" type="462c0819:PsiDirectoryNode" />
               <item name="v1_5_0_pre1" type="462c0819:PsiDirectoryNode" />
+              <item name="__main__.py" type="8704e2dd:PyFileNode" />
+            </path>
+            <path>
+              <item name="Qplay-Bubbles" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Qplay-Bubbles" type="462c0819:PsiDirectoryNode" />
+              <item name="versions" type="462c0819:PsiDirectoryNode" />
+              <item name="v1_5_0_pre1" type="462c0819:PsiDirectoryNode" />
+              <item name="__main__.py" type="8704e2dd:PyFileNode" />
+              <item name="Game" type="dd8bbb05:PyElementNode" />
+            </path>
+            <path>
+              <item name="Qplay-Bubbles" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Qplay-Bubbles" type="462c0819:PsiDirectoryNode" />
+              <item name="versions" type="462c0819:PsiDirectoryNode" />
+              <item name="v1_5_0_pre1" type="462c0819:PsiDirectoryNode" />
+              <item name="ammo.py" type="8704e2dd:PyFileNode" />
+            </path>
+            <path>
+              <item name="Qplay-Bubbles" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Qplay-Bubbles" type="462c0819:PsiDirectoryNode" />
+              <item name="versions" type="462c0819:PsiDirectoryNode" />
+              <item name="v1_5_0_pre1" type="462c0819:PsiDirectoryNode" />
               <item name="base.py" type="8704e2dd:PyFileNode" />
+            </path>
+            <path>
+              <item name="Qplay-Bubbles" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Qplay-Bubbles" type="462c0819:PsiDirectoryNode" />
+              <item name="versions" type="462c0819:PsiDirectoryNode" />
+              <item name="v1_5_0_pre1" type="462c0819:PsiDirectoryNode" />
+              <item name="base.py" type="8704e2dd:PyFileNode" />
+              <item name="BaseBarier" type="dd8bbb05:PyElementNode" />
             </path>
             <path>
               <item name="Qplay-Bubbles" type="b2602c69:ProjectViewProjectNode" />
@@ -344,11 +363,240 @@
               <item name="base.py" type="8704e2dd:PyFileNode" />
               <item name="Sprite" type="dd8bbb05:PyElementNode" />
             </path>
+            <path>
+              <item name="Qplay-Bubbles" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Qplay-Bubbles" type="462c0819:PsiDirectoryNode" />
+              <item name="versions" type="462c0819:PsiDirectoryNode" />
+              <item name="v1_5_0_pre1" type="462c0819:PsiDirectoryNode" />
+              <item name="bubble.py" type="8704e2dd:PyFileNode" />
+            </path>
+            <path>
+              <item name="Qplay-Bubbles" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Qplay-Bubbles" type="462c0819:PsiDirectoryNode" />
+              <item name="versions" type="462c0819:PsiDirectoryNode" />
+              <item name="v1_5_0_pre1" type="462c0819:PsiDirectoryNode" />
+              <item name="components.py" type="8704e2dd:PyFileNode" />
+            </path>
+            <path>
+              <item name="Qplay-Bubbles" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Qplay-Bubbles" type="462c0819:PsiDirectoryNode" />
+              <item name="versions" type="462c0819:PsiDirectoryNode" />
+              <item name="v1_5_0_pre1" type="462c0819:PsiDirectoryNode" />
+              <item name="fake_main.py" type="8704e2dd:PyFileNode" />
+            </path>
+            <path>
+              <item name="Qplay-Bubbles" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Qplay-Bubbles" type="462c0819:PsiDirectoryNode" />
+              <item name="versions" type="462c0819:PsiDirectoryNode" />
+              <item name="v1_5_0_pre1" type="462c0819:PsiDirectoryNode" />
+              <item name="fake_main.py" type="8704e2dd:PyFileNode" />
+              <item name="Game" type="dd8bbb05:PyElementNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="Scope">
+        <subPane subId="Scope 'Changed Files'; set:Changed Files; ALL; class com.intellij.packageDependencies.ChangeListScope">
+          <expand>
+            <path>
+              <item name="Qplay-Bubbles" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="C:\Users\quint\Documents\GitHub\Qplay-Bubbles" type="442cc68d:ScopeViewTreeModel$RootNode" />
+            </path>
+            <path>
+              <item name="Qplay-Bubbles" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="C:\Users\quint\Documents\GitHub\Qplay-Bubbles" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="versions" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="Qplay-Bubbles" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="C:\Users\quint\Documents\GitHub\Qplay-Bubbles" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="versions" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="v1_5_0_pre1" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="Qplay-Bubbles" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="C:\Users\quint\Documents\GitHub\Qplay-Bubbles" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="versions" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="v1_5_0_pre1" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="base.py" type="8704e2dd:PyFileNode" />
+            </path>
+            <path>
+              <item name="Qplay-Bubbles" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="C:\Users\quint\Documents\GitHub\Qplay-Bubbles" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="versions" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="v1_5_0_pre1" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="base.py" type="8704e2dd:PyFileNode" />
+              <item name="BaseBarier" type="dd8bbb05:PyElementNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+        <subPane subId="Scope 'Problems'; set:Problems; class com.intellij.psi.search.scope.ProblemsScope">
+          <expand>
+            <path>
+              <item name="Qplay-Bubbles" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="C:\Users\quint\Documents\GitHub\Qplay-Bubbles" type="442cc68d:ScopeViewTreeModel$RootNode" />
+            </path>
+            <path>
+              <item name="Qplay-Bubbles" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="C:\Users\quint\Documents\GitHub\Qplay-Bubbles" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="versions" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="Qplay-Bubbles" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="C:\Users\quint\Documents\GitHub\Qplay-Bubbles" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="versions" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="v1_5_0_pre1" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="Qplay-Bubbles" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="C:\Users\quint\Documents\GitHub\Qplay-Bubbles" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="versions" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="v1_5_0_pre1" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="base.py" type="8704e2dd:PyFileNode" />
+            </path>
+            <path>
+              <item name="Qplay-Bubbles" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="C:\Users\quint\Documents\GitHub\Qplay-Bubbles" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="versions" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="v1_5_0_pre1" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="base.py" type="8704e2dd:PyFileNode" />
+              <item name="BaseBarier" type="dd8bbb05:PyElementNode" />
+            </path>
+            <path>
+              <item name="Qplay-Bubbles" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="C:\Users\quint\Documents\GitHub\Qplay-Bubbles" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="versions" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="v1_5_0_pre1" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="base.py" type="8704e2dd:PyFileNode" />
+              <item name="Sprite" type="dd8bbb05:PyElementNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+        <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
+          <expand>
+            <path>
+              <item name="Qplay-Bubbles" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="C:\Users\quint\Documents\GitHub\Qplay-Bubbles" type="442cc68d:ScopeViewTreeModel$RootNode" />
+            </path>
+            <path>
+              <item name="Qplay-Bubbles" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="C:\Users\quint\Documents\GitHub\Qplay-Bubbles" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="mods" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="Qplay-Bubbles" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="C:\Users\quint\Documents\GitHub\Qplay-Bubbles" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="mods" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="v1_5_0_pre1" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="Qplay-Bubbles" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="C:\Users\quint\Documents\GitHub\Qplay-Bubbles" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="mods" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="v1_5_0_pre1" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="TestMod" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="Qplay-Bubbles" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="C:\Users\quint\Documents\GitHub\Qplay-Bubbles" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="mods" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="v1_5_0_pre1" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="TestMod" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="__main__.py" type="8704e2dd:PyFileNode" />
+            </path>
+            <path>
+              <item name="Qplay-Bubbles" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="C:\Users\quint\Documents\GitHub\Qplay-Bubbles" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="mods" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="v1_5_0_pre1" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="TestMod" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="__main__.py" type="8704e2dd:PyFileNode" />
+              <item name="Initialize" type="dd8bbb05:PyElementNode" />
+            </path>
+            <path>
+              <item name="Qplay-Bubbles" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="C:\Users\quint\Documents\GitHub\Qplay-Bubbles" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="mods" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="v1_5_0_pre1" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="TestMod" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="Barier.py" type="8704e2dd:PyFileNode" />
+            </path>
+            <path>
+              <item name="Qplay-Bubbles" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="C:\Users\quint\Documents\GitHub\Qplay-Bubbles" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="mods" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="v1_5_0_pre1" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="TestMod" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="Barier.py" type="8704e2dd:PyFileNode" />
+              <item name="Barier" type="dd8bbb05:PyElementNode" />
+            </path>
+            <path>
+              <item name="Qplay-Bubbles" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="C:\Users\quint\Documents\GitHub\Qplay-Bubbles" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="mods" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="v1_5_0_pre1" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="TestMod" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="EventCatcher.py" type="8704e2dd:PyFileNode" />
+            </path>
+            <path>
+              <item name="Qplay-Bubbles" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="C:\Users\quint\Documents\GitHub\Qplay-Bubbles" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="slots" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="Qplay-Bubbles" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="C:\Users\quint\Documents\GitHub\Qplay-Bubbles" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="slots" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="Quinten" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="Qplay-Bubbles" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="C:\Users\quint\Documents\GitHub\Qplay-Bubbles" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="versions" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="Qplay-Bubbles" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="C:\Users\quint\Documents\GitHub\Qplay-Bubbles" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="versions" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="v1_5_0_pre1" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="Qplay-Bubbles" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="C:\Users\quint\Documents\GitHub\Qplay-Bubbles" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="versions" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="v1_5_0_pre1" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="__main__.py" type="8704e2dd:PyFileNode" />
+            </path>
+            <path>
+              <item name="Qplay-Bubbles" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="C:\Users\quint\Documents\GitHub\Qplay-Bubbles" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="versions" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="v1_5_0_pre1" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="__main__.py" type="8704e2dd:PyFileNode" />
+              <item name="Maintance" type="dd8bbb05:PyElementNode" />
+            </path>
+            <path>
+              <item name="Qplay-Bubbles" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="C:\Users\quint\Documents\GitHub\Qplay-Bubbles" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="versions" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="v1_5_0_pre1" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="base.py" type="8704e2dd:PyFileNode" />
+            </path>
+            <path>
+              <item name="Qplay-Bubbles" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="C:\Users\quint\Documents\GitHub\Qplay-Bubbles" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="versions" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="v1_5_0_pre1" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="base.py" type="8704e2dd:PyFileNode" />
+              <item name="Sprite" type="dd8bbb05:PyElementNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -597,12 +845,12 @@
     <frame x="54" y="-8" width="1874" height="1096" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4895288" visible="true" weight="0.15849674" />
-      <window_info id="Structure" order="1" sideWeight="0.5104712" side_tool="true" visible="true" weight="0.15849674" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4882199" visible="true" weight="0.15849674" />
+      <window_info id="Structure" order="1" sideWeight="0.5117801" side_tool="true" visible="true" weight="0.15849674" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32936078" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.498366" weight="0.20664589" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49782136" weight="0.20664589" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39761648" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -610,7 +858,7 @@
       <window_info anchor="bottom" x="1920" y="23" width="1920" height="1017" id="Version Control" maximized="true" order="7" sideWeight="0.8452381" type="WINDOWED" weight="0.92938733" />
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info anchor="bottom" id="Python Console" order="9" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.501634" side_tool="true" visible="true" weight="0.20664589" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50217867" side_tool="true" visible="true" weight="0.20664589" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.32917964" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -770,14 +1018,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/lang/el.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="16" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/site-packages/pseudo/main.py" />
     <entry file="file://$PROJECT_DIR$/lang/ni.yaml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -895,37 +1135,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/versions/v1_5_0/config/reset-bubble - kopie.json" />
     <entry file="file://$PROJECT_DIR$/versions/v1_5_0/data/contacts.dat" />
-    <entry file="file://$PROJECT_DIR$/versions/v1_5_0_pre1/config/reset-bubble.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/all_versions.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="1" column="14" selection-start-line="1" selection-start-column="14" selection-end-line="1" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/slots/Quinten/game.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
-          <caret line="37" column="1" selection-start-line="37" selection-start-column="1" selection-end-line="37" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/versions/v1_5_0_pre1/mod_support.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="34" column="46" selection-start-line="34" selection-start-column="46" selection-end-line="34" selection-end-column="46" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mods/v1_5_0_pre1/TestMod/EventCatcher.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="12" column="29" selection-start-line="12" selection-start-column="29" selection-end-line="12" selection-end-column="29" />
         </state>
       </provider>
     </entry>
@@ -953,13 +1166,6 @@
     <entry file="file://$PROJECT_DIR$/versions/v1_5_0_pre1/sprites.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/mods/v1_5_0_pre1/TestMod/__main__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="44" selection-start-line="12" selection-start-column="44" selection-end-line="12" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/versions/v1_5_0_pre1/archivement.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -973,69 +1179,128 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/versions/v1_5_0_pre1/LICENSE">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/versions/v1_5_0_pre1/extras.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/versions/v1_5_0_pre1/components.py">
+    <entry file="file://$PROJECT_DIR$/launcher.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="3128">
+          <caret line="187" lean-forward="true" selection-start-line="187" selection-end-line="187" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/versions/v1_5_0_pre1/.gitignore">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/versions/v1_5_0_pre1/LICENSE">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/versions/v1_5_0_pre1/bubble.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="553" column="88" selection-start-line="552" selection-start-column="84" selection-end-line="553" selection-end-column="88" />
-          <folding>
-            <element signature="e#0#19#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/versions/v1_5_0_pre1/ammo.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="705">
-          <caret line="52" column="79" selection-start-line="52" selection-start-column="79" selection-end-line="52" selection-end-column="79" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/versions/v1_5_0_pre1/fake_main.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
-          <caret line="20" column="18" lean-forward="true" selection-start-line="20" selection-start-column="18" selection-end-line="20" selection-end-column="18" />
+          <caret line="523" column="13" selection-start-line="523" selection-start-column="13" selection-end-line="523" selection-end-column="13" />
           <folding>
             <element signature="e#134#156#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/versions/v1_5_0_pre1/__main__.py">
+    <entry file="file://$PROJECT_DIR$/versions/v1_5_0_pre1/ammo.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="597">
-          <caret line="459" column="39" selection-start-line="459" selection-start-column="39" selection-end-line="459" selection-end-column="39" />
+        <state relative-caret-position="682">
+          <caret line="52" column="79" selection-start-line="52" selection-start-column="79" selection-end-line="52" selection-end-column="79" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/launcher.py">
+    <entry file="file://$PROJECT_DIR$/mods/v1_5_0_pre1/TestMod/Barier.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="87">
-          <caret line="187" lean-forward="true" selection-start-line="187" selection-end-line="187" />
+        <state relative-caret-position="85">
+          <caret line="5" column="26" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mods/v1_5_0_pre1/TestMod/EventCatcher.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="14" selection-start-line="13" selection-start-column="14" selection-end-line="13" selection-end-column="14" />
+          <folding>
+            <element signature="e#0#47#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mods/v1_5_0_pre1/TestMod/__main__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/versions/v1_5_0_pre1/bubble.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-170">
+          <caret line="68" column="4" selection-start-line="68" selection-start-column="4" selection-end-line="68" selection-end-column="4" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/versions/v1_5_0_pre1/mod_support.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="663">
+          <caret line="39" column="23" selection-start-line="39" selection-start-column="23" selection-end-line="39" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/versions/v1_5_0_pre1/config/reset-bubble.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="4" lean-forward="true" selection-end-line="23" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/versions/v1_5_0_pre1/components.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/slots/Quinten/game.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="821" selection-start-column="821" selection-end-column="821" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/slots/Quinten/bubble.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="12281" selection-start-column="12281" selection-end-column="12281" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/versions/v1_5_0_pre1/__main__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="1018" column="35" lean-forward="true" selection-start-line="1018" selection-start-column="35" selection-end-line="1018" selection-end-column="35" />
+          <folding>
+            <element signature="e#134#156#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/versions/v1_5_0_pre1/base.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="158" column="20" selection-start-line="158" selection-start-column="20" selection-end-line="158" selection-end-column="20" />
+        <state relative-caret-position="391">
+          <caret line="184" column="20" selection-start-line="184" selection-start-column="20" selection-end-line="184" selection-end-column="20" />
         </state>
       </provider>
     </entry>
