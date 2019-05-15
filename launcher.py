@@ -146,7 +146,7 @@ class Launcher(wx.Panel):
 
         self.all = json.JSONDecoder().decode(json_data)
 
-        for i in ("v1.1.0", "v1.1.1", "v1.2.0-pre1", "v1.2.0-pre2", "v1.2.0", "v1.2.1", "v1.2.2", "v1.3.0-pre1", "v1.3.0"):
+        for i in ("v1.1.0", "v1.1.1", "v1.2.0-pre1", "v1.2.0-pre2", "v1.2.0", "v1.2.1", "v1.2.2", "v1.3.0-pre1"):
             self.all.pop(i)
 
         # -- old / historic versions --------------------------------------------------------------------------------- #
@@ -201,8 +201,6 @@ class Launcher(wx.Panel):
                     )
                     extract_zipfile("temp/QplayBubbles-" + version + '.zip', "versions/")
                     os.rename("versions/QplayBubbles-Releaes-" + version[1:], "versions/" + version_dir)
-        else:
-            return
 
         cfg = {"version": version,
                "versionDir": version_dir,
