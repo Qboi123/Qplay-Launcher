@@ -36,14 +36,14 @@ def speed():
         total2 = total
         spd = (total2 - total1) * 2
         try:
-            a = fileTotalbytes / spd
+            a = (fileTotalbytes - total) / spd
             b = time.gmtime(a)
             hours = b[3]
             # noinspection PyShadowingBuiltins
             min = b[4]
             sec = b[5]
         except ZeroDivisionError:
-            a = -1
+            a = 0
             b = time.gmtime(a)
             hours = b[3]
             # noinspection PyShadowingBuiltins
@@ -134,7 +134,7 @@ class Launcher(wx.Panel):
         import json
 
         self.data = json.JSONDecoder().decode(json_data)
-        print(self.data)
+        # print(self.data)
 
         # -- all versions -------------------------------------------------------------------------------------------- #
         json_url = urllib.request.urlopen(
@@ -146,7 +146,7 @@ class Launcher(wx.Panel):
 
         self.all = json.JSONDecoder().decode(json_data)
 
-        for i in ("v1.1.0", "v1.1.1", "v1.2.0-pre1", "v1.2.0-pre2", "v1.2.0", "v1.2.1", "v1.2.2", "v1.3.0-pre1"):
+        for i in ("v1.1.0", "v1.1.1", "v1.2.0-pre1", "v1.2.0-pre2", "v1.2.0", "v1.2.1", "v1.2.2", "v1.3.0-pre1", "v1.3.0"):
             self.all.pop(i)
 
         # -- old / historic versions --------------------------------------------------------------------------------- #
@@ -182,13 +182,13 @@ class Launcher(wx.Panel):
 
         version_dir = replace2dir(version)
 
-        print(version_dir)
+        # print(version_dir)
 
         if 1:
             if version in self.old:
                 if not os.path.exists("versions/" + version_dir + "/"):
                     download(
-                        "https://github.com/Qplay123/QplayBubbles-OldReleases/archive/" + self.data["version"] + ".zip",
+                        "https://github.com/Qplay123/QplayBubbles-OldReleases/archive/" + version + ".zip",
                         self, version
                     )
                     extract_zipfile("temp/QplayBubbles-" + version + '.zip', "versions/")
@@ -196,7 +196,7 @@ class Launcher(wx.Panel):
             else:
                 if not os.path.exists("versions/" + version_dir + "/"):
                     download(
-                        "https://github.com/Qplay123/QplayBubbles-Releaes/archive/" + self.data["version"] + ".zip",
+                        "https://github.com/Qplay123/QplayBubbles-Releaes/archive/" + version + ".zip",
                         self, version
                     )
                     extract_zipfile("temp/QplayBubbles-" + version + '.zip', "versions/")
@@ -211,9 +211,14 @@ class Launcher(wx.Panel):
                }
 
         os.chdir("versions/"+version_dir)
-        print(os.curdir)
+        # print(os.curdir)
         a = __import__("versions.%s.__main__" % version_dir, fromlist=["__main__"])
-        a.Game(launcher_cfg=cfg)
+        try:
+            a.Game(launcher_cfg=cfg)
+        except TypeError as e:
+            # print(e.args)
+            if e.args[0] == "__init__() got an unexpected keyword argument 'launcher_cfg'":
+                a.Game()
         os.chdir("../../")
 
 
