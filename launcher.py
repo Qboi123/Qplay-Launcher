@@ -5,11 +5,11 @@ import wx
 
 
 def replace2ver(string: str):
-    return string.replace("_", ".")
+    return string.replace("_", ".").replace("_pre", "-pre")
 
 
 def replace2dir(string: str):
-    return string.replace(".", "_")
+    return string.replace(".", "_").replace("-pre", "_pre")
 
 
 def ver2list(string: str):
@@ -149,6 +149,8 @@ class Launcher(wx.Panel):
         for i in ("v1.1.0", "v1.1.1", "v1.2.0-pre1", "v1.2.0-pre2", "v1.2.0", "v1.2.1", "v1.2.2", "v1.3.0-pre1"):
             self.all.pop(i)
 
+        self.all["v1.5.0-pre1"] = 12
+
         # -- old / historic versions --------------------------------------------------------------------------------- #
         json_url = urllib.request.urlopen(
             "https://raw.githubusercontent.com/Qplay123/Qplay-Bubbles/master/old_versions.json"
@@ -182,7 +184,7 @@ class Launcher(wx.Panel):
 
         version_dir = replace2dir(version)
 
-        # print(version_dir)
+        print(version_dir)
 
         if 1:
             if version in self.old:
@@ -209,7 +211,7 @@ class Launcher(wx.Panel):
                }
 
         os.chdir("versions/"+version_dir)
-        # print(os.curdir)
+        print(os.curdir)
         a = __import__("versions.%s.__main__" % version_dir, fromlist=["__main__"])
         try:
             a.Game(launcher_cfg=cfg)
