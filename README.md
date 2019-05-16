@@ -59,3 +59,10 @@ https://github.com/Qplay123/Qplay-Bubbles/releases for the Game. (Setup / Source
 
 ## Tips:
 01. Use the Source steps. (.zip / .tar.gz)  
+
+## Badges
+![Python Badge](https://github.com/Qplay123/Qplay-Bubbles/raw/master/img/PythonBadge.png)  
+![Windows 7 Badge](https://github.com/Qplay123/Qplay-Bubbles/raw/master/img/Windows7Badge.png)
+![Windows 7 Badge](https://github.com/Qplay123/Qplay-Bubbles/raw/master/img/Windows8Badge.png)
+![Windows 7 Badge](https://github.com/Qplay123/Qplay-Bubbles/raw/master/img/Windows8.1Badge.png)
+![Windows 7 Badge](https://github.com/Qplay123/Qplay-Bubbles/raw/master/img/Windows10Badge.png)
