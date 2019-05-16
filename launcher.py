@@ -1,6 +1,5 @@
 import os
 import zipfile
-
 import wx
 
 
@@ -165,7 +164,7 @@ class Launcher(wx.Panel):
         vertical_box = wx.BoxSizer(wx.VERTICAL)
 
         all = list(self.old.keys())+list(self.all.keys())
-        all.sort(reverse=False)
+        all.sort(reverse=True)
 
         self.versions = wx.Choice(self, pos=(0, 640-35), choices=all)
         self.versions.SetSelection(0)
@@ -224,7 +223,7 @@ class Launcher(wx.Panel):
 
 if __name__ == '__main__':
     app = wx.App()
-    frame = wx.Frame(None, size=wx.Size(1280, 720), title="Qplay Bubbles Launcher")
+    frame = wx.Frame(None, size=wx.Size(1280, 720), pos=wx.Point(0, 2), title="Qplay Bubbles Launcher")
     main = Launcher(frame)
     frame.Show()
     app.MainLoop()

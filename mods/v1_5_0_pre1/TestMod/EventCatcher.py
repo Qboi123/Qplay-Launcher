@@ -6,9 +6,8 @@ from . import Barier
 
 # noinspection PyUnusedLocal
 class EventCatcher(Event):
-    def __init__(self, parent: Game):
-        super().__init__(parent)
-        self.parent = parent
+    def __init__(self):
+        super().__init__()
 
     def on_update(self, parent: Game):
-        Barier
+        pass
