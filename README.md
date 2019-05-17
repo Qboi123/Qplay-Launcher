@@ -56,6 +56,8 @@ https://github.com/Qplay123/Qplay-Bubbles/releases for the Game. (Setup / Source
 
 ## Information for next version (v1.5.0):
 * Mods / Addon support
+* May be sprites. (Friend & Enemy)
+* Bariers. Note: this is also a sprite!
 
 ## Tips:
 01. Use the Source steps. (.zip / .tar.gz)  
