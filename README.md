@@ -16,7 +16,7 @@ Minimum of 1366x768 resolution of your screen.
 04. Then click on Install.
 05. When this instalation is done, press on "Disable PATH length limit."
 06. When you have downloaded Python 3.7. Search with start for cmd.exe and open it.
-07. Type "pip install pygame threadsafe_tkinter"
+07. Type "pip install pygame threadsafe_tkinter yaml wx"
 08. Press ENTER.
 09. Wait.
 10. When this is done, unpack the archive (zip). Ans run Main.py
