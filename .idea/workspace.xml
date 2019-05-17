@@ -2,16 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ebd1d8ec-c92d-450e-a095-92c9f916e95f" name="Default Changelist" comment="LICENSE Update (Also for older versions)">
-      <change afterPath="$PROJECT_DIR$/lang/tengwar.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/slots/Quinten/bubble.json" beforeDir="false" afterPath="$PROJECT_DIR$/slots/Quinten/bubble.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/slots/Quinten/game.json" beforeDir="false" afterPath="$PROJECT_DIR$/slots/Quinten/game.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/versions/v1_5_0_pre1/Test 4.py" beforeDir="false" afterPath="$PROJECT_DIR$/versions/v1_5_0_pre1/Test 4.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/slots/Bob/bubble.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/slots/Bob/game.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/slots/Quinten/bubble.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/slots/Quinten/game.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/versions/v1_5_0_pre1/__main__.py" beforeDir="false" afterPath="$PROJECT_DIR$/versions/v1_5_0_pre1/__main__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/versions/v1_5_0_pre1/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/versions/v1_5_0_pre1/base.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/versions/v1_5_0_pre1/components.py" beforeDir="false" afterPath="$PROJECT_DIR$/versions/v1_5_0_pre1/components.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/versions/v1_5_0_pre1/config/startup.json" beforeDir="false" afterPath="$PROJECT_DIR$/versions/v1_5_0_pre1/config/startup.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/versions/v1_5_0_pre1/fake_main.py" beforeDir="false" afterPath="$PROJECT_DIR$/versions/v1_5_0_pre1/fake_main.py" afterDir="false" />
     </list>
     <list id="693c844b-4be0-44d9-9e7c-714de82debfb" name="LICENSE Update (Also for older versions)" comment="Update Readme.md" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -19,25 +15,6 @@
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="DockManager">
-    <window id="1">
-      <content type="file-editors">
-        <state>
-          <leaf>
-            <file pinned="false" current-in-tab="true">
-              <entry file="file://$PROJECT_DIR$/lang/tengwar.yaml">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="459">
-                    <caret line="63" column="16" selection-start-line="63" selection-start-column="16" selection-end-line="63" selection-end-column="16" />
-                  </state>
-                </provider>
-              </entry>
-            </file>
-          </leaf>
-        </state>
-      </content>
-    </window>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
@@ -53,8 +30,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/versions/v1_5_0_pre1/config/startup.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="24" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
+            <state relative-caret-position="238">
+              <caret line="18" column="1" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -71,8 +48,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/versions/v1_5_0_pre1/__main__.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="169" column="102" selection-start-line="169" selection-start-column="102" selection-end-line="169" selection-end-column="102" />
+            <state relative-caret-position="198">
+              <caret line="907" column="22" lean-forward="true" selection-start-line="907" selection-start-column="22" selection-end-line="907" selection-end-column="22" />
               <folding>
                 <element signature="e#134#156#0" expanded="true" />
               </folding>
@@ -88,15 +65,6 @@
               <folding>
                 <element signature="e#134#156#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/slots/Quinten/bubble.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="47" lean-forward="true" selection-start-column="47" selection-end-column="47" />
             </state>
           </provider>
         </entry>
@@ -256,18 +224,19 @@
         <option value="$PROJECT_DIR$/versions/v1_5_0_pre1/bubble.py" />
         <option value="$PROJECT_DIR$/versions/v1_5_0_pre1/ammo.py" />
         <option value="$PROJECT_DIR$/versions/v1_5_0_pre1/base.py" />
-        <option value="$PROJECT_DIR$/versions/v1_5_0_pre1/config/startup.json" />
         <option value="$PROJECT_DIR$/versions/v1_5_0_pre1/components.py" />
         <option value="$PROJECT_DIR$/versions/v1_5_0_pre1/fake_main.py" />
         <option value="$PROJECT_DIR$/lang/tengwar.yaml" />
+        <option value="$PROJECT_DIR$/versions/v1_5_0_pre1/config/startup.json" />
         <option value="$PROJECT_DIR$/versions/v1_5_0_pre1/__main__.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="676" />
-    <option name="width" value="697" />
-    <option name="height" value="735" />
+    <option name="x" value="536" />
+    <option name="y" value="-8" />
+    <option name="width" value="974" />
+    <option name="height" value="1047" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -495,17 +464,6 @@
             <path>
               <item name="Qplay-Bubbles" type="b2602c69:ProjectViewProjectNode" />
               <item name="Qplay-Bubbles" type="462c0819:PsiDirectoryNode" />
-              <item name="slots" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Qplay-Bubbles" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Qplay-Bubbles" type="462c0819:PsiDirectoryNode" />
-              <item name="slots" type="462c0819:PsiDirectoryNode" />
-              <item name="Quinten" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Qplay-Bubbles" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Qplay-Bubbles" type="462c0819:PsiDirectoryNode" />
               <item name="versions" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -530,7 +488,7 @@
   <component name="PropertiesComponent">
     <property name="ChangesTree.GroupingKeys" value="directory&#10;repository" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/versions/v1_5_0" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../FAIM-Jarvis" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
@@ -771,6 +729,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49604222" visible="true" weight="0.25" />
       <window_info id="Structure" order="1" sideWeight="0.5039578" side_tool="true" weight="0.50986344" />
@@ -1126,14 +1085,7 @@
     <entry file="file://$PROJECT_DIR$/slots/Quinten/bubble.json">
       <provider selected="true" editor-type-id="text-editor">
         <state>
-          <caret column="47" lean-forward="true" selection-start-column="47" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/versions/v1_5_0_pre1/config/startup.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="24" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
+          <caret column="47" selection-start-column="47" selection-end-column="47" />
         </state>
       </provider>
     </entry>
@@ -1161,6 +1113,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/versions/v1_5_0_pre1/config/startup.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="18" column="1" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/versions/v1_5_0_pre1/base.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="243">
@@ -1170,8 +1129,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/versions/v1_5_0_pre1/__main__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="169" column="102" selection-start-line="169" selection-start-column="102" selection-end-line="169" selection-end-column="102" />
+        <state relative-caret-position="198">
+          <caret line="907" column="22" lean-forward="true" selection-start-line="907" selection-start-column="22" selection-end-line="907" selection-end-column="22" />
           <folding>
             <element signature="e#134#156#0" expanded="true" />
           </folding>
