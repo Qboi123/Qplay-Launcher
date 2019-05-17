@@ -27,6 +27,12 @@ Minimum of 1366x768 resolution of your screen.
 03. Follow the instructions
 04. NOTE: After install you can choose to run the game.
 
+## Steps for Launcher Archive (The launcher.zip file)
+01. Download the launcher.zip file from the releases page.
+02. Open and extract the archive on a location that doesn't need administrator rights.
+03. In the extracted folder run the launcher.exe file (or laucher).
+04. TIP: You can make a link on the desktop to this. And rename it with <F2>.
+
 ## Steps for Application (Windows 10)
 Steps for Windows 10
 
