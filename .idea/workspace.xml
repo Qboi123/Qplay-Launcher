@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ebd1d8ec-c92d-450e-a095-92c9f916e95f" name="Default Changelist" comment="LICENSE Update (Also for older versions)">
-      <change beforePath="$PROJECT_DIR$/slots/Bob/bubble.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/slots/Bob/game.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/slots/Quinten/bubble.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/slots/Quinten/game.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/versions/v1_5_0_pre1/__main__.py" beforeDir="false" afterPath="$PROJECT_DIR$/versions/v1_5_0_pre1/__main__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/versions/v1_5_0_pre1/config/startup.json" beforeDir="false" afterPath="$PROJECT_DIR$/versions/v1_5_0_pre1/config/startup.json" afterDir="false" />
-    </list>
+    <list default="true" id="ebd1d8ec-c92d-450e-a095-92c9f916e95f" name="Default Changelist" comment="LICENSE Update (Also for older versions)" />
     <list id="693c844b-4be0-44d9-9e7c-714de82debfb" name="LICENSE Update (Also for older versions)" comment="Update Readme.md" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -728,15 +721,14 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1382" height="703" extended-state="6" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49604222" visible="true" weight="0.25" />
       <window_info id="Structure" order="1" sideWeight="0.5039578" side_tool="true" weight="0.50986344" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49945533" weight="0.32917964" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49891067" visible="true" weight="0.36497545" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49891067" weight="0.39122808" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39761648" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
