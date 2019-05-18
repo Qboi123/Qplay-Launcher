@@ -138,8 +138,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>True</find>
-      <find>pass</find>
       <find>j</find>
       <find>versions.</find>
       <find>from ammo</find>
@@ -168,6 +166,8 @@
       <find>parent.move</find>
       <find>bub-rad</find>
       <find>+bubs</find>
+      <find>&quot;helvetica&quot;</find>
+      <find>font=(self.font)</find>
     </findStrings>
     <replaceStrings>
       <replace>False</replace>
@@ -193,6 +193,8 @@
       <replace>self.parent.canvas.coords</replace>
       <replace>parent.canvas.move</replace>
       <replace>-bub_</replace>
+      <replace>self.font</replace>
+      <replace>font=[self.font]</replace>
     </replaceStrings>
     <dirStrings>
       <dir>C:\Users\quint\Documents\GitHub\Qplay-Bubbles\versions</dir>
@@ -248,18 +250,21 @@
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/mods/v1_5_0_pre1/TestMod/__main__.py" />
         <option value="$PROJECT_DIR$/versions/v1_5_0_pre1/bubble.py" />
-        <option value="$PROJECT_DIR$/versions/v1_5_0_pre1/__main__.py" />
         <option value="$PROJECT_DIR$/versions/v1_5_0_pre1/ammo.py" />
-        <option value="$PROJECT_DIR$/versions/v1_5_0_pre1/fake_main.py" />
         <option value="$PROJECT_DIR$/versions/v1_5_0_pre1/base.py" />
+        <option value="$PROJECT_DIR$/versions/v1_5_0_pre1/components.py" />
+        <option value="$PROJECT_DIR$/versions/v1_5_0_pre1/fake_main.py" />
+        <option value="$PROJECT_DIR$/lang/tengwar.yaml" />
+        <option value="$PROJECT_DIR$/versions/v1_5_0_pre1/config/startup.json" />
+        <option value="$PROJECT_DIR$/versions/v1_5_0_pre1/__main__.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="556" />
-    <option name="y" value="-9" />
-    <option name="width" value="1936" />
-    <option name="height" value="1096" />
+    <option name="x" value="536" />
+    <option name="y" value="-8" />
+    <option name="width" value="974" />
+    <option name="height" value="1047" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -482,122 +487,25 @@
             <path>
               <item name="Qplay-Bubbles" type="b2602c69:ProjectViewProjectNode" />
               <item name="Qplay-Bubbles" type="462c0819:PsiDirectoryNode" />
-              <item name="versions" type="462c0819:PsiDirectoryNode" />
+              <item name="lang" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Qplay-Bubbles" type="b2602c69:ProjectViewProjectNode" />
               <item name="Qplay-Bubbles" type="462c0819:PsiDirectoryNode" />
               <item name="versions" type="462c0819:PsiDirectoryNode" />
-              <item name="v1_5_0_pre1" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Qplay-Bubbles" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Qplay-Bubbles" type="462c0819:PsiDirectoryNode" />
-              <item name="versions" type="462c0819:PsiDirectoryNode" />
-              <item name="v1_5_0_pre1" type="462c0819:PsiDirectoryNode" />
-              <item name="__main__.py" type="8704e2dd:PyFileNode" />
             </path>
             <path>
               <item name="Qplay-Bubbles" type="b2602c69:ProjectViewProjectNode" />
               <item name="Qplay-Bubbles" type="462c0819:PsiDirectoryNode" />
               <item name="versions" type="462c0819:PsiDirectoryNode" />
               <item name="v1_5_0_pre1" type="462c0819:PsiDirectoryNode" />
-              <item name="__main__.py" type="8704e2dd:PyFileNode" />
-              <item name="Game" type="dd8bbb05:PyElementNode" />
             </path>
             <path>
               <item name="Qplay-Bubbles" type="b2602c69:ProjectViewProjectNode" />
               <item name="Qplay-Bubbles" type="462c0819:PsiDirectoryNode" />
               <item name="versions" type="462c0819:PsiDirectoryNode" />
               <item name="v1_5_0_pre1" type="462c0819:PsiDirectoryNode" />
-              <item name="ammo.py" type="8704e2dd:PyFileNode" />
-            </path>
-            <path>
-              <item name="Qplay-Bubbles" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Qplay-Bubbles" type="462c0819:PsiDirectoryNode" />
-              <item name="versions" type="462c0819:PsiDirectoryNode" />
-              <item name="v1_5_0_pre1" type="462c0819:PsiDirectoryNode" />
-              <item name="base.py" type="8704e2dd:PyFileNode" />
-            </path>
-            <path>
-              <item name="Qplay-Bubbles" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Qplay-Bubbles" type="462c0819:PsiDirectoryNode" />
-              <item name="versions" type="462c0819:PsiDirectoryNode" />
-              <item name="v1_5_0_pre1" type="462c0819:PsiDirectoryNode" />
-              <item name="base.py" type="8704e2dd:PyFileNode" />
-              <item name="Ammo" type="dd8bbb05:PyElementNode" />
-            </path>
-            <path>
-              <item name="Qplay-Bubbles" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Qplay-Bubbles" type="462c0819:PsiDirectoryNode" />
-              <item name="versions" type="462c0819:PsiDirectoryNode" />
-              <item name="v1_5_0_pre1" type="462c0819:PsiDirectoryNode" />
-              <item name="base.py" type="8704e2dd:PyFileNode" />
-              <item name="Bubble" type="dd8bbb05:PyElementNode" />
-            </path>
-            <path>
-              <item name="Qplay-Bubbles" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Qplay-Bubbles" type="462c0819:PsiDirectoryNode" />
-              <item name="versions" type="462c0819:PsiDirectoryNode" />
-              <item name="v1_5_0_pre1" type="462c0819:PsiDirectoryNode" />
-              <item name="base.py" type="8704e2dd:PyFileNode" />
-              <item name="Sprite" type="dd8bbb05:PyElementNode" />
-            </path>
-            <path>
-              <item name="Qplay-Bubbles" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Qplay-Bubbles" type="462c0819:PsiDirectoryNode" />
-              <item name="versions" type="462c0819:PsiDirectoryNode" />
-              <item name="v1_5_0_pre1" type="462c0819:PsiDirectoryNode" />
-              <item name="base.py" type="8704e2dd:PyFileNode" />
-              <item name="StatusBubble" type="dd8bbb05:PyElementNode" />
-            </path>
-            <path>
-              <item name="Qplay-Bubbles" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Qplay-Bubbles" type="462c0819:PsiDirectoryNode" />
-              <item name="versions" type="462c0819:PsiDirectoryNode" />
-              <item name="v1_5_0_pre1" type="462c0819:PsiDirectoryNode" />
-              <item name="bubble.py" type="8704e2dd:PyFileNode" />
-            </path>
-            <path>
-              <item name="Qplay-Bubbles" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Qplay-Bubbles" type="462c0819:PsiDirectoryNode" />
-              <item name="versions" type="462c0819:PsiDirectoryNode" />
-              <item name="v1_5_0_pre1" type="462c0819:PsiDirectoryNode" />
-              <item name="bubble.py" type="8704e2dd:PyFileNode" />
-              <item name="Collision" type="dd8bbb05:PyElementNode" />
-            </path>
-            <path>
-              <item name="Qplay-Bubbles" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Qplay-Bubbles" type="462c0819:PsiDirectoryNode" />
-              <item name="versions" type="462c0819:PsiDirectoryNode" />
-              <item name="v1_5_0_pre1" type="462c0819:PsiDirectoryNode" />
-              <item name="fake_main.py" type="8704e2dd:PyFileNode" />
-            </path>
-            <path>
-              <item name="Qplay-Bubbles" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Qplay-Bubbles" type="462c0819:PsiDirectoryNode" />
-              <item name="versions" type="462c0819:PsiDirectoryNode" />
-              <item name="v1_5_0_pre1" type="462c0819:PsiDirectoryNode" />
-              <item name="fake_main.py" type="8704e2dd:PyFileNode" />
-              <item name="Game" type="dd8bbb05:PyElementNode" />
-            </path>
-            <path>
-              <item name="Qplay-Bubbles" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Qplay-Bubbles" type="462c0819:PsiDirectoryNode" />
-              <item name="versions" type="462c0819:PsiDirectoryNode" />
-              <item name="v1_5_0_pre1" type="462c0819:PsiDirectoryNode" />
-              <item name="mod_support.py" type="8704e2dd:PyFileNode" />
-            </path>
-            <path>
-              <item name="Qplay-Bubbles" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Qplay-Bubbles" type="462c0819:PsiDirectoryNode" />
-              <item name="launcher.py" type="8704e2dd:PyFileNode" />
-            </path>
-            <path>
-              <item name="Qplay-Bubbles" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Qplay-Bubbles" type="462c0819:PsiDirectoryNode" />
-              <item name="launcher.py" type="8704e2dd:PyFileNode" />
-              <item name="Launcher" type="dd8bbb05:PyElementNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -608,7 +516,7 @@
   <component name="PropertiesComponent">
     <property name="ChangesTree.GroupingKeys" value="directory&#10;repository" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/versions/v1_5_0" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../FAIM-Jarvis" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
@@ -856,7 +764,7 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49945533" weight="0.32917964" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49891067" weight="0.3665628" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49891067" weight="0.39122808" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39761648" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -864,7 +772,7 @@
       <window_info anchor="bottom" x="1920" y="23" width="1920" height="1017" id="Version Control" maximized="true" order="7" sideWeight="0.8452381" type="WINDOWED" weight="0.92938733" />
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info anchor="bottom" id="Python Console" order="9" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50108933" side_tool="true" visible="true" weight="0.3665628" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50108933" side_tool="true" weight="0.36497545" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.32917964" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -1024,21 +932,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/versions/v1_5_0_pre1/data/NoImage.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/versions/v1_5_0_pre1/data/Pause.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/versions/v1_5_0_pre1/data/PauseIcon.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/versions/v1_5_0_pre1/data/Pop_3_bubs.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/versions/v1_5_0_pre1/data/Present.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/versions/v1_5_0_pre1/data/Protect.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -1132,9 +1025,6 @@
     <entry file="file://$PROJECT_DIR$/slots/Bob/game.json">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/slots/Quinten/bubble.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/slots/Quinten/game.json">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -1178,6 +1068,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="8874">
           <caret line="529" column="63" lean-forward="true" selection-start-line="529" selection-start-column="63" selection-end-line="529" selection-end-column="63" />
+    <entry file="file://$PROJECT_DIR$/versions/v1_5_0_pre1/ammo.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="765">
+          <caret line="49" column="31" selection-start-line="49" selection-start-column="31" selection-end-line="49" selection-end-column="31" />
         </state>
       </provider>
     </entry>
@@ -1188,12 +1082,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/versions/v1_5_0_pre1/__main__.py">
+    <entry file="file://$PROJECT_DIR$/mods/v1_5_0_pre1/TestMod/__main__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="24582">
           <caret line="1454" column="29" lean-forward="true" selection-start-line="1454" selection-start-column="29" selection-end-line="1454" selection-end-column="29" />
           <folding>
-            <element signature="e#134#156#0" expanded="true" />
+            <element signature="e#0#47#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1217,7 +1111,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/mods/v1_5_0_pre1/TestMod/EventCatcher.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
+        <state relative-caret-position="187">
+          <caret line="20" column="18" selection-start-line="20" selection-start-column="18" selection-end-line="20" selection-end-column="18" />
           <folding>
             <element signature="e#0#47#0" expanded="true" />
           </folding>

@@ -16,7 +16,7 @@ Minimum of 1366x768 resolution of your screen.
 04. Then click on Install.
 05. When this instalation is done, press on "Disable PATH length limit."
 06. When you have downloaded Python 3.7. Search with start for cmd.exe and open it.
-07. Type "pip install pygame threadsafe_tkinter"
+07. Type "pip install pygame threadsafe_tkinter yaml wx"
 08. Press ENTER.
 09. Wait.
 10. When this is done, unpack the archive (zip). Ans run Main.py
@@ -26,6 +26,12 @@ Minimum of 1366x768 resolution of your screen.
 02. Run the setup.
 03. Follow the instructions
 04. NOTE: After install you can choose to run the game.
+
+## Steps for Launcher Archive (The launcher.zip file)
+01. Download the launcher.zip file from the releases page.
+02. Open and extract the archive on a location that doesn't need administrator rights.
+03. In the extracted folder run the launcher.exe file (or laucher).
+04. TIP: You can make a link on the desktop to this. And rename it with F2.
 
 ## Steps for Application (Windows 10)
 Steps for Windows 10
@@ -56,6 +62,8 @@ https://github.com/Qplay123/Qplay-Bubbles/releases for the Game. (Setup / Source
 
 ## Information for next version (v1.5.0):
 * Mods / Addon support
+* May be sprites. (Friend & Enemy)
+* Bariers. Note: this is also a sprite!
 
 ## Tips:
 01. Use the Source steps. (.zip / .tar.gz)  
