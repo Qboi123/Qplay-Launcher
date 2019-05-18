@@ -1,19 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ebd1d8ec-c92d-450e-a095-92c9f916e95f" name="Default Changelist" comment="LICENSE Update (Also for older versions)">
-      <change afterPath="$PROJECT_DIR$/mods/v1_5_0_pre1/TestMod/TestStoreItem.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mods/v1_5_0_pre1/TestMod/__main__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/slots/Quinten/bubble.json" beforeDir="false" afterPath="$PROJECT_DIR$/slots/Quinten/bubble.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/slots/Quinten/game.json" beforeDir="false" afterPath="$PROJECT_DIR$/slots/Quinten/game.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/versions/v1_5_0_pre1/__main__.py" beforeDir="false" afterPath="$PROJECT_DIR$/versions/v1_5_0_pre1/__main__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/versions/v1_5_0_pre1/ammo.py" beforeDir="false" afterPath="$PROJECT_DIR$/versions/v1_5_0_pre1/ammo.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/versions/v1_5_0_pre1/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/versions/v1_5_0_pre1/base.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/versions/v1_5_0_pre1/bubble.py" beforeDir="false" afterPath="$PROJECT_DIR$/versions/v1_5_0_pre1/bubble.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/versions/v1_5_0_pre1/fake_main.py" beforeDir="false" afterPath="$PROJECT_DIR$/versions/v1_5_0_pre1/fake_main.py" afterDir="false" />
-    </list>
+    <list default="true" id="ebd1d8ec-c92d-450e-a095-92c9f916e95f" name="Default Changelist" comment="LICENSE Update (Also for older versions)" />
     <list id="693c844b-4be0-44d9-9e7c-714de82debfb" name="LICENSE Update (Also for older versions)" comment="Update Readme.md" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -28,8 +16,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/launcher.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="476">
-                  <caret line="163" column="29" lean-forward="true" selection-start-line="163" selection-start-column="29" selection-end-line="163" selection-end-column="29" />
+                <state relative-caret-position="2737">
+                  <caret line="163" column="29" selection-start-line="163" selection-start-column="29" selection-end-line="163" selection-end-column="29" />
                   <folding>
                     <element signature="e#0#9#0" expanded="true" />
                   </folding>
@@ -60,7 +48,7 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/versions/v1_5_0_pre1/fake_main.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="212">
+                <state relative-caret-position="8874">
                   <caret line="529" column="63" lean-forward="true" selection-start-line="529" selection-start-column="63" selection-end-line="529" selection-end-column="63" />
                 </state>
               </provider>
@@ -69,7 +57,7 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/versions/v1_5_0_pre1/ammo.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="374">
+                <state relative-caret-position="765">
                   <caret line="49" column="31" lean-forward="true" selection-start-line="47" selection-start-column="27" selection-end-line="49" selection-end-column="31" />
                 </state>
               </provider>
@@ -78,7 +66,7 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/versions/v1_5_0_pre1/__main__.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="276">
+                <state relative-caret-position="24582">
                   <caret line="1454" column="29" lean-forward="true" selection-start-line="1454" selection-start-column="29" selection-end-line="1454" selection-end-column="29" />
                   <folding>
                     <element signature="e#134#156#0" expanded="true" />
@@ -90,7 +78,7 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/versions/v1_5_0_pre1/bubble.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="119">
+                <state relative-caret-position="9656">
                   <caret line="571" column="24" selection-start-line="571" selection-start-column="24" selection-end-line="571" selection-end-column="24" />
                   <folding>
                     <element signature="e#0#19#0" expanded="true" />
@@ -127,7 +115,7 @@
         </leaf>
       </split-first>
       <split-second>
-        <leaf>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/versions/v1_5_0_pre1/base.py">
               <provider selected="true" editor-type-id="text-editor">
@@ -860,11 +848,11 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="54" y="-8" width="1874" height="1096" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49836066" visible="true" weight="0.25" />
-      <window_info active="true" id="Structure" order="1" sideWeight="0.50163937" side_tool="true" visible="true" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4967213" visible="true" weight="0.24973656" />
+      <window_info active="true" id="Structure" order="1" sideWeight="0.5032787" side_tool="true" visible="true" weight="0.24973656" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49945533" weight="0.32917964" />
@@ -1167,63 +1155,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mods/v1_5_0_pre1/TestMod/EventCatcher.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#47#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mods/v1_5_0_pre1/TestMod/Barier.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mods/v1_5_0_pre1/TestMod/__main__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="18" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/versions/v1_5_0_pre1/bubble.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="571" column="24" selection-start-line="571" selection-start-column="24" selection-end-line="571" selection-end-column="24" />
-          <folding>
-            <element signature="e#0#19#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/versions/v1_5_0_pre1/__main__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="1454" column="29" lean-forward="true" selection-start-line="1454" selection-start-column="29" selection-end-line="1454" selection-end-column="29" />
-          <folding>
-            <element signature="e#134#156#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/versions/v1_5_0_pre1/fake_main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="212">
-          <caret line="529" column="63" lean-forward="true" selection-start-line="529" selection-start-column="63" selection-end-line="529" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/versions/v1_5_0_pre1/ammo.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="49" column="31" lean-forward="true" selection-start-line="47" selection-start-column="27" selection-end-line="49" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/launcher.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="163" column="29" lean-forward="true" selection-start-line="163" selection-start-column="29" selection-end-line="163" selection-end-column="29" />
+        <state relative-caret-position="2737">
+          <caret line="163" column="29" selection-start-line="163" selection-start-column="29" selection-end-line="163" selection-end-column="29" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>
@@ -1239,10 +1174,63 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/versions/v1_5_0_pre1/fake_main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8874">
+          <caret line="529" column="63" lean-forward="true" selection-start-line="529" selection-start-column="63" selection-end-line="529" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/versions/v1_5_0_pre1/ammo.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="765">
+          <caret line="49" column="31" lean-forward="true" selection-start-line="47" selection-start-column="27" selection-end-line="49" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/versions/v1_5_0_pre1/__main__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="24582">
+          <caret line="1454" column="29" lean-forward="true" selection-start-line="1454" selection-start-column="29" selection-end-line="1454" selection-end-column="29" />
+          <folding>
+            <element signature="e#134#156#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/versions/v1_5_0_pre1/bubble.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="9656">
+          <caret line="571" column="24" selection-start-line="571" selection-start-column="24" selection-end-line="571" selection-end-column="24" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mods/v1_5_0_pre1/TestMod/__main__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="18" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mods/v1_5_0_pre1/TestMod/EventCatcher.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#47#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mods/v1_5_0_pre1/TestMod/Barier.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/versions/v1_5_0_pre1/base.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="412">
-          <caret line="473" column="52" selection-start-line="473" selection-start-column="52" selection-end-line="473" selection-end-column="52" />
+        <state relative-caret-position="323">
+          <caret line="72" column="28" lean-forward="true" selection-start-line="72" selection-start-column="28" selection-end-line="72" selection-end-column="28" />
         </state>
       </provider>
     </entry>
