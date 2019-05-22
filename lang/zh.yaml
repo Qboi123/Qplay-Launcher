@@ -15,6 +15,7 @@ slots.open: "開放"
 slots.rename: "改名"
 slots.remove: "去掉"
 slots.add: "新"
+slots.reset: "Reset"
 
 # Options
 options.language: "語言"

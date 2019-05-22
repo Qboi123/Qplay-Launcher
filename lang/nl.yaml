@@ -15,6 +15,7 @@ slots.open: "Open"
 slots.rename: "Hernoem"
 slots.remove: "Verwijder"
 slots.add: "Nieuw"
+slots.reset: "Reset"
 
 # Options
 options.language: "Taal"

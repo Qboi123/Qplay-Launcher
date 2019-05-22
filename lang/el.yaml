@@ -15,6 +15,7 @@ slots.open: "Ανοιξε"
 slots.rename: "Μετονομάζω"
 slots.remove: "Διαγράφω"
 slots.add: "Νέος"
+slots.reset: "Reset"
 
 # Options
 options.language: "Language"

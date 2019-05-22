@@ -15,6 +15,7 @@ slots.open: "Open"
 slots.rename: "Rename"
 slots.remove: "Delete"
 slots.add: "New"
+slots.reset: "Reset"
 
 # Options
 options.language: "Language"

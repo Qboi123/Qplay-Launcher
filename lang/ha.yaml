@@ -15,6 +15,7 @@ slots.open: "열다"
 slots.rename: "이름 바꾸기"
 slots.remove: "지우다"
 slots.add: "새로운"
+slots.reset: "Reset"
 
 # Options
 options.language: "언어"
