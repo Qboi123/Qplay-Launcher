@@ -105,14 +105,15 @@ def download(url: str, panel: wx.Panel, version: str):
             active = False
             break
 
-    data = b''.join(data_blocks)
+        with open("temp/QplayBubbles-" + version + '.zip', "ab") as f:
+            f.write(block)
+            f.close()
+
+    # data = b''.join(data_blocks)
     u.close()
 
     if not os.path.exists("temp"):
         os.makedirs("temp")
-
-    with open("temp/QplayBubbles-"+version+'.zip', "wb") as f:
-        f.write(data)
 
     frame.SetWindowStyle(wx.DEFAULT_FRAME_STYLE)
     load.Destroy()
