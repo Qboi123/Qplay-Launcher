@@ -4444,3 +4444,5 @@ temp/QplayBubbles-v1.4.0.zip
 *.pyc
 versions/v1_5_0_pre1/
 /versions/*
+/logs/*
+/crashes/*
