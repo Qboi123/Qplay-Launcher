@@ -162,7 +162,7 @@ class Launcher(wx.Panel):
         for i in ("v1.1.0", "v1.1.1", "v1.2.0-pre1", "v1.2.0-pre2", "v1.2.0", "v1.2.1", "v1.2.2", "v1.3.0-pre1"):
             self.all.pop(i)
 
-        self.all["v1.5.0-pre1"] = 12
+        self.all["v1.5.0-pre2"] = 13
 
         # -- old / historic versions --------------------------------------------------------------------------------- #
         json_url = urllib.request.urlopen(
@@ -183,7 +183,7 @@ class Launcher(wx.Panel):
         self.versions = wx.Choice(self, pos=(0, 640-35), choices=all)
         self.versions.SetSelection(0)
         self.browser = wx.html2.WebView
-        self.page = self.browser.New(self, size=(1280, 600))
+        self.page = self.browser.New(self, size=(1265, 600))
         self.page.LoadURL("https://quintenjungblut.wixsite.com/qplaysoftware/qplay-bubbles-changelog")
         self.play = wx.Button(self, label="Play!", size=wx.Size(120, 70), pos=(640-60, 640-35))
         self.play.Bind(wx.EVT_BUTTON, lambda event: self.open())
@@ -233,6 +233,8 @@ class Launcher(wx.Panel):
             b.start()
         elif version >= "v1.0.0":
             a.Game()
+        else:
+            pass
 
 
 if __name__ == '__main__':
