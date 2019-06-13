@@ -1,6 +1,11 @@
 import os
 import zipfile
 import wx
+from threading import Thread
+from time import sleep
+
+import wx
+import wx.html2
 
 
 def replace2ver(string: str):
@@ -31,9 +36,9 @@ def speed():
     global h, m, s
     while active:
         total1 = total
-        time.sleep(0.47)
+        time.sleep(1)
         total2 = total
-        spd = (total2 - total1) * 2
+        spd = (total2 - total1) * 1
         try:
             a = (fileTotalbytes - total) / spd
             b = time.gmtime(a)
@@ -75,6 +80,8 @@ def download(url: str, panel: wx.Panel, version: str):
 
     # Get the total number of bytes of the file to download before downloading
     u = urllib.request.urlopen(str(url))
+    if os.path.exists("temp/QplayBubbles-" + version + '.zip'):
+        os.remove("temp/QplayBubbles-" + version + '.zip')
     meta = u.info()
     fileTotalbytes = int(meta["Content-Length"])
 
@@ -105,9 +112,15 @@ def download(url: str, panel: wx.Panel, version: str):
             active = False
             break
 
-        with open("temp/QplayBubbles-" + version + '.zip', "ab") as f:
-            f.write(block)
-            f.close()
+        try:
+            with open("temp/QplayBubbles-" + version + '.zip', "ab+") as f:
+                f.write(block)
+                f.close()
+        except FileNotFoundError:
+            os.makedirs("temp/")
+            with open("temp/QplayBubbles-" + version + '.zip', "ab+") as f:
+                f.write(block)
+                f.close()
 
     # data = b''.join(data_blocks)
     u.close()
@@ -169,6 +182,9 @@ class Launcher(wx.Panel):
 
         self.versions = wx.Choice(self, pos=(0, 640-35), choices=all)
         self.versions.SetSelection(0)
+        self.browser = wx.html2.WebView
+        self.page = self.browser.New(self, size=(1280, 600))
+        self.page.LoadURL("https://quintenjungblut.wixsite.com/qplaysoftware/qplay-bubbles-changelog")
         self.play = wx.Button(self, label="Play!", size=wx.Size(120, 70), pos=(640-60, 640-35))
         self.play.Bind(wx.EVT_BUTTON, lambda event: self.open())
         self.play.Show()
@@ -210,16 +226,13 @@ class Launcher(wx.Panel):
                "args": sys.argv
                }
 
-        os.chdir("versions/"+version_dir)
         print(os.curdir)
         a = __import__("versions.%s.__main__" % version_dir, fromlist=["__main__"])
-        try:
-            a.Game(launcher_cfg=cfg)
-        except TypeError as e:
-            # print(e.args)
-            if e.args[0] == "__init__() got an unexpected keyword argument 'launcher_cfg'":
-                a.Game()
-        os.chdir("../../")
+        if version > "v1.4.1":
+            b = Thread(None, lambda: a.Game(launcher_cfg=cfg))
+            b.start()
+        elif version >= "v1.0.0":
+            a.Game()
 
 
 if __name__ == '__main__':
