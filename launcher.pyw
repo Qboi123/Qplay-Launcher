@@ -9,11 +9,15 @@ import wx.html2
 
 
 def replace2ver(string: str):
-    return string.replace("_", ".").replace("_pre", "-pre")
+    return string.replace("_pre", "-pre").replace("_", ".")
 
 
 def replace2dir(string: str):
-    return string.replace(".", "_").replace("-pre", "_pre")
+    return string.replace("-pre", "_pre").replace(".", "_")
+
+
+def replace2name(ver: str):
+    return ver.replace("-pre", " Pre-Release ")
 
 
 def ver2list(string: str):
@@ -136,49 +140,105 @@ def download(url: str, panel: wx.Panel, version: str):
 class Launcher(wx.Panel):
     def __init__(self, master: wx.Frame, *args):
         super().__init__(master, *args)
-        import urllib.request
+        import urllib.request, urllib.error
 
-        # -- current ------------------------------------------------------------------------------------------------- #
-        json_url = urllib.request.urlopen(
-            "https://raw.githubusercontent.com/Qplay123/Qplay-Bubbles/master/current.json"
-        )
-        json_data = json_url.read().decode()
+        try:
+            # -- current ------------------------------------------------------------------------------------------------- #
+            json_url = urllib.request.urlopen(
+                "https://raw.githubusercontent.com/Qplay123/Qplay-Bubbles/master/current.json"
+            )
+            json_data = json_url.read().decode()
+            with open("current.json", "w+") as file:
+                file.write(json_data)
 
-        import json
+            import json
 
-        self.data = json.JSONDecoder().decode(json_data)
-        # print(self.data)
+            self.data = json.JSONDecoder().decode(json_data)
+            # print(self.data)
 
-        # -- all versions -------------------------------------------------------------------------------------------- #
-        json_url = urllib.request.urlopen(
-            "https://raw.githubusercontent.com/Qplay123/Qplay-Bubbles/master/all_versions.json"
-        )
-        json_data = json_url.read().decode()
+            # -- all versions -------------------------------------------------------------------------------------------- #
+            json_url = urllib.request.urlopen(
+                "https://raw.githubusercontent.com/Qplay123/Qplay-Bubbles/master/all_versions.json"
+            )
+            json_data = json_url.read().decode()
+            with open("all_versions.json", "w+") as file:
+                file.write(json_data)
 
-        import json
+            import json
 
-        self.all = json.JSONDecoder().decode(json_data)
+            self.all = json.JSONDecoder().decode(json_data)
 
-        for i in ("v1.1.0", "v1.1.1", "v1.2.0-pre1", "v1.2.0-pre2", "v1.2.0", "v1.2.1", "v1.2.2", "v1.3.0-pre1"):
-            self.all.pop(i)
+            for i in ("v1.1.0", "v1.1.1", "v1.2.0-pre1", "v1.2.0-pre2", "v1.2.0", "v1.2.1", "v1.2.2", "v1.3.0-pre1"):
+                self.all.pop(i)
 
-        self.all["v1.5.0-pre2"] = 13
+            # -- old / historic versions --------------------------------------------------------------------------------- #
+            json_url = urllib.request.urlopen(
+                "https://raw.githubusercontent.com/Qplay123/Qplay-Bubbles/master/old_versions.json"
+            )
+            json_data = json_url.read().decode()
 
-        # -- old / historic versions --------------------------------------------------------------------------------- #
-        json_url = urllib.request.urlopen(
-            "https://raw.githubusercontent.com/Qplay123/Qplay-Bubbles/master/old_versions.json"
-        )
-        json_data = json_url.read().decode()
+            with open("old_versions.json", "w+") as file:
+                file.write(json_data)
 
-        import json
+            import json
 
-        self.old = json.JSONDecoder().decode(json_data)
+            self.old = json.JSONDecoder().decode(json_data)
 
-        # ------------------------------------------------------------------------------------------------------------ #
-        vertical_box = wx.BoxSizer(wx.VERTICAL)
+            # ------------------------------------------------------------------------------------------------------------ #
+            vertical_box = wx.BoxSizer(wx.VERTICAL)
 
-        all = list(self.old.keys())+list(self.all.keys())
-        all.sort(reverse=True)
+            self.inet_available = True
+
+            all = list(self.old.keys())+list(self.all.keys())
+
+            for i in os.listdir("versions/"):
+                if i not in all:
+                    all.append(replace2ver(i))
+
+            all.sort(reverse=True)
+
+        except urllib.error.URLError:
+            # # -- current ------------------------------------------------------------------------------------------------- #
+            # with open("current.json", "r") as file:
+            #     json_data = file.read()
+            #
+            # import json
+            #
+            # self.data = json.JSONDecoder().decode(json_data)
+            # # print(self.data)
+            #
+            # # -- all versions -------------------------------------------------------------------------------------------- #
+            # with open("all_versions.json", "r") as file:
+            #     json_data = file.read()
+            #
+            # import json
+            #
+            # self.all = json.JSONDecoder().decode(json_data)
+            #
+            # for i in ("v1.1.0", "v1.1.1", "v1.2.0-pre1", "v1.2.0-pre2", "v1.2.0", "v1.2.1", "v1.2.2", "v1.3.0-pre1"):
+            #     self.all.pop(i)
+            #
+            # self.all["v1.5.0-pre2"] = 13
+            #
+            # # -- old / historic versions --------------------------------------------------------------------------------- #
+            # with open("old_versions.json", "r") as file:
+            #     json_data = file.read()
+            #
+            # import json
+            #
+            # self.old = json.JSONDecoder().decode(json_data)
+            #
+            # # ------------------------------------------------------------------------------------------------------------ #
+            # vertical_box = wx.BoxSizer(wx.VERTICAL)
+            # self.inet_available = False
+
+            all = list()
+            for i in os.listdir("versions/"):
+                all.append(replace2ver(i))
+
+            # all = list(self.old.keys()) + list(self.all.keys())
+            # all.sort(reverse=True)
+
 
         self.versions = wx.Choice(self, pos=(0, 640-35), choices=all)
         self.versions.SetSelection(0)
