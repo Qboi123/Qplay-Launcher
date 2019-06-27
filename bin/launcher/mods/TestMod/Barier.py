@@ -1,4 +1,4 @@
-from versions.v1_5_0_pre2.base import BaseBarier
+from versions.v1_5_0_pre3.base import BaseBarier
 
 
 class Barier(BaseBarier):

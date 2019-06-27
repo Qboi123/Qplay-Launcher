@@ -2,8 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5517ee74-8b7f-4783-b76c-419986e82904" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/all_versions.json" beforeDir="false" afterPath="$PROJECT_DIR$/all_versions.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/launcher/all_versions.json" beforeDir="false" afterPath="$PROJECT_DIR$/bin/launcher/all_versions.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/launcher/mods/TestMod/Barier.py" beforeDir="false" afterPath="$PROJECT_DIR$/bin/launcher/mods/TestMod/Barier.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/launcher/mods/TestMod/EventCatcher.py" beforeDir="false" afterPath="$PROJECT_DIR$/bin/launcher/mods/TestMod/EventCatcher.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/launcher/mods/TestMod/TestStoreItem.py" beforeDir="false" afterPath="$PROJECT_DIR$/bin/launcher/mods/TestMod/TestStoreItem.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/launcher/mods/TestMod/__main__.py" beforeDir="false" afterPath="$PROJECT_DIR$/bin/launcher/mods/TestMod/__main__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mods/TestMod/Barier.py" beforeDir="false" afterPath="$PROJECT_DIR$/mods/TestMod/Barier.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mods/TestMod/EventCatcher.py" beforeDir="false" afterPath="$PROJECT_DIR$/mods/TestMod/EventCatcher.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mods/TestMod/TestStoreItem.py" beforeDir="false" afterPath="$PROJECT_DIR$/mods/TestMod/TestStoreItem.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mods/TestMod/__main__.py" beforeDir="false" afterPath="$PROJECT_DIR$/mods/TestMod/__main__.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -45,7 +51,7 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/versions/v1_5_0_pre2/__main__.py">
+        <entry file="file://$PROJECT_DIR$/versions/v1_5_0_pre3/__main__.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="23324">
               <caret line="1386" column="61" selection-start-line="1386" selection-start-column="61" selection-end-line="1386" selection-end-column="61" />
@@ -63,7 +69,7 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/versions/v1_5_0_pre2/config/startup.json">
+        <entry file="file://$PROJECT_DIR$/versions/v1_5_0_pre3/config/startup.json">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="68">
               <caret line="4" column="20" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="20" />
@@ -72,7 +78,7 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/versions/v1_5_0_pre2/bubble.py">
+        <entry file="file://$PROJECT_DIR$/versions/v1_5_0_pre3/bubble.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1275">
               <caret line="77" column="13" selection-start-line="77" selection-start-column="13" selection-end-line="77" selection-end-column="13" />
@@ -81,17 +87,17 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/versions/v1_5_0_pre2/data/bubbles/Ultimate/60px.png">
+        <entry file="file://$PROJECT_DIR$/versions/v1_5_0_pre3/data/bubbles/Ultimate/60px.png">
           <provider selected="true" editor-type-id="images" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/versions/v1_5_0_pre2/data/bubbles/NoTouch/60px.png">
+        <entry file="file://$PROJECT_DIR$/versions/v1_5_0_pre3/data/bubbles/NoTouch/60px.png">
           <provider selected="true" editor-type-id="images" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/versions/v1_5_0_pre2/data/bubbles/StoneBub/60px.png">
+        <entry file="file://$PROJECT_DIR$/versions/v1_5_0_pre3/data/bubbles/StoneBub/60px.png">
           <provider selected="true" editor-type-id="images" />
         </entry>
       </file>
@@ -290,9 +296,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49729145" visible="true" weight="0.24973656" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49729145" visible="true" weight="0.24973656" />
       <window_info id="Structure" order="1" sideWeight="0.50270855" side_tool="true" visible="true" weight="0.24973656" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -371,10 +376,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/versions/v1_5_0_pre2/data/bubbles/Diamond.png">
+    <entry file="file://$PROJECT_DIR$/versions/v1_5_0_pre3/data/bubbles/Diamond.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/versions/v1_5_0_pre2/data/CoinBub.png">
+    <entry file="file://$PROJECT_DIR$/versions/v1_5_0_pre3/data/CoinBub.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$USER_HOME$/.PyCharmCE2019.1/system/python_stubs/-1656044374/PIL/_imaging.py">
@@ -384,46 +389,46 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/versions/v1_5_0_pre2/data/bubbles/Confusion/9px.png">
+    <entry file="file://$PROJECT_DIR$/versions/v1_5_0_pre3/data/bubbles/Confusion/9px.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/versions/v1_5_0_pre2/data/bubbles/SpeedUp/60px.png">
+    <entry file="file://$PROJECT_DIR$/versions/v1_5_0_pre3/data/bubbles/SpeedUp/60px.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/versions/v1_5_0_pre2/data/bubbles/Up/59px.png">
+    <entry file="file://$PROJECT_DIR$/versions/v1_5_0_pre3/data/bubbles/Up/59px.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/versions/v1_5_0_pre2/data/bubbles/SpeedDown/60px.png">
+    <entry file="file://$PROJECT_DIR$/versions/v1_5_0_pre3/data/bubbles/SpeedDown/60px.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/versions/v1_5_0_pre2/data/bubbles/Up/60px.png">
+    <entry file="file://$PROJECT_DIR$/versions/v1_5_0_pre3/data/bubbles/Up/60px.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/versions/v1_5_0_pre2/data/bubbles/Kill/60px.png">
+    <entry file="file://$PROJECT_DIR$/versions/v1_5_0_pre3/data/bubbles/Kill/60px.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/versions/v1_5_0_pre2/data/bubbles/Teleporter/60px.png">
+    <entry file="file://$PROJECT_DIR$/versions/v1_5_0_pre3/data/bubbles/Teleporter/60px.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/versions/v1_5_0_pre2/data/bubbles/SlowMotion/60px.png">
+    <entry file="file://$PROJECT_DIR$/versions/v1_5_0_pre3/data/bubbles/SlowMotion/60px.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/versions/v1_5_0_pre2/data/DiamondBub.png">
+    <entry file="file://$PROJECT_DIR$/versions/v1_5_0_pre3/data/DiamondBub.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/versions/v1_5_0_pre2/data/bubbles/InfitraMode12px.png">
+    <entry file="file://$PROJECT_DIR$/versions/v1_5_0_pre3/data/bubbles/InfitraMode12px.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/versions/v1_5_0_pre2/data/bubbles/DoubleState/60px.png">
+    <entry file="file://$PROJECT_DIR$/versions/v1_5_0_pre3/data/bubbles/DoubleState/60px.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/versions/v1_5_0_pre2/data/bubbles/Protect/60px.png">
+    <entry file="file://$PROJECT_DIR$/versions/v1_5_0_pre3/data/bubbles/Protect/60px.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/versions/v1_5_0_pre2/data/bubbles/ShotSpdStat/60px.png">
+    <entry file="file://$PROJECT_DIR$/versions/v1_5_0_pre3/data/bubbles/ShotSpdStat/60px.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/versions/v1_5_0_pre2/data/bubbles/HyperMode/60px.png">
+    <entry file="file://$PROJECT_DIR$/versions/v1_5_0_pre3/data/bubbles/HyperMode/60px.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$USER_HOME$/Anaconda3/Lib/site-packages/PIL/Image.py">
@@ -433,13 +438,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/versions/v1_5_0_pre2/data/bubbles/TimeBreak/60px.png">
+    <entry file="file://$PROJECT_DIR$/versions/v1_5_0_pre3/data/bubbles/TimeBreak/60px.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/versions/v1_5_0_pre2/data/bubbles/Confusion/60px.png">
+    <entry file="file://$PROJECT_DIR$/versions/v1_5_0_pre3/data/bubbles/Confusion/60px.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/versions/v1_5_0_pre2/data/bubbles/Paralis/60px.png">
+    <entry file="file://$PROJECT_DIR$/versions/v1_5_0_pre3/data/bubbles/Paralis/60px.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/versions/v0_1_0/__main__.py">
@@ -469,7 +474,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/versions/v1_5_0_pre2/__main__.py">
+    <entry file="file://$PROJECT_DIR$/versions/v1_5_0_pre3/__main__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="23324">
           <caret line="1386" column="61" selection-start-line="1386" selection-start-column="61" selection-end-line="1386" selection-end-column="61" />
@@ -483,27 +488,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/versions/v1_5_0_pre2/config/startup.json">
+    <entry file="file://$PROJECT_DIR$/versions/v1_5_0_pre3/config/startup.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="20" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="20" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/versions/v1_5_0_pre2/bubble.py">
+    <entry file="file://$PROJECT_DIR$/versions/v1_5_0_pre3/bubble.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1275">
           <caret line="77" column="13" selection-start-line="77" selection-start-column="13" selection-end-line="77" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/versions/v1_5_0_pre2/data/bubbles/Ultimate/60px.png">
+    <entry file="file://$PROJECT_DIR$/versions/v1_5_0_pre3/data/bubbles/Ultimate/60px.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/versions/v1_5_0_pre2/data/bubbles/NoTouch/60px.png">
+    <entry file="file://$PROJECT_DIR$/versions/v1_5_0_pre3/data/bubbles/NoTouch/60px.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/versions/v1_5_0_pre2/data/bubbles/StoneBub/60px.png">
+    <entry file="file://$PROJECT_DIR$/versions/v1_5_0_pre3/data/bubbles/StoneBub/60px.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/all_versions.json">
