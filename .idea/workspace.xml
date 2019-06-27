@@ -2,14 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5517ee74-8b7f-4783-b76c-419986e82904" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/bin/launcher/mods/TestMod/Barier.py" beforeDir="false" afterPath="$PROJECT_DIR$/bin/launcher/mods/TestMod/Barier.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/launcher/mods/TestMod/EventCatcher.py" beforeDir="false" afterPath="$PROJECT_DIR$/bin/launcher/mods/TestMod/EventCatcher.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/launcher/mods/TestMod/TestStoreItem.py" beforeDir="false" afterPath="$PROJECT_DIR$/bin/launcher/mods/TestMod/TestStoreItem.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/launcher/mods/TestMod/__main__.py" beforeDir="false" afterPath="$PROJECT_DIR$/bin/launcher/mods/TestMod/__main__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mods/TestMod/Barier.py" beforeDir="false" afterPath="$PROJECT_DIR$/mods/TestMod/Barier.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mods/TestMod/EventCatcher.py" beforeDir="false" afterPath="$PROJECT_DIR$/mods/TestMod/EventCatcher.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mods/TestMod/TestStoreItem.py" beforeDir="false" afterPath="$PROJECT_DIR$/mods/TestMod/TestStoreItem.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mods/TestMod/__main__.py" beforeDir="false" afterPath="$PROJECT_DIR$/mods/TestMod/__main__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versions/v0_1_0/version.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/versions/v1_5_0_pre3/version.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/launcher.pyw" beforeDir="false" afterPath="$PROJECT_DIR$/launcher.pyw" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -22,48 +18,48 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/launcher.pyw">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4046">
-              <caret line="245" column="60" selection-start-line="245" selection-start-column="60" selection-end-line="245" selection-end-column="60" />
+            <state relative-caret-position="97">
+              <caret line="204" column="41" lean-forward="true" selection-start-line="204" selection-start-column="41" selection-end-line="204" selection-end-column="41" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
-                <marker date="1561556543981" expanded="true" signature="7524:7588" ph="..." />
+                <marker date="1561649297098" expanded="true" signature="9088:9152" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/utils.py">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/versions/v1_5_0_pre3/version.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="64" selection-start-column="64" selection-end-column="64" />
+            <state relative-caret-position="51">
+              <caret line="3" column="1" lean-forward="true" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/versions/v0_1_0/version.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" column="24" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/old_versions.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="1" column="14" selection-start-line="1" selection-start-column="14" selection-end-line="1" selection-end-column="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/all_versions.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="1" selection-start-column="1" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/versions/v1_5_0_pre3/__main__.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="23324">
-              <caret line="1386" column="61" selection-start-line="1386" selection-start-column="61" selection-end-line="1386" selection-end-column="61" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/Anaconda3/Lib/urllib/request.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="21998">
-              <caret line="1318" selection-start-line="1318" selection-end-line="1318" />
+            <state relative-caret-position="34">
+              <caret line="2" column="14" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -118,15 +114,19 @@
       <find>tp</find>
       <find>config</find>
       <find>self.close</find>
+      <find>_all</find>
+      <find>dir</find>
     </findStrings>
     <replaceStrings>
       <replace>/</replace>
       <replace>self.tp</replace>
       <replace>self.config</replace>
+      <replace>dir</replace>
+      <replace>_all</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/versions/v1_5_0_pre3" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -137,10 +137,13 @@
         <option value="$PROJECT_DIR$/lib/popup.py" />
         <option value="$PROJECT_DIR$/../QDroid/.gitignore" />
         <option value="$PROJECT_DIR$/versions/v1_5_0_pre2/config/startup.json" />
-        <option value="$PROJECT_DIR$/launcher.pyw" />
         <option value="$PROJECT_DIR$/versions/v1_5_0_pre2/__main__.py" />
         <option value="$PROJECT_DIR$/lib/utils.py" />
         <option value="$PROJECT_DIR$/all_versions.json" />
+        <option value="$PROJECT_DIR$/versions/v0_1_0/version.json" />
+        <option value="$PROJECT_DIR$/versions/v1_5_0_pre2/version.json" />
+        <option value="$PROJECT_DIR$/launcher.pyw" />
+        <option value="$PROJECT_DIR$/versions/v1_5_0_pre3/version.json" />
       </list>
     </option>
   </component>
@@ -156,6 +159,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -185,11 +189,22 @@
               <item name="Qplay-Bubbles" type="462c0819:PsiDirectoryNode" />
               <item name="versions" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="Qplay-Bubbles" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Qplay-Bubbles" type="462c0819:PsiDirectoryNode" />
+              <item name="versions" type="462c0819:PsiDirectoryNode" />
+              <item name="v0_1_0" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Qplay-Bubbles" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Qplay-Bubbles" type="462c0819:PsiDirectoryNode" />
+              <item name="versions" type="462c0819:PsiDirectoryNode" />
+              <item name="v1_5_0_pre3" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -296,9 +311,10 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49729145" visible="true" weight="0.24973656" />
-      <window_info id="Structure" order="1" sideWeight="0.50270855" side_tool="true" visible="true" weight="0.24973656" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.496208" visible="true" weight="0.24973656" />
+      <window_info id="Structure" order="1" sideWeight="0.503792" side_tool="true" visible="true" weight="0.24973656" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32936078" />
@@ -349,13 +365,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="1" column="25" selection-start-line="1" selection-start-column="25" selection-end-line="1" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/old_versions.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="14" selection-start-line="1" selection-start-column="14" selection-end-line="1" selection-end-column="14" />
         </state>
       </provider>
     </entry>
@@ -456,24 +465,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/launcher.pyw">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4046">
-          <caret line="245" column="60" selection-start-line="245" selection-start-column="60" selection-end-line="245" selection-end-column="60" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-            <marker date="1561556543981" expanded="true" signature="7524:7588" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/utils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="64" selection-start-column="64" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/versions/v1_5_0_pre3/__main__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="23324">
@@ -511,10 +502,49 @@
     <entry file="file://$PROJECT_DIR$/versions/v1_5_0_pre3/data/bubbles/StoneBub/60px.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/all_versions.json">
+    <entry file="file://$PROJECT_DIR$/lib/utils.py">
       <provider selected="true" editor-type-id="text-editor">
         <state>
-          <caret column="1" selection-start-column="1" selection-end-column="1" />
+          <caret column="64" selection-start-column="64" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/versions/v0_1_0/version.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="24" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/old_versions.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="14" selection-start-line="1" selection-start-column="14" selection-end-line="1" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/all_versions.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="14" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/launcher.pyw">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="97">
+          <caret line="204" column="41" lean-forward="true" selection-start-line="204" selection-start-column="41" selection-end-line="204" selection-end-column="41" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+            <marker date="1561649297098" expanded="true" signature="9088:9152" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/versions/v1_5_0_pre3/version.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="1" lean-forward="true" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
         </state>
       </provider>
     </entry>

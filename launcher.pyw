@@ -8,21 +8,30 @@ import wx
 import wx.html2
 
 
-def replace2ver(string: str):
+def replace_dir2ver(string: str):
     return string.replace("_pre", "-pre").replace("_", ".")
 
 
-def replace2dir(string: str):
+def replace_ver2dir(string: str):
     return string.replace("-pre", "_pre").replace(".", "_")
 
 
-def replace2name(ver: str):
+def replace_name2dir(string: str):
+    return replace_ver2dir(replace_name2ver(string))
+
+
+def replace_name2ver(string: str):
+    return string.replace(" Pre-Release ", "-pre")
+
+
+def replace_any2name(ver: str):
+    ver = replace_dir2ver(ver)
     return ver.replace("-pre", " Pre-Release ")
 
 
 def ver2list(string: str):
     if string.count(".") == 0:
-        replace2ver(string)
+        replace_dir2ver(string)
     string = string[1:]
     string.split(".")
 
@@ -168,8 +177,8 @@ class Launcher(wx.Panel):
 
             self.all = json.JSONDecoder().decode(json_data)
 
-            for i in ("v1.1.0", "v1.1.1", "v1.2.0-pre1", "v1.2.0-pre2", "v1.2.0", "v1.2.1", "v1.2.2", "v1.3.0-pre1"):
-                self.all.pop(i)
+            # for i in ("v1.1.0", "v1.1.1", "v1.2.0-pre1", "v1.2.0-pre2", "v1.2.0", "v1.2.1", "v1.2.2", "v1.3.0-pre1"):
+            #     self.all.pop(i)
 
             # -- old / historic versions --------------------------------------------------------------------------------- #
             json_url = urllib.request.urlopen(
@@ -189,52 +198,99 @@ class Launcher(wx.Panel):
 
             self.inet_available = True
 
-            all = list(self.old.keys())+list(self.all.keys())
+            _all = list(self.old.keys())+list(self.all.keys())
+            _all_build = list(self.old.values())+list(self.all.values())
+            print(_all)
+            print(_all_build)
+            dir = os.listdir("versions/")
+            dir_build = list()
+
+            for i in dir:
+                with open("versions/%s/version.json" % i) as file:
+                    versionData = json.JSONDecoder().decode(file.read())
+                    dir_build.append(versionData["build"])
+
+            dir_data = dict()
+            for _i in range(len(dir)):
+                i = dir[_i]
+                j = dir_build[_i]
+                dir_data[i] = j
+
+            print(dir_data) 
 
             for i in os.listdir("versions/"):
-                if i not in all:
-                    all.append(replace2ver(i))
+                found = 0
+                for j in range(len(_all_build)):
+                    print(dir_data[i], _all_build[j])
+                    if dir_data[i] < _all_build[j]:
+                        _all.insert(j, replace_dir2ver(i))
+                        _all_build.insert(j, dir_data[i])
+                        found = 1
+                        break
+                if found == 0:
+                    _all.append(replace_dir2ver(i))
+                    _all_build.append(dir_data[i])
 
-            all.sort(reverse=True)
+
+            _all_data = dict()
+            for _i in range(len(_all)):
+                i = _all[_i]
+                j = _all_build[_i]
+                _all_data[i] = j
+
+            all = _all
+            all_build = _all_build
+            all_data = _all_data
 
         except urllib.error.URLError:
-            # # -- current ------------------------------------------------------------------------------------------------- #
-            # with open("current.json", "r") as file:
-            #     json_data = file.read()
-            #
-            # import json
-            #
-            # self.data = json.JSONDecoder().decode(json_data)
-            # # print(self.data)
-            #
-            # # -- all versions -------------------------------------------------------------------------------------------- #
-            # with open("all_versions.json", "r") as file:
-            #     json_data = file.read()
-            #
-            # import json
-            #
-            # self.all = json.JSONDecoder().decode(json_data)
-            #
-            # for i in ("v1.1.0", "v1.1.1", "v1.2.0-pre1", "v1.2.0-pre2", "v1.2.0", "v1.2.1", "v1.2.2", "v1.3.0-pre1"):
-            #     self.all.pop(i)
-            #
-            # self.all["v1.5.0-pre2"] = 13
-            #
-            # # -- old / historic versions --------------------------------------------------------------------------------- #
-            # with open("old_versions.json", "r") as file:
-            #     json_data = file.read()
-            #
-            # import json
-            #
-            # self.old = json.JSONDecoder().decode(json_data)
-            #
-            # # ------------------------------------------------------------------------------------------------------------ #
-            # vertical_box = wx.BoxSizer(wx.VERTICAL)
-            # self.inet_available = False
+            with open("current.json", "w+") as file:
+                json_data = file.read()
+            self.data = json.JSONDecoder().decode(json_data)
 
-            all = list()
+            with open("all_versions.json", "w+") as file:
+                json_data = file.read()
+            self.all = json.JSONDecoder().decode(json_data)
+
+            with open("old_versions.json", "w+") as file:
+                json_data = file.read()
+            self.old = json.JSONDecoder().decode(json_data)
+
+            # ------------------------------------------------------------------------------------------------------------ #
+            vertical_box = wx.BoxSizer(wx.VERTICAL)
+
+            self.inet_available = False
+
+            _all = list(self.old.keys())+list(self.all.keys())
+            _all_build = list(self.old.values())+list(self.all.values())
+            dir = os.listdir("versions/")
+            dir_build = list()
+
+            for i in dir:
+                with open("versions/%s/version.json" % i) as file:
+                    versionData = json.JSONDecoder().decode(file.read())
+                    dir_build.append(versionData["build"])
+
+            dir_data = dict()
+            for i, j in (dir, dir_build):
+                dir_data[i] = j
+
+            _all = list()
             for i in os.listdir("versions/"):
-                all.append(replace2ver(i))
+                for j in _all_build:
+                    print(dir_data[i], j)
+                    if dir_data[i] > j:
+                        _all.append(replace_dir2ver(i))
+                        _all_build.append(dir_data[i])
+
+            _all_data = dict()
+            for i, j in (_all, _all_build):
+                _all_data[i] = j
+
+            all = _all
+            all_build = _all_build
+            all_data = _all_data
+
+
 
             # all = list(self.old.keys()) + list(self.all.keys())
             # all.sort(reverse=True)
@@ -254,11 +310,11 @@ class Launcher(wx.Panel):
     def open(self):
         import sys
 
-        version = self.versions.GetString(self.versions.GetSelection())
+        version = replace_name2ver(self.versions.GetString(self.versions.GetSelection()))
         if version == "":
             return
 
-        version_dir = replace2dir(version)
+        version_dir = replace_ver2dir(version)
 
         print(version_dir)
 
@@ -271,6 +327,8 @@ class Launcher(wx.Panel):
                     )
                     extract_zipfile("temp/QplayBubbles-" + version + '.zip', "versions/")
                     os.rename("versions/QplayBubbles-Releaes-" + version[1:], "versions/" + version_dir)
+                    build = self.old[version]
+                    a = {'build': build, 'displayName': replace_any2name(version)}
             else:
                 if not os.path.exists("versions/" + version_dir + "/"):
                     download(
