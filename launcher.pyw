@@ -177,9 +177,6 @@ class Launcher(wx.Panel):
 
             self.all = json.JSONDecoder().decode(json_data)
 
-            # for i in ("v1.1.0", "v1.1.1", "v1.2.0-pre1", "v1.2.0-pre2", "v1.2.0", "v1.2.1", "v1.2.2", "v1.3.0-pre1"):
-            #     self.all.pop(i)
-
             # -- old / historic versions --------------------------------------------------------------------------------- #
             json_url = urllib.request.urlopen(
                 "https://raw.githubusercontent.com/Qplay123/Qplay-Bubbles/master/old_versions.json"
@@ -216,7 +213,7 @@ class Launcher(wx.Panel):
                 j = dir_build[_i]
                 dir_data[i] = j
 
-            print(dir_data) 
+            print(dir_data)
 
             for i in os.listdir("versions/"):
                 found = 0
@@ -295,6 +292,8 @@ class Launcher(wx.Panel):
             # all = list(self.old.keys()) + list(self.all.keys())
             # all.sort(reverse=True)
 
+        all.reverse()
+
 
         self.versions = wx.Choice(self, pos=(0, 640-35), choices=all)
         self.versions.SetSelection(0)
@@ -326,7 +325,7 @@ class Launcher(wx.Panel):
                         self, version
                     )
                     extract_zipfile("temp/QplayBubbles-" + version + '.zip', "versions/")
-                    os.rename("versions/QplayBubbles-Releaes-" + version[1:], "versions/" + version_dir)
+                    os.rename("versions/QplayBubbles-OldReleases-" + version[1:], "versions/" + version_dir)
                     build = self.old[version]
                     a = {'build': build, 'displayName': replace_any2name(version)}
             else:
