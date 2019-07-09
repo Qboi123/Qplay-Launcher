@@ -1,4 +1,4 @@
-from versions.v1_5_0_pre3.fake_main import Game
+from versions.v1_5_0_pre4.fake_main import Game
 
 
 # noinspection PyMethodMayBeStatic

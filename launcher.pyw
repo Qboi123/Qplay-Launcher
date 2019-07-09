@@ -167,7 +167,7 @@ class Launcher(wx.Panel):
 
             # -- all versions -------------------------------------------------------------------------------------------- #
             json_url = urllib.request.urlopen(
-                "https://raw.githubusercontent.com/Qplay123/Qplay-Bubbles/master/all_versions.json"
+                "https://github.com/Qplay123/Qplay-Bubbles/raw/master/all_versions.json"
             )
             json_data = json_url.read().decode()
             with open("all_versions.json", "w+") as file:
@@ -197,8 +197,8 @@ class Launcher(wx.Panel):
 
             _all = list(self.old.keys())+list(self.all.keys())
             _all_build = list(self.old.values())+list(self.all.values())
-            print(_all)
-            print(_all_build)
+            # print(_all)
+            # print(_all_build)
             dir = os.listdir("versions/")
             dir_build = list()
 
@@ -213,26 +213,42 @@ class Launcher(wx.Panel):
                 j = dir_build[_i]
                 dir_data[i] = j
 
-            print(dir_data)
-
-            for i in os.listdir("versions/"):
-                found = 0
-                for j in range(len(_all_build)):
-                    print(dir_data[i], _all_build[j])
-                    if dir_data[i] < _all_build[j]:
-                        _all.insert(j, replace_dir2ver(i))
-                        _all_build.insert(j, dir_data[i])
-                        found = 1
-                        break
-                if found == 0:
-                    _all.append(replace_dir2ver(i))
-                    _all_build.append(dir_data[i])
             _all_data = dict()
             for _i in range(len(_all)):
                 i = _all[_i]
                 j = _all_build[_i]
                 _all_data[i] = j
 
+            # print(dir_data)
+            # print(_all)
+
+            dzf = _all.copy()
+
+            for i in os.listdir("versions/"):
+                # print("I: %s" % i)
+                for k in _all:
+                    # print("K: %s" % k)
+                    if i == replace_ver2dir(k):
+                        not_exists = False
+                        break
+                    else:
+                        not_exists = True
+
+                # print("ALL: %s" % _all)
+                found = 0
+                for j in range(len(_all_build.copy())):
+                    # print("DirData: %s | AllBuild: %s | All: %s" % (dir_data[i], _all_build[j], _all[j]))
+                    if dir_data[i] < _all_build[j]:
+                        if not_exists:
+                            _all.insert(j, replace_dir2ver(i))
+                            _all_build.insert(j, dir_data[i])
+                            found = 1
+                            break
+                if found == 0:
+                    # print("Found\n")
+                    if not_exists:
+                        _all.append(replace_dir2ver(i))
+                        _all_build.append(dir_data[i])
             all = list()
             for i in _all:
                 all.append(replace_any2name(i))
@@ -258,8 +274,11 @@ class Launcher(wx.Panel):
 
             self.inet_available = False
 
+
             _all = list(self.old.keys())+list(self.all.keys())
             _all_build = list(self.old.values())+list(self.all.values())
+            # print(_all)
+            # print(_all_build)
             dir = os.listdir("versions/")
             dir_build = list()
 
@@ -269,24 +288,50 @@ class Launcher(wx.Panel):
                     dir_build.append(versionData["build"])
 
             dir_data = dict()
-            for i, j in (dir, dir_build):
+            for _i in range(len(dir)):
+                i = dir[_i]
+                j = dir_build[_i]
                 dir_data[i] = j
 
-            _all = list()
-            for i in os.listdir("versions/"):
-                for j in _all_build:
-                    print(dir_data[i], j)
-                    if dir_data[i] > j:
-                        _all.append(replace_any2name(i))
-                        _all_build.append(dir_data[i])
-
             _all_data = dict()
-            for i, j in (_all, _all_build):
+            for _i in range(len(_all)):
+                i = _all[_i]
+                j = _all_build[_i]
                 _all_data[i] = j
 
+            # print(dir_data)
+            # print(_all)
+
+            dzf = _all.copy()
+
+            for i in os.listdir("versions/"):
+                # print("I: %s" % i)
+                for k in _all:
+                    # print("K: %s" % k)
+                    if i == replace_ver2dir(k):
+                        not_exists = False
+                        break
+                    else:
+                        not_exists = True
+
+                # print("ALL: %s" % _all)
+                found = 0
+                for j in range(len(_all_build.copy())):
+                    # print("DirData: %s | AllBuild: %s | All: %s" % (dir_data[i], _all_build[j], _all[j]))
+                    if dir_data[i] < _all_build[j]:
+                        if not_exists:
+                            _all.insert(j, replace_dir2ver(i))
+                            _all_build.insert(j, dir_data[i])
+                            found = 1
+                            break
+                if found == 0:
+                    # print("Found\n")
+                    if not_exists:
+                        _all.append(replace_dir2ver(i))
+                        _all_build.append(dir_data[i])
             all = list()
             for i in _all:
-                all.append(replace_any2name(_all))
+                all.append(replace_any2name(i))
 
             all_build = _all_build
             all_data = _all_data
@@ -375,7 +420,8 @@ if __name__ == '__main__':
         os.makedirs("slots")
 
     app = wx.App()
-    frame = wx.Frame(None, size=wx.Size(1280, 720), pos=wx.Point(0, 2), title="Qplay Bubbles Launcher")
+    frame = wx.Frame(None, size=wx.Size(1280, 720), pos=wx.Point(0, 2), title="Qplay Bubbles Launcher",
+                     style=wx.DEFAULT_FRAME_STYLE & ~(wx.RESIZE_BORDER | wx.MAXIMIZE_BOX))
     main = Launcher(frame)
     frame.Show()
     app.MainLoop()

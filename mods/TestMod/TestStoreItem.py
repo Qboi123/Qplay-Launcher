@@ -1,5 +1,5 @@
-from versions.v1_5_0_pre3.base import StoreItem
-from versions.v1_5_0_pre3.fake_main import Game
+from versions.v1_5_0_pre4.base import StoreItem
+from versions.v1_5_0_pre4.fake_main import Game
 
 
 class TestStoreItem(StoreItem):
