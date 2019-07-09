@@ -27,7 +27,7 @@ Minimum of 1366x768 resolution of your screen.
 03. Follow the instructions
 04. NOTE: After install you can choose to run the game.
 
-## Steps for Launcher Archive (The launcher.zip file)
+## Steps for Launcher Archive (The launcher.zip / Qplay.Launcher.zip file)
 01. Download the launcher.zip file from the releases page.
 02. Open and extract the archive on a location that doesn't need administrator rights.
 03. In the extracted folder run the launcher.exe file (or laucher).
@@ -48,7 +48,7 @@ NOTE: If you don't do this. You can't install Qplay Bubbles.
 07. Left top press start / home or reopen settings.
 08. Update & security 
 09. For developers
-10. Select Apps sideloaden or Mode for developers. (The best is Apps siteloaden)
+10. Select 'Sideloading Apps' or 'Mode for developers'. (The best is 'Sideloading Apps')
 
 ### Install:
 01. Download the setup.msi (the case doesn't matter) from the releases page.
@@ -57,7 +57,7 @@ NOTE: If you don't do this. You can't install Qplay Bubbles.
 04. NOTE: After install you can choose to run the game.
 
 ## Downloads:
-www.python.org for Python.  
+https://www.python.org for Python.  
 https://github.com/Qplay123/Qplay-Bubbles/releases for the Game. (Setup / Source)
 
 ## Information for next version (v1.5.0):
