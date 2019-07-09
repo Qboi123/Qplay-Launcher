@@ -4,18 +4,18 @@
 {
     "distutils": {
         "depends": [
-            "src/gevent/__tracer.pxd"
-        ], 
+            "src/gevent/__tracer.pxd",
+            "src\\gevent\\__tracer.pxd"
+        ],
         "include_dirs": [
-            "/private/tmp/gevent/python2.7/include/python2.7", 
-            "/private/tmp/gevent/python2.7/include/site/python2.7", 
+            "C:\\Python37-x64\\Include",
             "deps"
-        ], 
-        "name": "gevent.__tracer", 
+        ],
+        "name": "gevent.__tracer",
         "sources": [
             "src/gevent/_tracer.py"
         ]
-    }, 
+    },
     "module_name": "gevent.__tracer"
 }
 END: Cython Metadata */
@@ -835,8 +835,8 @@ static const char *__pyx_filename;
 
 
 static const char *__pyx_f[] = {
-  "src/gevent/_tracer.py",
-  "src/gevent/__tracer.pxd",
+  "src\\gevent\\_tracer.py",
+  "src\\gevent\\__tracer.pxd",
 };
 
 /*--- Type declarations ---*/
@@ -1475,7 +1475,12 @@ int __pyx_module_is_main_gevent____tracer = 0;
 /* Implementation of 'gevent.__tracer' */
 static PyObject *__pyx_builtin_KeyError;
 static PyObject *__pyx_builtin_hex;
+#if PY_MAJOR_VERSION >= 3
 static const char __pyx_k_[] = "================================================================================";
+#endif
+#if PY_MAJOR_VERSION < 3
+static const char __pyx_k_b[] = "b'================================================================================'";
+#endif
 static const char __pyx_k__2[] = "";
 static const char __pyx_k_all[] = "__all__";
 static const char __pyx_k_hex[] = "hex";
@@ -1530,7 +1535,7 @@ static const char __pyx_k_cline_in_traceback[] = "cline_in_traceback";
 static const char __pyx_k_GreenletTracer_kill[] = "GreenletTracer.kill";
 static const char __pyx_k_did_block_hub_report[] = "did_block_hub_report";
 static const char __pyx_k_GreenletTracer__trace[] = "GreenletTracer._trace";
-static const char __pyx_k_src_gevent__tracer_py[] = "src/gevent/_tracer.py";
+static const char __pyx_k_src_gevent__tracer_py[] = "src\\gevent\\_tracer.py";
 static const char __pyx_k_HubSwitchTracer__trace[] = "HubSwitchTracer._trace";
 static const char __pyx_k_MaxSwitchTracer__trace[] = "MaxSwitchTracer._trace";
 static const char __pyx_k_GreenletTracer_did_block_hub[] = "GreenletTracer.did_block_hub";
@@ -1544,7 +1549,6 @@ static const char __pyx_k_GreenletTracer_ignore_current_gr[] = "GreenletTracer.i
 static const char __pyx_k_GreenletTracer_monitor_current_g[] = "GreenletTracer.monitor_current_greenlet_blocking";
 static const char __pyx_k_ignore_current_greenlet_blocking[] = "ignore_current_greenlet_blocking";
 static const char __pyx_k_monitor_current_greenlet_blockin[] = "monitor_current_greenlet_blocking";
-static PyObject *__pyx_kp_s_;
 static PyObject *__pyx_kp_s_Blocked_Stack_for_thread_id_s;
 static PyObject *__pyx_n_s_GreenletTracer;
 static PyObject *__pyx_n_s_GreenletTracer__trace;
@@ -1569,6 +1573,7 @@ static PyObject *__pyx_kp_s__2;
 static PyObject *__pyx_n_s_active_greenlet;
 static PyObject *__pyx_n_s_all;
 static PyObject *__pyx_n_s_args;
+static PyObject *__pyx_kp_s_b;
 static PyObject *__pyx_n_s_cline_in_traceback;
 static PyObject *__pyx_n_s_current_frames;
 static PyObject *__pyx_n_s_did_block_hub;
@@ -2986,9 +2991,9 @@ static PyObject *__pyx_pf_6gevent_8__tracer_14GreenletTracer_14did_block_hub_rep
  */
   __pyx_t_2 = PyList_New(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 102, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __Pyx_INCREF(__pyx_kp_s_);
-  __Pyx_GIVEREF(__pyx_kp_s_);
-  PyList_SET_ITEM(__pyx_t_2, 0, __pyx_kp_s_);
+  __Pyx_INCREF(__pyx_kp_s_b);
+  __Pyx_GIVEREF(__pyx_kp_s_b);
+  PyList_SET_ITEM(__pyx_t_2, 0, __pyx_kp_s_b);
   __Pyx_GIVEREF(__pyx_t_1);
   PyList_SET_ITEM(__pyx_t_2, 1, __pyx_t_1);
   __pyx_t_1 = 0;
@@ -5793,7 +5798,6 @@ static struct PyModuleDef __pyx_moduledef = {
 #endif
 
 static __Pyx_StringTabEntry __pyx_string_tab[] = {
-  {&__pyx_kp_s_, __pyx_k_, sizeof(__pyx_k_), 0, 0, 1, 0},
   {&__pyx_kp_s_Blocked_Stack_for_thread_id_s, __pyx_k_Blocked_Stack_for_thread_id_s, sizeof(__pyx_k_Blocked_Stack_for_thread_id_s), 0, 0, 1, 0},
   {&__pyx_n_s_GreenletTracer, __pyx_k_GreenletTracer, sizeof(__pyx_k_GreenletTracer), 0, 0, 1, 1},
   {&__pyx_n_s_GreenletTracer__trace, __pyx_k_GreenletTracer__trace, sizeof(__pyx_k_GreenletTracer__trace), 0, 0, 1, 1},
@@ -5818,6 +5822,11 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_active_greenlet, __pyx_k_active_greenlet, sizeof(__pyx_k_active_greenlet), 0, 0, 1, 1},
   {&__pyx_n_s_all, __pyx_k_all, sizeof(__pyx_k_all), 0, 0, 1, 1},
   {&__pyx_n_s_args, __pyx_k_args, sizeof(__pyx_k_args), 0, 0, 1, 1},
+  #if PY_MAJOR_VERSION >= 3
+  {&__pyx_kp_s_b, __pyx_k_, sizeof(__pyx_k_), 0, 1, 0, 0},
+  #else
+  {&__pyx_kp_s_b, __pyx_k_b, sizeof(__pyx_k_b), 0, 0, 1, 0},
+  #endif
   {&__pyx_n_s_cline_in_traceback, __pyx_k_cline_in_traceback, sizeof(__pyx_k_cline_in_traceback), 0, 0, 1, 1},
   {&__pyx_n_s_current_frames, __pyx_k_current_frames, sizeof(__pyx_k_current_frames), 0, 0, 1, 1},
   {&__pyx_n_s_did_block_hub, __pyx_k_did_block_hub, sizeof(__pyx_k_did_block_hub), 0, 0, 1, 1},

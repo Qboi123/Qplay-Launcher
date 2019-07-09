@@ -1,6 +1,63 @@
 from PIL import Image, ImageTk, ImageDraw2, ImageDraw, ImageFont
 
 
+def yamldict2class(obj: dict):
+    """
+    DON'T USE THIS. THIS DOESN'T WORKING
+    :param obj:
+    :return:
+    """
+    keys = list(obj.keys())
+    values = list(obj.values())
+    length = len(keys)
+
+    class DictClass:
+        def __init__(self):
+            pass
+
+    obj2 = dict()
+
+    for index in range(length):
+        key = keys[index]
+        value = values[index]
+        print("Key: %s | Find Dot: %s" % (key, key.find(".")))
+
+        keys2, values2 = dotkeyvalue(key, value)
+        # length2 =
+
+        # for index2 in range(length2):
+
+
+        dictClass.__dict__[key] = value
+
+
+
+def dict2class(obj: dict):
+    import sys
+    class DictClass:
+        def __init__(self):
+            pass
+
+    print("Object: %s" % obj)
+
+    dictClass = DictClass()
+
+    print("Keys: %s" % list(obj.keys()))
+
+    for index in range(len(list(obj.keys()))):
+        key = list(obj.keys())[index]
+        value = list(obj.values())[index]
+        print("Key: %s | Value: %s" % (key, value))
+        if type(key) == dict:
+            print("ERROR: Key is a Dict!", file=sys.stderr)
+            exit(1)
+        if type(value) == dict:
+            value = dict2class(value)
+        dictClass.__dict__[key] = value
+
+    return dictClass
+
+
 def draw_ellipse(image, bounds, width=1.0, outline='white', antialias=4):
     """Improved ellipse drawing function, based on PIL.ImageDraw."""
 

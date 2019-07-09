@@ -4,20 +4,22 @@
 {
     "distutils": {
         "depends": [
-            "src/gevent/__ident.pxd", 
-            "src/gevent/_greenlet.pxd", 
-            "src/gevent/_ident.py"
-        ], 
+            "src/gevent/__ident.pxd",
+            "src/gevent/_greenlet.pxd",
+            "src/gevent/_ident.py",
+            "src\\gevent\\__ident.pxd",
+            "src\\gevent\\_greenlet.pxd",
+            "src\\gevent\\_ident.py"
+        ],
         "include_dirs": [
-            "/private/tmp/gevent/python2.7/include/python2.7", 
-            "/private/tmp/gevent/python2.7/include/site/python2.7", 
+            "C:\\Python37-x64\\Include",
             "deps"
-        ], 
-        "name": "gevent._greenlet", 
+        ],
+        "name": "gevent._greenlet",
         "sources": [
             "src/gevent/greenlet.py"
         ]
-    }, 
+    },
     "module_name": "gevent._greenlet"
 }
 END: Cython Metadata */
@@ -839,12 +841,12 @@ static const char *__pyx_filename;
 
 
 static const char *__pyx_f[] = {
-  "src/gevent/greenlet.py",
-  "src/gevent/_greenlet.pxd",
-  "src/gevent/__greenlet_primitives.pxd",
-  "src/gevent/__waiter.pxd",
+  "src\\gevent\\greenlet.py",
+  "src\\gevent\\_greenlet.pxd",
+  "src\\gevent\\__greenlet_primitives.pxd",
+  "src\\gevent\\__waiter.pxd",
   "stringsource",
-  "src/gevent/__ident.pxd",
+  "src\\gevent\\__ident.pxd",
 };
 
 /*--- Type declarations ---*/
@@ -2199,7 +2201,7 @@ static const char __pyx_k_spawning_stack_frames[] = "_spawning_stack_frames";
 static const char __pyx_k_start_completed_event[] = "_start_completed_event";
 static const char __pyx_k_Greenlet__notify_links[] = "Greenlet._notify_links";
 static const char __pyx_k_gevent__hub_primitives[] = "gevent._hub_primitives";
-static const char __pyx_k_src_gevent_greenlet_py[] = "src/gevent/greenlet.py";
+static const char __pyx_k_src_gevent_greenlet_py[] = "src\\gevent\\greenlet.py";
 static const char __pyx_k_Greenlet_link_exception[] = "Greenlet.link_exception";
 static const char __pyx_k_Greenlet_spawning_stack[] = "Greenlet.spawning_stack";
 static const char __pyx_k_Greenlet__raise_exception[] = "Greenlet._raise_exception";
@@ -4041,8 +4043,8 @@ static PyObject *__pyx_pf_6gevent_9_greenlet_6_Frame_6f_back___get__(struct __py
  */
 
 static struct __pyx_obj_6gevent_9_greenlet__Frame *__pyx_f_6gevent_9_greenlet__Frame_from_list(PyObject *__pyx_v_frames) {
-  PyObject *__pyx_v_frame = 0;
   struct __pyx_obj_6gevent_9_greenlet__Frame *__pyx_v_previous = 0;
+  PyObject *__pyx_v_frame = 0;
   struct __pyx_obj_6gevent_9_greenlet__Frame *__pyx_v_f = 0;
   struct __pyx_obj_6gevent_9_greenlet__Frame *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
@@ -4173,8 +4175,8 @@ static struct __pyx_obj_6gevent_9_greenlet__Frame *__pyx_f_6gevent_9_greenlet__F
   __Pyx_AddTraceback("gevent._greenlet._Frame_from_list", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = 0;
   __pyx_L0:;
-  __Pyx_XDECREF(__pyx_v_frame);
   __Pyx_XDECREF((PyObject *)__pyx_v_previous);
+  __Pyx_XDECREF(__pyx_v_frame);
   __Pyx_XDECREF((PyObject *)__pyx_v_f);
   __Pyx_XGIVEREF((PyObject *)__pyx_r);
   __Pyx_RefNannyFinishContext();
@@ -15812,115 +15814,6 @@ static CYTHON_INLINE PyObject *__pyx_f_6gevent_21__greenlet_primitives__greenlet
   return __pyx_r;
 }
 
-/* "gevent/_greenlet.pxd":27
- * 
- * @cython.final
- * cdef inline greenlet getcurrent():             # <<<<<<<<<<<<<<
- *     return PyGreenlet_GetCurrent()
- * 
- */
-
-static CYTHON_INLINE PyGreenlet *__pyx_f_6gevent_9_greenlet_getcurrent(void) {
-  PyGreenlet *__pyx_r = NULL;
-  __Pyx_RefNannyDeclarations
-  PyObject *__pyx_t_1 = NULL;
-  __Pyx_RefNannySetupContext("getcurrent", 0);
-
-  /* "gevent/_greenlet.pxd":28
- * @cython.final
- * cdef inline greenlet getcurrent():
- *     return PyGreenlet_GetCurrent()             # <<<<<<<<<<<<<<
- * 
- * cdef bint _greenlet_imported
- */
-  __Pyx_XDECREF(((PyObject *)__pyx_r));
-  __pyx_t_1 = ((PyObject *)PyGreenlet_GetCurrent()); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 28, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  __pyx_r = ((PyGreenlet *)__pyx_t_1);
-  __pyx_t_1 = 0;
-  goto __pyx_L0;
-
-  /* "gevent/_greenlet.pxd":27
- * 
- * @cython.final
- * cdef inline greenlet getcurrent():             # <<<<<<<<<<<<<<
- *     return PyGreenlet_GetCurrent()
- * 
- */
-
-  /* function exit code */
-  __pyx_L1_error:;
-  __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("gevent._greenlet.getcurrent", __pyx_clineno, __pyx_lineno, __pyx_filename);
-  __pyx_r = 0;
-  __pyx_L0:;
-  __Pyx_XGIVEREF((PyObject *)__pyx_r);
-  __Pyx_RefNannyFinishContext();
-  return __pyx_r;
-}
-
-/* "gevent/_greenlet.pxd":32
- * cdef bint _greenlet_imported
- * 
- * cdef inline void greenlet_init():             # <<<<<<<<<<<<<<
- *     global _greenlet_imported
- *     if not _greenlet_imported:
- */
-
-static CYTHON_INLINE void __pyx_f_6gevent_9_greenlet_greenlet_init(void) {
-  __Pyx_RefNannyDeclarations
-  int __pyx_t_1;
-  __Pyx_RefNannySetupContext("greenlet_init", 0);
-
-  /* "gevent/_greenlet.pxd":34
- * cdef inline void greenlet_init():
- *     global _greenlet_imported
- *     if not _greenlet_imported:             # <<<<<<<<<<<<<<
- *         PyGreenlet_Import()
- *         _greenlet_imported = True
- */
-  __pyx_t_1 = ((!(__pyx_v_6gevent_9_greenlet__greenlet_imported != 0)) != 0);
-  if (__pyx_t_1) {
-
-    /* "gevent/_greenlet.pxd":35
- *     global _greenlet_imported
- *     if not _greenlet_imported:
- *         PyGreenlet_Import()             # <<<<<<<<<<<<<<
- *         _greenlet_imported = True
- * 
- */
-    PyGreenlet_Import();
-
-    /* "gevent/_greenlet.pxd":36
- *     if not _greenlet_imported:
- *         PyGreenlet_Import()
- *         _greenlet_imported = True             # <<<<<<<<<<<<<<
- * 
- * cdef extern from "Python.h":
- */
-    __pyx_v_6gevent_9_greenlet__greenlet_imported = 1;
-
-    /* "gevent/_greenlet.pxd":34
- * cdef inline void greenlet_init():
- *     global _greenlet_imported
- *     if not _greenlet_imported:             # <<<<<<<<<<<<<<
- *         PyGreenlet_Import()
- *         _greenlet_imported = True
- */
-  }
-
-  /* "gevent/_greenlet.pxd":32
- * cdef bint _greenlet_imported
- * 
- * cdef inline void greenlet_init():             # <<<<<<<<<<<<<<
- *     global _greenlet_imported
- *     if not _greenlet_imported:
- */
-
-  /* function exit code */
-  __Pyx_RefNannyFinishContext();
-}
-
 /* "gevent/__waiter.pxd":24
  *     void PyGreenlet_Import()
  * 
@@ -16020,6 +15913,115 @@ static CYTHON_INLINE void __pyx_f_6gevent_8__waiter_greenlet_init(void) {
 
   /* "gevent/__waiter.pxd":27
  *     return PyGreenlet_GetCurrent()
+ * 
+ * cdef inline void greenlet_init():             # <<<<<<<<<<<<<<
+ *     global _greenlet_imported
+ *     if not _greenlet_imported:
+ */
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+/* "gevent/_greenlet.pxd":27
+ * 
+ * @cython.final
+ * cdef inline greenlet getcurrent():             # <<<<<<<<<<<<<<
+ *     return PyGreenlet_GetCurrent()
+ * 
+ */
+
+static CYTHON_INLINE PyGreenlet *__pyx_f_6gevent_9_greenlet_getcurrent(void) {
+  PyGreenlet *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  __Pyx_RefNannySetupContext("getcurrent", 0);
+
+  /* "gevent/_greenlet.pxd":28
+ * @cython.final
+ * cdef inline greenlet getcurrent():
+ *     return PyGreenlet_GetCurrent()             # <<<<<<<<<<<<<<
+ * 
+ * cdef bint _greenlet_imported
+ */
+  __Pyx_XDECREF(((PyObject *)__pyx_r));
+  __pyx_t_1 = ((PyObject *)PyGreenlet_GetCurrent()); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 28, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_r = ((PyGreenlet *)__pyx_t_1);
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+
+  /* "gevent/_greenlet.pxd":27
+ * 
+ * @cython.final
+ * cdef inline greenlet getcurrent():             # <<<<<<<<<<<<<<
+ *     return PyGreenlet_GetCurrent()
+ * 
+ */
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_AddTraceback("gevent._greenlet.getcurrent", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = 0;
+  __pyx_L0:;
+  __Pyx_XGIVEREF((PyObject *)__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "gevent/_greenlet.pxd":32
+ * cdef bint _greenlet_imported
+ * 
+ * cdef inline void greenlet_init():             # <<<<<<<<<<<<<<
+ *     global _greenlet_imported
+ *     if not _greenlet_imported:
+ */
+
+static CYTHON_INLINE void __pyx_f_6gevent_9_greenlet_greenlet_init(void) {
+  __Pyx_RefNannyDeclarations
+  int __pyx_t_1;
+  __Pyx_RefNannySetupContext("greenlet_init", 0);
+
+  /* "gevent/_greenlet.pxd":34
+ * cdef inline void greenlet_init():
+ *     global _greenlet_imported
+ *     if not _greenlet_imported:             # <<<<<<<<<<<<<<
+ *         PyGreenlet_Import()
+ *         _greenlet_imported = True
+ */
+  __pyx_t_1 = ((!(__pyx_v_6gevent_9_greenlet__greenlet_imported != 0)) != 0);
+  if (__pyx_t_1) {
+
+    /* "gevent/_greenlet.pxd":35
+ *     global _greenlet_imported
+ *     if not _greenlet_imported:
+ *         PyGreenlet_Import()             # <<<<<<<<<<<<<<
+ *         _greenlet_imported = True
+ * 
+ */
+    PyGreenlet_Import();
+
+    /* "gevent/_greenlet.pxd":36
+ *     if not _greenlet_imported:
+ *         PyGreenlet_Import()
+ *         _greenlet_imported = True             # <<<<<<<<<<<<<<
+ * 
+ * cdef extern from "Python.h":
+ */
+    __pyx_v_6gevent_9_greenlet__greenlet_imported = 1;
+
+    /* "gevent/_greenlet.pxd":34
+ * cdef inline void greenlet_init():
+ *     global _greenlet_imported
+ *     if not _greenlet_imported:             # <<<<<<<<<<<<<<
+ *         PyGreenlet_Import()
+ *         _greenlet_imported = True
+ */
+  }
+
+  /* "gevent/_greenlet.pxd":32
+ * cdef bint _greenlet_imported
  * 
  * cdef inline void greenlet_init():             # <<<<<<<<<<<<<<
  *     global _greenlet_imported

@@ -4,18 +4,18 @@
 {
     "distutils": {
         "depends": [
-            "src/gevent/__hub_local.pxd"
-        ], 
+            "src/gevent/__hub_local.pxd",
+            "src\\gevent\\__hub_local.pxd"
+        ],
         "include_dirs": [
-            "/private/tmp/gevent/python2.7/include/python2.7", 
-            "/private/tmp/gevent/python2.7/include/site/python2.7", 
+            "C:\\Python37-x64\\Include",
             "deps"
-        ], 
-        "name": "gevent.__hub_local", 
+        ],
+        "name": "gevent.__hub_local",
         "sources": [
             "src/gevent/_hub_local.py"
         ]
-    }, 
+    },
     "module_name": "gevent.__hub_local"
 }
 END: Cython Metadata */
@@ -836,8 +836,8 @@ static const char *__pyx_filename;
 
 
 static const char *__pyx_f[] = {
-  "src/gevent/_hub_local.py",
-  "src/gevent/__greenlet_primitives.pxd",
+  "src\\gevent\\_hub_local.py",
+  "src\\gevent\\__greenlet_primitives.pxd",
 };
 
 /*--- Type declarations ---*/
@@ -1319,7 +1319,7 @@ static const char __pyx_k_Threadlocal___init[] = "_Threadlocal.__init__";
 static const char __pyx_k_cline_in_traceback[] = "cline_in_traceback";
 static const char __pyx_k_gevent___hub_local[] = "gevent.__hub_local";
 static const char __pyx_k_set_default_hub_class[] = "set_default_hub_class";
-static const char __pyx_k_src_gevent__hub_local_py[] = "src/gevent/_hub_local.py";
+static const char __pyx_k_src_gevent__hub_local_py[] = "src\\gevent\\_hub_local.py";
 static const char __pyx_k_Maintains_the_thread_local_hub[] = "\nMaintains the thread local hub.\n\n";
 static PyObject *__pyx_n_s_Hub;
 static PyObject *__pyx_n_s_Threadlocal;

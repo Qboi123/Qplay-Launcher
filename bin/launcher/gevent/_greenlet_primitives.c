@@ -4,18 +4,18 @@
 {
     "distutils": {
         "depends": [
-            "src/gevent/__greenlet_primitives.pxd"
-        ], 
+            "src/gevent/__greenlet_primitives.pxd",
+            "src\\gevent\\__greenlet_primitives.pxd"
+        ],
         "include_dirs": [
-            "/private/tmp/gevent/python2.7/include/python2.7", 
-            "/private/tmp/gevent/python2.7/include/site/python2.7", 
+            "C:\\Python37-x64\\Include",
             "deps"
-        ], 
-        "name": "gevent.__greenlet_primitives", 
+        ],
+        "name": "gevent.__greenlet_primitives",
         "sources": [
             "src/gevent/_greenlet_primitives.py"
         ]
-    }, 
+    },
     "module_name": "gevent.__greenlet_primitives"
 }
 END: Cython Metadata */
@@ -836,8 +836,8 @@ static const char *__pyx_filename;
 
 
 static const char *__pyx_f[] = {
-  "src/gevent/_greenlet_primitives.py",
-  "src/gevent/__greenlet_primitives.pxd",
+  "src\\gevent\\_greenlet_primitives.py",
+  "src\\gevent\\__greenlet_primitives.pxd",
 };
 
 /*--- Type declarations ---*/
@@ -1378,7 +1378,7 @@ static const char __pyx_k_greenlet_tree_is_ignored[] = "greenlet_tree_is_ignored
 static const char __pyx_k_SwitchOutGreenletWithLoop[] = "SwitchOutGreenletWithLoop";
 static const char __pyx_k_gevent___greenlet_primitives[] = "gevent.__greenlet_primitives";
 static const char __pyx_k_A_collection_of_primitives_used[] = "\nA collection of primitives used by the hub, and suitable for\ncompilation with Cython because of their frequency of use.\n\n";
-static const char __pyx_k_src_gevent__greenlet_primitives[] = "src/gevent/_greenlet_primitives.py";
+static const char __pyx_k_src_gevent__greenlet_primitives[] = "src\\gevent\\_greenlet_primitives.py";
 static const char __pyx_k_Impossible_to_call_blocking_func[] = "Impossible to call blocking function in the event loop callback";
 static const char __pyx_k_SwitchOutGreenletWithLoop_switch[] = "SwitchOutGreenletWithLoop.switch";
 static const char __pyx_k_SwitchOutGreenletWithLoop_switch_2[] = "SwitchOutGreenletWithLoop.switch_out";

@@ -4,18 +4,18 @@
 {
     "distutils": {
         "depends": [
-            "src/gevent/_queue.pxd"
-        ], 
+            "src/gevent/_queue.pxd",
+            "src\\gevent\\_queue.pxd"
+        ],
         "include_dirs": [
-            "/private/tmp/gevent/python2.7/include/python2.7", 
-            "/private/tmp/gevent/python2.7/include/site/python2.7", 
+            "C:\\Python37-x64\\Include",
             "deps"
-        ], 
-        "name": "gevent._queue", 
+        ],
+        "name": "gevent._queue",
         "sources": [
             "src/gevent/queue.py"
         ]
-    }, 
+    },
     "module_name": "gevent._queue"
 }
 END: Cython Metadata */
@@ -836,12 +836,12 @@ static const char *__pyx_filename;
 
 
 static const char *__pyx_f[] = {
-  "src/gevent/queue.py",
-  "src/gevent/_queue.pxd",
-  "src/gevent/__greenlet_primitives.pxd",
-  "src/gevent/__waiter.pxd",
-  "src/gevent/__abstract_linkable.pxd",
-  "src/gevent/_event.pxd",
+  "src\\gevent\\queue.py",
+  "src\\gevent\\_queue.pxd",
+  "src\\gevent\\__greenlet_primitives.pxd",
+  "src\\gevent\\__waiter.pxd",
+  "src\\gevent\\__abstract_linkable.pxd",
+  "src\\gevent\\_event.pxd",
 };
 
 /*--- Type declarations ---*/
@@ -2244,7 +2244,7 @@ static const char __pyx_k_PriorityQueue__put[] = "PriorityQueue._put";
 static const char __pyx_k_cline_in_traceback[] = "cline_in_traceback";
 static const char __pyx_k_start_new_or_dummy[] = "_start_new_or_dummy";
 static const char __pyx_k_Queue__create_queue[] = "Queue._create_queue";
-static const char __pyx_k_src_gevent_queue_py[] = "src/gevent/queue.py";
+static const char __pyx_k_src_gevent_queue_py[] = "src\\gevent\\queue.py";
 static const char __pyx_k_JoinableQueue__format[] = "JoinableQueue._format";
 static const char __pyx_k_JoinableQueue_task_done[] = "JoinableQueue.task_done";
 static const char __pyx_k_LifoQueue__create_queue[] = "LifoQueue._create_queue";

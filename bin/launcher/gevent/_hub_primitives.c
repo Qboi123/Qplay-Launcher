@@ -4,18 +4,18 @@
 {
     "distutils": {
         "depends": [
-            "src/gevent/__hub_primitives.pxd"
-        ], 
+            "src/gevent/__hub_primitives.pxd",
+            "src\\gevent\\__hub_primitives.pxd"
+        ],
         "include_dirs": [
-            "/private/tmp/gevent/python2.7/include/python2.7", 
-            "/private/tmp/gevent/python2.7/include/site/python2.7", 
+            "C:\\Python37-x64\\Include",
             "deps"
-        ], 
-        "name": "gevent.__hub_primitives", 
+        ],
+        "name": "gevent.__hub_primitives",
         "sources": [
             "src/gevent/_hub_primitives.py"
         ]
-    }, 
+    },
     "module_name": "gevent.__hub_primitives"
 }
 END: Cython Metadata */
@@ -836,10 +836,10 @@ static const char *__pyx_filename;
 
 
 static const char *__pyx_f[] = {
-  "src/gevent/_hub_primitives.py",
-  "src/gevent/__greenlet_primitives.pxd",
-  "src/gevent/__waiter.pxd",
-  "src/gevent/__hub_primitives.pxd",
+  "src\\gevent\\_hub_primitives.py",
+  "src\\gevent\\__greenlet_primitives.pxd",
+  "src\\gevent\\__waiter.pxd",
+  "src\\gevent\\__hub_primitives.pxd",
 };
 
 /*--- Type declarations ---*/
@@ -1752,7 +1752,7 @@ static const char __pyx_k_ConcurrentObjectUseError[] = "ConcurrentObjectUseError
 static const char __pyx_k_SwitchOutGreenletWithLoop[] = "SwitchOutGreenletWithLoop";
 static const char __pyx_k_set_default_timeout_error[] = "set_default_timeout_error";
 static const char __pyx_k_WaitOperationsGreenlet_wait[] = "WaitOperationsGreenlet.wait";
-static const char __pyx_k_src_gevent__hub_primitives_py[] = "src/gevent/_hub_primitives.py";
+static const char __pyx_k_src_gevent__hub_primitives_py[] = "src\\gevent\\_hub_primitives.py";
 static const char __pyx_k_A_collection_of_primitives_used[] = "\nA collection of primitives used by the hub, and suitable for\ncompilation with Cython because of their frequency of use.\n\n\n";
 static const char __pyx_k_Invalid_switch_into_s_r_expected[] = "Invalid switch into %s: %r (expected %r)";
 static const char __pyx_k_The_socket_has_already_been_clos[] = "The socket has already been closed by another greenlet";

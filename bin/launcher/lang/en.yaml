@@ -1,4 +1,5 @@
 # Store text
+store: "Store"
 store.diamonds: "Diamonds: "
 store.coins: "Coins: "
 

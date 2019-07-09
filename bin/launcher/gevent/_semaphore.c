@@ -4,18 +4,18 @@
 {
     "distutils": {
         "depends": [
-            "src/gevent/__semaphore.pxd"
-        ], 
+            "src/gevent/__semaphore.pxd",
+            "src\\gevent\\__semaphore.pxd"
+        ],
         "include_dirs": [
-            "/private/tmp/gevent/python2.7/include/python2.7", 
-            "/private/tmp/gevent/python2.7/include/site/python2.7", 
+            "C:\\Python37-x64\\Include",
             "deps"
-        ], 
-        "name": "gevent.__semaphore", 
+        ],
+        "name": "gevent.__semaphore",
         "sources": [
             "src/gevent/_semaphore.py"
         ]
-    }, 
+    },
     "module_name": "gevent.__semaphore"
 }
 END: Cython Metadata */
@@ -836,10 +836,10 @@ static const char *__pyx_filename;
 
 
 static const char *__pyx_f[] = {
-  "src/gevent/_semaphore.py",
-  "src/gevent/__semaphore.pxd",
-  "src/gevent/__greenlet_primitives.pxd",
-  "src/gevent/__abstract_linkable.pxd",
+  "src\\gevent\\_semaphore.py",
+  "src\\gevent\\__semaphore.pxd",
+  "src\\gevent\\__greenlet_primitives.pxd",
+  "src\\gevent\\__abstract_linkable.pxd",
 };
 
 /*--- Type declarations ---*/
@@ -1551,7 +1551,7 @@ static const char __pyx_k_gevent___semaphore[] = "gevent.__semaphore";
 static const char __pyx_k_s_counter_s__links_s[] = "<%s counter=%s _links[%s]>";
 static const char __pyx_k_Semaphore__start_notify[] = "Semaphore._start_notify";
 static const char __pyx_k_BoundedSemaphore_release[] = "BoundedSemaphore.release";
-static const char __pyx_k_src_gevent__semaphore_py[] = "src/gevent/_semaphore.py";
+static const char __pyx_k_src_gevent__semaphore_py[] = "src\\gevent\\_semaphore.py";
 static const char __pyx_k_gevent__abstract_linkable[] = "gevent._abstract_linkable";
 static const char __pyx_k_semaphore_initial_value_must_be[] = "semaphore initial value must be >= 0";
 static const char __pyx_k_Semaphore_released_too_many_time[] = "Semaphore released too many times";

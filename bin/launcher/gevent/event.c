@@ -4,18 +4,18 @@
 {
     "distutils": {
         "depends": [
-            "src/gevent/_event.pxd"
-        ], 
+            "src/gevent/_event.pxd",
+            "src\\gevent\\_event.pxd"
+        ],
         "include_dirs": [
-            "/private/tmp/gevent/python2.7/include/python2.7", 
-            "/private/tmp/gevent/python2.7/include/site/python2.7", 
+            "C:\\Python37-x64\\Include",
             "deps"
-        ], 
-        "name": "gevent._event", 
+        ],
+        "name": "gevent._event",
         "sources": [
             "src/gevent/event.py"
         ]
-    }, 
+    },
     "module_name": "gevent._event"
 }
 END: Cython Metadata */
@@ -836,10 +836,10 @@ static const char *__pyx_filename;
 
 
 static const char *__pyx_f[] = {
-  "src/gevent/event.py",
-  "src/gevent/_event.pxd",
-  "src/gevent/__greenlet_primitives.pxd",
-  "src/gevent/__abstract_linkable.pxd",
+  "src\\gevent\\event.py",
+  "src\\gevent\\_event.pxd",
+  "src\\gevent\\__greenlet_primitives.pxd",
+  "src\\gevent\\__abstract_linkable.pxd",
 };
 
 /*--- Type declarations ---*/
@@ -1608,7 +1608,7 @@ static const char __pyx_k_abstract_linkable[] = "_abstract_linkable";
 static const char __pyx_k_AsyncResult_cancel[] = "AsyncResult.cancel";
 static const char __pyx_k_AsyncResult_result[] = "AsyncResult.result";
 static const char __pyx_k_cline_in_traceback[] = "cline_in_traceback";
-static const char __pyx_k_src_gevent_event_py[] = "src/gevent/event.py";
+static const char __pyx_k_src_gevent_event_py[] = "src\\gevent\\event.py";
 static const char __pyx_k_reset_internal_locks[] = "_reset_internal_locks";
 static const char __pyx_k_AsyncResult_cancelled[] = "AsyncResult.cancelled";
 static const char __pyx_k_AsyncResult_get_nowait[] = "AsyncResult.get_nowait";

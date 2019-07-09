@@ -4,18 +4,18 @@
 {
     "distutils": {
         "depends": [
-            "src/gevent/__abstract_linkable.pxd"
-        ], 
+            "src/gevent/__abstract_linkable.pxd",
+            "src\\gevent\\__abstract_linkable.pxd"
+        ],
         "include_dirs": [
-            "/private/tmp/gevent/python2.7/include/python2.7", 
-            "/private/tmp/gevent/python2.7/include/site/python2.7", 
+            "C:\\Python37-x64\\Include",
             "deps"
-        ], 
-        "name": "gevent.__abstract_linkable", 
+        ],
+        "name": "gevent.__abstract_linkable",
         "sources": [
             "src/gevent/_abstract_linkable.py"
         ]
-    }, 
+    },
     "module_name": "gevent.__abstract_linkable"
 }
 END: Cython Metadata */
@@ -836,9 +836,9 @@ static const char *__pyx_filename;
 
 
 static const char *__pyx_f[] = {
-  "src/gevent/_abstract_linkable.py",
-  "src/gevent/__greenlet_primitives.pxd",
-  "src/gevent/__abstract_linkable.pxd",
+  "src\\gevent\\_abstract_linkable.py",
+  "src\\gevent\\__greenlet_primitives.pxd",
+  "src\\gevent\\__abstract_linkable.pxd",
 };
 
 /*--- Type declarations ---*/
@@ -1526,7 +1526,7 @@ static const char __pyx_k_gevent___abstract_linkable[] = "gevent.__abstract_link
 static const char __pyx_k_AbstractLinkable__notify_links[] = "AbstractLinkable._notify_links";
 static const char __pyx_k_Internal_module_support_for_the[] = "\nInternal module, support for the linkable protocol for \"event\" like objects.\n\n";
 static const char __pyx_k_Invalid_switch_into_Event_wait_r[] = "Invalid switch into Event.wait(): %r";
-static const char __pyx_k_src_gevent__abstract_linkable_py[] = "src/gevent/_abstract_linkable.py";
+static const char __pyx_k_src_gevent__abstract_linkable_py[] = "src\\gevent\\_abstract_linkable.py";
 static PyObject *__pyx_n_s_AbstractLinkable;
 static PyObject *__pyx_n_s_AbstractLinkable__notify_links;
 static PyObject *__pyx_n_s_AbstractLinkable_linkcount;

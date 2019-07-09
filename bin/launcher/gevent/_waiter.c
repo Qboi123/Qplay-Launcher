@@ -4,18 +4,18 @@
 {
     "distutils": {
         "depends": [
-            "src/gevent/__waiter.pxd"
-        ], 
+            "src/gevent/__waiter.pxd",
+            "src\\gevent\\__waiter.pxd"
+        ],
         "include_dirs": [
-            "/private/tmp/gevent/python2.7/include/python2.7", 
-            "/private/tmp/gevent/python2.7/include/site/python2.7", 
+            "C:\\Python37-x64\\Include",
             "deps"
-        ], 
-        "name": "gevent.__waiter", 
+        ],
+        "name": "gevent.__waiter",
         "sources": [
             "src/gevent/_waiter.py"
         ]
-    }, 
+    },
     "module_name": "gevent.__waiter"
 }
 END: Cython Metadata */
@@ -836,9 +836,9 @@ static const char *__pyx_filename;
 
 
 static const char *__pyx_f[] = {
-  "src/gevent/_waiter.py",
-  "src/gevent/__greenlet_primitives.pxd",
-  "src/gevent/__waiter.pxd",
+  "src\\gevent\\_waiter.py",
+  "src\\gevent\\__greenlet_primitives.pxd",
+  "src\\gevent\\__waiter.pxd",
 };
 
 /*--- Type declarations ---*/
@@ -1505,7 +1505,7 @@ static const char __pyx_k_Waiter_switch_args[] = "Waiter.switch_args";
 static const char __pyx_k_cline_in_traceback[] = "cline_in_traceback";
 static const char __pyx_k_s_greenlet_s_value_r[] = "<%s greenlet=%s value=%r>";
 static const char __pyx_k_MultipleWaiter_switch[] = "MultipleWaiter.switch";
-static const char __pyx_k_src_gevent__waiter_py[] = "src/gevent/_waiter.py";
+static const char __pyx_k_src_gevent__waiter_py[] = "src\\gevent\\_waiter.py";
 static const char __pyx_k_s_greenlet_s_exc_info_r[] = "<%s greenlet=%s exc_info=%r>";
 static const char __pyx_k_ConcurrentObjectUseError[] = "ConcurrentObjectUseError";
 static const char __pyx_k_Low_level_waiting_primitives[] = "\nLow-level waiting primitives.\n\n";

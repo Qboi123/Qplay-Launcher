@@ -5,56 +5,89 @@
     "distutils": {
         "define_macros": [
             [
-                "LIBEV_EMBED", 
+                "FD_SETSIZE",
+                "1024"
+            ],
+            [
+                "_WIN32",
                 "1"
-            ], 
+            ],
             [
-                "EV_COMMON", 
+                "EV_STANDALONE",
+                "1"
+            ],
+            [
+                "LIBEV_EMBED",
+                "1"
+            ],
+            [
+                "EV_COMMON",
                 ""
-            ], 
+            ],
             [
-                "EV_CLEANUP_ENABLE", 
+                "EV_CLEANUP_ENABLE",
                 "0"
-            ], 
+            ],
             [
-                "EV_EMBED_ENABLE", 
+                "EV_EMBED_ENABLE",
                 "0"
-            ], 
+            ],
             [
-                "EV_PERIODIC_ENABLE", 
+                "EV_PERIODIC_ENABLE",
                 "0"
             ]
-        ], 
+        ],
         "depends": [
-            "deps/libev/ev++.h", 
-            "deps/libev/ev.c", 
-            "deps/libev/ev.h", 
-            "deps/libev/ev_epoll.c", 
-            "deps/libev/ev_kqueue.c", 
-            "deps/libev/ev_poll.c", 
-            "deps/libev/ev_port.c", 
-            "deps/libev/ev_select.c", 
-            "deps/libev/ev_vars.h", 
-            "deps/libev/ev_win32.c", 
-            "deps/libev/ev_wrap.h", 
-            "deps/libev/event.c", 
-            "deps/libev/event.h", 
-            "src/gevent/libev/callbacks.c", 
-            "src/gevent/libev/callbacks.h", 
-            "src/gevent/libev/libev.h", 
-            "src/gevent/libev/libev_vfd.h", 
-            "src/gevent/libev/stathelper.c"
-        ], 
+            "deps/libev\\ev++.h",
+            "deps/libev\\ev.c",
+            "deps/libev\\ev.h",
+            "deps/libev\\ev_epoll.c",
+            "deps/libev\\ev_kqueue.c",
+            "deps/libev\\ev_poll.c",
+            "deps/libev\\ev_port.c",
+            "deps/libev\\ev_select.c",
+            "deps/libev\\ev_vars.h",
+            "deps/libev\\ev_win32.c",
+            "deps/libev\\ev_wrap.h",
+            "deps/libev\\event.c",
+            "deps/libev\\event.h",
+            "deps\\libev\\ev++.h",
+            "deps\\libev\\ev.c",
+            "deps\\libev\\ev.h",
+            "deps\\libev\\ev_epoll.c",
+            "deps\\libev\\ev_kqueue.c",
+            "deps\\libev\\ev_poll.c",
+            "deps\\libev\\ev_port.c",
+            "deps\\libev\\ev_select.c",
+            "deps\\libev\\ev_vars.h",
+            "deps\\libev\\ev_win32.c",
+            "deps\\libev\\ev_wrap.h",
+            "deps\\libev\\event.c",
+            "deps\\libev\\event.h",
+            "src/gevent/libev/stathelper.c",
+            "src/gevent/libev\\callbacks.c",
+            "src/gevent/libev\\callbacks.h",
+            "src/gevent/libev\\libev.h",
+            "src/gevent/libev\\libev_vfd.h",
+            "src\\gevent\\libev\\callbacks.c",
+            "src\\gevent\\libev\\callbacks.h",
+            "src\\gevent\\libev\\libev.h",
+            "src\\gevent\\libev\\libev_vfd.h",
+            "src\\gevent\\libev\\stathelper.c"
+        ],
         "include_dirs": [
-            "src/gevent/libev", 
-            "/private/tmp/gevent/python2.7/gevent/deps/libev"
-        ], 
-        "name": "gevent.libev.corecext", 
+            "src/gevent/libev",
+            "C:\\Users\\appveyor\\AppData\\Local\\Temp\\1\\pip-req-build-23dcp19e\\deps\\libev"
+        ],
+        "libraries": [
+            "ws2_32"
+        ],
+        "name": "gevent.libev.corecext",
         "sources": [
-            "src/gevent/libev/corecext.pyx", 
+            "src/gevent/libev/corecext.pyx",
             "src/gevent/libev/callbacks.c"
         ]
-    }, 
+    },
     "module_name": "gevent.libev.corecext"
 }
 END: Cython Metadata */
@@ -882,7 +915,7 @@ static const char *__pyx_filename;
 
 
 static const char *__pyx_f[] = {
-  "src/gevent/libev/corecext.pyx",
+  "src\\gevent\\libev\\corecext.pyx",
   "type.pxd",
   "bool.pxd",
   "complex.pxd",
@@ -2020,7 +2053,7 @@ static const char __pyx_k_illegal_signal_number_r[] = "illegal signal number: %r
 static const char __pyx_k_ev_default_loop_s_failed[] = "ev_default_loop(%s) failed";
 static const char __pyx_k_fd_must_be_non_negative_r[] = "fd must be non-negative: %r";
 static const char __pyx_k_operation_on_destroyed_loop[] = "operation on destroyed loop";
-static const char __pyx_k_src_gevent_libev_corecext_pyx[] = "src/gevent/libev/corecext.pyx";
+static const char __pyx_k_src_gevent_libev_corecext_pyx[] = "src\\gevent\\libev\\corecext.pyx";
 static const char __pyx_k_Invalid_value_for_backend_0x_x[] = "Invalid value for backend: 0x%x";
 static const char __pyx_k_io_watcher_attribute_events_is[] = "'io' watcher attribute 'events' is read-only while watcher is active";
 static const char __pyx_k_Cannot_construct_a_bare_watcher[] = "Cannot construct a bare watcher";

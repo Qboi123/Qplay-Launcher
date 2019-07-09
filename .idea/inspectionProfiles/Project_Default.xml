@@ -23,6 +23,7 @@
       <option name="ignoredIdentifiers">
         <list>
           <option value="bool.set_selected" />
+          <option value="versions.v1_5_0_pre3.test2.extras" />
         </list>
       </option>
     </inspection_tool>

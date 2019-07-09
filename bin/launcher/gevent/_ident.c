@@ -4,18 +4,18 @@
 {
     "distutils": {
         "depends": [
-            "src/gevent/__ident.pxd"
-        ], 
+            "src/gevent/__ident.pxd",
+            "src\\gevent\\__ident.pxd"
+        ],
         "include_dirs": [
-            "/private/tmp/gevent/python2.7/include/python2.7", 
-            "/private/tmp/gevent/python2.7/include/site/python2.7", 
+            "C:\\Python37-x64\\Include",
             "deps"
-        ], 
-        "name": "gevent.__ident", 
+        ],
+        "name": "gevent.__ident",
         "sources": [
             "src/gevent/_ident.py"
         ]
-    }, 
+    },
     "module_name": "gevent.__ident"
 }
 END: Cython Metadata */
@@ -835,8 +835,8 @@ static const char *__pyx_filename;
 
 
 static const char *__pyx_f[] = {
-  "src/gevent/_ident.py",
-  "src/gevent/__ident.pxd",
+  "src\\gevent\\_ident.py",
+  "src\\gevent\\__ident.pxd",
 };
 
 /*--- Type declarations ---*/
@@ -1352,7 +1352,7 @@ static const char __pyx_k_gevent___ident[] = "gevent.__ident";
 static const char __pyx_k_import_c_accel[] = "import_c_accel";
 static const char __pyx_k_WeakKeyDictionary[] = "WeakKeyDictionary";
 static const char __pyx_k_cline_in_traceback[] = "cline_in_traceback";
-static const char __pyx_k_src_gevent__ident_py[] = "src/gevent/_ident.py";
+static const char __pyx_k_src_gevent__ident_py[] = "src\\gevent\\_ident.py";
 static const char __pyx_k_IdentRegistry_get_ident[] = "IdentRegistry.get_ident";
 static const char __pyx_k_IdentRegistry__return_ident[] = "IdentRegistry._return_ident";
 static PyObject *__pyx_n_s_IdentRegistry;

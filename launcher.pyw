@@ -227,15 +227,16 @@ class Launcher(wx.Panel):
                 if found == 0:
                     _all.append(replace_dir2ver(i))
                     _all_build.append(dir_data[i])
-
-
             _all_data = dict()
             for _i in range(len(_all)):
                 i = _all[_i]
                 j = _all_build[_i]
                 _all_data[i] = j
 
-            all = _all
+            all = list()
+            for i in _all:
+                all.append(replace_any2name(i))
+
             all_build = _all_build
             all_data = _all_data
 
@@ -276,14 +277,17 @@ class Launcher(wx.Panel):
                 for j in _all_build:
                     print(dir_data[i], j)
                     if dir_data[i] > j:
-                        _all.append(replace_dir2ver(i))
+                        _all.append(replace_any2name(i))
                         _all_build.append(dir_data[i])
 
             _all_data = dict()
             for i, j in (_all, _all_build):
                 _all_data[i] = j
 
-            all = _all
+            all = list()
+            for i in _all:
+                all.append(replace_any2name(_all))
+
             all_build = _all_build
             all_data = _all_data
 
@@ -307,7 +311,7 @@ class Launcher(wx.Panel):
         self.SetSizer(vertical_box)
 
     def open(self):
-        import sys
+        import sys, json
 
         version = replace_name2ver(self.versions.GetString(self.versions.GetSelection()))
         if version == "":
@@ -317,25 +321,33 @@ class Launcher(wx.Panel):
 
         print(version_dir)
 
-        if 1:
-            if version in self.old:
-                if not os.path.exists("versions/" + version_dir + "/"):
-                    download(
-                        "https://github.com/Qplay123/QplayBubbles-OldReleases/archive/" + version + ".zip",
-                        self, version
-                    )
-                    extract_zipfile("temp/QplayBubbles-" + version + '.zip', "versions/")
-                    os.rename("versions/QplayBubbles-OldReleases-" + version[1:], "versions/" + version_dir)
-                    build = self.old[version]
-                    a = {'build': build, 'displayName': replace_any2name(version)}
-            else:
-                if not os.path.exists("versions/" + version_dir + "/"):
-                    download(
-                        "https://github.com/Qplay123/QplayBubbles-Releaes/archive/" + version + ".zip",
-                        self, version
-                    )
-                    extract_zipfile("temp/QplayBubbles-" + version + '.zip', "versions/")
-                    os.rename("versions/QplayBubbles-Releaes-" + version[1:], "versions/" + version_dir)
+        if version in self.old:
+            if not os.path.exists("versions/" + version_dir + "/"):
+                download(
+                    "https://github.com/Qplay123/QplayBubbles-OldReleases/archive/" + version + ".zip",
+                    self, version
+                )
+                extract_zipfile("temp/QplayBubbles-" + version + '.zip', "versions/")
+                os.rename("versions/QplayBubbles-OldReleases-" + version[1:], "versions/" + version_dir)
+                build = self.old[version]
+                a = {'build': build, 'displayName': replace_any2name(version)}
+                with open("versions/%s/version.json" % version_dir, "w+") as file:
+                    file.write(json.JSONEncoder().encode(a))
+        else:
+            if not os.path.exists("versions/" + version_dir + "/"):
+                download(
+                    "https://github.com/Qplay123/QplayBubbles-Releaes/archive/" + version + ".zip",
+                    self, version
+                )
+                extract_zipfile("temp/QplayBubbles-" + version + '.zip', "versions/")
+                os.rename("versions/QplayBubbles-Releaes-" + version[1:], "versions/" + version_dir)
+                build = self.all[version]
+                a = {'build': build, 'displayName': replace_any2name(version)}
+                with open("versions/%s/version.json" % version_dir, "w+") as file:
+                    file.write(json.JSONEncoder().encode(a))
+
+        if not os.path.exists("mods/%s" % version_dir):
+            os.makedirs("mods/%s" % version_dir)
 
         cfg = {"version": version,
                "versionDir": version_dir,
@@ -355,6 +367,13 @@ class Launcher(wx.Panel):
 
 
 if __name__ == '__main__':
+    if not os.path.exists("versions"):
+        os.makedirs("versions")
+    if not os.path.exists("mods"):
+        os.makedirs("mods")
+    if not os.path.exists("slots"):
+        os.makedirs("slots")
+
     app = wx.App()
     frame = wx.Frame(None, size=wx.Size(1280, 720), pos=wx.Point(0, 2), title="Qplay Bubbles Launcher")
     main = Launcher(frame)
