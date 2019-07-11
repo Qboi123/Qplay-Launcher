@@ -69,8 +69,13 @@ https://github.com/Qplay123/Qplay-Bubbles/releases for the Game. (Setup / Source
 01. Use the Source steps. (.zip / .tar.gz)  
 
 ## Badges
-![Python Badge](https://github.com/Qplay123/Qplay-Bubbles/raw/master/img/PythonBadge.png)  
+![Python Badge](https://github.com/Qplay123/Qplay-Bubbles/raw/master/img/PythonBadge.png) [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FQplay123%2FQplay-Bubbles.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2FQplay123%2FQplay-Bubbles?ref=badge_shield)
+ 
 ![Windows 7 Badge](https://github.com/Qplay123/Qplay-Bubbles/raw/master/img/Windows7Badge.png)
 ![Windows 7 Badge](https://github.com/Qplay123/Qplay-Bubbles/raw/master/img/Windows8Badge.png)
 ![Windows 7 Badge](https://github.com/Qplay123/Qplay-Bubbles/raw/master/img/Windows8.1Badge.png)
 ![Windows 7 Badge](https://github.com/Qplay123/Qplay-Bubbles/raw/master/img/Windows10Badge.png)
+
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FQplay123%2FQplay-Bubbles.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2FQplay123%2FQplay-Bubbles?ref=badge_large)
