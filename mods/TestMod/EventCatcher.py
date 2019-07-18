@@ -9,5 +9,5 @@ class EventCatcher(Event):
     def __init__(self):
         super().__init__()
 
-    def on_update(self, parent: Game):
+    def on_update(self, parent):
         pass

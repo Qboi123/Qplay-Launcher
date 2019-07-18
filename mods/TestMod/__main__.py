@@ -6,7 +6,7 @@ class Initialize:
     def __init__(self):
         self.ID = "TestMod"
 
-    def pre_initialize(self, parent: Game):
+    def pre_initialize(self, parent):
         from .TestStoreItem import TestStoreItem
         from .EventCatcher import EventCatcher
         self.test_store_item = TestStoreItem(parent)
