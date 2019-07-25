@@ -353,11 +353,15 @@ class Launcher(Canvas):
             for line in lines:
                 if line[:1] == "#":
                     height += 20
-                    self.canvass.create_text(10, height, text=line[1:], font=("Helvetica", 28), fill="darkgray", anchor=NW)
+                    self.canvass.create_text(10, height, text=line[1:], font=("Helvetica", 28, "bold"), fill="darkgray", anchor=NW)
                     height += 38
                 else:
-                    self.canvass.create_text(10, height, text=line, font=("Helvetica", 16), fill="darkgray", anchor=NW)
-                    height += 24
+                    if line.lower()[:5] == "note:":
+                        self.canvass.create_text(10, height, text=line, font=("Helvetica", 16), fill="red", anchor=NW)
+                        height += 24
+                    else:
+                        self.canvass.create_text(10, height, text=line, font=("Helvetica", 16), fill="darkgray", anchor=NW)
+                        height += 24
 
             height -= 16
             height += 10

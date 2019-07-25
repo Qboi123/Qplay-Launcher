@@ -6,1011 +6,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5517ee74-8b7f-4783-b76c-419986e82904" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/lib/xbox.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/test5.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/test_new.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/bubbles/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/bubbles/bubble.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Confusion/10px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Confusion/11px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Confusion/12px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Confusion/13px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Confusion/14px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Confusion/15px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Confusion/16px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Confusion/17px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Confusion/18px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Confusion/19px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Confusion/20px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Confusion/21px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Confusion/22px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Confusion/23px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Confusion/24px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Confusion/25px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Confusion/26px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Confusion/27px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Confusion/28px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Confusion/29px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Confusion/30px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Confusion/31px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Confusion/32px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Confusion/33px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Confusion/34px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Confusion/35px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Confusion/36px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Confusion/37px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Confusion/38px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Confusion/39px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Confusion/40px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Confusion/41px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Confusion/42px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Confusion/43px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Confusion/44px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Confusion/45px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Confusion/46px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Confusion/47px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Confusion/48px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Confusion/49px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Confusion/50px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Confusion/51px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Confusion/52px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Confusion/53px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Confusion/54px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Confusion/55px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Confusion/56px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Confusion/57px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Confusion/58px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Confusion/59px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Confusion/60px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Confusion/9px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Diamond.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Double/10px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Double/11px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Double/12px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Double/13px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Double/14px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Double/15px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Double/16px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Double/17px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Double/18px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Double/19px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Double/20px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Double/21px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Double/22px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Double/23px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Double/24px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Double/25px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Double/26px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Double/27px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Double/28px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Double/29px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Double/30px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Double/31px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Double/32px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Double/33px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Double/34px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Double/35px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Double/36px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Double/37px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Double/38px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Double/39px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Double/40px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Double/41px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Double/42px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Double/43px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Double/44px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Double/45px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Double/46px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Double/47px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Double/48px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Double/49px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Double/50px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Double/51px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Double/52px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Double/53px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Double/54px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Double/55px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Double/56px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Double/57px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Double/58px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Double/59px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Double/60px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Double/9px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/DoubleState/10px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/DoubleState/11px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/DoubleState/12px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/DoubleState/13px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/DoubleState/14px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/DoubleState/15px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/DoubleState/16px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/DoubleState/17px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/DoubleState/18px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/DoubleState/19px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/DoubleState/20px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/DoubleState/21px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/DoubleState/22px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/DoubleState/23px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/DoubleState/24px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/DoubleState/25px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/DoubleState/26px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/DoubleState/27px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/DoubleState/28px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/DoubleState/29px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/DoubleState/30px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/DoubleState/31px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/DoubleState/32px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/DoubleState/33px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/DoubleState/34px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/DoubleState/35px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/DoubleState/36px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/DoubleState/37px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/DoubleState/38px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/DoubleState/39px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/DoubleState/40px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/DoubleState/41px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/DoubleState/42px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/DoubleState/43px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/DoubleState/44px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/DoubleState/45px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/DoubleState/46px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/DoubleState/47px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/DoubleState/48px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/DoubleState/49px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/DoubleState/50px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/DoubleState/51px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/DoubleState/52px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/DoubleState/53px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/DoubleState/54px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/DoubleState/55px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/DoubleState/56px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/DoubleState/57px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/DoubleState/58px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/DoubleState/59px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/DoubleState/60px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/DoubleState/9px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/HyperMode/10px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/HyperMode/11px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/HyperMode/12px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/HyperMode/13px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/HyperMode/14px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/HyperMode/15px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/HyperMode/16px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/HyperMode/17px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/HyperMode/18px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/HyperMode/19px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/HyperMode/20px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/HyperMode/21px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/HyperMode/22px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/HyperMode/23px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/HyperMode/24px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/HyperMode/25px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/HyperMode/26px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/HyperMode/27px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/HyperMode/28px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/HyperMode/29px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/HyperMode/30px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/HyperMode/31px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/HyperMode/32px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/HyperMode/33px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/HyperMode/34px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/HyperMode/35px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/HyperMode/36px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/HyperMode/37px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/HyperMode/38px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/HyperMode/39px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/HyperMode/40px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/HyperMode/41px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/HyperMode/42px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/HyperMode/43px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/HyperMode/44px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/HyperMode/45px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/HyperMode/46px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/HyperMode/47px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/HyperMode/48px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/HyperMode/49px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/HyperMode/50px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/HyperMode/51px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/HyperMode/52px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/HyperMode/53px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/HyperMode/54px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/HyperMode/55px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/HyperMode/56px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/HyperMode/57px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/HyperMode/58px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/HyperMode/59px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/HyperMode/60px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/HyperMode/9px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/InfitraMode12px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/InfitraMode24px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/InfitraMode48px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/InfitraMode60px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Key.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Kill/10px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Kill/11px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Kill/12px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Kill/13px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Kill/14px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Kill/15px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Kill/16px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Kill/17px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Kill/18px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Kill/19px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Kill/20px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Kill/21px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Kill/22px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Kill/23px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Kill/24px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Kill/25px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Kill/26px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Kill/27px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Kill/28px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Kill/29px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Kill/30px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Kill/31px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Kill/32px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Kill/33px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Kill/34px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Kill/35px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Kill/36px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Kill/37px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Kill/38px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Kill/39px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Kill/40px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Kill/41px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Kill/42px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Kill/43px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Kill/44px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Kill/45px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Kill/46px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Kill/47px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Kill/48px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Kill/49px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Kill/50px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Kill/51px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Kill/52px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Kill/53px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Kill/54px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Kill/55px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Kill/56px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Kill/57px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Kill/58px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Kill/59px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Kill/60px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Kill/9px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/NoTouch/10px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/NoTouch/11px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/NoTouch/12px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/NoTouch/13px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/NoTouch/14px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/NoTouch/15px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/NoTouch/16px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/NoTouch/17px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/NoTouch/18px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/NoTouch/19px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/NoTouch/20px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/NoTouch/21px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/NoTouch/22px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/NoTouch/23px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/NoTouch/24px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/NoTouch/25px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/NoTouch/26px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/NoTouch/27px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/NoTouch/28px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/NoTouch/29px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/NoTouch/30px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/NoTouch/31px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/NoTouch/32px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/NoTouch/33px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/NoTouch/34px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/NoTouch/35px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/NoTouch/36px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/NoTouch/37px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/NoTouch/38px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/NoTouch/39px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/NoTouch/40px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/NoTouch/41px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/NoTouch/42px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/NoTouch/43px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/NoTouch/44px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/NoTouch/45px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/NoTouch/46px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/NoTouch/47px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/NoTouch/48px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/NoTouch/49px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/NoTouch/50px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/NoTouch/51px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/NoTouch/52px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/NoTouch/53px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/NoTouch/54px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/NoTouch/55px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/NoTouch/56px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/NoTouch/57px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/NoTouch/58px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/NoTouch/59px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/NoTouch/60px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/NoTouch/9px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Normal/10px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Normal/11px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Normal/12px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Normal/13px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Normal/14px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Normal/15px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Normal/16px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Normal/17px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Normal/18px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Normal/19px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Normal/20px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Normal/21px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Normal/22px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Normal/23px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Normal/24px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Normal/25px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Normal/26px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Normal/27px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Normal/28px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Normal/29px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Normal/30px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Normal/31px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Normal/32px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Normal/33px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Normal/34px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Normal/35px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Normal/36px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Normal/37px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Normal/38px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Normal/39px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Normal/40px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Normal/41px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Normal/42px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Normal/43px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Normal/44px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Normal/45px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Normal/46px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Normal/47px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Normal/48px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Normal/49px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Normal/50px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Normal/51px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Normal/52px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Normal/53px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Normal/54px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Normal/55px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Normal/56px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Normal/57px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Normal/58px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Normal/59px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Normal/60px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Normal/9px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Paralis/10px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Paralis/11px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Paralis/12px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Paralis/13px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Paralis/14px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Paralis/15px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Paralis/16px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Paralis/17px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Paralis/18px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Paralis/19px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Paralis/20px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Paralis/21px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Paralis/22px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Paralis/23px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Paralis/24px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Paralis/25px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Paralis/26px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Paralis/27px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Paralis/28px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Paralis/29px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Paralis/30px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Paralis/31px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Paralis/32px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Paralis/33px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Paralis/34px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Paralis/35px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Paralis/36px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Paralis/37px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Paralis/38px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Paralis/39px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Paralis/40px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Paralis/41px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Paralis/42px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Paralis/43px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Paralis/44px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Paralis/45px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Paralis/46px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Paralis/47px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Paralis/48px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Paralis/49px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Paralis/50px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Paralis/51px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Paralis/52px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Paralis/53px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Paralis/54px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Paralis/55px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Paralis/56px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Paralis/57px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Paralis/58px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Paralis/59px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Paralis/60px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Paralis/9px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Present.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Protect/10px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Protect/11px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Protect/12px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Protect/13px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Protect/14px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Protect/15px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Protect/16px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Protect/17px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Protect/18px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Protect/19px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Protect/20px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Protect/21px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Protect/22px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Protect/23px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Protect/24px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Protect/25px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Protect/26px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Protect/27px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Protect/28px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Protect/29px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Protect/30px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Protect/31px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Protect/32px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Protect/33px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Protect/34px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Protect/35px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Protect/36px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Protect/37px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Protect/38px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Protect/39px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Protect/40px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Protect/41px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Protect/42px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Protect/43px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Protect/44px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Protect/45px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Protect/46px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Protect/47px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Protect/48px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Protect/49px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Protect/50px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Protect/51px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Protect/52px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Protect/53px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Protect/54px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Protect/55px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Protect/56px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Protect/57px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Protect/58px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Protect/59px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Protect/60px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Protect/9px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/ShotSpdStat/10px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/ShotSpdStat/11px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/ShotSpdStat/12px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/ShotSpdStat/13px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/ShotSpdStat/14px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/ShotSpdStat/15px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/ShotSpdStat/16px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/ShotSpdStat/17px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/ShotSpdStat/18px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/ShotSpdStat/19px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/ShotSpdStat/20px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/ShotSpdStat/21px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/ShotSpdStat/22px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/ShotSpdStat/23px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/ShotSpdStat/24px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/ShotSpdStat/25px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/ShotSpdStat/26px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/ShotSpdStat/27px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/ShotSpdStat/28px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/ShotSpdStat/29px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/ShotSpdStat/30px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/ShotSpdStat/31px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/ShotSpdStat/32px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/ShotSpdStat/33px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/ShotSpdStat/34px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/ShotSpdStat/35px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/ShotSpdStat/36px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/ShotSpdStat/37px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/ShotSpdStat/38px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/ShotSpdStat/39px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/ShotSpdStat/40px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/ShotSpdStat/41px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/ShotSpdStat/42px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/ShotSpdStat/43px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/ShotSpdStat/44px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/ShotSpdStat/45px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/ShotSpdStat/46px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/ShotSpdStat/47px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/ShotSpdStat/48px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/ShotSpdStat/49px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/ShotSpdStat/50px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/ShotSpdStat/51px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/ShotSpdStat/52px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/ShotSpdStat/53px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/ShotSpdStat/54px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/ShotSpdStat/55px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/ShotSpdStat/56px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/ShotSpdStat/57px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/ShotSpdStat/58px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/ShotSpdStat/59px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/ShotSpdStat/60px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/ShotSpdStat/9px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SlowMotion/10px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SlowMotion/11px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SlowMotion/12px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SlowMotion/13px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SlowMotion/14px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SlowMotion/15px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SlowMotion/16px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SlowMotion/17px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SlowMotion/18px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SlowMotion/19px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SlowMotion/20px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SlowMotion/21px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SlowMotion/22px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SlowMotion/23px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SlowMotion/24px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SlowMotion/25px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SlowMotion/26px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SlowMotion/27px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SlowMotion/28px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SlowMotion/29px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SlowMotion/30px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SlowMotion/31px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SlowMotion/32px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SlowMotion/33px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SlowMotion/34px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SlowMotion/35px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SlowMotion/36px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SlowMotion/37px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SlowMotion/38px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SlowMotion/39px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SlowMotion/40px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SlowMotion/41px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SlowMotion/42px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SlowMotion/43px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SlowMotion/44px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SlowMotion/45px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SlowMotion/46px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SlowMotion/47px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SlowMotion/48px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SlowMotion/49px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SlowMotion/50px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SlowMotion/51px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SlowMotion/52px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SlowMotion/53px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SlowMotion/54px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SlowMotion/55px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SlowMotion/56px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SlowMotion/57px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SlowMotion/58px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SlowMotion/59px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SlowMotion/60px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SlowMotion/9px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SpecialMode.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SpeedDown/10px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SpeedDown/11px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SpeedDown/12px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SpeedDown/13px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SpeedDown/14px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SpeedDown/15px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SpeedDown/16px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SpeedDown/17px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SpeedDown/18px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SpeedDown/19px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SpeedDown/20px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SpeedDown/21px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SpeedDown/22px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SpeedDown/23px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SpeedDown/24px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SpeedDown/25px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SpeedDown/26px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SpeedDown/27px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SpeedDown/28px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SpeedDown/29px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SpeedDown/30px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SpeedDown/31px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SpeedDown/32px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SpeedDown/33px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SpeedDown/34px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SpeedDown/35px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SpeedDown/36px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SpeedDown/37px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SpeedDown/38px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SpeedDown/39px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SpeedDown/40px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SpeedDown/41px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SpeedDown/42px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SpeedDown/43px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SpeedDown/44px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SpeedDown/45px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SpeedDown/46px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SpeedDown/47px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SpeedDown/48px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SpeedDown/49px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SpeedDown/50px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SpeedDown/51px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SpeedDown/52px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SpeedDown/53px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SpeedDown/54px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SpeedDown/55px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SpeedDown/56px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SpeedDown/57px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SpeedDown/58px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SpeedDown/59px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SpeedDown/60px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SpeedDown/9px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SpeedUp/10px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SpeedUp/11px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SpeedUp/12px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SpeedUp/13px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SpeedUp/14px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SpeedUp/15px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SpeedUp/16px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SpeedUp/17px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SpeedUp/18px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SpeedUp/19px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SpeedUp/20px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SpeedUp/21px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SpeedUp/22px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SpeedUp/23px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SpeedUp/24px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SpeedUp/25px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SpeedUp/26px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SpeedUp/27px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SpeedUp/28px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SpeedUp/29px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SpeedUp/30px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SpeedUp/31px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SpeedUp/32px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SpeedUp/33px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SpeedUp/34px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SpeedUp/35px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SpeedUp/36px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SpeedUp/37px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SpeedUp/38px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SpeedUp/39px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SpeedUp/40px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SpeedUp/41px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SpeedUp/42px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SpeedUp/43px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SpeedUp/44px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SpeedUp/45px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SpeedUp/46px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SpeedUp/47px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SpeedUp/48px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SpeedUp/49px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SpeedUp/50px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SpeedUp/51px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SpeedUp/52px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SpeedUp/53px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SpeedUp/54px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SpeedUp/55px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SpeedUp/56px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SpeedUp/57px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SpeedUp/58px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SpeedUp/59px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SpeedUp/60px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/SpeedUp/9px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/StoneBub/10px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/StoneBub/11px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/StoneBub/12px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/StoneBub/13px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/StoneBub/14px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/StoneBub/15px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/StoneBub/16px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/StoneBub/17px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/StoneBub/18px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/StoneBub/19px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/StoneBub/20px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/StoneBub/21px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/StoneBub/22px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/StoneBub/23px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/StoneBub/24px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/StoneBub/25px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/StoneBub/26px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/StoneBub/27px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/StoneBub/28px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/StoneBub/29px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/StoneBub/30px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/StoneBub/31px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/StoneBub/32px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/StoneBub/33px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/StoneBub/34px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/StoneBub/35px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/StoneBub/36px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/StoneBub/37px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/StoneBub/38px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/StoneBub/39px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/StoneBub/40px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/StoneBub/41px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/StoneBub/42px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/StoneBub/43px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/StoneBub/44px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/StoneBub/45px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/StoneBub/46px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/StoneBub/47px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/StoneBub/48px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/StoneBub/49px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/StoneBub/50px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/StoneBub/51px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/StoneBub/52px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/StoneBub/53px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/StoneBub/54px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/StoneBub/55px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/StoneBub/56px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/StoneBub/57px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/StoneBub/58px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/StoneBub/59px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/StoneBub/60px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/StoneBub/9px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Teleporter/10px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Teleporter/11px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Teleporter/12px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Teleporter/13px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Teleporter/14px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Teleporter/15px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Teleporter/16px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Teleporter/17px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Teleporter/18px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Teleporter/19px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Teleporter/20px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Teleporter/21px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Teleporter/22px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Teleporter/23px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Teleporter/24px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Teleporter/25px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Teleporter/26px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Teleporter/27px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Teleporter/28px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Teleporter/29px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Teleporter/30px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Teleporter/31px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Teleporter/32px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Teleporter/33px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Teleporter/34px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Teleporter/35px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Teleporter/36px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Teleporter/37px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Teleporter/38px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Teleporter/39px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Teleporter/40px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Teleporter/41px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Teleporter/42px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Teleporter/43px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Teleporter/44px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Teleporter/45px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Teleporter/46px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Teleporter/47px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Teleporter/48px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Teleporter/49px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Teleporter/50px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Teleporter/51px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Teleporter/52px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Teleporter/53px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Teleporter/54px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Teleporter/55px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Teleporter/56px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Teleporter/57px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Teleporter/58px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Teleporter/59px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Teleporter/60px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Teleporter/9px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/TimeBreak/10px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/TimeBreak/11px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/TimeBreak/12px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/TimeBreak/13px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/TimeBreak/14px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/TimeBreak/15px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/TimeBreak/16px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/TimeBreak/17px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/TimeBreak/18px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/TimeBreak/19px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/TimeBreak/20px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/TimeBreak/21px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/TimeBreak/22px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/TimeBreak/23px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/TimeBreak/24px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/TimeBreak/25px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/TimeBreak/26px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/TimeBreak/27px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/TimeBreak/28px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/TimeBreak/29px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/TimeBreak/30px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/TimeBreak/31px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/TimeBreak/32px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/TimeBreak/33px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/TimeBreak/34px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/TimeBreak/35px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/TimeBreak/36px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/TimeBreak/37px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/TimeBreak/38px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/TimeBreak/39px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/TimeBreak/40px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/TimeBreak/41px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/TimeBreak/42px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/TimeBreak/43px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/TimeBreak/44px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/TimeBreak/45px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/TimeBreak/46px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/TimeBreak/47px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/TimeBreak/48px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/TimeBreak/49px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/TimeBreak/50px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/TimeBreak/51px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/TimeBreak/52px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/TimeBreak/53px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/TimeBreak/54px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/TimeBreak/55px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/TimeBreak/56px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/TimeBreak/57px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/TimeBreak/58px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/TimeBreak/59px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/TimeBreak/60px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/TimeBreak/9px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Triple/10px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Triple/11px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Triple/12px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Triple/13px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Triple/14px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Triple/15px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Triple/16px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Triple/17px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Triple/18px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Triple/19px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Triple/20px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Triple/21px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Triple/22px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Triple/23px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Triple/24px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Triple/25px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Triple/26px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Triple/27px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Triple/28px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Triple/29px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Triple/30px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Triple/31px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Triple/32px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Triple/33px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Triple/34px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Triple/35px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Triple/36px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Triple/37px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Triple/38px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Triple/39px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Triple/40px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Triple/41px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Triple/42px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Triple/43px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Triple/44px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Triple/45px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Triple/46px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Triple/47px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Triple/48px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Triple/49px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Triple/50px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Triple/51px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Triple/52px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Triple/53px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Triple/54px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Triple/55px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Triple/56px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Triple/57px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Triple/58px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Triple/59px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Triple/60px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Triple/9px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Ultimate/10px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Ultimate/11px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Ultimate/12px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Ultimate/13px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Ultimate/14px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Ultimate/15px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Ultimate/16px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Ultimate/17px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Ultimate/18px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Ultimate/19px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Ultimate/20px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Ultimate/21px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Ultimate/22px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Ultimate/23px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Ultimate/24px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Ultimate/25px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Ultimate/26px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Ultimate/27px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Ultimate/28px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Ultimate/29px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Ultimate/30px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Ultimate/31px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Ultimate/32px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Ultimate/33px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Ultimate/34px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Ultimate/35px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Ultimate/36px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Ultimate/37px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Ultimate/38px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Ultimate/39px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Ultimate/40px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Ultimate/41px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Ultimate/42px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Ultimate/43px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Ultimate/44px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Ultimate/45px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Ultimate/46px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Ultimate/47px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Ultimate/48px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Ultimate/49px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Ultimate/50px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Ultimate/51px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Ultimate/52px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Ultimate/53px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Ultimate/54px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Ultimate/55px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Ultimate/56px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Ultimate/57px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Ultimate/58px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Ultimate/59px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Ultimate/60px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Ultimate/9px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Up/10px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Up/11px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Up/12px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Up/13px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Up/14px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Up/15px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Up/16px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Up/17px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Up/18px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Up/19px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Up/20px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Up/21px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Up/22px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Up/23px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Up/24px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Up/25px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Up/26px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Up/27px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Up/28px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Up/29px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Up/30px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Up/31px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Up/32px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Up/33px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Up/34px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Up/35px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Up/36px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Up/37px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Up/38px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Up/39px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Up/40px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Up/41px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Up/42px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Up/43px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Up/44px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Up/45px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Up/46px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Up/47px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Up/48px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Up/49px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Up/50px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Up/51px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Up/52px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Up/53px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Up/54px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Up/55px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Up/56px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Up/57px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Up/58px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Up/59px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Up/60px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/data/bubbles/Up/9px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/modSupport.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/xbox.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test5.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test_new.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/versions/v1_5_0_pre4/bubbles/__init__.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/versions/v1_5_0_pre4/bubbles/bubble.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/versions/v1_5_0_pre4/data/bubbles/Confusion/10px.png" afterDir="false" />
@@ -2010,45 +1005,9 @@
       <change afterPath="$PROJECT_DIR$/versions/v1_5_0_pre4/data/bubbles/Up/60px.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/versions/v1_5_0_pre4/data/bubbles/Up/9px.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/versions/v1_5_0_pre4/modSupport.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/all_versions.json" beforeDir="false" afterPath="$PROJECT_DIR$/all_versions.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/changelog.qplaylog" beforeDir="false" afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/changelog.qplaylog" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/config.json" beforeDir="false" afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/config.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/launcher.pyw" beforeDir="false" afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/launcher.pyw" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/.travis.yml" beforeDir="false" afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/.travis.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/LICENSE" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/Test 3.py" beforeDir="false" afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/Test 3.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/Test 4.py" beforeDir="false" afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/Test 4.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/__main__.py" beforeDir="false" afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/__main__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/ammo.py" beforeDir="false" afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/ammo.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/archivement.py" beforeDir="false" afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/archivement.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/base.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/bubble.py" beforeDir="false" afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/bubble.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/bubblesLib.py" beforeDir="false" afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/bubblesLib.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/components.py" beforeDir="false" afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/components.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/config/reset-bubble.json" beforeDir="false" afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/config/reset-bubble.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/config/reset.json" beforeDir="false" afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/config/reset.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/config/slotInfo.json" beforeDir="false" afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/config/slotInfo.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/config/startup.json" beforeDir="false" afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/config/startup.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/config/store.json" beforeDir="false" afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/config/store.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/error.py" beforeDir="false" afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/error.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/exceptions.py" beforeDir="false" afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/exceptions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/extras.py" beforeDir="false" afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/extras.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/info.py" beforeDir="false" afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/info.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/logging.conf" beforeDir="false" afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/logging.conf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/mod.py" beforeDir="false" afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/mod.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/multisave.py" beforeDir="false" afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/multiSave.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/oldoldsetup.py" beforeDir="false" afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/oldOldSetup.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/setup.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/special.py" beforeDir="false" afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/special.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/state.py" beforeDir="false" afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/state.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/teleport.py" beforeDir="false" afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/teleport.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/test2.py" beforeDir="false" afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/test2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/version.json" beforeDir="false" afterPath="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4/version.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/changelog.qplaylog" beforeDir="false" afterPath="$PROJECT_DIR$/changelog.qplaylog" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.json" beforeDir="false" afterPath="$PROJECT_DIR$/config.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/launcher.pyw" beforeDir="false" afterPath="$PROJECT_DIR$/launcher.pyw" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/versions/v1_5_0_pre4/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/versions/v1_5_0_pre4/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/versions/v1_5_0_pre4/.travis.yml" beforeDir="false" afterPath="$PROJECT_DIR$/versions/v1_5_0_pre4/.travis.yml" afterDir="false" />
@@ -2091,11 +1050,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/launcher.pyw">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1099">
-              <caret line="472" column="16" selection-start-line="467" selection-start-column="44" selection-end-line="472" selection-end-column="16" />
+            <state relative-caret-position="46">
+              <caret line="352" column="29" selection-start-line="352" selection-start-column="29" selection-end-line="352" selection-end-column="29" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
               </folding>
@@ -2104,10 +1063,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="47">
+              <caret line="4450" column="4" selection-start-line="4450" selection-start-column="4" selection-end-line="4450" selection-end-column="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/versions/v1_5_0_pre4/__main__.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-42334">
-              <caret line="65" selection-start-line="65" selection-end-line="65" />
+            <state relative-caret-position="24">
+              <caret line="1181" selection-start-line="1181" selection-end-line="1181" />
               <folding>
                 <element signature="e#134#145#0" expanded="true" />
               </folding>
@@ -2178,24 +1146,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/launcherOld.pyw">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="10056">
-              <caret line="424" selection-start-line="417" selection-start-column="26" selection-end-line="424" />
-              <folding>
-                <element signature="e#0#9#0" expanded="true" />
-                <marker date="1563184255226" expanded="true" signature="10650:10714" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/all_versions.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="1" selection-end-line="14" />
+            <state relative-caret-position="286">
+              <caret line="13" column="19" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -2314,14 +1269,15 @@
         <option value="$PROJECT_DIR$/versions/v1_5_0_pre3/__main__.py" />
         <option value="$PROJECT_DIR$/versions/v1_5_0_pre4/config/store.json" />
         <option value="$PROJECT_DIR$/lib/utils.py" />
-        <option value="$PROJECT_DIR$/all_versions.json" />
-        <option value="$PROJECT_DIR$/launcher.pyw" />
         <option value="$PROJECT_DIR$/test5.py" />
         <option value="$PROJECT_DIR$/config.json" />
         <option value="$PROJECT_DIR$/test_new.py" />
         <option value="$PROJECT_DIR$/lib/xbox.py" />
-        <option value="$PROJECT_DIR$/versions/v1_5_0_pre4/__main__.py" />
         <option value="$PROJECT_DIR$/changelog.qplaylog" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/launcher.pyw" />
+        <option value="$PROJECT_DIR$/versions/v1_5_0_pre4/__main__.py" />
+        <option value="$PROJECT_DIR$/all_versions.json" />
       </list>
     </option>
   </component>
@@ -2356,17 +1312,6 @@
               <item name="Qplay-Bubbles" type="b2602c69:ProjectViewProjectNode" />
               <item name="Qplay-Bubbles" type="462c0819:PsiDirectoryNode" />
               <item name="lib" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Qplay-Bubbles" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Qplay-Bubbles" type="462c0819:PsiDirectoryNode" />
-              <item name="versions" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Qplay-Bubbles" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Qplay-Bubbles" type="462c0819:PsiDirectoryNode" />
-              <item name="versions" type="462c0819:PsiDirectoryNode" />
-              <item name="v1_5_0_pre4" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Qplay-Bubbles" type="b2602c69:ProjectViewProjectNode" />
@@ -2524,8 +1469,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.test_new" />
-        <item itemvalue="Python.test5" />
         <item itemvalue="Python.Run New Launcher" />
+        <item itemvalue="Python.test5" />
         <item itemvalue="Python.launcher.pyw" />
         <item itemvalue="Python.test4" />
       </list>
@@ -2553,7 +1498,7 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49894625" weight="0.3278328" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4889357" weight="0.56545657" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4889357" visible="true" weight="0.56545657" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49683878" weight="0.39933994" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -2594,9 +1539,6 @@
     </ignored-roots>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/current.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$USER_HOME$/.PyCharmCE2019.1/system/python_stubs/-1656044374/wx/_core/Frame.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="584">
@@ -2853,13 +1795,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/all_versions.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="1" selection-end-line="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test5.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
@@ -2911,23 +1846,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/launcher.pyw">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="352" column="29" selection-start-line="352" selection-start-column="29" selection-end-line="352" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="47">
+          <caret line="4450" column="4" selection-start-line="4450" selection-start-column="4" selection-end-line="4450" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/versions/v1_5_0_pre4/__main__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-42334">
-          <caret line="65" selection-start-line="65" selection-end-line="65" />
+        <state relative-caret-position="24">
+          <caret line="1181" selection-start-line="1181" selection-end-line="1181" />
           <folding>
             <element signature="e#134#145#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/launcher.pyw">
+    <entry file="file://$PROJECT_DIR$/all_versions.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1099">
-          <caret line="472" column="16" selection-start-line="467" selection-start-column="44" selection-end-line="472" selection-end-column="16" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="286">
+          <caret line="13" column="19" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="19" />
         </state>
       </provider>
     </entry>
