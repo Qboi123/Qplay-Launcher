@@ -587,6 +587,14 @@ class Launcher(Canvas):
 
 
 if __name__ == '__main__':
+    import os
+    if not os.path.exists("versions"):
+        os.makedirs("versions")
+    if not os.path.exists("mods"):
+        os.makedirs("mods")
+    if not os.path.exists("slots"):
+        os.makedirs("slots")
+
     width = 1280
     height = 720
     tk = Tk()
