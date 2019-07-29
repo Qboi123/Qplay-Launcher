@@ -29,6 +29,7 @@ class XboxController(object):
         self.RightDPad = 0
         self.UpDPad = 0
         self.DownDPad = 0
+        self.Dict = dict()
 
         self._monitor_thread = threading.Thread(target=self.update, args=())
         self._monitor_thread.daemon = True
@@ -96,6 +97,8 @@ class XboxController(object):
                 self.UpDPad = event.state
             elif event.code == 'BTN_TRIGGER_HAPPY4':
                 self.DownDPad = event.state
+            if event.code != "SYN_REPORT":
+                self.Dict = event.__dict__
 
 
 from tkinter import *
@@ -127,7 +130,9 @@ while True:
     RIGHT Button:"""+str(bool(xbox.RightDPad))+ """
     
     START Button:"""+str(bool(xbox.Start))+ """
-    BACK Button:"""+str(bool(xbox.Back))
+    BACK Button:"""+str(bool(xbox.Back)) + """
+    
+    DICT: """+str(xbox.Dict)
 
     label.config(text=c)
     root.update()

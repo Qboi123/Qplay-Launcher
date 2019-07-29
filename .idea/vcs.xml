@@ -2,10 +2,8 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v0_1_0" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/versions/v0_1_0" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/versions/v1_5_0_pre4" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/versions/v1_5_0_pre5" vcs="Git" />
   </component>
 </project>

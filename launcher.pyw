@@ -108,6 +108,8 @@ class Launcher(Canvas):
             json_data = json_url.read().decode()
             with open("all_versions.json", "w+") as file:
                 file.write(json_data)
+            with open("all_versions.json", "w") as file:
+                file.write(json_data)
 
             import json
 

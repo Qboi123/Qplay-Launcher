@@ -87,3 +87,25 @@ class XboxController(object):
                 self.UpDPad = event.state
             elif event.code == 'BTN_TRIGGER_HAPPY4':
                 self.DownDPad = event.state
+            elif event.code == "ABS_HAT0X":
+                if event.state == -1:
+                    self.LeftDPad = 1
+                elif event.state == 0:
+                    self.LeftDPad = 0
+                    self.RightDPad = 0
+                elif event.state == 1:
+                    self.RightDPad = 1
+            elif event.code == "ABS_HAT0Y":
+                if event.state == -1:
+                    self.UpDPad = 1
+                elif event.state == 0:
+                    self.UpDPad = 0
+                    self.DownDPad = 0
+                elif event.state == 1:
+                    self.DownDPad = 1
+            elif event.code == "SYN_REPORT":
+                pass
+            else:
+                from sys import stderr
+                print("[XboxContoller]: Invalid input: %s" % event.code, file=stderr)
+            # print(event.__dict__)
