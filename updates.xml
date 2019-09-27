@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Updates>
     <Update time="1569415224" version="2" subversion="0" release="1" state="r" statebuild="0" build="7" url="https://github.com/Qboi123/Qplay-Launcher/archive/2.0.1.zip"/>
+    <Update time="1569415224" version="2" subversion="0" release="1" state="d" statebuild="0" build="6" url="https://github.com/Qboi123/Qplay-Launcher/archive/2.0.1.zip"/>
+    <Update time="1569415224" version="2" subversion="0" release="1" state="c" statebuild="0" build="5" url="https://github.com/Qboi123/Qplay-Launcher/archive/2.0.1.zip"/>
+    <Update time="1569415224" version="2" subversion="0" release="1" state="b" statebuild="0" build="4" url="https://github.com/Qboi123/Qplay-Launcher/archive/2.0.1.zip"/>
+    <Update time="1569415224" version="2" subversion="0" release="1" state="a" statebuild="0" build="3" url="https://github.com/Qboi123/Qplay-Launcher/archive/2.0.1.zip"/>
 </Updates>
