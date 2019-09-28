@@ -1,4 +1,4 @@
-from inputs import get_gamepad
+from inputs import get_gamepad, UnpluggedError
 import threading
 
 import math
@@ -45,7 +45,10 @@ class XboxController(object):
 
 
     def update(self):
-        events = get_gamepad()
+        try:
+            events = get_gamepad()
+        except UnpluggedError:
+            return
         for event in events:
             if event.code == 'ABS_Y':
                 self.LeftJoystickY = event.state / XboxController.MAX_JOY_VAL # normalize between -1 and 1

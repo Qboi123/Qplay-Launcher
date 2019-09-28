@@ -101,11 +101,14 @@ class Launcher(Canvas):
         import sys
 
         args = sys.argv
-        for i in args:
-            if i[:12] == "runtime-dir=":
-                self.runtime_dir = i[12:]
-            else:
-                print("WARNING: Argument %s has no effect" % i)
+        if len(args) > 1:
+            for i in args[1:]:
+                if i[:12] == "runtime-dir=":
+                    self.runtime_dir = i[12:]
+                else:
+                    print("WARNING: Argument %s has no effect" % i)
+        else:
+            self.runtime_dir = "%s/../runtime" % os.getcwd().replace("\\", "/")
 
         try:
             # -- current ------------------------------------------------------------------------------------------------- #
@@ -512,7 +515,7 @@ class Launcher(Canvas):
         print("Starting Version: %s" % _dir)
         cfg = {"version": self.version,
                "versionDir": _dir,
-               "build": self.dir_data[_dir]
+               "build": self.dir_data[_dir],
                "runtimeDir": self.runtime_dir
                }
 

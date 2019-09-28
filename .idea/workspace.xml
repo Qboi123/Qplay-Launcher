@@ -1,12 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/launcher.pyw" line="298" />
+    <bookmark url="file://$PROJECT_DIR$/launcher.pyw" line="301" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5517ee74-8b7f-4783-b76c-419986e82904" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/old_load.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/launcher.pyw" beforeDir="false" afterPath="$PROJECT_DIR$/launcher.pyw" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pyvjoy/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pyvjoy/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pyvjoy/README" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pyvjoy/README" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/xbox.py" beforeDir="false" afterPath="$PROJECT_DIR$/lib/xbox.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -16,14 +21,50 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/launcher.pyw">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="485">
-              <caret line="611" column="56" lean-forward="true" selection-start-line="611" selection-start-column="56" selection-end-line="611" selection-end-column="56" />
+            <state relative-caret-position="659">
+              <caret line="655" selection-start-line="655" selection-end-line="655" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../Qplay-Launcher-Updater/bin/game/launcher.pyw">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="599">
+              <caret line="658" lean-forward="true" selection-start-line="3" selection-end-line="658" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../Qplay-Launcher-Updater/bin/game/old_load.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="600">
+              <caret line="40" lean-forward="true" selection-start-line="40" selection-end-line="40" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../Qplay-Bubbles/old_load.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="585">
+              <caret line="39" column="21" lean-forward="true" selection-end-line="40" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/old_load.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="600">
+              <caret line="40" selection-start-line="40" selection-end-line="40" />
             </state>
           </provider>
         </entry>
@@ -52,8 +93,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/requirements.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret selection-end-line="4" />
+            <state relative-caret-position="45">
+              <caret line="3" column="6" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -140,10 +181,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/lib/popup.py" />
-        <option value="$PROJECT_DIR$/../QDroid/.gitignore" />
-        <option value="$PROJECT_DIR$/versions/v1_5_0_pre2/config/startup.json" />
-        <option value="$PROJECT_DIR$/versions/v1_5_0_pre2/__main__.py" />
         <option value="$PROJECT_DIR$/versions/v0_1_0/version.json" />
         <option value="$PROJECT_DIR$/versions/v1_5_0_pre2/version.json" />
         <option value="$PROJECT_DIR$/versions/v1_5_0_pre3/version.json" />
@@ -190,7 +227,11 @@
         <option value="$PROJECT_DIR$/versions/v1_5_0_pre5/bubble.py" />
         <option value="$PROJECT_DIR$/versions/v1_5_0_pre5/__main__.py" />
         <option value="$PROJECT_DIR$/../Qplay-Bubbles/launcher.pyw" />
+        <option value="$PROJECT_DIR$/../Qplay-Launcher-Updater/bin/game/launcher.pyw" />
         <option value="$PROJECT_DIR$/launcher.pyw" />
+        <option value="$PROJECT_DIR$/../Qplay-Bubbles/old_load.py" />
+        <option value="$PROJECT_DIR$/old_load.py" />
+        <option value="$PROJECT_DIR$/../Qplay-Launcher-Updater/bin/game/old_load.py" />
       </list>
     </option>
   </component>
@@ -223,7 +264,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Qplay-Bubbles/launcher.pyw" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Qplay-Launcher-Updater/bin/game/old_load.py" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
@@ -252,7 +293,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.test_new">
+  <component name="RunManager" selected="Python.Run New Launcher">
     <configuration name="Run New Launcher" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Qplay-Bubbles" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -367,9 +408,9 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.Run New Launcher" />
         <item itemvalue="Python.test_new" />
         <item itemvalue="Python.test5" />
-        <item itemvalue="Python.Run New Launcher" />
         <item itemvalue="Python.test6" />
         <item itemvalue="Python.launcher.pyw" />
       </list>
@@ -392,12 +433,12 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.3954496" visible="true" weight="0.300843" />
-      <window_info id="Structure" order="1" sideWeight="0.60455036" side_tool="true" visible="true" weight="0.300843" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.39484397" visible="true" weight="0.22286618" />
+      <window_info id="Structure" order="1" sideWeight="0.60515606" side_tool="true" visible="true" weight="0.22286618" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49894625" weight="0.3278328" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4889357" visible="true" weight="0.9669967" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4889357" visible="true" weight="0.20151679" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49683878" weight="0.39933994" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -422,11 +463,6 @@
     </ignored-roots>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/versions/v1_5_0_pre5/test2.py" />
-    <entry file="file://$PROJECT_DIR$/versions/v1_5_0_pre5/ammo.py" />
-    <entry file="file://$PROJECT_DIR$/versions/v1_5_0_pre5/bubbles/bubble.py" />
-    <entry file="file://$PROJECT_DIR$/versions/v1_5_0_pre5/bubbles/__init__.py" />
-    <entry file="file://E:/Github/MuOnline-Launcher-Zen-master/LauncherNew.py" />
     <entry file="file://$PROJECT_DIR$/tkinterhtml/tkhtml/Linux/32-bit/Tkhtml/pkgIndex.tcl">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -601,8 +637,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/requirements.txt">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="6" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../Qplay-Launcher-Updater/bin/game/old_versions.json">
+      <provider selected="true" editor-type-id="text-editor">
         <state>
-          <caret selection-end-line="4" />
+          <caret selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../Qplay-Launcher-Updater/bin/game/launcher.pyw">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="599">
+          <caret line="658" lean-forward="true" selection-start-line="3" selection-end-line="658" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/launcher.pyw">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="659">
+          <caret line="655" selection-start-line="655" selection-end-line="655" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -616,13 +676,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/launcher.pyw">
+    <entry file="file://$PROJECT_DIR$/../Qplay-Launcher-Updater/bin/game/old_load.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="485">
-          <caret line="611" column="56" lean-forward="true" selection-start-line="611" selection-start-column="56" selection-end-line="611" selection-end-column="56" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="600">
+          <caret line="40" lean-forward="true" selection-start-line="40" selection-end-line="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../Qplay-Bubbles/old_load.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="585">
+          <caret line="39" column="21" lean-forward="true" selection-end-line="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/old_load.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="40" selection-start-line="40" selection-end-line="40" />
         </state>
       </provider>
     </entry>
