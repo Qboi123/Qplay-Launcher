@@ -5,13 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5517ee74-8b7f-4783-b76c-419986e82904" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/old_load.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/launcher.pyw" beforeDir="false" afterPath="$PROJECT_DIR$/launcher.pyw" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pyvjoy/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pyvjoy/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pyvjoy/README" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pyvjoy/README" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/xbox.py" beforeDir="false" afterPath="$PROJECT_DIR$/lib/xbox.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/updates.xml" beforeDir="false" afterPath="$PROJECT_DIR$/updates.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -24,11 +18,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/launcher.pyw">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="659">
-              <caret line="655" selection-start-line="655" selection-end-line="655" />
+            <state relative-caret-position="14">
+              <caret line="612" column="16" lean-forward="true" selection-start-line="612" selection-start-column="16" selection-end-line="612" selection-end-column="16" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/updates.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="2" column="168" selection-start-line="2" selection-start-column="168" selection-end-line="2" selection-end-column="168" />
             </state>
           </provider>
         </entry>
@@ -60,7 +63,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/old_load.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="600">
@@ -181,7 +184,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/versions/v0_1_0/version.json" />
         <option value="$PROJECT_DIR$/versions/v1_5_0_pre2/version.json" />
         <option value="$PROJECT_DIR$/versions/v1_5_0_pre3/version.json" />
         <option value="$PROJECT_DIR$/build.py" />
@@ -232,6 +234,7 @@
         <option value="$PROJECT_DIR$/../Qplay-Bubbles/old_load.py" />
         <option value="$PROJECT_DIR$/old_load.py" />
         <option value="$PROJECT_DIR$/../Qplay-Launcher-Updater/bin/game/old_load.py" />
+        <option value="$PROJECT_DIR$/updates.xml" />
       </list>
     </option>
   </component>
@@ -433,20 +436,20 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.39484397" visible="true" weight="0.22286618" />
-      <window_info id="Structure" order="1" sideWeight="0.60515606" side_tool="true" visible="true" weight="0.22286618" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.39579967" visible="true" weight="0.22286618" />
+      <window_info id="Structure" order="1" sideWeight="0.6042003" side_tool="true" visible="true" weight="0.22286618" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49894625" weight="0.3278328" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4889357" visible="true" weight="0.20151679" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4889357" weight="0.20151679" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49683878" weight="0.39933994" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32893288" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32827735" />
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5110643" side_tool="true" weight="0.56545657" />
-      <window_info anchor="bottom" id="Python Console" order="10" />
+      <window_info active="true" anchor="bottom" id="Python Console" order="10" visible="true" weight="0.32936078" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -463,9 +466,6 @@
     </ignored-roots>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/tkinterhtml/tkhtml/Linux/32-bit/Tkhtml/pkgIndex.tcl">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$USER_HOME$/Anaconda3/Lib/site-packages/tkinterhtml/__main__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="202">
@@ -656,16 +656,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/launcher.pyw">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="659">
-          <caret line="655" selection-start-line="655" selection-end-line="655" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../Qplay-Bubbles/launcher.pyw">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="620">
@@ -676,10 +666,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../Qplay-Launcher-Updater/bin/game/old_load.py">
+    <entry file="file://$PROJECT_DIR$/old_load.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="600">
-          <caret line="40" lean-forward="true" selection-start-line="40" selection-end-line="40" />
+          <caret line="40" selection-start-line="40" selection-end-line="40" />
         </state>
       </provider>
     </entry>
@@ -690,10 +680,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/old_load.py">
+    <entry file="file://$PROJECT_DIR$/../Qplay-Launcher-Updater/bin/game/old_load.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="600">
-          <caret line="40" selection-start-line="40" selection-end-line="40" />
+          <caret line="40" lean-forward="true" selection-start-line="40" selection-end-line="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/launcher.pyw">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="14">
+          <caret line="612" column="16" lean-forward="true" selection-start-line="612" selection-start-column="16" selection-end-line="612" selection-end-column="16" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/updates.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="168" selection-start-line="2" selection-start-column="168" selection-end-line="2" selection-end-column="168" />
         </state>
       </provider>
     </entry>
