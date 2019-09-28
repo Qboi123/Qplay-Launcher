@@ -1,4 +1,4 @@
 pyyaml
 wxpython
-threadsafe-tkinter
+threadsafe_tkinter
 inputs
