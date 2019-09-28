@@ -2,10 +2,12 @@ from threading import Thread
 from tkinter import ttk
 
 from threadsafe_tkinter import *
+import os
 
 
 class Download:
-    def __init__(self, url, fp):
+    def __init__(self, url, fp="", isTemp=False):
+        self.isTemp = isTemp
         self._url = url
         self._fp = fp
         self.file_total_bytes = 1
@@ -18,6 +20,7 @@ class Download:
     def download(self):
         import urllib.request
         import os
+        import tempfile
 
         self.downloaded = False
 
@@ -48,24 +51,32 @@ class Download:
 
         # Thread(None, lambda: speed(), "SpeedThread").start()
 
-        while True:
-            block = u.read(1024)
-            data_blocks.append(block)
-            self.file_downloaded_bytes += len(block)
-            _hash = ((60 * self.file_downloaded_bytes) // self.file_total_bytes)
-            if not len(block):
-                active = False
-                break
+        if self.isTemp:
+            with tempfile.TemporaryFile("ab+") as f:
+                print(f.file)
+                while True:
+                    block = u.read(1024)
+                    data_blocks.append(block)
+                    self.file_downloaded_bytes += len(block)
+                    _hash = ((60 * self.file_downloaded_bytes) // self.file_total_bytes)
+                    if not len(block):
+                        active = False
+                        break
+                    f.write(block)
+                f.close()
 
-            try:
-                with open(self._fp, "ab+") as f:
+        else:
+            with open(self._fp, "ab+") as f:
+                while True:
+                    block = u.read(1024)
+                    data_blocks.append(block)
+                    self.file_downloaded_bytes += len(block)
+                    _hash = ((60 * self.file_downloaded_bytes) // self.file_total_bytes)
+                    if not len(block):
+                        active = False
+                        break
                     f.write(block)
-                    f.close()
-            except FileNotFoundError:
-                os.makedirs("temp/")
-                with open(self._fp, "ab+") as f:
-                    f.write(block)
-                    f.close()
+                f.close()
 
         # data = b''.join(data_blocks)
         u.close()
@@ -86,6 +97,15 @@ class Launcher(Canvas):
         from lib import utils
         import urllib.request
         import os, json
+
+        import sys
+
+        args = sys.argv
+        for i in args:
+            if i[:12] == "runtime-dir=":
+                self.runtime_dir = i[12:]
+            else:
+                print("WARNING: Argument %s has no effect" % i)
 
         try:
             # -- current ------------------------------------------------------------------------------------------------- #
@@ -131,8 +151,8 @@ class Launcher(Canvas):
             # ------------------------------------------------------------------------------------------------------------ #
             self.inet_available = True
 
-            _all = list(self.old.keys())+list(self.all.keys())
-            _all_build = list(self.old.values())+list(self.all.values())
+            _all = list(self.old.keys()) + list(self.all.keys())
+            _all_build = list(self.old.values()) + list(self.all.values())
             # print(_all)
             # print(_all_build)
             dir = os.listdir("versions/")
@@ -206,9 +226,8 @@ class Launcher(Canvas):
             # ------------------------------------------------------------------------------------------------------------ #
             self.inet_available = False
 
-
-            _all = list(self.old.keys())+list(self.all.keys())
-            _all_build = list(self.old.values())+list(self.all.values())
+            _all = list(self.old.keys()) + list(self.all.keys())
+            _all_build = list(self.old.values()) + list(self.all.values())
             # print(_all)
             # print(_all_build)
             dir = os.listdir("versions/")
@@ -268,18 +287,17 @@ class Launcher(Canvas):
             all_build = _all_build
             all_data = _all_data
 
-
-
             # all = list(self.old.keys()) + list(self.all.keys())
             # all.sort(reverse=True)
         all.reverse()
+
+        self.dir_data = dir_data
 
         self.pack()
         self.update()
 
         cUrl = urllib.request.urlopen("https://quintenjungblut.wixsite.com/qplaysoftware/qplay-bubbles-changelog")
         self.changelog = cUrl.read()
-
 
         self.imgBottomPanel = utils.openbackground("data/bottomPanel.png", (self.width, 100))
         self.idBottomPanel = self.create_image(0, self.height - 100, image=self.imgBottomPanel, anchor=NW)
@@ -302,8 +320,10 @@ class Launcher(Canvas):
         working_list = list(all)
         self.choice_var = tk.StringVar(value=all[0])
         self.omVersion = tk.OptionMenu(self.root, self.choice_var, *working_list, command=print_choice)
-        self.omVersion.configure(background="#FFD800", activebackground="#FFE65E", relief=FLAT, highlightthickness=0, bd=0)
-        self.omVersion["menu"].configure(bg="#3f3f3f", fg="#efefef", bd=0, borderwidth=0, activebackground="#FFD800", activeforeground="#3f3f3f", relief=FLAT)
+        self.omVersion.configure(background="#FFD800", activebackground="#FFE65E", relief=FLAT, highlightthickness=0,
+                                 bd=0)
+        self.omVersion["menu"].configure(bg="#3f3f3f", fg="#efefef", bd=0, borderwidth=0, activebackground="#FFD800",
+                                         activeforeground="#3f3f3f", relief=FLAT)
         self.omVersion.place(x=5, y=self.height - 50, anchor=W)
 
         webLoadThread = Thread(None, lambda: self.changeLogLoad(), name="WebLoadThread")
@@ -320,6 +340,7 @@ class Launcher(Canvas):
     def changeLogLoad(self):
         import urllib.request as urllib
         from lib import utils
+        from lib.theme import CustomScrollbar
         try:
             a = urllib.urlopen("https://github.com/Qplay123/Qplay-Bubbles/raw/master/changelog.qplaylog")
             data = a.read().decode()
@@ -342,7 +363,7 @@ class Launcher(Canvas):
             s_frame = Frame(self.root, width=self.width, height=self.height - 105)
             # s_frame.place(x=0, y=0)
 
-            sw = utils.ScrolledWindow(s_frame, width=self.width-16, heigh=height, canv_h=self.height - 100,
+            sw = utils.ScrolledWindow(s_frame, width=self.width - 9, heigh=height, canv_h=self.height - 100,
                                       canv_w=self.width, scrollcommand=self.scroll)
 
             canv = sw.canv
@@ -355,35 +376,37 @@ class Launcher(Canvas):
             for line in lines:
                 if line[:1] == "#":
                     height += 20
-                    self.canvass.create_text(10, height, text=line[1:], font=("Helvetica", 28, "bold"), fill="darkgray", anchor=NW)
+                    self.canvass.create_text(10, height, text=line[1:], font=("Helvetica", 28, "bold"), fill="darkgray",
+                                             anchor=NW)
                     height += 38
                 else:
                     if line.lower()[:5] == "note:":
                         self.canvass.create_text(10, height, text=line, font=("Helvetica", 16), fill="red", anchor=NW)
                         height += 24
                     else:
-                        self.canvass.create_text(10, height, text=line, font=("Helvetica", 16), fill="darkgray", anchor=NW)
+                        self.canvass.create_text(10, height, text=line, font=("Helvetica", 16), fill="darkgray",
+                                                 anchor=NW)
                         height += 24
 
             height -= 16
             height += 10
 
-            y1, y2 = sw.vbar.get()
-
-            print(y1, y2)
-            y1 = y1 * height
-            y2 = y2 * height
-
-            print(y1, y2)
-
-            self.scroll2 = self.canvass.create_rectangle(width-5, 5, width-10, 45, fill="darkgray", outline="darkgray")
+            # y1, y2 = sw.vbar.get()
+            #
+            # print(y1, y2)
+            # y1 = y1 * height
+            # y2 = y2 * height
+            #
+            # print(y1, y2)
 
             self.canvass.config(height=height, width=self.width)
             self.canvass.pack(fill=Y)
 
             self.cHeight = height
 
-            self.create_window(0, 0, window=s_frame, height=self.height-100, width=self.width, anchor=NW)
+            self.create_window(0, 0, window=s_frame, height=self.height - 100, width=self.width, anchor=NW)
+
+            self.old_value = 25
 
             print("[sw.scrollwindow]: %sx%s" % (sw.scrollwindow.winfo_width(), sw.scrollwindow.winfo_height()))
             print("[sw.canv]: %sx%s" % (sw.canv.winfo_width(), sw.canv.winfo_height()))
@@ -391,32 +414,33 @@ class Launcher(Canvas):
             print("[canvas2]: %sx%s" % (self.canvass.winfo_width(), self.canvass.winfo_height()))
             self.root.update()
             self.root.update_idletasks()
+            self.sw = sw
             print("Ready")
         except urllib.HTTPError or urllib.URLError:
             pass
 
-    def scroll(self, i, reqHeight, vbarValue):
+    def scroll(self, i, reqHeight, vbarValue, vbar: ttk.Scrollbar):
         pass  # The code was never good working. (Impossible to make it for me!!!)
-        # print("vbarValue", vbarValue)
-        # # value = -i / 1.4
-        # # a1 = int(self.canvass.coords(self.scroll2)[1]) == 5
-        # # a2 = value > 0
-        # # a = not(a1 ^ a2)
-        # #
-        # # b1 = ((self.canvass.coords(self.scroll2)[3] > self.cHeight))
-        # # b2 = value < 0
-        # # b = not(b1 ^ b2)
-        # # # print(value, value < 0)
-        # # # print(a1, 5)
-        # # # print("====")
-        # # # print(a1, a2)
-        # # # print(a)
-        # # # print("----")
-        # # # print(b1, b2)
-        # # # print(b)
-        # # # print("====\n\n")
-        # # print("OK")
-        # x1, y1, x2, y2 = self.canvass.coords(self.scroll2)
+        print("vbarValue", vbarValue)
+        value = -i / 1.4
+        # a1 = int(self.canvass.coords(self.scroll2)[1]) == 5
+        # a2 = value > 0
+        # a = not(a1 ^ a2)
+        #
+        # b1 = ((self.canvass.coords(self.scroll2)[3] > self.cHeight))
+        # b2 = value < 0
+        # b = not(b1 ^ b2)
+        # print(value, value < 0)
+        # print(a1, 5)
+        # print("====")
+        # print(a1, a2)
+        # print(a)
+        # print("----")
+        # print(b1, b2)
+        # print(b)
+        # print("====\n\n")
+        # print("OK")
+        x1, y1, x2, y2 = self.canvass.coords(self.scroll2)
         # _y1, _y2 = vbarValue
         # print("1:",y1, y2)
         # print("2:",_y1, _y2)
@@ -434,10 +458,24 @@ class Launcher(Canvas):
         #
         #
         # print("Value: %s", value)
-        # self.canvass.move(self.scroll2, 0, -y2)
-        # self.canvass.move(self.scroll2, 0, value)
-        # print("coords: %s" % self.canvass.coords(self.scroll2))
-        # print("reqHeight: %s" % reqHeight)
+
+        print("vbar.identify(*value):", vbar.fraction(int(vbarValue[0] * self.canvass.winfo_height())))
+
+        self.scroll_canv.set(*vbarValue)
+
+        # value = self.canvass.winfo_height() / (value * 41.4)
+        #
+        # if vbarValue[0] <= 0:
+        #     return
+        # if vbarValue[1] >= 1:
+        #     return
+        #
+        # self.canvass.move(self.scroll2, 0, -value)
+        # self.old_value = value
+        print("\n")
+        print("value: %s" % value)
+        print("coords: %s" % self.canvass.coords(self.scroll2))
+        print("reqHeight: %s" % reqHeight)
 
     def onPlayButtonEnter(self):
         self.itemconfig(self.idPlayButton, image=self.imgPlayButtonHover)
@@ -457,7 +495,7 @@ class Launcher(Canvas):
 
     import random
     random.randint
-    
+
     def start(self):
         from time import sleep
         from os.path import exists
@@ -474,40 +512,20 @@ class Launcher(Canvas):
         print("Starting Version: %s" % _dir)
         cfg = {"version": self.version,
                "versionDir": _dir,
-               "launcher": self,
-               "args": sys.argv
+               "build": self.dir_data[_dir]
+               "runtimeDir": self.runtime_dir
                }
 
         print("Current Directory: %s" % os.curdir)
 
-        self.root.destroy()
+        # if self.dir_data[_dir] < 16:
+        #     self.root.destroy()
 
-        if self.version > "v1.4.1":
-            a = __import__("versions.%s.__main__" % _dir, fromlist=["__main__"])
-            if hasattr(a, "Initialize"):
-                a.Game(launcher_cfg=cfg)
-            a.Game(launcher_cfg=cfg)
-            self.__init__(self.root, self.width, self.height)
-        elif self.version >= "v1.4.0":
-            a = __import__("versions.%s.__main__" % _dir, fromlist=["__main__"])
-            os.chdir("versions/%s/" % _dir)
-            a.Game()
-            self.__init__(self.root, self.width, self.height)
-            os.chdir("../../")
-        elif self.version >= "v1.0.0":
-            import time
-            # print(os.getcwd())
-            # print("%s/versions/%s/" % (os.getcwd().replace("\\", "/"), _dir))
-            # exit(1)
-            sys.path.append("%s/versions/%s/" % (os.getcwd().replace("\\", "/"), _dir))
-            os.chdir("versions/%s/" % _dir)
-            a = __import__("versions.%s.__main__" % _dir, fromlist=["__main__"])
-            a.Game(time.time())
-            # self.__init__(self.root, self.width, self.height)
-            os.chdir("../../")
-            del sys.path[-1]
+        if self.dir_data[_dir] >= 16:
+            os.system("{runtimeDir}/python.exe versions/" + _dir + "/__main__.py {version} {versionDir} {build}".format(
+                **cfg))
         else:
-            self.__init__(self.root, self.width, self.height)
+            os.system("{runtimeDir}/python.exe old_load.py {version} {versionDir} {build}".format(_dir, **cfg))
 
     def download(self):
         from os.path import exists
@@ -526,15 +544,18 @@ class Launcher(Canvas):
             self.itemconfig(self.idPlayButton, state=HIDDEN)
             if self.version in self.old:
                 down = Download("https://github.com/Qplay123/QplayBubbles-OldReleases/archive/" + self.version + ".zip",
-                    "temp/QplayBubbles-" + self.version + '.zip')
+                                "temp/QplayBubbles-" + self.version + '.zip', False)
             else:
                 if self.version >= "v1.4.0":
                     down = Download("https://github.com/Qplay123/QplayBubbles-Releaes/archive/" + self.version + ".zip",
-                                    "temp/QplayBubbles-" + self.version + '.zip')
+                                    "temp/QplayBubbles-" + self.version + '.zip', False)
                 elif self.version >= "v1.0.0":
                     down = Download("https://github.com/Qplay123/Qplay-Bubbles/archive/" + self.version + ".zip",
-                                    "temp/QplayBubbles-" + self.version + '.zip')
-
+                                    "temp/QplayBubbles-" + self.version + '.zip', False)
+                else:
+                    down = Download(
+                        "https://github.com/Qplay123/QplayBubbles-OldReleases/archive/" + self.version + ".zip",
+                        "temp/QplayBubbles-" + self.version + '.zip', False)
 
             # Thread(None, lambda: down.download()).start()
             self.idDownloadBar = self.create_image(5, self.height - 50, anchor=W)
@@ -582,7 +603,14 @@ class Launcher(Canvas):
                     a = {'build': build, 'displayName': utils.replace_any2name(self.version)}
                     with open("versions/%s/version.json" % _dir, "w+") as file:
                         file.write(json.JSONEncoder().encode(a))
-            
+
+            if os.path.exists("versions/%s/requirements.txt" % _dir):
+                with open("versions/%s/requirements.txt" % _dir, "r"):
+                    requirements = file.read()
+                    file.close()
+                if requirements:
+                    self.install_libraries(requirements)
+
             self.itemconfig(self.idPlayButton, state=NORMAL)
             self.tag_bind(self.idPlayButton, "<Enter>", lambda event: self.onPlayButtonEnter())
             self.tag_bind(self.idPlayButton, "<Leave>", lambda event: self.onPlayButtonLeave())
@@ -591,9 +619,14 @@ class Launcher(Canvas):
 
             self.omVersion.place(x=5, y=self.height - 50, anchor=W)
 
+    def install_libraries(self, requirements: str):
+        requirements = requirements.replace("\n", " ")
+        os.system("%s/python.exe -m pip install %s" % (self.runtime_dir, requirements))
+
 
 if __name__ == '__main__':
     import os
+
     if not os.path.exists("versions"):
         os.makedirs("versions")
     if not os.path.exists("mods"):
