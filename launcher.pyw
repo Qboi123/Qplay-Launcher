@@ -108,7 +108,10 @@ class Launcher(Canvas):
                 else:
                     print("WARNING: Argument %s has no effect" % i)
         else:
-            self.runtime_dir = "%s/../runtime" % os.getcwd().replace("\\", "/")
+            if os.path.exists("C:/Users/quint/Anaconda3"):
+                self.runtime_dir = "C:/Users/quint/Anaconda3"
+            else:
+                raise RuntimeError("Runtime was not found.")
 
         try:
             # -- current ------------------------------------------------------------------------------------------------- #
@@ -504,6 +507,7 @@ class Launcher(Canvas):
         from os.path import exists
         from lib import utils
         import os, sys
+        import subprocess as sp
         # fp = "temp/QplayBubbles-" + self.version + '.zip'
         _dir = utils.replace_ver2dir(self.version)
         if not exists("versions/%s" % _dir):
@@ -525,10 +529,15 @@ class Launcher(Canvas):
         #     self.root.destroy()
 
         if self.dir_data[_dir] >= 16:
-            os.system("{runtimeDir}/python.exe versions/" + _dir + "/__main__.py {version} {versionDir} {build}".format(
+            exit_code = os.system("{runtimeDir}/python.exe versions/" + _dir + "/__main__.py {version} {versionDir} {build}".format(
                 **cfg))
+            if exit_code != 0:
+                sp.run(("{runtimeDir}/python.exe versions/" + _dir + "/__main__.py {version} {versionDir} {build}".format(
+                    **cfg)).split(" "), shell=True)
         else:
-            os.system("{runtimeDir}/python.exe old_load.py {version} {versionDir} {build}".format(_dir, **cfg))
+            exit_code = os.system("{runtimeDir}/python.exe old_load.py {version} {versionDir} {build}".format(_dir, **cfg))
+            if exit_code != 0:
+                sp.run(("{runtimeDir}/python.exe old_load.py {version} {versionDir} {build}".format(_dir, **cfg)).split(" "))
 
     def download(self):
         from os.path import exists
