@@ -2,7 +2,6 @@ from threading import Thread
 from tkinter import ttk
 
 from threadsafe_tkinter import *
-import os
 
 
 class Download:
@@ -96,6 +95,7 @@ class Launcher(Canvas):
         self.root = root
         from lib import utils
         import urllib.request
+        import urllib.error
         import os, json
 
         import sys
@@ -113,6 +113,226 @@ class Launcher(Canvas):
             else:
                 raise RuntimeError("Runtime was not found.")
 
+        try:
+
+            # -- current ------------------------------------------------------------------------------------------------- #
+            json_url = urllib.request.urlopen(
+                "https://raw.githubusercontent.com/Qplay123/Qplay-Bubbles/master/current.json"
+            )
+            json_data = json_url.read().decode()
+            with open("current.json", "w+") as file:
+                file.write(json_data)
+
+            import json
+
+            self.data = json.JSONDecoder().decode(json_data)
+            # print(self.data)
+
+            # -- all versions -------------------------------------------------------------------------------------------- #
+            json_url = urllib.request.urlopen(
+                "https://github.com/Qplay123/Qplay-Bubbles/raw/master/all_versions.json"
+            )
+            json_data = json_url.read().decode()
+            with open("all_versions.json", "w+") as file:
+                file.write(json_data)
+            with open("all_versions.json", "w") as file:
+                file.write(json_data)
+
+            import json
+
+            self.all = json.JSONDecoder().decode(json_data)
+
+            # -- old / historic versions --------------------------------------------------------------------------------- #
+            json_url = urllib.request.urlopen(
+                "https://raw.githubusercontent.com/Qplay123/Qplay-Bubbles/master/old_versions.json"
+            )
+            json_data = json_url.read().decode()
+
+            with open("old_versions.json", "w+") as file:
+                file.write(json_data)
+
+            import json
+
+            self.old = json.JSONDecoder().decode(json_data)
+
+            # ------------------------------------------------------------------------------------------------------------ #
+            self.inet_available = True
+
+            _all = list(self.old.keys()) + list(self.all.keys())
+            _all_build = list(self.old.values()) + list(self.all.values())
+            # print(_all)
+            # print(_all_build)
+            dir_ = os.listdir("versions/")
+            dir_build = list()
+
+            for i in dir_:
+                with open("versions/%s/version.json" % i) as file:
+                    versionData = json.JSONDecoder().decode(file.read())
+                    dir_build.append(versionData["build"])
+
+            dir_data = dict()
+            for _i in range(len(dir_)):
+                i = dir_[_i]
+                j = dir_build[_i]
+                dir_data[i] = j
+
+            _all_data = dict()
+            for _i in range(len(_all)):
+                i = _all[_i]
+                j = _all_build[_i]
+                _all_data[i] = j
+
+            # print(dir_data)
+            # print(_all)
+
+            for i in os.listdir("versions/"):
+                # print("I: %s" % i)
+                for k in _all:
+                    # print("K: %s" % k)
+                    if i == utils.replace_ver2dir(k):
+                        not_exists = False
+                        break
+                    else:
+                        not_exists = True
+
+                # print("ALL: %s" % _all)
+                found = 0
+                for j in range(len(_all_build.copy())):
+                    # noinspection PyUnboundLocalVariable
+                    if dir_data[i] < _all_build[j] and not_exists:
+                        _all.insert(j, utils.replace_dir2ver(i))
+                        _all_build.insert(j, dir_data[i])
+                        found = 1
+                        break
+                if found == 0 and not_exists:
+                    _all.append(utils.replace_dir2ver(i))
+                    _all_build.append(dir_data[i])
+            all_ = list()
+            for i in _all:
+                all_.append(utils.replace_any2name(i))
+        except urllib.error.URLError or urllib.error.HTTPError as e:
+            self.inet_err = e.args
+            print("Error: %s" % e.args[0])
+            with open("all_versions.json", "r") as file:
+                json_data = file.read()
+            self.all = json.JSONDecoder().decode(json_data)
+
+            with open("old_versions.json", "r") as file:
+                json_data = file.read()
+            self.old = json.JSONDecoder().decode(json_data)
+
+            # ------------------------------------------------------------------------------------------------------------ #
+            self.inet_available = False
+
+            _all = list(self.old.keys()) + list(self.all.keys())
+            _all_build = list(self.old.values()) + list(self.all.values())
+            # print(_all)
+            # print(_all_build)
+            dir_ = os.listdir("versions/")
+            dir_build = list()
+
+            for i in dir_:
+                with open("versions/%s/version.json" % i) as file:
+                    versionData = json.JSONDecoder().decode(file.read())
+                    dir_build.append(versionData["build"])
+
+            dir_data = dict()
+            for _i in range(len(dir_)):
+                i = dir_[_i]
+                j = dir_build[_i]
+                dir_data[i] = j
+
+            _all_data = dict()
+            for _i in range(len(_all)):
+                i = _all[_i]
+                j = _all_build[_i]
+                _all_data[i] = j
+
+            # print(dir_data)
+            # print(_all)
+
+            for i in os.listdir("versions/"):
+                # print("I: %s" % i)
+                for k in _all:
+                    # print("K: %s" % k)
+                    if i == utils.replace_ver2dir(k):
+                        not_exists = False
+                        break
+                    else:
+                        not_exists = True
+
+                # print("ALL: %s" % _all)
+                found = 0
+                for j in range(len(_all_build.copy())):
+                    # print("DirData: %s | AllBuild: %s | All: %s" % (dir_data[i], _all_build[j], _all[j]))
+                    if dir_data[i] < _all_build[j]:
+                        if not_exists:
+                            _all.insert(j, utils.replace_dir2ver(i))
+                            _all_build.insert(j, dir_data[i])
+                            found = 1
+                            break
+                if found == 0:
+                    # print("Found\n")
+                    if not_exists:
+                        _all.append(utils.replace_dir2ver(i))
+                        _all_build.append(dir_data[i])
+            all_ = list()
+            for i in _all:
+                all_.append(utils.replace_any2name(i))
+
+            # all = list(self.old.keys()) + list(self.all.keys())
+            # all.sort(reverse=True)
+        all_.reverse()
+
+        self.dir_data = dir_data
+
+        self.pack()
+        self.update()
+
+        cUrl = urllib.request.urlopen("https://quintenjungblut.wixsite.com/qplaysoftware/qplay-bubbles-changelog")
+        self.changelog = cUrl.read()
+
+        self.imgBottomPanel = utils.openbackground("data/bottomPanel.png", (self.width, 100))
+        self.idBottomPanel = self.create_image(0, self.height - 100, image=self.imgBottomPanel, anchor=NW)
+
+        self.imgPlayButtonNormal = utils.openimage("data/playButtonNormal.png")
+        self.imgPlayButtonHover = utils.openimage("data/playButtonHover.png")
+        self.imgPlayButtonPressed = utils.openimage("data/playButtonPressed.png")
+        self.idPlayButton = self.create_image(self.width / 2, self.height - 50, image=self.imgPlayButtonNormal)
+        self.tag_bind(self.idPlayButton, "<Enter>", lambda event: self.onPlayButtonEnter())
+        self.tag_bind(self.idPlayButton, "<Leave>", lambda event: self.onPlayButtonLeave())
+        self.tag_bind(self.idPlayButton, "<ButtonPress-1>", lambda event: self.onPlayButtonPress())
+        self.tag_bind(self.idPlayButton, "<ButtonRelease-1>", lambda event: self.onPlayButtonRelease())
+
+        import tkinter as _tk
+
+        def print_choice(event):
+            print(self.choice_var.get())  # prints value based on choice var
+            print(event)  # prints selection directly from the event passed by the command in OptionMenu
+
+        working_list = list(all_)
+        self.choice_var = _tk.StringVar(value=all_[0])
+        self.omVersion = _tk.OptionMenu(self.root, self.choice_var, *working_list, command=print_choice)
+        print(self.omVersion.keys())
+        self.omVersion.configure(background="#FFD800", activebackground="#FFE65E", relief=FLAT, highlightthickness=0,
+                                 bd=0)
+        self.omVersion["menu"].configure(bg="#3f3f3f", fg="#efefef", bd=0, borderwidth=0, activebackground="#FFD800",
+                                         activeforeground="#3f3f3f", relief=FLAT)
+        self.omVersion.place(x=5, y=self.height - 50, anchor=W)
+
+        webLoadThread = Thread(None, lambda: self.changeLogLoad(), name="WebLoadThread")
+        webLoadThread.start()
+
+        self.update()
+        print("%sx%s" % (self.winfo_width(), self.winfo_height()))
+
+    def reload(self):
+        self.omVersion.destroy()
+        del self.choice_var
+        import urllib.request
+        import urllib.error
+        from lib import utils
+        import json
         try:
             # -- current ------------------------------------------------------------------------------------------------- #
             json_url = urllib.request.urlopen(
@@ -161,17 +381,17 @@ class Launcher(Canvas):
             _all_build = list(self.old.values()) + list(self.all.values())
             # print(_all)
             # print(_all_build)
-            dir = os.listdir("versions/")
+            dir_ = os.listdir("versions/")
             dir_build = list()
 
-            for i in dir:
+            for i in dir_:
                 with open("versions/%s/version.json" % i) as file:
                     versionData = json.JSONDecoder().decode(file.read())
                     dir_build.append(versionData["build"])
 
             dir_data = dict()
-            for _i in range(len(dir)):
-                i = dir[_i]
+            for _i in range(len(dir_)):
+                i = dir_[_i]
                 j = dir_build[_i]
                 dir_data[i] = j
 
@@ -183,8 +403,6 @@ class Launcher(Canvas):
 
             # print(dir_data)
             # print(_all)
-
-            dzf = _all.copy()
 
             for i in os.listdir("versions/"):
                 # print("I: %s" % i)
@@ -199,25 +417,18 @@ class Launcher(Canvas):
                 # print("ALL: %s" % _all)
                 found = 0
                 for j in range(len(_all_build.copy())):
-                    # print("DirData: %s | AllBuild: %s | All: %s" % (dir_data[i], _all_build[j], _all[j]))
-                    if dir_data[i] < _all_build[j]:
-                        if not_exists:
-                            _all.insert(j, utils.replace_dir2ver(i))
-                            _all_build.insert(j, dir_data[i])
-                            found = 1
-                            break
-                if found == 0:
-                    # print("Found\n")
-                    if not_exists:
-                        _all.append(utils.replace_dir2ver(i))
-                        _all_build.append(dir_data[i])
-            all = list()
+                    # noinspection PyUnboundLocalVariable
+                    if dir_data[i] < _all_build[j] and not_exists:
+                        _all.insert(j, utils.replace_dir2ver(i))
+                        _all_build.insert(j, dir_data[i])
+                        found = 1
+                        break
+                if found == 0 and not_exists:
+                    _all.append(utils.replace_dir2ver(i))
+                    _all_build.append(dir_data[i])
+            all_ = list()
             for i in _all:
-                all.append(utils.replace_any2name(i))
-
-            all_build = _all_build
-            all_data = _all_data
-
+                all_.append(utils.replace_any2name(i))
         except urllib.error.URLError or urllib.error.HTTPError as e:
             self.inet_err = e.args
             print("Error: %s" % e.args[0])
@@ -236,17 +447,17 @@ class Launcher(Canvas):
             _all_build = list(self.old.values()) + list(self.all.values())
             # print(_all)
             # print(_all_build)
-            dir = os.listdir("versions/")
+            dir_ = os.listdir("versions/")
             dir_build = list()
 
-            for i in dir:
+            for i in dir_:
                 with open("versions/%s/version.json" % i) as file:
                     versionData = json.JSONDecoder().decode(file.read())
                     dir_build.append(versionData["build"])
 
             dir_data = dict()
-            for _i in range(len(dir)):
-                i = dir[_i]
+            for _i in range(len(dir_)):
+                i = dir_[_i]
                 j = dir_build[_i]
                 dir_data[i] = j
 
@@ -258,8 +469,6 @@ class Launcher(Canvas):
 
             # print(dir_data)
             # print(_all)
-
-            dzf = _all.copy()
 
             for i in os.listdir("versions/"):
                 # print("I: %s" % i)
@@ -286,57 +495,23 @@ class Launcher(Canvas):
                     if not_exists:
                         _all.append(utils.replace_dir2ver(i))
                         _all_build.append(dir_data[i])
-            all = list()
+            all_ = list()
             for i in _all:
-                all.append(utils.replace_any2name(i))
-
-            all_build = _all_build
-            all_data = _all_data
+                all_.append(utils.replace_any2name(i))
 
             # all = list(self.old.keys()) + list(self.all.keys())
             # all.sort(reverse=True)
-        all.reverse()
-
-        self.dir_data = dir_data
-
-        self.pack()
-        self.update()
-
-        cUrl = urllib.request.urlopen("https://quintenjungblut.wixsite.com/qplaysoftware/qplay-bubbles-changelog")
-        self.changelog = cUrl.read()
-
-        self.imgBottomPanel = utils.openbackground("data/bottomPanel.png", (self.width, 100))
-        self.idBottomPanel = self.create_image(0, self.height - 100, image=self.imgBottomPanel, anchor=NW)
-
-        self.imgPlayButtonNormal = utils.openimage("data/playButtonNormal.png")
-        self.imgPlayButtonHover = utils.openimage("data/playButtonHover.png")
-        self.imgPlayButtonPressed = utils.openimage("data/playButtonPressed.png")
-        self.idPlayButton = self.create_image(self.width / 2, self.height - 50, image=self.imgPlayButtonNormal)
-        self.tag_bind(self.idPlayButton, "<Enter>", lambda event: self.onPlayButtonEnter())
-        self.tag_bind(self.idPlayButton, "<Leave>", lambda event: self.onPlayButtonLeave())
-        self.tag_bind(self.idPlayButton, "<ButtonPress-1>", lambda event: self.onPlayButtonPress())
-        self.tag_bind(self.idPlayButton, "<ButtonRelease-1>", lambda event: self.onPlayButtonRelease())
-
-        import tkinter as tk
+        all_.reverse()
 
         def print_choice(event):
             print(self.choice_var.get())  # prints value based on choice var
             print(event)  # prints selection directly from the event passed by the command in OptionMenu
 
-        working_list = list(all)
-        self.choice_var = tk.StringVar(value=all[0])
-        self.omVersion = tk.OptionMenu(self.root, self.choice_var, *working_list, command=print_choice)
-        self.omVersion.configure(background="#FFD800", activebackground="#FFE65E", relief=FLAT, highlightthickness=0,
-                                 bd=0)
-        self.omVersion["menu"].configure(bg="#3f3f3f", fg="#efefef", bd=0, borderwidth=0, activebackground="#FFD800",
-                                         activeforeground="#3f3f3f", relief=FLAT)
-        self.omVersion.place(x=5, y=self.height - 50, anchor=W)
-
-        webLoadThread = Thread(None, lambda: self.changeLogLoad(), name="WebLoadThread")
-        webLoadThread.start()
-
+        working_list = list(all_)
+        self.choice_var = _tk.StringVar(value=all_[0])
+        self.omVersion = _tk.OptionMenu(self.root, self.choice_var, *working_list, command=print_choice)
         self.update()
-        print("%sx%s" % (self.winfo_width(), self.winfo_height()))
+
 
     def onSelectVersion(self, event):
         print('----------------------------')
@@ -346,7 +521,6 @@ class Launcher(Canvas):
     def changeLogLoad(self):
         import urllib.request as urllib
         from lib import utils
-        from lib.theme import CustomScrollbar
         try:
             a = urllib.urlopen("https://github.com/Qplay123/Qplay-Bubbles/raw/master/changelog.qplaylog")
             data = a.read().decode()
@@ -499,14 +673,10 @@ class Launcher(Canvas):
         self.version = utils.replace_name2ver(self.choice_var.get())
         self.start()
 
-    import random
-    random.randint
-
     def start(self):
-        from time import sleep
         from os.path import exists
         from lib import utils
-        import os, sys
+        import os
         import subprocess as sp
         # fp = "temp/QplayBubbles-" + self.version + '.zip'
         _dir = utils.replace_ver2dir(self.version)
