@@ -3,10 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="5517ee74-8b7f-4783-b76c-419986e82904" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/changelog.qplaylog" beforeDir="false" afterPath="$PROJECT_DIR$/changelog.qplaylog" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/launcher.pyw" beforeDir="false" afterPath="$PROJECT_DIR$/launcher.pyw" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -89,19 +87,19 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="65" />
-    <option name="y" value="155" />
-    <option name="width" value="1040" />
-    <option name="height" value="816" />
-  </component>
   <component name="ProjectId" id="1SyDQp8iOxOzLTk6DU4l9ijpjf0" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../QplayBubbles-Releaes" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
@@ -117,18 +115,6 @@
       <recent name="C:\Users\quint\Documents\GitHub\Qplay-Bubbles\versions\v0_0_0_pre1" />
       <recent name="C:\Users\quint\Documents\GitHub\Qplay-Bubbles\mods" />
     </key>
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
   </component>
   <component name="RunManager" selected="Python.Run New Launcher">
     <configuration name="Run New Launcher" type="PythonConfigurationType" factoryName="Python" temporary="true">
@@ -288,6 +274,36 @@
       <path value="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v0_1_0" />
       <path value="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4" />
     </ignored-roots>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="2274" y="213" key="#Run_New_Launcher" timestamp="1581950884774">
+      <screen x="1920" y="113" width="1280" height="984" />
+    </state>
+    <state x="2274" y="213" key="#Run_New_Launcher/0.0.1920.1040/1920.113.1280.984@1920.113.1280.984" timestamp="1581950884774" />
+    <state width="1237" height="247" key="GridCell.Tab.0.bottom" timestamp="1581951964260">
+      <screen x="1920" y="113" width="1280" height="984" />
+    </state>
+    <state width="1237" height="247" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.113.1280.984@1920.113.1280.984" timestamp="1581951964260" />
+    <state width="1237" height="247" key="GridCell.Tab.0.center" timestamp="1581951964260">
+      <screen x="1920" y="113" width="1280" height="984" />
+    </state>
+    <state width="1237" height="247" key="GridCell.Tab.0.center/0.0.1920.1040/1920.113.1280.984@1920.113.1280.984" timestamp="1581951964260" />
+    <state width="1237" height="247" key="GridCell.Tab.0.left" timestamp="1581951964260">
+      <screen x="1920" y="113" width="1280" height="984" />
+    </state>
+    <state width="1237" height="247" key="GridCell.Tab.0.left/0.0.1920.1040/1920.113.1280.984@1920.113.1280.984" timestamp="1581951964260" />
+    <state width="1237" height="247" key="GridCell.Tab.0.right" timestamp="1581951964260">
+      <screen x="1920" y="113" width="1280" height="984" />
+    </state>
+    <state width="1237" height="247" key="GridCell.Tab.0.right/0.0.1920.1040/1920.113.1280.984@1920.113.1280.984" timestamp="1581951964260" />
+    <state x="2061" y="247" key="SettingsEditor" timestamp="1581950893571">
+      <screen x="1920" y="113" width="1280" height="984" />
+    </state>
+    <state x="2061" y="247" key="SettingsEditor/0.0.1920.1040/1920.113.1280.984@1920.113.1280.984" timestamp="1581950893571" />
+    <state x="2236" y="428" key="com.intellij.ide.util.TipDialog" timestamp="1581944608712">
+      <screen x="1920" y="113" width="1280" height="984" />
+    </state>
+    <state x="2236" y="428" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/1920.113.1280.984@1920.113.1280.984" timestamp="1581944608712" />
   </component>
   <component name="masterDetails">
     <states>

@@ -50,6 +50,9 @@ class Download:
 
         # Thread(None, lambda: speed(), "SpeedThread").start()
 
+        if not os.path.exists(os.path.split(self._fp)[0]):
+            os.makedirs(os.path.split(self._fp)[0])
+
         if self.isTemp:
             with tempfile.TemporaryFile("ab+") as f:
                 print(f.file)
@@ -108,8 +111,8 @@ class Launcher(Canvas):
                 else:
                     print("WARNING: Argument %s has no effect" % i)
         else:
-            if os.path.exists("C:/Users/quint/Anaconda3"):
-                self.runtime_dir = "C:/Users/quint/Anaconda3"
+            if os.path.exists(os.path.split(sys.executable)[0]):
+                self.runtime_dir = os.path.split(sys.executable)[0]
             else:
                 raise RuntimeError("Runtime was not found.")
 
@@ -508,8 +511,14 @@ class Launcher(Canvas):
             print(event)  # prints selection directly from the event passed by the command in OptionMenu
 
         working_list = list(all_)
-        self.choice_var = _tk.StringVar(value=all_[0])
-        self.omVersion = _tk.OptionMenu(self.root, self.choice_var, *working_list, command=print_choice)
+        self.choice_var = StringVar(value=all_[0])
+        self.omVersion = OptionMenu(self.root, self.choice_var, *working_list, command=print_choice)
+        print(self.omVersion.keys())
+        self.omVersion.configure(background="#FFD800", activebackground="#FFE65E", relief=FLAT, highlightthickness=0,
+                                 bd=0)
+        self.omVersion["menu"].configure(bg="#3f3f3f", fg="#efefef", bd=0, borderwidth=0, activebackground="#FFD800",
+                                         activeforeground="#3f3f3f", relief=FLAT)
+        self.omVersion.place(x=5, y=self.height - 50, anchor=W)
         self.update()
 
 
@@ -794,12 +803,16 @@ class Launcher(Canvas):
                     self.install_libraries(requirements)
 
             self.itemconfig(self.idPlayButton, state=NORMAL)
+            self.itemconfig(self.idDownloadBar, state=HIDDEN)
+            self.itemconfig(self.idDownloadBarLoaded, state=HIDDEN)
             self.tag_bind(self.idPlayButton, "<Enter>", lambda event: self.onPlayButtonEnter())
             self.tag_bind(self.idPlayButton, "<Leave>", lambda event: self.onPlayButtonLeave())
             self.tag_bind(self.idPlayButton, "<ButtonPress-1>", lambda event: self.onPlayButtonPress())
             self.tag_bind(self.idPlayButton, "<ButtonRelease-1>", lambda event: self.onPlayButtonRelease())
 
             self.omVersion.place(x=5, y=self.height - 50, anchor=W)
+
+            self.reload()
 
     def install_libraries(self, requirements: str):
         requirements = requirements.replace("\n", " ")
