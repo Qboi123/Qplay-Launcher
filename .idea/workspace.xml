@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="5517ee74-8b7f-4783-b76c-419986e82904" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/launcher.pyw" beforeDir="false" afterPath="$PROJECT_DIR$/launcher.pyw" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,16 +103,16 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\quint\Documents\GitHub\Qplay-Bubbles\lib" />
-      <recent name="C:\Users\quint\Documents\GitHub\Qplay-Bubbles\data" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\quint\Documents\GitHub\Qplay-Bubbles\versions\v1_5_0_pre4" />
       <recent name="C:\Users\quint\Documents\GitHub\Qplay-Bubbles" />
       <recent name="C:\Users\quint\Documents\GitHub\Qplay-Bubbles\versions\v1_5_0_pre4\data" />
       <recent name="C:\Users\quint\Documents\GitHub\Qplay-Bubbles\versions\v0_0_0_pre1" />
       <recent name="C:\Users\quint\Documents\GitHub\Qplay-Bubbles\mods" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\quint\Documents\GitHub\Qplay-Bubbles\lib" />
+      <recent name="C:\Users\quint\Documents\GitHub\Qplay-Bubbles\data" />
     </key>
   </component>
   <component name="RunManager" selected="Python.Run New Launcher">
@@ -276,10 +275,10 @@
     </ignored-roots>
   </component>
   <component name="WindowStateProjectService">
-    <state x="2274" y="213" key="#Run_New_Launcher" timestamp="1581950884774">
+    <state x="2274" y="213" key="#Run_New_Launcher" timestamp="1582016407677">
       <screen x="1920" y="113" width="1280" height="984" />
     </state>
-    <state x="2274" y="213" key="#Run_New_Launcher/0.0.1920.1040/1920.113.1280.984@1920.113.1280.984" timestamp="1581950884774" />
+    <state x="2274" y="213" key="#Run_New_Launcher/0.0.1920.1040/1920.113.1280.984@1920.113.1280.984" timestamp="1582016407677" />
     <state width="1237" height="247" key="GridCell.Tab.0.bottom" timestamp="1581951964260">
       <screen x="1920" y="113" width="1280" height="984" />
     </state>
@@ -300,10 +299,10 @@
       <screen x="1920" y="113" width="1280" height="984" />
     </state>
     <state x="2061" y="247" key="SettingsEditor/0.0.1920.1040/1920.113.1280.984@1920.113.1280.984" timestamp="1581950893571" />
-    <state x="2236" y="428" key="com.intellij.ide.util.TipDialog" timestamp="1581944608712">
+    <state x="2236" y="428" key="com.intellij.ide.util.TipDialog" timestamp="1582036498236">
       <screen x="1920" y="113" width="1280" height="984" />
     </state>
-    <state x="2236" y="428" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/1920.113.1280.984@1920.113.1280.984" timestamp="1581944608712" />
+    <state x="2236" y="428" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/1920.113.1280.984@1920.113.1280.984" timestamp="1582036498236" />
   </component>
   <component name="masterDetails">
     <states>
