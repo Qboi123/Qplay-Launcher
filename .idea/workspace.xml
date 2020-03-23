@@ -2,11 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5517ee74-8b7f-4783-b76c-419986e82904" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/changelog.qplaylog" beforeDir="false" afterPath="$PROJECT_DIR$/changelog.qplaylog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/all_versions.json" beforeDir="false" afterPath="$PROJECT_DIR$/all_versions.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/current.json" beforeDir="false" afterPath="$PROJECT_DIR$/current.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/launcher.pyw" beforeDir="false" afterPath="$PROJECT_DIR$/launcher.pyw" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/launcherOld.pyw" beforeDir="false" afterPath="$PROJECT_DIR$/launcherOld.pyw" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/old_load.py" beforeDir="false" afterPath="$PROJECT_DIR$/old_load.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/old_versions.json" beforeDir="false" afterPath="$PROJECT_DIR$/old_versions.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tkinterhtml/tkhtml/Windows/64-bit/Tkhtml/pkgIndex.tcl" beforeDir="false" afterPath="$PROJECT_DIR$/tkinterhtml/tkhtml/Windows/64-bit/Tkhtml/pkgIndex.tcl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/updates.xml" beforeDir="false" afterPath="$PROJECT_DIR$/updates.xml" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -19,89 +27,25 @@
       </list>
     </option>
   </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>self.parent</find>
-      <find>self.sw.</find>
-      <find>threadsafe_tkinter</find>
-      <find>version_dir</find>
-      <find>version</find>
-      <find>config[</find>
-      <find>shipRadius</find>
-      <find>ship-radius</find>
-      <find>ship-speed</find>
-      <find>max-radius</find>
-      <find>min-radius</find>
-      <find>max-speed</find>
-      <find>maxSpeed</find>
-      <find>screen-gap</find>
-      <find>level-score</find>
-      <find>shipspeed</find>
-      <find>&quot;+self.launcher_cfg[&quot;versionDir&quot;]+&quot;</find>
-      <find>Left</find>
-      <find>self.pressed</find>
-      <find>commands</find>
-      <find>self.back</find>
-      <find>from</find>
-      <find>import</find>
-      <find>create_bubble</find>
-      <find>move_bubble</find>
-      <find>Bubble(modes,</find>
-      <find>Bubble</find>
-      <find>from .bubble import Bubble</find>
-      <find>create_bubble(self.modes</find>
-      <find>bubble</find>
-    </findStrings>
-    <replaceStrings>
-      <replace>/</replace>
-      <replace>self.tp</replace>
-      <replace>self.config</replace>
-      <replace>dir</replace>
-      <replace>_all</replace>
-      <replace>v1_5_0_pre3</replace>
-      <replace>parent</replace>
-      <replace />
-      <replace>self.</replace>
-      <replace>_dir</replace>
-      <replace>shipRadius</replace>
-      <replace>shipSpeed</replace>
-      <replace>maxRadius</replace>
-      <replace>minRadius</replace>
-      <replace>maxSpeed</replace>
-      <replace>screenGap</replace>
-      <replace>levelScore</replace>
-      <replace>v1_5_0_pre4</replace>
-      <replace>Right</replace>
-      <replace>self.xControl</replace>
-      <replace>self.commands</replace>
-      <replace>self.log</replace>
-      <replace>from .bubble import create_bubble</replace>
-      <replace>create_bubble(</replace>
-      <replace>bubbles</replace>
-    </replaceStrings>
-    <dirStrings>
-      <dir>C:\Users\quint\Documents\GitHub\Qplay-Bubbles\versions\v1_5_0_pre2</dir>
-      <dir>C:\Users\quint\Documents\GitHub\Qplay-Bubbles</dir>
-      <dir>C:\Users\quint\Documents\GitHub\Qplay-Bubbles\versions\v1_5_0_pre4</dir>
-      <dir>C:\Users\quint\Documents\GitHub\Qplay-Bubbles\versions\v1_5_0_pre5</dir>
-    </dirStrings>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="65" />
-    <option name="y" value="155" />
-    <option name="width" value="1040" />
-    <option name="height" value="816" />
   </component>
   <component name="ProjectId" id="1SyDQp8iOxOzLTk6DU4l9ijpjf0" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
+  <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
+    <option name="autoscrollToSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
+    <option name="sortByType" value="true" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../QplayBubbles-Releaes" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
@@ -117,18 +61,6 @@
       <recent name="C:\Users\quint\Documents\GitHub\Qplay-Bubbles\versions\v0_0_0_pre1" />
       <recent name="C:\Users\quint\Documents\GitHub\Qplay-Bubbles\mods" />
     </key>
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
   </component>
   <component name="RunManager" selected="Python.Run New Launcher">
     <configuration name="Run New Launcher" type="PythonConfigurationType" factoryName="Python" temporary="true">
@@ -288,6 +220,40 @@
       <path value="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v0_1_0" />
       <path value="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4" />
     </ignored-roots>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="740" y="261" key="FileChooserDialogImpl" timestamp="1584989688562">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="740" y="261" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1584989688562" />
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1584992830669">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1584992830669" />
+    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1584992830669">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1584992830669" />
+    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1584992830669">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1584992830669" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1584992830669">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1584992830669" />
+    <state x="461" y="162" key="SettingsEditor" timestamp="1584989699149">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="461" y="162" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1584989699149" />
+    <state x="592" y="217" width="737" height="606" key="find.popup" timestamp="1584992218634">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="592" y="217" width="737" height="606" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1584992218634" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1584990951663">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1584990951663" />
   </component>
   <component name="masterDetails">
     <states>

@@ -1,3 +1,4 @@
+Pillow
 pyyaml
 wxpython
 threadsafe_tkinter

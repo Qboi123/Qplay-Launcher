@@ -91,8 +91,8 @@ def download(url: str, panel: wx.Panel, version: str):
 
     # Get the total number of bytes of the file to download before downloading
     u = urllib.request.urlopen(str(url))
-    if os.path.exists("temp/QplayBubbles-" + version + '.zip'):
-        os.remove("temp/QplayBubbles-" + version + '.zip')
+    if os.path.exists(f"{appdata_path}/temp/QplayBubbles-" + version + '.zip'):
+        os.remove(f"{appdata_path}/temp/QplayBubbles-" + version + '.zip')
     meta = u.info()
     fileTotalbytes = int(meta["Content-Length"])
 
@@ -124,20 +124,20 @@ def download(url: str, panel: wx.Panel, version: str):
             break
 
         try:
-            with open("temp/QplayBubbles-" + version + '.zip', "ab+") as f:
+            with open(f"{appdata_path}/temp/QplayBubbles-" + version + '.zip', "ab+") as f:
                 f.write(block)
                 f.close()
         except FileNotFoundError:
-            os.makedirs("temp/")
-            with open("temp/QplayBubbles-" + version + '.zip', "ab+") as f:
+            os.makedirs(f"{appdata_path}/temp/")
+            with open(f"{appdata_path}/temp/QplayBubbles-" + version + '.zip', "ab+") as f:
                 f.write(block)
                 f.close()
 
     # data = b''.join(data_blocks)
     u.close()
 
-    if not os.path.exists("temp"):
-        os.makedirs("temp")
+    if not os.path.exists(f"{appdata_path}/temp"):
+        os.makedirs(f"{appdata_path}/temp")
 
     frame.SetWindowStyle(wx.DEFAULT_FRAME_STYLE)
     load.Destroy()
@@ -197,11 +197,11 @@ class Launcher(wx.Panel):
             _all_build = list(self.old.values())+list(self.all.values())
             # print(_all)
             # print(_all_build)
-            dir = os.listdir("versions/")
+            dir = os.listdir(f"{appdata_path}/versions/")
             dir_build = list()
 
             for i in dir:
-                with open("versions/%s/version.json" % i) as file:
+                with open(f"{appdata_path}/versions/%s/version.json" % i) as file:
                     versionData = json.JSONDecoder().decode(file.read())
                     dir_build.append(versionData["build"])
 
@@ -222,7 +222,7 @@ class Launcher(wx.Panel):
 
             dzf = _all.copy()
 
-            for i in os.listdir("versions/"):
+            for i in os.listdir(f"{appdata_path}/versions/"):
                 # print("I: %s" % i)
                 for k in _all:
                     # print("K: %s" % k)
@@ -275,11 +275,11 @@ class Launcher(wx.Panel):
             _all_build = list(self.old.values())+list(self.all.values())
             # print(_all)
             # print(_all_build)
-            dir = os.listdir("versions/")
+            dir = os.listdir(f"{appdata_path}/versions/")
             dir_build = list()
 
             for i in dir:
-                with open("versions/%s/version.json" % i) as file:
+                with open(f"{appdata_path}/versions/%s/version.json" % i) as file:
                     versionData = json.JSONDecoder().decode(file.read())
                     dir_build.append(versionData["build"])
 
@@ -300,7 +300,7 @@ class Launcher(wx.Panel):
 
             dzf = _all.copy()
 
-            for i in os.listdir("versions/"):
+            for i in os.listdir(f"{appdata_path}/versions/"):
                 # print("I: %s" % i)
                 for k in _all:
                     # print("K: %s" % k)
@@ -364,36 +364,36 @@ class Launcher(wx.Panel):
 
         version_dir = replace_ver2dir(version)
 
-        if not os.path.exists("versions/" + version_dir + "/"):
+        if not os.path.exists(f"{appdata_path}/versions/" + version_dir + "/"):
             if self.inet_available:
                 if version in self.old:
                     download(
                         "https://github.com/Qplay123/QplayBubbles-OldReleases/archive/" + version + ".zip",
                         self, version
                     )
-                    extract_zipfile("temp/QplayBubbles-" + version + '.zip', "versions/")
-                    os.rename("versions/QplayBubbles-OldReleases-" + version[1:], "versions/" + version_dir)
+                    extract_zipfile(f"{appdata_path}/temp/QplayBubbles-" + version + '.zip', f"{appdata_path}/versions/")
+                    os.rename(f"{appdata_path}/versions/QplayBubbles-OldReleases-" + version[1:], f"{appdata_path}/versions/" + version_dir)
                     build = self.old[version]
                     a = {'build': build, 'displayName': replace_any2name(version)}
-                    with open("versions/%s/version.json" % version_dir, "w+") as file:
+                    with open(f"{appdata_path}/versions/%s/version.json" % version_dir, "w+") as file:
                         file.write(json.JSONEncoder().encode(a))
                 else:
                     download(
                         "https://github.com/Qplay123/QplayBubbles-Releaes/archive/" + version + ".zip",
                         self, version
                     )
-                    extract_zipfile("temp/QplayBubbles-" + version + '.zip', "versions/")
-                    os.rename("versions/QplayBubbles-Releaes-" + version[1:], "versions/" + version_dir)
+                    extract_zipfile(f"{appdata_path}/temp/QplayBubbles-" + version + '.zip', f"{appdata_path}/versions/")
+                    os.rename(f"{appdata_path}/versions/QplayBubbles-Releaes-" + version[1:], f"{appdata_path}/versions/" + version_dir)
                     build = self.all[version]
                     a = {'build': build, 'displayName': replace_any2name(version)}
-                    with open("versions/%s/version.json" % version_dir, "w+") as file:
+                    with open(f"{appdata_path}/versions/%s/version.json" % version_dir, "w+") as file:
                         file.write(json.JSONEncoder().encode(a))
             else:
                 z = wx.MessageBox("Can't Download the game!\nNo internet available!\n\nMessage\n%s" % self.inet_err,
                                   "ERROR", style=wx.ICON_ERROR|wx.OK|wx.CENTRE)
 
-        if not os.path.exists("mods/%s" % version_dir):
-            os.makedirs("mods/%s" % version_dir)
+        if not os.path.exists(f"{appdata_path}/mods/"%s" % version_dir):
+            os.makedirs(f"{appdata_path}/mods/"%s" % version_dir)
 
         print("Starting Version: %s" % version_dir)
         cfg = {"version": version,
@@ -416,10 +416,10 @@ class Launcher(wx.Panel):
 
 
 if __name__ == '__main__':
-    if not os.path.exists("versions"):
-        os.makedirs("versions")
-    if not os.path.exists("mods"):
-        os.makedirs("mods")
+    if not os.path.exists(f"{appdata_path}/versions"):
+        os.makedirs(f"{appdata_path}/versions")
+    if not os.path.exists(f"{appdata_path}/mods"):
+        os.makedirs(f"{appdata_path}/mods")
     if not os.path.exists("slots"):
         os.makedirs("slots")
 

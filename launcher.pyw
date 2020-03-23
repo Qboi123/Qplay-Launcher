@@ -1,3 +1,4 @@
+import shutil
 from threading import Thread
 from tkinter import ttk
 
@@ -5,6 +6,7 @@ from threadsafe_tkinter import *
 
 
 class Download:
+    # noinspection PySameParameterValue
     def __init__(self, url, fp="", isTemp=False):
         self.isTemp = isTemp
         self._url = url
@@ -80,8 +82,8 @@ class Download:
         # data = b''.join(data_blocks)
         u.close()
 
-        if not os.path.exists("temp"):
-            os.makedirs("temp")
+        if not os.path.exists(f"{appdata_path}/temp"):
+            os.makedirs(f"{appdata_path}/temp")
 
         self.downloaded = True
 
@@ -108,11 +110,10 @@ class Launcher(Canvas):
                 else:
                     print("WARNING: Argument %s has no effect" % i)
         else:
-            if os.path.exists("C:/Users/quint/Anaconda3"):
-                self.runtime_dir = "C:/Users/quint/Anaconda3"
+            if os.path.split(sys.executable)[0]:
+                self.runtime_dir = os.path.split(sys.executable)[0]
             else:
                 raise RuntimeError("Runtime was not found.")
-
         try:
 
             # -- current ------------------------------------------------------------------------------------------------- #
@@ -162,11 +163,11 @@ class Launcher(Canvas):
             _all_build = list(self.old.values()) + list(self.all.values())
             # print(_all)
             # print(_all_build)
-            dir_ = os.listdir("versions/")
+            dir_ = os.listdir(f"{appdata_path}/versions/")
             dir_build = list()
 
             for i in dir_:
-                with open("versions/%s/version.json" % i) as file:
+                with open(f"{appdata_path}/versions/%s/version.json" % i) as file:
                     versionData = json.JSONDecoder().decode(file.read())
                     dir_build.append(versionData["build"])
 
@@ -185,7 +186,7 @@ class Launcher(Canvas):
             # print(dir_data)
             # print(_all)
 
-            for i in os.listdir("versions/"):
+            for i in os.listdir(f"{appdata_path}/versions/"):
                 # print("I: %s" % i)
                 for k in _all:
                     # print("K: %s" % k)
@@ -228,11 +229,11 @@ class Launcher(Canvas):
             _all_build = list(self.old.values()) + list(self.all.values())
             # print(_all)
             # print(_all_build)
-            dir_ = os.listdir("versions/")
+            dir_ = os.listdir(f"{appdata_path}/versions/")
             dir_build = list()
 
             for i in dir_:
-                with open("versions/%s/version.json" % i) as file:
+                with open(f"{appdata_path}/versions/%s/version.json" % i) as file:
                     versionData = json.JSONDecoder().decode(file.read())
                     dir_build.append(versionData["build"])
 
@@ -251,7 +252,7 @@ class Launcher(Canvas):
             # print(dir_data)
             # print(_all)
 
-            for i in os.listdir("versions/"):
+            for i in os.listdir(f"{appdata_path}/versions/"):
                 # print("I: %s" % i)
                 for k in _all:
                     # print("K: %s" % k)
@@ -304,15 +305,13 @@ class Launcher(Canvas):
         self.tag_bind(self.idPlayButton, "<ButtonPress-1>", lambda event: self.onPlayButtonPress())
         self.tag_bind(self.idPlayButton, "<ButtonRelease-1>", lambda event: self.onPlayButtonRelease())
 
-        import tkinter as _tk
-
         def print_choice(event):
             print(self.choice_var.get())  # prints value based on choice var
             print(event)  # prints selection directly from the event passed by the command in OptionMenu
 
         working_list = list(all_)
-        self.choice_var = _tk.StringVar(value=all_[0])
-        self.omVersion = _tk.OptionMenu(self.root, self.choice_var, *working_list, command=print_choice)
+        self.choice_var = StringVar(value=all_[0])
+        self.omVersion = OptionMenu(self.root, self.choice_var, *working_list, command=print_choice)
         print(self.omVersion.keys())
         self.omVersion.configure(background="#FFD800", activebackground="#FFE65E", relief=FLAT, highlightthickness=0,
                                  bd=0)
@@ -334,6 +333,7 @@ class Launcher(Canvas):
         from lib import utils
         import json
         try:
+
             # -- current ------------------------------------------------------------------------------------------------- #
             json_url = urllib.request.urlopen(
                 "https://raw.githubusercontent.com/Qplay123/Qplay-Bubbles/master/current.json"
@@ -381,11 +381,11 @@ class Launcher(Canvas):
             _all_build = list(self.old.values()) + list(self.all.values())
             # print(_all)
             # print(_all_build)
-            dir_ = os.listdir("versions/")
+            dir_ = os.listdir(f"{appdata_path}/versions/")
             dir_build = list()
 
             for i in dir_:
-                with open("versions/%s/version.json" % i) as file:
+                with open(f"{appdata_path}/versions/%s/version.json" % i) as file:
                     versionData = json.JSONDecoder().decode(file.read())
                     dir_build.append(versionData["build"])
 
@@ -404,7 +404,7 @@ class Launcher(Canvas):
             # print(dir_data)
             # print(_all)
 
-            for i in os.listdir("versions/"):
+            for i in os.listdir(f"{appdata_path}/versions/"):
                 # print("I: %s" % i)
                 for k in _all:
                     # print("K: %s" % k)
@@ -447,11 +447,11 @@ class Launcher(Canvas):
             _all_build = list(self.old.values()) + list(self.all.values())
             # print(_all)
             # print(_all_build)
-            dir_ = os.listdir("versions/")
+            dir_ = os.listdir(f"{appdata_path}/versions/")
             dir_build = list()
 
             for i in dir_:
-                with open("versions/%s/version.json" % i) as file:
+                with open(f"{appdata_path}/versions/%s/version.json" % i) as file:
                     versionData = json.JSONDecoder().decode(file.read())
                     dir_build.append(versionData["build"])
 
@@ -470,7 +470,7 @@ class Launcher(Canvas):
             # print(dir_data)
             # print(_all)
 
-            for i in os.listdir("versions/"):
+            for i in os.listdir(f"{appdata_path}/versions/"):
                 # print("I: %s" % i)
                 for k in _all:
                     # print("K: %s" % k)
@@ -503,26 +503,29 @@ class Launcher(Canvas):
             # all.sort(reverse=True)
         all_.reverse()
 
+        self.dir_data = dir_data
+
         def print_choice(event):
             print(self.choice_var.get())  # prints value based on choice var
             print(event)  # prints selection directly from the event passed by the command in OptionMenu
 
         working_list = list(all_)
-        self.choice_var = _tk.StringVar(value=all_[0])
-        self.omVersion = _tk.OptionMenu(self.root, self.choice_var, *working_list, command=print_choice)
+        self.choice_var = StringVar(value=all_[0])
+        self.omVersion = OptionMenu(self.root, self.choice_var, *working_list, command=print_choice)
+        print(self.omVersion.keys())
+        self.omVersion.configure(background="#FFD800", activebackground="#FFE65E", relief=FLAT, highlightthickness=0,
+                                 bd=0)
+        self.omVersion["menu"].configure(bg="#3f3f3f", fg="#efefef", bd=0, borderwidth=0, activebackground="#FFD800",
+                                         activeforeground="#3f3f3f", relief=FLAT)
+        self.omVersion.place(x=5, y=self.height - 50, anchor=W)
         self.update()
 
-
-    def onSelectVersion(self, event):
-        print('----------------------------')
-        print("event.widget:", event.widget.get())
-        print('----------------------------')
-
     def changeLogLoad(self):
-        import urllib.request as urllib
+        import urllib.request
+        import urllib.error
         from lib import utils
         try:
-            a = urllib.urlopen("https://github.com/Qplay123/Qplay-Bubbles/raw/master/changelog.qplaylog")
+            a = urllib.request.urlopen("https://github.com/Qplay123/Qplay-Bubbles/raw/master/changelog.qplaylog")
             data = a.read().decode()
 
             lines = data.split("\n")
@@ -544,7 +547,7 @@ class Launcher(Canvas):
             # s_frame.place(x=0, y=0)
 
             sw = utils.ScrolledWindow(s_frame, width=self.width - 9, heigh=height, canv_h=self.height - 100,
-                                      canv_w=self.width, scrollcommand=self.scroll)
+                                      canv_w=self.width)
 
             canv = sw.canv
 
@@ -596,66 +599,8 @@ class Launcher(Canvas):
             self.root.update_idletasks()
             self.sw = sw
             print("Ready")
-        except urllib.HTTPError or urllib.URLError:
+        except urllib.error.HTTPError or urllib.error.URLError:
             pass
-
-    def scroll(self, i, reqHeight, vbarValue, vbar: ttk.Scrollbar):
-        pass  # The code was never good working. (Impossible to make it for me!!!)
-        print("vbarValue", vbarValue)
-        value = -i / 1.4
-        # a1 = int(self.canvass.coords(self.scroll2)[1]) == 5
-        # a2 = value > 0
-        # a = not(a1 ^ a2)
-        #
-        # b1 = ((self.canvass.coords(self.scroll2)[3] > self.cHeight))
-        # b2 = value < 0
-        # b = not(b1 ^ b2)
-        # print(value, value < 0)
-        # print(a1, 5)
-        # print("====")
-        # print(a1, a2)
-        # print(a)
-        # print("----")
-        # print(b1, b2)
-        # print(b)
-        # print("====\n\n")
-        # print("OK")
-        x1, y1, x2, y2 = self.canvass.coords(self.scroll2)
-        # _y1, _y2 = vbarValue
-        # print("1:",y1, y2)
-        # print("2:",_y1, _y2)
-        # print("3:",(_y2 - _y1) / 2 - y2)
-        # print("4:",(_y1 + (_y2 - _y1) / 120) * self.cHeight)
-        # print("5:",(_y1 + (_y2 - _y1) / 120) * self.cHeight - (y2 / y1))
-        # print("6:",((_y2 - _y1) / 120) * self.cHeight - y2* -i)
-        # print("7:",(_y1 + (_y2 - _y1) / 120))
-        # value = (_y1 + (_y2 - _y1) / 120) * self.cHeight / (y1 / y2)
-        # print("8:",(y2 / y1))
-        # # value = value - (y1 / y2)
-        #
-        # print("Dynamic Canvas Region Height:")
-        # print("DCRH:", self.cHeight)
-        #
-        #
-        # print("Value: %s", value)
-
-        print("vbar.identify(*value):", vbar.fraction(int(vbarValue[0] * self.canvass.winfo_height())))
-
-        self.scroll_canv.set(*vbarValue)
-
-        # value = self.canvass.winfo_height() / (value * 41.4)
-        #
-        # if vbarValue[0] <= 0:
-        #     return
-        # if vbarValue[1] >= 1:
-        #     return
-        #
-        # self.canvass.move(self.scroll2, 0, -value)
-        # self.old_value = value
-        print("\n")
-        print("value: %s" % value)
-        print("coords: %s" % self.canvass.coords(self.scroll2))
-        print("reqHeight: %s" % reqHeight)
 
     def onPlayButtonEnter(self):
         self.itemconfig(self.idPlayButton, image=self.imgPlayButtonHover)
@@ -678,13 +623,13 @@ class Launcher(Canvas):
         from lib import utils
         import os
         import subprocess as sp
-        # fp = "temp/QplayBubbles-" + self.version + '.zip'
+        # fp = f"{appdata_path}/temp/QplayBubbles-" + self.version + '.zip'
         _dir = utils.replace_ver2dir(self.version)
-        if not exists("versions/%s" % _dir):
+        if not exists(f"{appdata_path}/versions/%s" % _dir):
             self.download()
 
-        if not os.path.exists("mods/%s" % _dir):
-            os.makedirs("mods/%s" % _dir)
+        if not os.path.exists(f"{appdata_path}/mods/%s" % _dir):
+            os.makedirs(f"{appdata_path}/mods/%s" % _dir)
 
         print("Starting Version: %s" % _dir)
         cfg = {"version": self.version,
@@ -693,31 +638,53 @@ class Launcher(Canvas):
                "runtimeDir": self.runtime_dir
                }
 
-        print("Current Directory: %s" % os.curdir)
+        if not os.path.exists(f"{appdata_path}/old_load.py"):
+            shutil.copy("old_load.py", f"{appdata_path}/old_load.py")
 
+        if not os.path.exists(f"{appdata_path}/lang/"):
+            shutil.copytree("lang/", f"{appdata_path}/lang/")
+
+        if not os.path.exists(f"{appdata_path}/lib/"):
+            shutil.copytree("lib/", f"{appdata_path}/lib/")
+
+        oldDir = os.getcwd()
+        os.chdir(f"{appdata_path}")
+
+        print("Current Directory: %s" % os.curdir)
         # if self.dir_data[_dir] < 16:
         #     self.root.destroy()
 
         if self.dir_data[_dir] >= 16:
-            exit_code = os.system("{runtimeDir}/python.exe versions/" + _dir + "/__main__.py {version} {versionDir} {build}".format(
-                **cfg))
-            if exit_code != 0:
-                sp.run(("{runtimeDir}/python.exe versions/" + _dir + "/__main__.py {version} {versionDir} {build}".format(
-                    **cfg)).split(" "), shell=True)
+            # exit_code = os.system("{runtimeDir}/python.exe versions/" + _dir + "/__main__.py {version} {versionDir} {build}".format(
+            #     **cfg))
+            command = [f"{cfg['runtimeDir']}/python.exe",
+                       f"version/{_dir}/__main__.py",
+                       f"{cfg['version']}",
+                       f"{cfg['versionDir']}",
+                       f"{cfg['build']}"]
+            sp.Popen(command, shell=True, cwd=appdata_path)
         else:
-            exit_code = os.system("{runtimeDir}/python.exe old_load.py {version} {versionDir} {build}".format(_dir, **cfg))
-            if exit_code != 0:
-                sp.run(("{runtimeDir}/python.exe old_load.py {version} {versionDir} {build}".format(_dir, **cfg)).split(" "))
+            # exit_code = os.system("{runtimeDir}/python.exe old_load.py {version} {versionDir} {build}".format(_dir, **cfg))
+            command = [f"{cfg['runtimeDir']}/python.exe",
+                       f"old_load.py",
+                       f"{cfg['version']}",
+                       f"{cfg['versionDir']}",
+                       f"{cfg['build']}"]
+            sp.Popen(command, cwd=appdata_path)
+        os.chdir(oldDir)
 
     def download(self):
         from os.path import exists
         import os
         import json
         from lib import utils
-        fp = "temp/QplayBubbles-" + self.version + '.zip'
+        if not os.path.exists(f"{appdata_path}/temp/"):
+            os.makedirs(f"{appdata_path}/temp/")
+        
+        fp = f"{appdata_path}/temp/QplayBubbles-" + self.version + '.zip'
         _dir = utils.replace_ver2dir(self.version)
 
-        if not exists("versions/%s" % _dir):
+        if not exists(f"{appdata_path}/versions/%s" % _dir):
             self.tag_unbind(self.idPlayButton, "<Enter>")
             self.tag_unbind(self.idPlayButton, "<Leave>")
             self.tag_unbind(self.idPlayButton, "<ButtonPress-1>")
@@ -726,18 +693,18 @@ class Launcher(Canvas):
             self.itemconfig(self.idPlayButton, state=HIDDEN)
             if self.version in self.old:
                 down = Download("https://github.com/Qplay123/QplayBubbles-OldReleases/archive/" + self.version + ".zip",
-                                "temp/QplayBubbles-" + self.version + '.zip', False)
+                                f"{appdata_path}/temp/QplayBubbles-" + self.version + '.zip', False)
             else:
                 if self.version >= "v1.4.0":
                     down = Download("https://github.com/Qplay123/QplayBubbles-Releaes/archive/" + self.version + ".zip",
-                                    "temp/QplayBubbles-" + self.version + '.zip', False)
+                                    f"{appdata_path}/temp/QplayBubbles-" + self.version + '.zip', False)
                 elif self.version >= "v1.0.0":
                     down = Download("https://github.com/Qplay123/Qplay-Bubbles/archive/" + self.version + ".zip",
-                                    "temp/QplayBubbles-" + self.version + '.zip', False)
+                                    f"{appdata_path}/temp/QplayBubbles-" + self.version + '.zip', False)
                 else:
                     down = Download(
                         "https://github.com/Qplay123/QplayBubbles-OldReleases/archive/" + self.version + ".zip",
-                        "temp/QplayBubbles-" + self.version + '.zip', False)
+                        f"{appdata_path}/temp/QplayBubbles-" + self.version + '.zip', False)
 
             # Thread(None, lambda: down.download()).start()
             self.idDownloadBar = self.create_image(5, self.height - 50, anchor=W)
@@ -764,30 +731,30 @@ class Launcher(Canvas):
                     pass
 
             if self.version in self.old:
-                utils.extract_zipfile("temp/QplayBubbles-" + self.version + '.zip', "versions/")
-                os.rename("versions/QplayBubbles-OldReleases-" + self.version[1:], "versions/" + _dir)
+                utils.extract_zipfile(f"{appdata_path}/temp/QplayBubbles-" + self.version + '.zip', f"{appdata_path}/versions/")
+                os.rename(f"{appdata_path}/versions/QplayBubbles-OldReleases-" + self.version[1:], f"{appdata_path}/versions/" + _dir)
                 build = self.old[self.version]
                 a = {'build': build, 'displayName': utils.replace_any2name(self.version)}
-                with open("versions/%s/version.json" % _dir, "w+") as file:
+                with open(f"{appdata_path}/versions/%s/version.json" % _dir, "w+") as file:
                     file.write(json.JSONEncoder().encode(a))
             else:
                 if self.version >= "v1.4.0":
-                    utils.extract_zipfile("temp/QplayBubbles-" + self.version + '.zip', "versions/")
-                    os.rename("versions/QplayBubbles-Releaes-" + self.version[1:], "versions/" + _dir)
+                    utils.extract_zipfile(f"{appdata_path}/temp/QplayBubbles-" + self.version + '.zip', f"{appdata_path}/versions/")
+                    os.rename(f"{appdata_path}/versions/QplayBubbles-Releaes-" + self.version[1:], f"{appdata_path}/versions/" + _dir)
                     build = self.all[self.version]
                     a = {'build': build, 'displayName': utils.replace_any2name(self.version)}
-                    with open("versions/%s/version.json" % _dir, "w+") as file:
+                    with open(f"{appdata_path}/versions/%s/version.json" % _dir, "w+") as file:
                         file.write(json.JSONEncoder().encode(a))
                 elif self.version >= "v1.0.0":
-                    utils.extract_zipfile("temp/QplayBubbles-" + self.version + '.zip', "versions/")
-                    os.rename("versions/Qplay-Bubbles-" + self.version[1:], "versions/" + _dir)
+                    utils.extract_zipfile(f"{appdata_path}/temp/QplayBubbles-" + self.version + '.zip', f"{appdata_path}/versions/")
+                    os.rename(f"{appdata_path}/versions/Qplay-Bubbles-" + self.version[1:], f"{appdata_path}/versions/" + _dir)
                     build = self.all[self.version]
                     a = {'build': build, 'displayName': utils.replace_any2name(self.version)}
-                    with open("versions/%s/version.json" % _dir, "w+") as file:
+                    with open(f"{appdata_path}/versions/%s/version.json" % _dir, "w+") as file:
                         file.write(json.JSONEncoder().encode(a))
 
-            if os.path.exists("versions/%s/requirements.txt" % _dir):
-                with open("versions/%s/requirements.txt" % _dir, "r"):
+            if os.path.exists(f"{appdata_path}/versions/%s/requirements.txt" % _dir):
+                with open(f"{appdata_path}/versions/%s/requirements.txt" % _dir, "r"):
                     requirements = file.read()
                     file.close()
                 if requirements:
@@ -800,6 +767,7 @@ class Launcher(Canvas):
             self.tag_bind(self.idPlayButton, "<ButtonRelease-1>", lambda event: self.onPlayButtonRelease())
 
             self.omVersion.place(x=5, y=self.height - 50, anchor=W)
+            self.reload()
 
     def install_libraries(self, requirements: str):
         requirements = requirements.replace("\n", " ")
@@ -808,11 +776,24 @@ class Launcher(Canvas):
 
 if __name__ == '__main__':
     import os
+    import platform
 
-    if not os.path.exists("versions"):
-        os.makedirs("versions")
-    if not os.path.exists("mods"):
-        os.makedirs("mods")
+    if platform.system().lower() == "windows":
+        appdata_path = f"C:/Users/{os.getlogin()}/AppData/Roaming/.qbubbles"
+    elif platform.system().lower() == "linux":
+        appdata_path = f"/home/{os.getlogin()}/.qbubbles"
+    elif platform.system().lower() == "osx":
+        appdata_path = f"/Users/{os.getlogin()}/.qbubbles"
+    else:
+        raise RuntimeError(f"Your platform is incompatible ({platform.system()})")
+
+    if not os.path.exists(appdata_path):
+        os.makedirs(appdata_path)
+
+    if not os.path.exists(f"{appdata_path}/versions"):
+        os.makedirs(f"{appdata_path}/versions")
+    if not os.path.exists(f"{appdata_path}/mods"):
+        os.makedirs(f"{appdata_path}/mods")
     if not os.path.exists("slots"):
         os.makedirs("slots")
 
@@ -820,7 +801,7 @@ if __name__ == '__main__':
     height = 720
     tk = Tk()
     style = ttk.Style(tk)
-    style.theme_use('clam')
+    style.theme_use('classic')
 
     # configure the style
     style.configure("Horizontal.TScrollbar", gripcount=0,
@@ -831,4 +812,4 @@ if __name__ == '__main__':
     tk.wm_resizable(False, False)
     tk.geometry("%sx%s" % (width, height))
     Launcher(tk, width, height)
-    tk.mainloop()
+    mainloop()
