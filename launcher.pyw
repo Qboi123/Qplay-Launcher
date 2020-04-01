@@ -1,8 +1,10 @@
 import shutil
+import xml.etree.ElementTree
 from threading import Thread
 from tkinter import ttk
 
 from threadsafe_tkinter import *
+import wx
 
 
 class Download:
@@ -86,6 +88,305 @@ class Download:
             os.makedirs(f"{appdata_path}/temp")
 
         self.downloaded = True
+
+
+class Updater(wx.Panel):
+    def __init__(self, url: str, data: list):
+        local_updates = self.get_updates(url)
+
+        import os
+
+        updates = []
+        for update in data:
+            if update["for"]["product"] != "qbubbles":
+                continue
+            if update in local_updates:
+                continue
+            updates.append(update)
+        if not updates:
+            return
+        self.load = wx.ProgressDialog("Downloading Updates", "")
+        for update in updates:
+
+        if (not os.path.exists(f"{appdata_path}/lib/")):
+            print("")
+            launcher = self.download(url, "")
+        if not os.path.exists("%s/runtime/downloaded" % os.getcwd().replace("\\", "/")):
+            print("[Updater]: Downloading Runtime")
+            runtime = self.download("https://www.python.org/ftp/python/3.7.4/python-3.7.4-embed-amd64.zip",
+                                    message="Downloading Runtime")
+        if not os.path.exists("%s/runtime/tkinter_downloaded" % os.getcwd().replace("\\", "/")):
+            print("[Updater]: Downloading Tkinter")
+            tkinter = self.download("https://github.com/Qboi123/Tkinter-Python/archive/8.6.9.zip",
+                                    message="Downloading Tkinter")
+        if not os.path.exists("%s/runtime/pip_installed" % os.getcwd().replace("\\", "/")):
+            print("[Updater]: Downloading Pip Installer")
+            pip = self.download("https://bootstrap.pypa.io/get-pip.py", fp="get-pip.py",
+                                message="Downloading Pip Installer")
+
+        if (not os.path.exists("%s/game/downloaded" % os.getcwd().replace("\\", "/"))) or not checker.isNewest():
+            print("[Updater]: Extracting Launcher")
+            self.extract(launcher, "%s/game" % os.getcwd().replace("\\", "/"), "Extracting Launcher",
+                         "Qplay-Launcher-",
+                         v, sv, r, st, stb)
+            with open("%s/game/downloaded" % os.getcwd().replace("\\", "/"), "w+") as file:
+                file.write("True")
+        if not os.path.exists("%s/runtime/downloaded" % os.getcwd().replace("\\", "/")):
+            print("[Updater]: Extracting Runtime")
+            self.extract(runtime, "%s/runtime" % os.getcwd().replace("\\", "/"), "Extracting Runtime")
+            with open("%s/runtime/downloaded" % os.getcwd().replace("\\", "/"), "w+") as file:
+                file.write("True")
+        if not os.path.exists("%s/runtime/tkinter_downloaded" % os.getcwd().replace("\\", "/")):
+            print("[Updater]: Extracing Tkinter")
+            self.extract(tkinter, "%s/runtime" % os.getcwd().replace("\\", "/"), "Extracting Tkinter",
+                         "Tkinter-Python-", 8, 6, 9, 'r')
+            with open("%s/runtime/tkinter_downloaded" % os.getcwd().replace("\\", "/"), "w+") as file:
+                file.write("True")
+        if not os.path.exists("%s/runtime/pip_installed" % os.getcwd().replace("\\", "/")):
+            import shutil
+            self.load.SetTitle("Installing...")
+            self.load.SetRange(100)
+            self.load.Update(0, "Installing...\nInstalling Pip")
+
+            runtime_dir = "%s/runtime" % os.getcwd().replace("\\", "/")
+
+            print("[Updater]: Extracing from './runtime/python37.zip' to './runtime/Lib'")
+            self.extract(runtime_dir+"/python37.zip", runtime_dir+"/Lib/", "Extracing...\nExtracting Python Runtime Library")
+
+            exitcode = 1
+
+            print("[Updater]: Executing Pip Installer")
+            while exitcode == 1:
+                exitcode = os.system("runtime\\python.exe temp/get-pip.py")
+            print("Pip exited with code: %s" % exitcode)
+
+            self.load.Update(66, "Installing...\nInstalling Pip")
+
+            self.replace_in_file("%s/runtime/python37._pth" % os.getcwd().replace("\\", "/"), "#import site", "import site")
+            self.replace_in_file("%s/runtime/python37._pth" % os.getcwd().replace("\\", "/"), ".\n",
+                                 "./Lib\n./DLLs")
+            dlls = """runtime/_sqlite3.pyd
+runtime/_lzma.pyd
+runtime/_hashlib.pyd
+runtime/_decimal.pyd
+runtime/select.pyd
+runtime/_socket.pyd
+runtime/_elementtree.pyd
+runtime/_multiprocessing.pyd
+runtime/_overlapped.pyd
+runtime/_asyncio.pyd
+runtime/_msi.pyd
+runtime/_queue.pyd
+runtime/_ctypes.pyd
+runtime/_bz2.pyd
+runtime/libcrypto-1_1.dll
+runtime/libssl-1_1.dll
+runtime/pyexpat.pyd
+runtime/_tkinter.pyd
+runtime/_ssl.pyd
+runtime/tk86t.dll
+runtime/tcl86t.dll
+runtime/unicodedata.pyd
+runtime/winsound.pyd"""
+            dlls = dlls.split("\n")
+            if not os.path.exists("%s/runtime/DLLs/" % os.getcwd().replace("\\", "/")):
+                os.makedirs("%s/runtime/DLLs/" % os.getcwd().replace("\\", "/"))
+                self.load.Update(70, "Installing...\nInstalling Pip")
+
+            for file in dlls:
+                dst = file.replace("runtime/", "runtime/DLLs/")
+                shutil.copy(("%s/"+file) % os.getcwd().replace("\\", "/"), ("%s/"+dst) % os.getcwd().replace("\\", "/"))
+            self.load.Update(81, "Installing...\nInstalling Pip")
+
+
+            if not os.path.exists(runtime_dir+'/Lib/tkinter'):
+                shutil.move(runtime_dir+"/tkinter", runtime_dir+"/Lib")
+            # with open("%s/runtime/python37._pth" % os.getcwd().replace("\\", "/"), "r") as file:
+            #     a = file.read()
+            #     self.load.Update(77, "Installing...\nInstalling Pip")
+            # with open("%s/runtime/python37._pth" % os.getcwd().replace("\\", "/"), "w") as file:
+            #     a = a.replace("#import site", "import site")
+            #     file.write(a)
+            #     self.load.Update(88, "Installing...\nInstalling Pip")
+            # with open("%s/runtime/pip_installed" % os.getcwd().replace("\\", "/"), "w+") as file:
+            #     file.write("True")
+
+            self.load.Update(82, "Installing...\nInstalling Pip: \nExtracing Python Runtime Library")
+
+
+            with open("%s/runtime/pip_installed" % os.getcwd().replace("\\", "/"), "w+") as file:
+                file.write("True")
+                file.close()
+
+        if (not os.path.exists("%s/game/downloaded" % os.getcwd().replace("\\", "/")) or not (
+                os.path.exists("%s/runtime/downloaded" % os.getcwd().replace("\\", "/")))) or (
+                not os.path.exists("%s/runtime/tkinter_downloaded" % os.getcwd().replace("\\", "/"))) or (
+                not os.path.exists("%s/runtime/pip_installed" % os.getcwd().replace("\\", "/"))):
+            self.load.Destroy()
+
+        if (not os.path.exists("%s/game/patched" % os.getcwd().replace("\\", "/")))  or not checker.isNewest():
+            print("[Updater]: Patching Launcher")
+            add = """import sys, os
+sys.path.append(os.getcwd().replace("\\\\", "/"))
+"""
+            with open("%s/game/launcher.pyw" % os.getcwd().replace("\\", "/"), "r") as file:
+                file_launcher = file.read()
+            with open("%s/game/launcher.pyw" % os.getcwd().replace("\\", "/"), "w+") as file:
+                file.write(add + file_launcher)
+            with open("%s/game/patched" % os.getcwd().replace("\\", "/"), "w+") as file:
+                file.write("True")
+                file.close()
+        if not os.path.exists("%s/runtime/packages_installed" % os.getcwd().replace("\\", "/")):
+            with open("%s/game/requirements.txt" % os.getcwd().replace("\\", "/"), "r") as file:
+                print("[Updater]: Installing Libraries")
+                self.install_libraries(file.read())
+                file.close()
+            with open("%s/runtime/packages_installed" % os.getcwd().replace("\\", "/"), "w+") as file:
+                file.write("True")
+                file.close()
+
+        with open("%s/updates.xml" % os.getcwd().replace("\\", "/"), "w+") as file:
+            file.write(xml)
+
+    def replace_in_file(self, fp, old, new):
+        with open(fp, "r") as file:
+            d = file.read()
+        with open(fp, "w") as file:
+            d = d.replace(old, new)
+            file.write(d)
+
+    def extract(self, file, dir, message, folder=None, v=None, sv=None, r=None, st=None, stb=None):
+        import zipfile
+        import os
+        import shutil
+
+        if st == "a":
+            copy = "%s.%s.%s-%s.%s" % (v, sv, r, "alpha", stb)
+        elif st == "b":
+            copy = "%s.%s.%s-%s.%s" % (v, sv, r, "beta", stb)
+        elif st == "c":
+            copy = "%s.%s.%s-%s.%s" % (v, sv, r, "rc", stb)
+        elif st == "r":
+            copy = "%s.%s.%s" % (v, sv, r)
+        else:
+            copy = None
+
+        self.load.SetTitle("Extracting...")
+        self.load.SetRange(100)
+        self.load.Update(0, "Extracing...\n" + message)
+
+        zip_file = zipfile.ZipFile(file)
+        if copy is not None:
+            print("[Checking]:", folder == "Qplay-Launcher-")
+            print("[Checking]:", folder)
+            if folder == "Qplay-Launcher-":
+                shutil.rmtree('%s/game' % os.getcwd().replace("\\", "/"), ignore_errors=True)
+            self.load.Update(1, "Extracing...\n" + message)
+            zip_file.extractall("%s/temp" % os.getcwd().replace("\\", "/"))
+            self.load.Update(98, "Extracing...\n" + message)
+            print(("%s/temp/" + folder + "%s") % (os.getcwd().replace("\\", "/"), copy), dir)
+            if folder == "Tkinter-Python-":
+                for item in os.listdir(("%s/temp/" + folder + "%s") % (os.getcwd().replace("\\", "/"), copy)):
+                    shutil.move(("%s/temp/" + folder + "%s/" + item) % (os.getcwd().replace("\\", "/"), copy),
+                               dir + "/" + item)
+            else:
+                shutil.move(("%s/temp/" + folder + "%s") % (os.getcwd().replace("\\", "/"), copy), dir)
+
+            while not os.path.exists(dir):
+                time.sleep(1)
+        else:
+            if not os.path.exists(dir):
+                os.makedirs(dir)
+            self.load.Update(99, "Extracing...\n" + message)
+            zip_file.extractall(dir)
+
+        self.load.Update(100, "Extracing...\n" + message)
+
+    def download(self, url, message="Downloading Launcher", wait=False, fp=None):
+        import random
+        import os
+
+        self.load.SetTitle("Downloading...")
+        self.load.SetRange(100)
+        self.load.Update(0, "Downloading...\n" + message)
+
+        value = random.randint(0x100000000000, 0xffffffffffff)
+        if fp is None:
+            filepath = hex(value)[2:] + ".tmp"
+        else:
+            filepath = fp
+
+        if not os.path.exists("%s/temp" % os.getcwd().replace("\\", "/")):
+            os.makedirs("%s/temp" % os.getcwd().replace("\\", "/"))
+
+        download = Download(url, "%s/temp/%s" % (os.getcwd().replace("\\", "/"), filepath))
+        # Thread(None, download.download, "DownloadThread")
+
+        self.load.SetRange(download.file_total_bytes + 1)
+        while not download.downloaded:
+            # print("Downloaded: ", download.file_downloaded_bytes)
+            # print("Total: ", download.file_total_bytes)
+            try:
+                self.load.SetRange(download.file_total_bytes + 1)
+                self.load.Update(download.file_downloaded_bytes, "Downloading...\n" + message)
+            except wx._core.wxAssertionError:
+                pass
+
+        # load.Destroy()
+
+        return "%s/temp/%s" % (os.getcwd().replace("\\", "/"), filepath)
+
+    def install_libraries(self, requirements: str):
+        import os
+        import subprocess
+
+        req = requirements.replace("\n", ", ")
+
+        requirements = requirements.replace("\n", " ")
+        print("[Run-Pip]: Installing Packages: %s" % req)
+        application = '"%s/runtime/python.exe"' % os.getcwd().replace("\\", "/")
+        args = " -m pip install "+requirements
+        cmd = application+args
+
+        print("[Run-Pip]: %s" % cmd)
+
+        process = os.system(cmd)
+        print("[Run-Pip]: Process Returned: %s" % process)
+        if process != 0:
+            print('[Run-Pip]: Retrying with subprocess...')
+            process = subprocess.call([application, "-m", "pip", "install", *requirements.split(" ")])
+            while process is None:
+                time.sleep(1)
+            print("[Run-Pip]: Process Returned: %s" % process)
+
+    def run(self):
+        import os
+        # import subprocess
+
+        os.chdir("%s/game" % os.getcwd().replace("\\", "/"))
+
+        import subprocess
+        file = '%s/../runtime/python.exe' % os.getcwd().replace("\\", "/")
+        py = '%s/launcher.pyw' % os.getcwd().replace("\\", "/")
+        # print('[Run]: "{file}" "{py}"'.format(file=file, py=py))
+        cmd = '"{file}" "{py}"'.format(file=file, py=py)
+
+        print("[Run-Game]: %s" % cmd)
+
+        process = os.system(cmd)
+        print("[Run-Game]: Process Returned: %s" % process)
+        if process != 0:
+            print('[Run-Game]: Retrying with subprocess...')
+            subprocess.call([file, py])
+            while process is None:
+                time.sleep(1)
+            print("[Run-Game]: Process Returned: %s" % process)
+
+        # print("[Run]: \"%s/../runtime/python.exe\" \"%s/launcher.pyw\"" % (
+        #     os.getcwd().replace("\\", "/"), os.getcwd().replace("\\", "/")))
+        #
+        # subprocess.run(("%s/../runtime/python.exe"% os.getcwd().replace("\\", "/"),
+        #                "%s/launcher.pyw\"" % os.getcwd().replace("\\", "/")), stderr=stderr, stdout=stdout)
 
 
 class Launcher(Canvas):
@@ -638,13 +939,13 @@ class Launcher(Canvas):
                "runtimeDir": self.runtime_dir
                }
 
-        if not os.path.exists(f"{appdata_path}/old_load.py"):
+        if os.path.exists(f"{appdata_path}/old_load.py"):
             shutil.copy("old_load.py", f"{appdata_path}/old_load.py")
 
-        if not os.path.exists(f"{appdata_path}/lang/"):
+        if os.path.exists(f"{appdata_path}/lang/"):
             shutil.copytree("lang/", f"{appdata_path}/lang/")
 
-        if not os.path.exists(f"{appdata_path}/lib/"):
+        if os.path.exists(f"{appdata_path}/lib/"):
             shutil.copytree("lib/", f"{appdata_path}/lib/")
 
         oldDir = os.getcwd()
@@ -786,6 +1087,8 @@ if __name__ == '__main__':
         appdata_path = f"/Users/{os.getlogin()}/.qbubbles"
     else:
         raise RuntimeError(f"Your platform is incompatible ({platform.system()})")
+
+    Updater("v1_5_0_pre5", xml.etree.ElementTree.parse(f"{appdata_path}/library_versions.xml"))
 
     if not os.path.exists(appdata_path):
         os.makedirs(appdata_path)

@@ -2,18 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5517ee74-8b7f-4783-b76c-419986e82904" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/all_versions.json" beforeDir="false" afterPath="$PROJECT_DIR$/all_versions.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/current.json" beforeDir="false" afterPath="$PROJECT_DIR$/current.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/launcher.pyw" beforeDir="false" afterPath="$PROJECT_DIR$/launcher.pyw" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/launcherOld.pyw" beforeDir="false" afterPath="$PROJECT_DIR$/launcherOld.pyw" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/old_load.py" beforeDir="false" afterPath="$PROJECT_DIR$/old_load.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/old_versions.json" beforeDir="false" afterPath="$PROJECT_DIR$/old_versions.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tkinterhtml/tkhtml/Windows/64-bit/Tkhtml/pkgIndex.tcl" beforeDir="false" afterPath="$PROJECT_DIR$/tkinterhtml/tkhtml/Windows/64-bit/Tkhtml/pkgIndex.tcl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/updates.xml" beforeDir="false" afterPath="$PROJECT_DIR$/updates.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,9 +36,9 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Documents/GitHub/Qplay-Launcher-Updater" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PythonContentEntriesConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -219,41 +210,48 @@
       <path value="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles" />
       <path value="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v0_1_0" />
       <path value="$PROJECT_DIR$/bin/launcher/Qplay-Bubbles/versions/v1_5_0_pre4" />
+      <path value="$PROJECT_DIR$/versions/v0_1_0" />
+      <path value="$PROJECT_DIR$/versions/v1_5_0_pre4" />
+      <path value="$PROJECT_DIR$/versions/v1_5_0_pre5" />
     </ignored-roots>
   </component>
   <component name="WindowStateProjectService">
-    <state x="740" y="261" key="FileChooserDialogImpl" timestamp="1584989688562">
+    <state x="679" y="134" key="#Run_New_Launcher" timestamp="1585055474715">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="261" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1584989688562" />
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1584992830669">
+    <state x="679" y="134" key="#Run_New_Launcher/0.0.1920.1040@0.0.1920.1040" timestamp="1585055474715" />
+    <state x="740" y="261" key="FileChooserDialogImpl" timestamp="1585057382526">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1584992830669" />
-    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1584992830669">
+    <state x="740" y="261" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1585057382526" />
+    <state width="938" height="282" key="GridCell.Tab.0.bottom" timestamp="1585060815667">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1584992830669" />
-    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1584992830669">
+    <state width="938" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1585060815667" />
+    <state width="938" height="282" key="GridCell.Tab.0.center" timestamp="1585060815667">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1584992830669" />
-    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1584992830669">
+    <state width="938" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1585060815667" />
+    <state width="938" height="282" key="GridCell.Tab.0.left" timestamp="1585060815667">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1584992830669" />
-    <state x="461" y="162" key="SettingsEditor" timestamp="1584989699149">
+    <state width="938" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1585060815667" />
+    <state width="938" height="282" key="GridCell.Tab.0.right" timestamp="1585060815667">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="461" y="162" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1584989699149" />
+    <state width="938" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1585060815667" />
+    <state x="461" y="162" key="SettingsEditor" timestamp="1585056105485">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="461" y="162" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1585056105485" />
     <state x="592" y="217" width="737" height="606" key="find.popup" timestamp="1584992218634">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="592" y="217" width="737" height="606" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1584992218634" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1584990951663">
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1585056743620">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1584990951663" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1585056743620" />
   </component>
   <component name="masterDetails">
     <states>
