@@ -730,7 +730,7 @@ class Launcher(Canvas):
             all_ = list()
             for i in _all:
                 all_.append(utils.replace_any2name(i))
-        except urllib.error.URLError or urllib.error.HTTPError as e:
+        except (urllib.error.URLError) as e:
             self.inet_err = e.args
             print("Error: %s" % e.args[0])
             with open("all_versions.json", "r") as file:
@@ -960,10 +960,9 @@ class Launcher(Canvas):
             #     **cfg))
             command = [f"{cfg['runtimeDir']}/python.exe",
                        f"version/{_dir}/__main__.py",
-                       f"{cfg['version']}",
-                       f"{cfg['versionDir']}",
-                       f"{cfg['build']}"]
-            sp.Popen(command, shell=True, cwd=appdata_path)
+                       f"gameDir=\"{appdata_path}\""
+                       ]
+            sp.Popen(command, cwd=appdata_path)
         else:
             # exit_code = os.system("{runtimeDir}/python.exe old_load.py {version} {versionDir} {build}".format(_dir, **cfg))
             command = [f"{cfg['runtimeDir']}/python.exe",
