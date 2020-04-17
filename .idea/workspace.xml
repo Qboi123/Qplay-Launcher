@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="5517ee74-8b7f-4783-b76c-419986e82904" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/changelog.qplaylog" beforeDir="false" afterPath="$PROJECT_DIR$/changelog.qplaylog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/launcher.pyw" beforeDir="false" afterPath="$PROJECT_DIR$/launcher.pyw" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/updates.xml" beforeDir="false" afterPath="$PROJECT_DIR$/updates.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,9 +36,9 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="E:/GitHub/Qplay-Launcher-Updater/updates.xml" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PythonContentEntriesConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -215,34 +216,34 @@
     </ignored-roots>
   </component>
   <component name="WindowStateProjectService">
-    <state x="679" y="134" key="#Run_New_Launcher" timestamp="1585055474715">
+    <state x="679" y="134" key="#Run_New_Launcher" timestamp="1587142467712">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="679" y="134" key="#Run_New_Launcher/0.0.1920.1040@0.0.1920.1040" timestamp="1585055474715" />
-    <state x="740" y="261" key="FileChooserDialogImpl" timestamp="1587138128437">
+    <state x="679" y="134" key="#Run_New_Launcher/0.0.1920.1040@0.0.1920.1040" timestamp="1587142467712" />
+    <state x="740" y="261" key="FileChooserDialogImpl" timestamp="1587142526149">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="261" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1587138128437" />
-    <state width="1877" height="281" key="GridCell.Tab.0.bottom" timestamp="1587138130106">
+    <state x="740" y="261" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1587142526149" />
+    <state width="1877" height="281" key="GridCell.Tab.0.bottom" timestamp="1587142857266">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="281" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1587138130106" />
-    <state width="1877" height="281" key="GridCell.Tab.0.center" timestamp="1587138130106">
+    <state width="1877" height="281" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1587142857266" />
+    <state width="1877" height="281" key="GridCell.Tab.0.center" timestamp="1587142857266">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="281" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1587138130106" />
-    <state width="1877" height="281" key="GridCell.Tab.0.left" timestamp="1587138130106">
+    <state width="1877" height="281" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1587142857266" />
+    <state width="1877" height="281" key="GridCell.Tab.0.left" timestamp="1587142857266">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="281" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1587138130106" />
-    <state width="1877" height="281" key="GridCell.Tab.0.right" timestamp="1587138130106">
+    <state width="1877" height="281" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1587142857266" />
+    <state width="1877" height="281" key="GridCell.Tab.0.right" timestamp="1587142857266">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="281" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1587138130106" />
-    <state x="461" y="162" key="SettingsEditor" timestamp="1587133704746">
+    <state width="1877" height="281" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1587142857266" />
+    <state x="461" y="162" key="SettingsEditor" timestamp="1587142527200">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="461" y="162" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1587133704746" />
+    <state x="461" y="162" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1587142527200" />
     <state x="592" y="217" width="737" height="606" key="find.popup" timestamp="1584992218634">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

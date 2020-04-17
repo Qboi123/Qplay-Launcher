@@ -506,7 +506,7 @@ class Launcher(Canvas):
             # print(_all)
             # print(_all_build)
             dir_ = os.listdir(f"{appdata_path}/versions/")
-            dir_.remove("master")
+            (dir_.remove("master") if "master" in dir_ else None)
             dir_build = list()
 
             for i in dir_:
@@ -575,7 +575,7 @@ class Launcher(Canvas):
             # print(_all)
             # print(_all_build)
             dir_ = os.listdir(f"{appdata_path}/versions/")
-            dir_.remove("master")
+            (dir_.remove("master") if "master" in dir_ else None)
             dir_build = list()
 
             for i in dir_:
@@ -730,7 +730,7 @@ class Launcher(Canvas):
             # print(_all)
             # print(_all_build)
             dir_ = os.listdir(f"{appdata_path}/versions/")
-            dir_.remove("master")
+            (dir_.remove("master") if "master" in dir_ else None)
             dir_build = list()
 
             for i in dir_:
@@ -799,7 +799,7 @@ class Launcher(Canvas):
             # print(_all)
             # print(_all_build)
             dir_ = os.listdir(f"{appdata_path}/versions/")
-            dir_.remove("master")
+            (dir_.remove("master") if "master" in dir_ else None)
             dir_build = list()
 
             for i in dir_:
@@ -981,6 +981,9 @@ class Launcher(Canvas):
         _dir = utils.replace_ver2dir(self.version)
         if not exists(f"{appdata_path}/versions/%s" % _dir):
             self.download()
+        else:
+            if _dir == "master":
+                self.download()
 
         if not os.path.exists(f"{appdata_path}/mods/%s" % _dir):
             os.makedirs(f"{appdata_path}/mods/%s" % _dir)
@@ -1014,7 +1017,7 @@ class Launcher(Canvas):
             print(command)
             # ShellExecute()
             execute(command, cwd=appdata_path+f"/versions/{_dir}/", show=False)
-            # os.kill(os.getpid(), 0)
+            os.kill(os.getpid(), 0)
         elif self.dir_data[_dir] >= 16:
             cfg = {"runtimeDir": self.runtime_dir}
 
@@ -1026,7 +1029,7 @@ class Launcher(Canvas):
                        ]
             print(command)
             execute(command, cwd=appdata_path+f"/versions/{_dir}/", show=False)
-            # os.kill(os.getpid(), 0)
+            os.kill(os.getpid(), 0)
         else:
             cfg = {"version": self.version,
                    "versionDir": _dir,
@@ -1057,7 +1060,7 @@ class Launcher(Canvas):
         else:
             _dir = utils.replace_ver2dir(self.version)
 
-        if not exists(f"{appdata_path}/versions/%s" % _dir):
+        if (not exists(f"{appdata_path}/versions/%s" % _dir)) or _dir == "master":
             self.tag_unbind(self.idPlayButton, "<Enter>")
             self.tag_unbind(self.idPlayButton, "<Leave>")
             self.tag_unbind(self.idPlayButton, "<ButtonPress-1>")
@@ -1130,6 +1133,7 @@ class Launcher(Canvas):
                         file.write(json.JSONEncoder().encode(a))
                 elif self.version == "master":
                     utils.extract_zipfile(f"{appdata_path}/temp/QplayBubbles-" + self.version + '.zip', f"{appdata_path}/versions/")
+                    shutil.rmtree(f"{appdata_path}/versions/{_dir}", True)
                     os.rename(f"{appdata_path}/versions/QplayBubbles-Releaes-" + self.version, f"{appdata_path}/versions/" + _dir)
 
             if os.path.exists(f"{appdata_path}/versions/%s/requirements.txt" % _dir):
