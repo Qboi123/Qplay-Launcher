@@ -10,6 +10,37 @@ from threadsafe_tkinter import *
 import wx
 
 
+def execute(argv=None, cwd=None, use_arguments=True, show=True):
+    """Run a subprocess with elevated privileges.
+
+    (Should work with both UAC and Guest accounts)
+
+    @param argv: Command to run. C{None} for self.
+    @param cwd: Working directory or C{None} for C{os.getcwd()}
+    @param use_arguments: If False, PyWin32 is not required.
+    @param show: See bShow in C{win32api.ShellExecute} docs.
+                        (Ignored if use_arguments = C{False})
+
+    @note: This assumes that sys.argv[0] is absolute or relative to cwd.
+    @todo: Get access to something newer than XP to test on.
+    """
+    argv = argv or sys.argv
+    cwd = cwd or os.getcwd()
+
+    if isinstance(argv, str):
+        argv = [argv]
+    cmd = os.path.normpath(argv[0])
+
+    if use_arguments:
+        from win32api import ShellExecute
+        from subprocess import list2cmdline
+
+        args = list2cmdline(argv[1:])
+        ShellExecute(0, None, cmd, args, cwd, show)
+    else:
+        os.chdir(cwd)
+        os.startfile(os.path.normpath(cmd))
+
 class Download:
     # noinspection PySameParameterValue
     def __init__(self, url, fp="", isTemp=False):
@@ -475,6 +506,7 @@ class Launcher(Canvas):
             # print(_all)
             # print(_all_build)
             dir_ = os.listdir(f"{appdata_path}/versions/")
+            dir_.remove("master")
             dir_build = list()
 
             for i in dir_:
@@ -498,6 +530,8 @@ class Launcher(Canvas):
             # print(_all)
 
             for i in os.listdir(f"{appdata_path}/versions/"):
+                if i == "master":
+                    continue
                 # print("I: %s" % i)
                 for k in _all:
                     # print("K: %s" % k)
@@ -541,6 +575,7 @@ class Launcher(Canvas):
             # print(_all)
             # print(_all_build)
             dir_ = os.listdir(f"{appdata_path}/versions/")
+            dir_.remove("master")
             dir_build = list()
 
             for i in dir_:
@@ -564,6 +599,8 @@ class Launcher(Canvas):
             # print(_all)
 
             for i in os.listdir(f"{appdata_path}/versions/"):
+                if i == "master":
+                    continue
                 # print("I: %s" % i)
                 for k in _all:
                     # print("K: %s" % k)
@@ -693,6 +730,7 @@ class Launcher(Canvas):
             # print(_all)
             # print(_all_build)
             dir_ = os.listdir(f"{appdata_path}/versions/")
+            dir_.remove("master")
             dir_build = list()
 
             for i in dir_:
@@ -716,6 +754,8 @@ class Launcher(Canvas):
             # print(_all)
 
             for i in os.listdir(f"{appdata_path}/versions/"):
+                if i == "master":
+                    continue
                 # print("I: %s" % i)
                 for k in _all:
                     # print("K: %s" % k)
@@ -759,6 +799,7 @@ class Launcher(Canvas):
             # print(_all)
             # print(_all_build)
             dir_ = os.listdir(f"{appdata_path}/versions/")
+            dir_.remove("master")
             dir_build = list()
 
             for i in dir_:
@@ -782,6 +823,8 @@ class Launcher(Canvas):
             # print(_all)
 
             for i in os.listdir(f"{appdata_path}/versions/"):
+                if i == "master":
+                    continue
                 # print("I: %s" % i)
                 for k in _all:
                     # print("K: %s" % k)
@@ -965,10 +1008,13 @@ class Launcher(Canvas):
             # exit_code = os.system("{runtimeDir}/python.exe versions/" + _dir + "/__main__.py {version} {versionDir} {build}".format(
             #     **cfg))
             command = [f"{cfg['runtimeDir']}/python.exe",
-                       f"versions/{_dir}/__main__.py",
+                       f"__main__.py",
                        f"gameDir={appdata_path}"
                        ]
-            self.processes.append(sp.Popen(command, cwd=appdata_path))
+            print(command)
+            # ShellExecute()
+            execute(command, cwd=appdata_path+f"/versions/{_dir}/", show=False)
+            # os.kill(os.getpid(), 0)
         elif self.dir_data[_dir] >= 16:
             cfg = {"runtimeDir": self.runtime_dir}
 
@@ -979,7 +1025,8 @@ class Launcher(Canvas):
                        f"gameDir={appdata_path}"
                        ]
             print(command)
-            self.processes.append(sp.Popen(command, cwd=appdata_path))
+            execute(command, cwd=appdata_path+f"/versions/{_dir}/", show=False)
+            # os.kill(os.getpid(), 0)
         else:
             cfg = {"version": self.version,
                    "versionDir": _dir,
