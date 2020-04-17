@@ -1,7 +1,10 @@
 import shutil
+import subprocess
+import time
 import xml.etree.ElementTree
 from threading import Thread
 from tkinter import ttk
+from typing import List
 
 from threadsafe_tkinter import *
 import wx
@@ -106,8 +109,6 @@ class Updater(wx.Panel):
         if not updates:
             return
         self.load = wx.ProgressDialog("Downloading Updates", "")
-        for update in updates:
-
         if (not os.path.exists(f"{appdata_path}/lib/")):
             print("")
             launcher = self.download(url, "")
@@ -390,12 +391,21 @@ sys.path.append(os.getcwd().replace("\\\\", "/"))
 
 
 class Launcher(Canvas):
-    def __init__(self, root, width, height):
+    def __init__(self, root: Tk, width, height):
         self.width = width
         self.height = height
 
         super().__init__(root, highlightthickness=0, height=self.height, width=self.width)
         self.root = root
+        self.processes: List[subprocess.Popen] = []
+        def end():
+            for process in self.processes:
+                try:
+                    os.kill(process.pid, 1)
+                except:
+                    pass
+
+        self.root.protocol("WM_DELETE_WINDOW", lambda: os.kill(os.getpid(), 1))
         from lib import utils
         import urllib.request
         import urllib.error
@@ -610,7 +620,7 @@ class Launcher(Canvas):
             print(self.choice_var.get())  # prints value based on choice var
             print(event)  # prints selection directly from the event passed by the command in OptionMenu
 
-        working_list = list(all_)
+        working_list = list(all_)+["master"]
         self.choice_var = StringVar(value=all_[0])
         self.omVersion = OptionMenu(self.root, self.choice_var, *working_list, command=print_choice)
         print(self.omVersion.keys())
@@ -810,7 +820,7 @@ class Launcher(Canvas):
             print(self.choice_var.get())  # prints value based on choice var
             print(event)  # prints selection directly from the event passed by the command in OptionMenu
 
-        working_list = list(all_)
+        working_list = list(all_)+["master"]
         self.choice_var = StringVar(value=all_[0])
         self.omVersion = OptionMenu(self.root, self.choice_var, *working_list, command=print_choice)
         print(self.omVersion.keys())
@@ -931,21 +941,15 @@ class Launcher(Canvas):
 
         if not os.path.exists(f"{appdata_path}/mods/%s" % _dir):
             os.makedirs(f"{appdata_path}/mods/%s" % _dir)
-
         print("Starting Version: %s" % _dir)
-        cfg = {"version": self.version,
-               "versionDir": _dir,
-               "build": self.dir_data[_dir],
-               "runtimeDir": self.runtime_dir
-               }
 
-        if os.path.exists(f"{appdata_path}/old_load.py"):
+        if not os.path.exists(f"{appdata_path}/old_load.py"):
             shutil.copy("old_load.py", f"{appdata_path}/old_load.py")
 
-        if os.path.exists(f"{appdata_path}/lang/"):
+        if not os.path.exists(f"{appdata_path}/lang/"):
             shutil.copytree("lang/", f"{appdata_path}/lang/")
 
-        if os.path.exists(f"{appdata_path}/lib/"):
+        if not os.path.exists(f"{appdata_path}/lib/"):
             shutil.copytree("lib/", f"{appdata_path}/lib/")
 
         oldDir = os.getcwd()
@@ -955,15 +959,34 @@ class Launcher(Canvas):
         # if self.dir_data[_dir] < 16:
         #     self.root.destroy()
 
-        if self.dir_data[_dir] >= 16:
+        if _dir == "master":
+            cfg = {"runtimeDir": self.runtime_dir}
+
             # exit_code = os.system("{runtimeDir}/python.exe versions/" + _dir + "/__main__.py {version} {versionDir} {build}".format(
             #     **cfg))
             command = [f"{cfg['runtimeDir']}/python.exe",
-                       f"version/{_dir}/__main__.py",
-                       f"gameDir=\"{appdata_path}\""
+                       f"versions/{_dir}/__main__.py",
+                       f"gameDir={appdata_path}"
                        ]
-            sp.Popen(command, cwd=appdata_path)
+            self.processes.append(sp.Popen(command, cwd=appdata_path))
+        elif self.dir_data[_dir] >= 16:
+            cfg = {"runtimeDir": self.runtime_dir}
+
+            # exit_code = os.system("{runtimeDir}/python.exe versions/" + _dir + "/__main__.py {version} {versionDir} {build}".format(
+            #     **cfg))
+            command = [f"{cfg['runtimeDir']}/python.exe",
+                       f"versions/{_dir}/__main__.py",
+                       f"gameDir={appdata_path}"
+                       ]
+            print(command)
+            self.processes.append(sp.Popen(command, cwd=appdata_path))
         else:
+            cfg = {"version": self.version,
+                   "versionDir": _dir,
+                   "build": self.dir_data[_dir],
+                   "runtimeDir": self.runtime_dir
+                   }
+
             # exit_code = os.system("{runtimeDir}/python.exe old_load.py {version} {versionDir} {build}".format(_dir, **cfg))
             command = [f"{cfg['runtimeDir']}/python.exe",
                        f"old_load.py",
@@ -982,7 +1005,10 @@ class Launcher(Canvas):
             os.makedirs(f"{appdata_path}/temp/")
         
         fp = f"{appdata_path}/temp/QplayBubbles-" + self.version + '.zip'
-        _dir = utils.replace_ver2dir(self.version)
+        if self.version == "master":
+            _dir = "master"
+        else:
+            _dir = utils.replace_ver2dir(self.version)
 
         if not exists(f"{appdata_path}/versions/%s" % _dir):
             self.tag_unbind(self.idPlayButton, "<Enter>")
@@ -991,7 +1017,10 @@ class Launcher(Canvas):
             self.tag_unbind(self.idPlayButton, "<ButtonRelease-1>")
             self.omVersion.place_forget()
             self.itemconfig(self.idPlayButton, state=HIDDEN)
-            if self.version in self.old:
+            if self.version == "master":
+                down = Download("https://github.com/Qplay123/QplayBubbles-Releaes/archive/" + self.version + ".zip",
+                                f"{appdata_path}/temp/QplayBubbles-" + self.version + '.zip', False)
+            elif self.version in self.old:
                 down = Download("https://github.com/Qplay123/QplayBubbles-OldReleases/archive/" + self.version + ".zip",
                                 f"{appdata_path}/temp/QplayBubbles-" + self.version + '.zip', False)
             else:
@@ -1052,9 +1081,12 @@ class Launcher(Canvas):
                     a = {'build': build, 'displayName': utils.replace_any2name(self.version)}
                     with open(f"{appdata_path}/versions/%s/version.json" % _dir, "w+") as file:
                         file.write(json.JSONEncoder().encode(a))
+                elif self.version == "master":
+                    utils.extract_zipfile(f"{appdata_path}/temp/QplayBubbles-" + self.version + '.zip', f"{appdata_path}/versions/")
+                    os.rename(f"{appdata_path}/versions/QplayBubbles-Releaes-" + self.version, f"{appdata_path}/versions/" + _dir)
 
             if os.path.exists(f"{appdata_path}/versions/%s/requirements.txt" % _dir):
-                with open(f"{appdata_path}/versions/%s/requirements.txt" % _dir, "r"):
+                with open(f"{appdata_path}/versions/%s/requirements.txt" % _dir, "r") as file:
                     requirements = file.read()
                     file.close()
                 if requirements:
@@ -1087,7 +1119,9 @@ if __name__ == '__main__':
     else:
         raise RuntimeError(f"Your platform is incompatible ({platform.system()})")
 
-    Updater("v1_5_0_pre5", xml.etree.ElementTree.parse(f"{appdata_path}/library_versions.xml"))
+    app = wx.App()
+
+    # Updater("v1_5_0_pre5", xml.etree.ElementTree.parse(f"{appdata_path}/library_versions.xml"))
 
     if not os.path.exists(appdata_path):
         os.makedirs(appdata_path)
